@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="尚硅谷大数据Hive 3.x教程全新升级版（基于hive3.1.3）#手握日月摘星辰，世间无我这般人！   #一：Hive的基础知识##1.什么是Hive？   Hive是由Facebook开源，基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张表，并提供类SQL查询功能 ##2.Hive本质   Hive是一个Hadoop客户端，用于将HQL（Hive SQL）转化成MapRe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hive学习笔记">
+<meta property="og:url" content="http://example.com/2023/07/30/hive_learn/index.html">
+<meta property="og:site_name" content="第五门徒">
+<meta property="og:description" content="尚硅谷大数据Hive 3.x教程全新升级版（基于hive3.1.3）#手握日月摘星辰，世间无我这般人！   #一：Hive的基础知识##1.什么是Hive？   Hive是由Facebook开源，基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张表，并提供类SQL查询功能 ##2.Hive本质   Hive是一个Hadoop客户端，用于将HQL（Hive SQL）转化成MapRe">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/07/30/hive_learn/8.png">
+<meta property="og:image" content="http://example.com/2023/07/30/hive_learn/1.png">
+<meta property="og:image" content="http://example.com/2023/07/30/hive_learn/2.png">
+<meta property="og:image" content="http://example.com/2023/07/30/hive_learn/3.png">
+<meta property="og:image" content="http://example.com/2023/07/30/hive_learn/4.png">
+<meta property="og:image" content="http://example.com/2023/07/30/hive_learn/5.png">
+<meta property="og:image" content="http://example.com/2023/07/30/hive_learn/6.png">
+<meta property="og:image" content="http://example.com/2023/07/30/hive_learn/7.png">
+<meta property="article:published_time" content="2023-07-30T10:56:09.000Z">
+<meta property="article:modified_time" content="2023-07-31T08:30:32.053Z">
+<meta property="article:author" content="张宴银">
+<meta property="article:tag" content="手握日月摘星辰，世间无我这般人">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/07/30/hive_learn/8.png">
+
+<link rel="canonical" href="http://example.com/2023/07/30/hive_learn/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>hive学习笔记 | 第五门徒</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="第五门徒" type="application/rss+xml">
+</head>
+
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">第五门徒</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/30/hive_learn/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张宴银">
+      <meta itemprop="description" content="初级以内我无敌，中级以上我一换一">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="第五门徒">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          hive学习笔记
+        </h1>
+
+        <div class="post-meta">
+		  
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-07-30 18:56:09" itemprop="dateCreated datePublished" datetime="2023-07-30T18:56:09+08:00">2023-07-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-07-31 16:30:32" itemprop="dateModified" datetime="2023-07-31T16:30:32+08:00">2023-07-31</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g84y147sX?p=78&vd_source=326368ccf929b51406b17a280e53c102">尚硅谷大数据Hive 3.x教程全新升级版（基于hive3.1.3）</a><br>#手握日月摘星辰，世间无我这般人！<br><img src="/2023/07/30/hive_learn/8.png">  </p>
+<p>#一：Hive的基础知识<br>##1.什么是Hive？  </p>
+<p>Hive是由Facebook开源，基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张表，并提供类SQL查询功能</p>
+<p>##2.Hive本质  </p>
+<p>Hive是一个Hadoop客户端，用于将HQL（Hive SQL）转化成MapReduce程序。<br>（1）Hive中每张表的数据存储在HDFS<br>（2）Hive分析数据底层的实现是MapReduce（也可配置为Spark或者Tez）<br>（3）执行程序运行在Yarn上</p>
+<p>##3.用户接口：Client  </p>
+<p>CLI（command-line interface）、JDBC&#x2F;ODBC  </p>
+<p>###JDBC和ODBC的区别:  </p>
+<p>（1）JDBC的移植性比ODBC好 </p>
+<p>（2）两者使用的语言不同，JDBC在Java编程时使用，ODBC一般在C&#x2F;C++编程时使用  </p>
+<p>##4:元数据：Metastore  </p>
+<p>元数据包括：数据库（默认是default）、表名、表的拥有者、列&#x2F;分区字段、表的类型（是否是外部表）、表的数据所在目录等  </p>
+<p>默认存储在自带的derby数据库中，由于derby数据库只支持单客户端访问，生产环境中为了多人开发，推荐使用MySQL存储Metastore  </p>
+<p>##5.hive的存储和计算  </p>
+<p>使用HDFS进行存储，可以选择MapReduce&#x2F;Tez&#x2F;Spark进行计算</p>
+<p>##6.hiveserver2服务  </p>
+<p>Hive的hiveserver2服务的作用是提供jdbc&#x2F;odbc接口，为用户提供远程访问Hive数据的功能，例如用户期望在个人电脑中访问远程服务中的Hive数据，就需要用到Hiveserver2  </p>
+<p>##7.用户说明  </p>
+<p>在远程访问Hive数据时，客户端并未直接访问Hadoop集群，而是由Hivesever2代理访问,那么访问Hadoop集群的用户身份是谁？  </p>
+<p>具体是谁，由Hiveserver2的hive.server2.enable.doAs参数决定，该参数的含义是是否启用Hiveserver2用户模拟的功能  </p>
+<p>若启用，则Hiveserver2会模拟成客户端的登录用户去访问Hadoop集群的数据，不启用，则Hivesever2会直接使用启动用户访问Hadoop集群数据  </p>
+<p>默认为开启</p>
+<p>生产环境，推荐开启用户模拟功能，因为开启后才能保证各用户之间的权限隔离</p>
+<p>hivesever2的模拟用户功能，依赖于Hadoop提供的proxy user（代理用户功能），只有Hadoop中的代理用户才能模拟其他用户的身份访问Hadoop集群。因此，需要将hiveserver2的启动用户设置为Hadoop的代理用户 </p>
+<p>##8.metastore服务  </p>
+<p>Hive的metastore服务的作用是为Hive CLI或者Hiveserver2提供元数据访问接口  </p>
+<p>##9.metastore运行模式  </p>
+<p>metastore有两种运行模式，分别为嵌入式模式和独立服务模式</p>
+<p><img src="/2023/07/30/hive_learn/1.png" alt="&quot;metastore运行模式&quot;"></p>
+<p>生产环境中，不推荐使用嵌入式模式  </p>
+<p>（1）嵌入式模式下，每个Hive CLI都需要直接连接元数据库，当Hive CLI较多时，数据库压力会比较大。  </p>
+<p>（2）每个客户端都需要用户元数据库的读写权限，元数据库的安全得不到很好的保证</p>
+<p>##10.编写Hive服务启动脚本  </p>
+<p>nohup：放在命令开头，表示不挂起，也就是关闭终端进程也继续保持运行状态  </p>
+<p>&#x2F;dev&#x2F;null：是Linux文件系统中的一个文件，被称为黑洞，所有写入该文件的内容都会被自动丢弃  </p>
+<p>2&gt;&amp;1：表示将错误重定向到标准输出上  </p>
+<p>&amp;：放在命令结尾，表示后台运行  </p>
+<p>一般会组合使用：nohup  [xxx命令操作]&gt; file  2&gt;&amp;1 &amp;，表示将xxx命令运行的结果输出到file中，并保持命令启动的进程在后台运行。  </p>
+<p>##11.hive -e 和 hive -f  </p>
+<p>“-e”不进入hive的交互窗口执行hql语句  </p>
+<p><code>bin/hive -e &quot;select id from student;&quot;</code></p>
+<p>“-f”执行脚本中的hql语句  </p>
+<p><code>bin/hive -f /opt/module/hive/datas/hivef.sql</code>  </p>
+<p>##12.Hive参数配置方式  </p>
+<p>参数的配置三种方式  </p>
+<p>###(1).配置文件方式  </p>
+<p><code>hive-site.xml</code></p>
+<p>###(2).命令行参数方式  </p>
+<p>启动Hive时，可以在命令行添加-hiveconf param&#x3D;value来设定参数  </p>
+<p>比如：bin&#x2F;hive -hiveconf   </p>
+<p><code>mapreduce.job.reduces=10;</code></p>
+<p>注：仅对本次Hive启动有效  </p>
+<p>###(3).参数声明方式  </p>
+<p>可以在HQL中使用SET关键字设定参数  </p>
+<p><code>set mapreduce.job.reduces=10;</code>  </p>
+<p>上述三种设定方式的优先级依次递增,配置文件 &lt; 命令行参数 &lt; 参数声明  </p>
+<p>##13.Hive常见属性配置  </p>
+<p>Hive客户端显示当前库和表头<br>Set Hive-site.xml :<br>          <code>hive.cli.print.header = true</code><br>          <code>hive.cli.print.current.db</code>  </p>
+<p>Hive运行日志路径配置<br>Set hive-log4j2.properties:<br>     <code>property.hive.log.dir=/opt/module/hive/logs</code>  </p>
+<p>修改Hive的堆内存<br>Set hive-env.sh:<br>     <code>export HADOOP_HEAPSIZE=2048</code>  </p>
+<p>关闭Hadoop虚拟内存检查<br>Set yarn-site.xml:<br>     <code>yarn.nodemanager.vmem-check-enabled =false</code>  </p>
+<p>#二：Hive的DDL语法  </p>
+<p>##1.创建数据库  </p>
+<pre><code>CREATE DATABASE [IF NOT EXISTS] database_name  
+[COMMENT database_comment]  
+[LOCATION hdfs_path]  
+[WITH DBPROPERTIES (property_name=property_value, ...)];   
+</code></pre>
+<p>创建一个数据库，指定路径<br>    hive (default)&gt; create database db_hive2 location ‘&#x2F;db_hive2’;  </p>
+<p>##2.查看数据库信息  </p>
+<pre><code>DESCRIBE DATABASE [EXTENDED] db_name;    
+</code></pre>
+<p>###(1) 查看基本信息  </p>
+<pre><code>desc database db_hive3;  
+</code></pre>
+<p>###(2) 查看更多信息  </p>
+<pre><code>desc database extended db_hive3;  
+</code></pre>
+<p>##3.修改数据库   </p>
+<p>需要注意的是：修改数据库location，不会改变当前已有表的路径信息，而只是改变后续创建的新表的默认的父目录  </p>
+<p>###修改dbproperties<br>    ALTER DATABASE database_name SET DBPROPERTIES   (property_name&#x3D;property_value, …);  </p>
+<p>###修改location<br>    ALTER DATABASE database_name SET LOCATION hdfs_path;  </p>
+<p>###修改owner user<br>    ALTER DATABASE database_name SET OWNER USER user_name;  </p>
+<p>##4.删除数据库  </p>
+<pre><code>DROP DATABASE [IF EXISTS] database_name [RESTRICT|CASCADE];    
+</code></pre>
+<p>RESTRICT：严格模式，若数据库不为空，则会删除失败，默认为该模式。  </p>
+<p>CASCADE：级联模式，若数据库不为空，则会将库中的表一并删除。</p>
+<p>##5.切换当前数据库  </p>
+<p>USE database_name;  </p>
+<p>##6.创建表  </p>
+<pre><code>CREATE [TEMPORARY] [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name   
+[(col_name data_type [COMMENT col_comment], ...)]
+[COMMENT table_comment]
+[PARTITIONED BY (col_name data_type [COMMENT col_comment], ...)]
+[CLUSTERED BY (col_name, col_name, ...) 
+[SORTED BY (col_name [ASC|DESC], ...)] INTO num_buckets BUCKETS]
+[ROW FORMAT row_format] 
+[STORED AS file_format]
+[LOCATION hdfs_path]
+[TBLPROPERTIES (property_name=property_value, ...)]
+</code></pre>
+<p>关键字说明:<br>###(1)TEMPORARY<br>临时表，该表只在当前会话可见，会话结束，表会被删除。  </p>
+<p>###(2)EXTERNAL（重点）  </p>
+<p>外部表，与之相对应的是内部表（管理表）。内部表意味着Hive会完全接管该表，包括元数据和HDFS中的数据。而外部表则意味着Hive只接管元数据，而不完全接管HDFS中的数据</p>
+<p>###(3)data_type（重点）</p>
+<p>Hive中的字段类型可分为基本数据类型和复杂数据类型。  </p>
+<p><img src="/2023/07/30/hive_learn/2.png" alt="&quot;hive数据类型&quot;">  </p>
+<p>类型转换:  </p>
+<p>Hive的基本数据类型可以做类型转换，转换的方式包括隐式转换以及显示转换。  </p>
+<p>####方式一：隐式转换  </p>
+<p>隐式地转换为一个范围更广的类型   </p>
+<p>Hive官方隐式转换表<br><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/hive/languagemanual+types#LanguageManualTypes-AllowedImplicitConversions">Allowed Implicit Conversions</a>  </p>
+<p>####方式二：显示转换  </p>
+<p>可以借助cast函数完成显示的类型转换(强制转换)  </p>
+<pre><code>select &#39;1&#39; + 2, cast(&#39;1&#39; as int) + 2;
+</code></pre>
+<p>###(4) PARTITIONED BY（重点）  </p>
+<p>创建分区表  </p>
+<p>###(5) CLUSTERED BY … SORTED BY…INTO … BUCKETS（重点）  </p>
+<p>创建分桶表  </p>
+<p>###(6) ROW FORMAT（重点）  </p>
+<p>指定SERDE，SERDE是Serializer and Deserializer的简写。Hive使用SERDE序列化和反序列化每行数据  </p>
+<p>Hive官方序列化反序列化器文档<br><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/DeveloperGuide#DeveloperGuide-HiveSerDe">Hive-Serde</a></p>
+<p>####语法一：  </p>
+<p>DELIMITED关键字表示对文件中的每个字段按照特定分割符进行分割，其会使用默认的SERDE对每行数据进行序列化和反序列化  </p>
+<pre><code>ROW FORAMT DELIMITED 
+[FIELDS TERMINATED BY char] 
+[COLLECTION ITEMS TERMINATED BY char] 
+[MAP KEYS TERMINATED BY char] 
+[LINES TERMINATED BY char] 
+[NULL DEFINED AS char]   
+</code></pre>
+<p>注：<br>fields terminated by ：列分隔符<br>collection items terminated by ： map、struct和array中每个元素之间的分隔符<br>map keys terminated by ：map中的key与value的分隔符<br>lines terminated by ：行分隔符  </p>
+<p>####语法二：  </p>
+<p>SERDE关键字可用于指定其他内置的SERDE或者用户自定义的SERDE。例如JSON SERDE，可用于处理JSON字符串  </p>
+<pre><code>ROW FORMAT SERDE serde_name [WITH SERDEPROPERTIES (property_name=property_value,property_name=property_value, ...)] 
+</code></pre>
+<p>###(7) STORED AS（重点）  </p>
+<p>指定文件格式，常用的文件格式有，textfile（默认值），sequence file，orc file、parquet file等等  </p>
+<p>###(8) LOCATION  </p>
+<p>指定表所对应的HDFS路径，若不指定路径，其默认值为<br>${hive.metastore.warehouse.dir}&#x2F;db_name.db&#x2F;table_name  </p>
+<p>###(9) TBLPROPERTIES  </p>
+<p>用于配置表的一些KV键值对参数  </p>
+<p>##7.Create Table As Select（CTAS）建表  </p>
+<pre><code>CREATE [TEMPORARY] TABLE [IF NOT EXISTS] table_name 
+[COMMENT table_comment] 
+[ROW FORMAT row_format] 
+[STORED AS file_format] 
+[LOCATION hdfs_path]
+[TBLPROPERTIES (property_name=property_value, ...)]
+[AS select_statement]
+</code></pre>
+<p>##8.Create Table Like语法</p>
+<p>该语法允许用户复刻一张已经存在的表结构，与上述的CTAS语法不同，该语法创建出来的表中不包含数据  </p>
+<pre><code>CREATE [TEMPORARY] [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name
+[LIKE exist_table_name]
+[ROW FORMAT row_format] 
+[STORED AS file_format] 
+[LOCATION hdfs_path]
+[TBLPROPERTIES (property_name=property_value, ...)]
+</code></pre>
+<p>##9.内部表与外部表  </p>
+<p>Hive中默认创建的表都是的内部表，有时也被称为管理表。对于内部表，Hive会完全管理表的元数据和数据文件  </p>
+<p>外部表通常可用于处理其他工具上传的数据文件，对于外部表，Hive只负责管理元数据，不负责管理HDFS中的数据文件  </p>
+<p>##10.查看表  </p>
+<pre><code>DESCRIBE [EXTENDED | FORMATTED] [db_name.]table_name  
+</code></pre>
+<p>EXTENDED：展示详细信息  </p>
+<p>FORMATTED：对详细信息进行格式化的展示</p>
+<p>##11.修改列信息  </p>
+<p>###增加列  </p>
+<pre><code>ALTER TABLE table_name ADD COLUMNS (col_name data_type [COMMENT col_comment], ...)  
+</code></pre>
+<p>新增列的位置位于末尾  </p>
+<p>###更新列</p>
+<pre><code>ALTER TABLE table_name CHANGE [COLUMN] col_old_name col_new_name column_type [COMMENT col_comment] [FIRST|AFTER column_name]
+</code></pre>
+<p>该语句允许用户修改指定列的列名、数据类型、注释信息以及在表中的位置  </p>
+<p>###替换列  </p>
+<pre><code>ALTER TABLE table_name REPLACE COLUMNS (col_name data_type [COMMENT col_comment], ...)  
+</code></pre>
+<p>该语句允许用户用新的列集替换表中原有的全部列  </p>
+<p>##12.清空表  </p>
+<pre><code>TRUNCATE [TABLE] table_name  
+</code></pre>
+<p>truncate只能清空管理表，不能删除外部表中数据  </p>
+<p>#三：Hive的DML语法  </p>
+<p>##1. Load  </p>
+<p>Load语句可将文件导入到Hive表中    </p>
+<pre><code>LOAD DATA [LOCAL] INPATH &#39;filepath&#39; [OVERWRITE] INTO TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)];
+</code></pre>
+<p>关键字说明：  </p>
+<p>（1）local：表示从本地加载数据到Hive表；否则从HDFS加载数据到Hive表。  </p>
+<p>（2）overwrite：表示覆盖表中已有数据，否则表示追加。  </p>
+<p>（3）partition：表示上传到指定分区，若目标是分区表，需指定分区    </p>
+<p>###1.1加载本地文件到hive:  </p>
+<pre><code>load data local inpath &#39;/opt/module/datas/student.txt&#39; into table student;  
+</code></pre>
+<p>###1.2加载HDFS上数据:  </p>
+<pre><code>hadoop fs -put /opt/module/datas/student.txt /user/atguigu;  
+
+load data inpath &#39;/user/atguigu/student.txt&#39; into table student;
+</code></pre>
+<p>##2.Insert  </p>
+<pre><code>INSERT (INTO | OVERWRITE) TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)] select_statement;
+</code></pre>
+<p>关键字说明：  </p>
+<p>（1）INTO：将结果追加到目标表  </p>
+<p>（2）OVERWRITE：用结果覆盖原有数据  </p>
+<p>###2.1 将给定Values插入表中</p>
+<pre><code>INSERT (INTO | OVERWRITE) TABLE tablename [PARTITION (partcol1[=val1], partcol2[=val2] ...)] VALUES values_row [, values_row ...]  
+</code></pre>
+<p>###2.2将查询结果写入目标路径  </p>
+<pre><code>INSERT OVERWRITE [LOCAL] DIRECTORY directory[ROW FORMAT row_format] [STORED AS file_format] select_statement;
+</code></pre>
+<p>##3.Export&amp;Import  </p>
+<p>Export导出语句可将表的数据和元数据信息一并到处的HDFS路径，Import可将Export导出的内容导入Hive，表的数据和元数据信息都会恢复。Export和Import可用于两个Hive实例之间的数据迁移</p>
+<p>###导出<br>    EXPORT TABLE tablename TO ‘export_target_path’</p>
+<p>###导入<br>    IMPORT [EXTERNAL] TABLE new_or_original_tablename FROM ‘source_path’ [LOCATION ‘import_target_path’]</p>
+<p>#四:查询  </p>
+<p><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Select">Hive-select语法文档</a></p>
+<p>##1.select 查询语法    </p>
+<pre><code>SELECT [ALL | DISTINCT] select_expr, select_expr, 
+FROM table_reference       -- 从什么表查
+[WHERE where_condition]   -- 过滤
+[GROUP BY col_list]        -- 分组查询
+[HAVING col_list]          -- 分组后过滤
+[ORDER BY col_list]        -- 排序
+[CLUSTER BY col_list
+| [DISTRIBUTE BY col_list] [SORT BY col_list]]
+[LIMIT number]                -- 限制输出的行数
+</code></pre>
+<p>注意：<br>（1）SQL 语言大小写不敏感。<br>（2）SQL 可以写在一行或者多行。<br>（3）关键字不能被缩写也不能分行。<br>（4）各子句一般要分行写。<br>（5）使用缩进提高语句的可读性    </p>
+<p>##2.Limit语句  </p>
+<p>典型的查询会返回多行数据。limit子句用于限制返回的行数  </p>
+<pre><code>select * from emp limit 2,3; -- 表示从第2行开始，向下抓取3行
+</code></pre>
+<p>##3.关系运算函数  </p>
+<p>A&lt;&#x3D;&gt;B :  </p>
+<p> 如果A和B都为null或者都不为null，则返回true，如果只有一边为null，返回false  </p>
+<p>A [not] like B :  </p>
+<p> B是一个SQL下的简单正则表达式，也叫通配符模式，如果A与其匹配的话，则返回true；反之返回false。B的表达式说明如下：‘x%’表示A必须以字母‘x’开头，‘%x’表示A必须以字母‘x’结尾，而‘%x%’表示A包含有字母‘x’,可以位于开头，结尾或者字符串中间。如果使用not关键字则可达到相反的效果。  </p>
+<p>A rlike B, A regexp B:  </p>
+<p>B是基于java的正则表达式，如果A与其匹配，则返回true；反之返回false。匹配使用的是JDK中的正则表达式接口实现的，因为正则也依据其中的规则。例如，正则表达式必须和整个字符串A相匹配，而不是只需与其字符串匹配。  </p>
+<p>##4.聚合函数  </p>
+<p>count(*)，表示统计所有行数，包含null值； </p>
+<p>count(某列)，表示该列一共有多少行，不包含null值； </p>
+<p>max()，求最大值，不包含null，除非所有值都是null； </p>
+<p>min()，求最小值，不包含null，除非所有值都是null； </p>
+<p>sum()，求和，不包含null。   </p>
+<p>avg()，求平均值，不包含null。    </p>
+<p>##5.分组<br>Group By语句：  </p>
+<p>Group By语句通常会和聚合函数一起使用，按照一个或者多个列队结果进行分组，然后对每个组执行聚合操作</p>
+<p>##6.Having语句  </p>
+<p>having与where不同点  </p>
+<p>（1）where后面不能写分组聚合函数，而having后面可以使用分组聚合函数。  </p>
+<p>（2）having只用于group by分组统计语句    </p>
+<p>##7.Join语句   </p>
+<p>Hive支持通常的sql join语句，但是只支持等值连接，不支持非等值连接。  </p>
+<p>inner join 内连接：只有进行连接的两个表中都存在与连接条件相匹配的数据才会被保留下来  </p>
+<p>left outer join 左外连接：join操作符左边表中符合where子句的所有记录将会被返回  </p>
+<p>right outer join 右外连接：join操作符右边表中符合where子句的所有记录将会被返回  </p>
+<p>full outer join : 满外连接：将会返回所有表中符合where语句条件的所有记录。如果任一表的指定字段没有符合条件的值的话，那么就使用null值替代    </p>
+<p>多表连接: 连接n个表，至少需要n-1个连接条件    </p>
+<p>大多数情况下，Hive会对每对join连接对象启动一个MapReduce任务。本例中会首先启动一个MapReduce job对表e和表d进行连接操作，然后会再启动一个MapReduce job将第一个MapReduce job的输出和表l进行连接操作</p>
+<p>因为Hive总是按照从左到右的顺序执行的  </p>
+<p>##8.笛卡尔积产生条件  </p>
+<p>（1）省略连接条件  </p>
+<p>（2）连接条件无效  </p>
+<p>（3）所有表中的所有行互相连接  </p>
+<p>##9.联合（union &amp; union all）  </p>
+<p>union和union all都是上下拼接sql的结果，这点是和join有区别的，join是左右关联，union和union all是上下拼接。  </p>
+<p>union去重，union all不去重  </p>
+<p>union和union all在上下拼接sql结果时有两个要求：  </p>
+<p>（1）两个sql的结果，列的个数必须相同  </p>
+<p>（2）两个sql的结果，上下所对应列的类型必须一致    </p>
+<p>##10.排序  </p>
+<p>####全局排序 Order By  </p>
+<p>全局排序，只有一个Reduce    </p>
+<p>asc（ascend）：升序（默认）  </p>
+<p>desc（descend）：降序  </p>
+<p>####每个Reduce内部排序（Sort By）  </p>
+<p>Sort By：对于大规模的数据集order by的效率非常低。在很多情况下，并不需要全局排序，此时可以使用Sort by  </p>
+<p>Sort by为每个reduce产生一个排序文件。每个Reduce内部进行排序，对全局结果集来说不是排序  </p>
+<p>设置reduce个数  </p>
+<pre><code>hive (default)&gt; set mapreduce.job.reduces=3;  
+</code></pre>
+<p>查看设置reduce个数  </p>
+<pre><code>hive (default)&gt; set mapreduce.job.reduces;  
+</code></pre>
+<p>##11.分区（Distribute By）</p>
+<p>Distribute By：在有些情况下，我们需要控制某个特定行应该到哪个Reducer，通常是为了进行后续的聚集操作。distribute by子句可以做这件事。distribute by类似MapReduce中partition（自定义分区），进行分区，结合sort by使用  </p>
+<p>distribute by的分区规则是根据分区字段的hash码与reduce的个数进行相除后，余数相同的分到一个区。  </p>
+<p>Hive要求distribute by语句要写在sort by语句之前。  </p>
+<p>演示完以后mapreduce.job.reduces的值要设置回-1，否则下面分区or分桶表load跑MapReduce的时候会报错  </p>
+<p>##12.分区排序（Cluster By）  </p>
+<p>当distribute by和sort by字段相同时，可以使用cluster by方式  </p>
+<p>cluster by除了具有distribute by的功能外还兼具sort by的功能。但是排序只能是升序排序，不能指定排序规则为asc或者desc      </p>
+<p>以下两种写法等价<br>hive (default)&gt;<br>    select *<br>    from emp<br>    cluster by deptno;  </p>
+<p>hive (default)&gt;<br>    select<br>    *<br>    from emp<br>    distribute by deptno sort by deptno asc;  </p>
+<p>#五:函数  </p>
+<p>Hive会将常用的逻辑封装成函数给用户进行使用，类似于Java中的函数    </p>
+<p>Hive提供了大量的内置函数，按照其特点可大致分为如下几类：单行函数、聚合函数、炸裂函数、窗口函数  </p>
+<p>查看系统内置函数</p>
+<pre><code>show functions;  
+</code></pre>
+<p>查看内置函数用法  </p>
+<pre><code>desc function upper;  
+</code></pre>
+<p>查看内置函数详细信息  </p>
+<pre><code>desc function extended upper;  
+</code></pre>
+<p>##1.单行函数  </p>
+<p>单行函数的特点是一进一出，即输入一行，输出一行</p>
+<p>单行函数按照功能可分为如下几类: 日期函数、字符串函数、集合函数、数学函数、流程控制函数等  </p>
+<p>###数值函数  </p>
+<pre><code>round：四舍五入    
+
+ceil：向上取整   
+
+floor：向下取整  
+</code></pre>
+<p>###字符串函数  </p>
+<pre><code>substring：截取字符串  
+
+substring(string A, int start)  
+
+substring(string A, int start, int len)   
+</code></pre>
+<p>replace ：替换  </p>
+<pre><code>replace(string A, string B, string C)   
+
+regexp_replace：正则替换  
+
+regexp_replace(string A, string B, string C)   
+说明：将字符串A中的符合java正则表达式B的部分替换为C。注意，在有些情况下要使用转义字符  
+</code></pre>
+<p>regexp：正则匹配 </p>
+<pre><code>字符串 regexp 正则表达式     
+
+说明：若字符串符合正则表达式，则返回true，否则返回false
+
+select &#39;dfsaaaa&#39; regexp &#39;dfsa+&#39;  
+</code></pre>
+<p>repeat：重复字符串  </p>
+<pre><code>repeat(string A, int n)  
+
+说明：将字符串A重复n遍
+
+select repeat(&#39;123&#39;, 3);  
+</code></pre>
+<p>split ：字符串切割  </p>
+<pre><code>split(string str, string pat)   
+
+返回值：array
+
+hive&gt; select split(&#39;a-b-c-d&#39;,&#39;-&#39;);
+
+hive&gt; [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;]
+</code></pre>
+<p>nvl ：替换null值  </p>
+<pre><code>nvl(A,B) 
+
+若A的值不为null，则返回A，否则返回B  
+
+hive&gt; select nvl(null,1);   
+</code></pre>
+<p>concat ：拼接字符串  </p>
+<pre><code>concat(string A, string B, string C, ……)   
+
+将A,B,C……等字符拼接为一个字符串  
+
+hive&gt; select concat(&#39;beijing&#39;,&#39;-&#39;,&#39;shanghai&#39;,&#39;-&#39;,&#39;shenzhen&#39;);  
+
+hive&gt; beijing-shanghai-shenzhen  
+</code></pre>
+<p>concat_ws：以指定分隔符拼接字符串或者字符串数组  </p>
+<pre><code>concat_ws(string A, string…| array(string))   
+
+使用分隔符A拼接多个字符串，或者一个数组的所有元素。  
+
+hive&gt;select concat_ws(&#39;-&#39;,&#39;beijing&#39;,&#39;shanghai&#39;,&#39;shenzhen&#39;);  
+
+hive&gt; beijing-shanghai-shenzhen  
+
+hive&gt; select concat_ws(&#39;-&#39;,array(&#39;beijing&#39;,&#39;shenzhen&#39;,&#39;shanghai&#39;));  
+
+hive&gt; beijing-shanghai-shenzhen
+</code></pre>
+<p>get_json_object：解析json字符串   </p>
+<pre><code>get_json_object(string json_string, string path)
+
+解析json的字符串json_string，返回path指定的内容。如果输入的json字符串无效，那么返回NULL  
+
+hive&gt; select get_json_object(&#39;[&#123;&quot;name&quot;:&quot;大海海&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;age&quot;:&quot;25&quot;&#125;,&#123;&quot;name&quot;:&quot;小宋宋&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;age&quot;:&quot;47&quot;&#125;]&#39;,&#39;$.[0].name&#39;);  
+</code></pre>
+<p>###日期函数  </p>
+<p>unix_timestamp：返回当前或指定时间的时间戳</p>
+<pre><code>unix_timestamp()   
+
+返回值：bigint    
+
+hive&gt; select unix_timestamp(&#39;2022/08/08 08-08-08&#39;,&#39;yyyy/MM/dd HH-mm-ss&#39;);
+
+1659946088  
+</code></pre>
+<p>from_unixtime：转化UNIX时间戳（从 1970-01-01 00:00:00 UTC 到指定时间的秒数）到当前时区的时间格式</p>
+<pre><code>from_unixtime(bigint unixtime[, string format])  
+
+返回值：string  
+
+hive&gt; select from_unixtime(1659946088);  
+
+2022-08-08 08:08:08  
+</code></pre>
+<p>current_date：当前日期   </p>
+<p>current_timestamp：当前的日期加时间，并且精确的毫秒   </p>
+<p>month：获取日期中的月  </p>
+<pre><code>语法：month (string date)   
+
+返回值：int   
+</code></pre>
+<p>day：获取日期中的日  </p>
+<pre><code>语法：day (string date)   
+
+返回值：int 
+</code></pre>
+<p>hour：获取日期中的小时  </p>
+<pre><code>语法：hour (string date)   
+
+返回值：int   
+</code></pre>
+<p>datediff：两个日期相差的天数（结束日期减去开始日期的天数）</p>
+<pre><code>语法：datediff(string enddate, string startdate) 
+
+返回值：int   
+
+hive&gt; select datediff(&#39;2021-08-08&#39;,&#39;2022-10-09&#39;);    
+
+    -427    
+</code></pre>
+<p>date_add：日期加天数  </p>
+<pre><code>date_add(string startdate, int days)   
+</code></pre>
+<p>date_sub：日期减天数  </p>
+<pre><code>date_sub (string startdate, int days)   
+</code></pre>
+<p>date_format:将标准日期解析成指定格式字符串  </p>
+<pre><code>hive&gt; select date_format(&#39;2022-08-08&#39;,&#39;yyyy年-MM月-dd日&#39;)  
+
+2022年-08月-08日 
+</code></pre>
+<p>##流程控制函数  </p>
+<p>case when：条件判断函数  </p>
+<pre><code>语法一： case when a then b [when c then d]* [else e] end   
+
+语法二： case a when b then c [when d then e]* [else f] end
+判断同一个字段与多个值是否相等时才能这样写  
+</code></pre>
+<p>if: 条件判断，类似于Java中三元运算符</p>
+<pre><code>if（boolean testCondition, T valueTrue, T valueFalseOrNull）  
+
+当条件testCondition为true时，返回valueTrue；否则返回valueFalseOrNull	 
+
+hive&gt; select if(10 &gt; 5,&#39;正确&#39;,&#39;错误&#39;);    
+
+输出：正确  
+</code></pre>
+<p>##集合函数  </p>
+<p>size：集合中元素的个数  </p>
+<pre><code>hive&gt; select size(friends) from test;  --2/2  每一行数据中的friends集合里的个数  
+</code></pre>
+<p>map：创建map集合</p>
+<pre><code>语法：map (key1, value1, key2, value2, …) 
+
+说明：根据输入的key和value对构建map类型  
+</code></pre>
+<p>map_keys： 返回map中的key  </p>
+<pre><code>hive&gt; select map_keys(map(&#39;xiaohai&#39;,1,&#39;dahai&#39;,2));  
+
+hive&gt;[&quot;xiaohai&quot;,&quot;dahai&quot;] 
+</code></pre>
+<p>map_values: 返回map中的value  </p>
+<pre><code>hive&gt; select map_values(map(&#39;xiaohai&#39;,1,&#39;dahai&#39;,2));
+
+hive&gt;[1,2]  
+</code></pre>
+<p>array 声明array集合  </p>
+<pre><code>语法：array(val1, val2, …) 
+
+说明：根据输入的参数构建数组array类  
+
+hive&gt; select array(&#39;1&#39;,&#39;2&#39;,&#39;3&#39;,&#39;4&#39;);  
+
+hive&gt;[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;]  
+</code></pre>
+<p>array_contains: 判断array中是否包含某个元素  </p>
+<pre><code>hive&gt; select array_contains(array(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;),&#39;a&#39;);   
+
+hive&gt; true 
+</code></pre>
+<p>sort_array：将array中的元素排序</p>
+<pre><code>hive&gt; select sort_array(array(&#39;a&#39;,&#39;d&#39;,&#39;c&#39;));  
+
+hive&gt; [&quot;a&quot;,&quot;c&quot;,&quot;d&quot;]  
+</code></pre>
+<p>struct声明struct中的各属性   </p>
+<pre><code>语法：struct(val1, val2, val3, …)   
+
+说明：根据输入的参数构建结构体struct类  
+
+hive&gt; select struct(&#39;name&#39;,&#39;age&#39;,&#39;weight&#39;);  
+
+hive&gt; &#123;&quot;col1&quot;:&quot;name&quot;,&quot;col2&quot;:&quot;age&quot;,&quot;col3&quot;:&quot;weight&quot;&#125;  
+</code></pre>
+<p>named_struct声明struct的属性和值  </p>
+<pre><code>hive&gt; select named_struct(&#39;name&#39;,&#39;xiaosong&#39;,&#39;age&#39;,18,&#39;weight&#39;,80);  
+
+hive&gt; &#123;&quot;name&quot;:&quot;xiaosong&quot;,&quot;age&quot;:18,&quot;weight&quot;:80&#125;  
+</code></pre>
+<p>##2.高级聚合函数</p>
+<p>多进一出 （多行传入，一个行输出） </p>
+<p>普通聚合  </p>
+<p>collect_list 收集并形成list集合，结果不去重</p>
+<pre><code>hive&gt;
+select sex,collect_list(job) from employee group by sex;  
+
+女	[&quot;行政&quot;,&quot;研发&quot;,&quot;行政&quot;,&quot;前台&quot;]  
+男	[&quot;销售&quot;,&quot;研发&quot;,&quot;销售&quot;,&quot;前台&quot;]  
+</code></pre>
+<p>collect_set 收集并形成set集合，结果去重  </p>
+<pre><code>hive&gt;
+select sex,collect_set(job) from employee group by sex;
+
+女	[&quot;行政&quot;,&quot;研发&quot;,&quot;前台&quot;]	
+男	[&quot;销售&quot;,&quot;研发&quot;,&quot;前台&quot;]  
+</code></pre>
+<p>##3.炸裂函数</p>
+<p>UDTF,接收一行数据，输出一行或多行数据。</p>
+<p>##4.窗口函数  </p>
+<p>窗口函数，能为每行数据划分一个窗口，然后对窗口范围内的数据进行计算，最后将计算结果返回给该行的数据。</p>
+<p>###窗口语法</p>
+<p>####基于行<br><img src="/2023/07/30/hive_learn/3.png" alt="基于行">            </p>
+<p>####基于值<br><img src="/2023/07/30/hive_learn/4.png" alt="基于值"></p>
+<p>按照功能，常用窗口可划分为如下几类：聚合函数、跨行取值函数、排名函数  </p>
+<p>聚合函数</p>
+<pre><code>max：最大值
+
+min：最小值  
+
+sum：求和
+
+avg：平均值
+
+count：计数    
+</code></pre>
+<p>跨行取值函数</p>
+<pre><code>Lead：上移  
+
+Lag：下移
+
+注：lag和lead函数不支持自定义窗口
+
+first_value
+
+last_value  
+</code></pre>
+<p>排名函数  </p>
+<pre><code>rank 
+
+dense_rank
+
+row_number
+
+三者均不支持自定义窗口  
+</code></pre>
+<p>#六：自定义函数  </p>
+<p><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/HivePlugins">自定义函数官方文档</a> </p>
+<p>##编程步骤  </p>
+<p>(1) 继承Hive提供的类  </p>
+<p>org.apache.hadoop.hive.ql.udf.generic.GenericUDF  </p>
+<p>org.apache.hadoop.hive.ql.udf.generic.GenericUDTF;</p>
+<p>(2) 实现类中的抽象方法  </p>
+<p>(3) 在hive的命令行窗口创建函数  </p>
+<p>添加jar  </p>
+<pre><code>add jar linux_jar_path  
+</code></pre>
+<p>创建function  </p>
+<pre><code>create [temporary] function [dbname.]function_name AS class_name;
+</code></pre>
+<p>(4) 在hive的命令行窗口删除函数  </p>
+<pre><code>drop [temporary] function [if exists] [dbname.]function_name;
+</code></pre>
+<p>#七：分区表和分桶表    </p>
+<p>##1.分区表  </p>
+<p>Hive中的分区就是把一张大表的数据按照业务需要分散的存储到多个目录，每个目录就称为该表的一个分区  </p>
+<pre><code>hive (default)&gt; 
+create table dept_partition
+(
+deptno int,    --部门编号
+dname  string, --部门名称
+loc    string  --部门位置
+)
+partitioned by (day string)
+row format delimited fields terminated by &#39;\t&#39;;
+</code></pre>
+<p>装载语句  </p>
+<pre><code>hive (default)&gt; 
+load data local inpath &#39;/opt/module/hive/datas/dept_20220401.log&#39; 
+into table dept_partition 
+partition(day=&#39;20220401&#39;);  
+
+hive (default)&gt; 
+insert overwrite table dept_partition partition (day = &#39;20220402&#39;)
+select deptno, dname, loc
+from dept_partition
+where day = &#39;2020-04-01&#39;;
+</code></pre>
+<p>###分区表基本操作  </p>
+<p>####1）查看所有分区信息  </p>
+<pre><code>hive&gt; show partitions dept_partition;
+</code></pre>
+<p>####2）增加分区<br>#####（1）创建单个分区  </p>
+<pre><code>hive (default)&gt; 
+alter table dept_partition 
+add partition(day=&#39;20220403&#39;);  
+</code></pre>
+<p>#####（2）同时创建多个分区（分区之间不能有逗号）  </p>
+<pre><code>hive (default)&gt; 
+alter table dept_partition 
+add partition(day=&#39;20220404&#39;) partition(day=&#39;20220405&#39;);  
+</code></pre>
+<p>####3）删除分区  </p>
+<p>#####（1）删除单个分区  </p>
+<pre><code>hive (default)&gt; 
+alter table dept_partition 
+drop partition (day=&#39;20220403&#39;);
+</code></pre>
+<p>#####（2）同时删除多个分区（分区之间必须有逗号）  </p>
+<pre><code>hive (default)&gt; 
+alter table dept_partition 
+drop partition (day=&#39;20220404&#39;), partition(day=&#39;20220405&#39;);
+</code></pre>
+<p>####4）修复分区</p>
+<p>add partition  </p>
+<pre><code>若手动创建HDFS的分区路径，Hive无法识别，可通过add partition命令增加分区元数据信息，从而使元数据和分区路径保持一致
+</code></pre>
+<p>drop partition  </p>
+<pre><code>若手动删除HDFS的分区路径，Hive无法识别，可通过drop partition命令删除分区元数据信息，从而使元数据和分区路径保持一致
+</code></pre>
+<p>msck </p>
+<p>若分区元数据和HDFS的分区路径不一致，还可使用msck命令进行修复，以下是该命令的用法说明 </p>
+<pre><code>hive (default)&gt; 
+msck repair table table_name [add/drop/sync partitions];
+
+msck repair table table_name add partitions：该命令会增加HDFS路径存在但元数据缺失的分区信息 
+
+msck repair table table_name drop partitions：该命令会删除HDFS路径已经删除但元数据仍然存在的分区信息 
+
+msck repair table table_name sync partitions：该命令会同步HDFS路径和元数据分区信息，相当于同时执行上述的两个命令
+
+msck repair table table_name：等价于msck repair table table_name add partitions命令
+</code></pre>
+<p><strong>所以msck修复hive元数据，首选msck repair table table_name sync partitions命令</strong>  </p>
+<p>####二级分区表 </p>
+<p>二级分区表建表语句  </p>
+<pre><code>hive (default)&gt;
+create table dept_partition2(
+deptno int,    -- 部门编号
+dname string, -- 部门名称
+loc string     -- 部门位置
+)
+partitioned by (day string, hour string)
+row format delimited fields terminated by &#39;\t&#39;; 
+</code></pre>
+<p>数据装载语句  </p>
+<pre><code>hive (default)&gt; 
+load data local inpath &#39;/opt/module/hive/datas/dept_20220401.log&#39; 
+into table dept_partition2 
+partition(day=&#39;20220401&#39;, hour=&#39;12&#39;);  
+</code></pre>
+<p>查询分区数据  </p>
+<pre><code>hive (default)&gt; 
+select  * 
+from dept_partition2 
+where day=&#39;20220401&#39; and hour=&#39;12&#39;;  
+</code></pre>
+<p>####动态分区  </p>
+<p>动态分区是指向分区表insert数据时，被写往的分区不由用户指定，而是由每行数据的最后一个字段的值来动态的决定，使用动态分区，可只用一个insert语句将数据写入多个分区  </p>
+<p>#####1）动态分区相关参数  </p>
+<p>(1) 动态分区功能总开关（默认true，开启）  </p>
+<pre><code>set hive.exec.dynamic.partition=true  
+</code></pre>
+<p>(2) 严格模式和非严格模式   </p>
+<p>动态分区的模式，默认strict（严格模式），要求必须指定至少一个分区为静态分区，nonstrict（非严格模式）允许所有的分区字段都使用动态分区  </p>
+<pre><code>set hive.exec.dynamic.partition.mode=nonstrict
+</code></pre>
+<p>##2.分桶表  </p>
+<p>并非所有的数据集都可形成合理的分区。对于一张表或者分区，Hive 可以进一步组织成桶，也就是更为细粒度的数据范围划分  </p>
+<p><strong>分区针对的是数据的存储路径，分桶针对的是数据文件</strong>  </p>
+<p>分桶表的基本原理是，首先为每行数据计算一个指定字段的数据的hash值，然后模以一个指定的分桶数，最后将取模运算结果相同的行，写入同一个文件中，这个文件就称为一个分桶（bucket）</p>
+<p>建表语句</p>
+<pre><code>hive (default)&gt; 
+create table stu_buck(
+id int, 
+name string
+)
+clustered by(id) sorted by(id)
+into 4 buckets
+row format delimited fields terminated by &#39;\t&#39;;
+
+load data local inpath &#39;/opt/module/hive/datas/student.txt&#39; 
+into table stu_buck;
+</code></pre>
+<p>#8.Hive压缩格式和文件格式  </p>
+<p>##压缩格式</p>
+<p>DEFLATE<br>gzip<br>bzip2<br>LZO<br>Snappy</p>
+<p>##Hive文件格式<br>text file<br>orc<br>parquet<br>sequence file  </p>
+<p>##行式存储和列式存储</p>
+<p>###行式存储 - textfile，sequence file<br>文本文件是Hive默认使用的文件格式，文本文件中的一行内容，就对应Hive表中的一行记录</p>
+<p>适用于会用到很多where语句的表</p>
+<p>###列式存储 - orc，parquet</p>
+<p>数仓中尽量选用列式存储方式</p>
+<p><img src="/2023/07/30/hive_learn/5.png" alt="ORC文件基本格式">  </p>
+<p><img src="/2023/07/30/hive_learn/6.png" alt="Parquet文件基本格式">   </p>
+<p>##压缩</p>
+<p>在Hive表中和计算过程中，保持数据的压缩，对磁盘空间的有效利用和提高查询性能都是十分有益的  </p>
+<p>###Hive表数据进行压缩    </p>
+<p>####1）TextFile    </p>
+<p>无法直接在表结构中进行声明压缩    </p>
+<p>直接将压缩后的文件导入到该表即可，Hive在查询表中数据时，可自动识别其压缩格式，进行解压  </p>
+<p>TextFile压缩格式常为Gzip  </p>
+<p>需要注意的是，在执行往表中导入数据的SQL语句时，用户需设置以下参数，来保证写入表中的数据是被压缩的。  </p>
+<p>–SQL语句的最终输出结果是否压缩  </p>
+<pre><code>set hive.exec.compress.output=true;  
+</code></pre>
+<p>–输出结果的压缩格式（以下示例为snappy）  </p>
+<pre><code>set mapreduce.output.fileoutputformat.compress.codec =org.apache.hadoop.io.compress.SnappyCodec;
+</code></pre>
+<p>####2）ORC</p>
+<p>可在建表时声明    </p>
+<pre><code>create table orc_table
+(column_specs)
+stored as orc
+tblproperties (&quot;orc.compress&quot;=&quot;snappy&quot;);  
+</code></pre>
+<p>####3）Parquet  </p>
+<p>可在建表时声明   </p>
+<pre><code>create table orc_table
+(column_specs)
+stored as parquet
+tblproperties (&quot;parquet.compression&quot;=&quot;snappy&quot;);
+</code></pre>
+<p>###计算过程中使用压缩  </p>
+<p>1）单个mr的中间结果进行压缩  </p>
+<p>–开启MapReduce中间数据压缩功能  </p>
+<pre><code>set mapreduce.map.output.compress=true;
+</code></pre>
+<p>–设置MapReduce中间数据数据的压缩方式（以下示例为snappy） </p>
+<pre><code>set mapreduce.map.output.compress.codec=org.apache.hadoop.io.compress.SnappyCodec;  
+</code></pre>
+<p>2）单条sql语句的中间结果进行压缩    </p>
+<p>单条SQL语句的中间结果是指，两个MR（一条SQL语句可能需要通过MR进行计算）之间的临时数据，可通过以下参数进行配置：   </p>
+<p>–是否对两个MR之间的临时数据进行压缩  </p>
+<pre><code>set hive.exec.compress.intermediate=true;  
+</code></pre>
+<p>–压缩格式（以下示例为snappy）  </p>
+<pre><code>set hive.intermediate.compression.codec= org.apache.hadoop.io.compress.SnappyCodec;
+</code></pre>
+<p>#能看到这里，你是真滴牛批~</p>
+<p>#猛男，帅哥儿，靓仔，点个赞再肘~</p>
+<p><img src="/2023/07/30/hive_learn/7.png" alt="歪嘴猫"></p>
+
+    </div>
+
+    
+    
+    
+	
+	  <div>
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  </div>
+	
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>张宴银
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2023/07/30/hive_learn/" title="hive学习笔记">http://example.com/2023/07/30/hive_learn/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%89%8B%E6%8F%A1%E6%97%A5%E6%9C%88%E6%91%98%E6%98%9F%E8%BE%B0%EF%BC%8C%E4%B8%96%E9%97%B4%E6%97%A0%E6%88%91%E8%BF%99%E8%88%AC%E4%BA%BA/" rel="tag"># 手握日月摘星辰，世间无我这般人</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/07/30/hexo_erro/" rel="prev" title="hexo上传报错问题记录">
+      <i class="fa fa-chevron-left"></i> hexo上传报错问题记录
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/07/31/hive-udf/" rel="next" title="hive-udf">
+      hive-udf <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=2042878838&auto=1&height=66"></iframe>
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张宴银"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">张宴银</p>
+  <div class="site-description" itemprop="description">初级以内我无敌，中级以上我一换一</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; Sat Jul 29 2023 08:00:00 GMT+0800 (中国标准时间) – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张宴银</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共16.5k字</span>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
