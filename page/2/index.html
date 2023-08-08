@@ -215,6 +215,81 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/30/hexo_erro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张宴银">
+      <meta itemprop="description" content="初级以内我无敌，中级以上我一换一">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="第五门徒">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/30/hexo_erro/" class="post-title-link" itemprop="url">hexo上传报错问题记录</a>
+        </h2>
+
+        <div class="post-meta">
+		  
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2023-07-30 12:49:06 / 修改时间：13:00:17" itemprop="dateCreated datePublished" datetime="2023-07-30T12:49:06+08:00">2023-07-30</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>上传博文到hexo时突然报错，如下图<br><img src="/2023/07/30/hexo_erro/1.png" alt="报错"></p>
+<p>解决方案1：  </p>
+<p>进入站点根目录<br>cd E:&#x2F;hexo</p>
+<p>删除git提交内容文件夹<br>rm -rf .deploy_git&#x2F;</p>
+<p>执行<br>git config –global core.autocrlf false</p>
+<p>最后<br>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</p>
+<p>依旧报错</p>
+<p>后仔细阅读报错发现，github与git之间的网络通信存在问题</p>
+<p>解决方案2：</p>
+<p>重新建立本机git与github之间的通信</p>
+<p>在git-bash命令行下，输入ssh-keygen -t rsa 命令（注意空格），表示我们指定 RSA 算法生成密钥，然后敲四次回车键，之后就就会生成两个文件，分别为秘钥 id_rsa 和公钥 id_rsa.pub. （注意：git中的复制粘贴不是 Ctrl+C 和 Ctrl+V，而是 Ctrl+insert 和 Shift+insert.）文件的位置在 Git Bash 上面都有显示，默认生成在以下目录：</p>
+<p>Windows 10 ：C:&#x2F;Users&#x2F;ASUS&#x2F;.ssh</p>
+<p><img src="/2023/07/30/hexo_erro/2.png" alt="&quot;sshkey配置&quot;"></p>
+<p>验证是否成功，我们可以通过在 Git Bash 中输入 ssh -T <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#x69;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;">&#103;&#105;&#x74;&#x40;&#103;&#x69;&#116;&#104;&#117;&#98;&#46;&#x63;&#111;&#109;</a> 进行检验</p>
+<p>注意查看日志，验证成功后，再依次输入hexo clean , hexo g , hexo d 发布博文</p>
+
+      
+    </div>
+
+    
+    
+    
+	
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/30/markdown%E8%AF%AD%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -487,14 +562,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -564,7 +639,7 @@ $(document).ready(function() {
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共29.2k字</span>
+  <span class="post-count">博客全站共30.6k字</span>
 </div>
         
 <div class="busuanzi-count">
