@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="尚硅谷大数据Hive 3.x教程全新升级版（基于hive3.1.3）#手握日月摘星辰，世间无我这般人！   相关学习文档链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1vdjJdb5hZtWMDK6hoH1R5g提取码：uce2       #一：Hive的基础知识##1.什么是Hive？   Hive是由Facebook开源，基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射">
+  <meta name="description" content="尚硅谷大数据Hive 3.x教程全新升级版（基于hive3.1.3） 手握日月摘星辰，世间无我这般人！相关学习文档链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1vdjJdb5hZtWMDK6hoH1R5g提取码：uce2       一：Hive的基础知识1.什么是Hive？Hive是由Facebook开源，基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张表，并提供类">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hive学习笔记">
 <meta property="og:url" content="http://example.com/2023/07/30/hive_learn/index.html">
 <meta property="og:site_name" content="第五门徒">
-<meta property="og:description" content="尚硅谷大数据Hive 3.x教程全新升级版（基于hive3.1.3）#手握日月摘星辰，世间无我这般人！   相关学习文档链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1vdjJdb5hZtWMDK6hoH1R5g提取码：uce2       #一：Hive的基础知识##1.什么是Hive？   Hive是由Facebook开源，基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射">
+<meta property="og:description" content="尚硅谷大数据Hive 3.x教程全新升级版（基于hive3.1.3） 手握日月摘星辰，世间无我这般人！相关学习文档链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1vdjJdb5hZtWMDK6hoH1R5g提取码：uce2       一：Hive的基础知识1.什么是Hive？Hive是由Facebook开源，基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张表，并提供类">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/07/30/hive_learn/8.png">
 <meta property="og:image" content="http://example.com/2023/07/30/hive_learn/1.png">
@@ -37,7 +37,7 @@
 <meta property="og:image" content="http://example.com/2023/07/30/hive_learn/6.png">
 <meta property="og:image" content="http://example.com/2023/07/30/hive_learn/7.png">
 <meta property="article:published_time" content="2023-07-30T10:56:09.000Z">
-<meta property="article:modified_time" content="2023-08-06T09:51:57.884Z">
+<meta property="article:modified_time" content="2023-08-11T05:08:10.379Z">
 <meta property="article:author" content="张宴银">
 <meta property="article:tag" content="手握日月摘星辰，世间无我这般人">
 <meta name="twitter:card" content="summary">
@@ -259,7 +259,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-06 17:51:57" itemprop="dateModified" datetime="2023-08-06T17:51:57+08:00">2023-08-06</time>
+                <time title="修改时间：2023-08-11 13:08:10" itemprop="dateModified" datetime="2023-08-11T13:08:10+08:00">2023-08-11</time>
               </span>
 
           
@@ -280,100 +280,77 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g84y147sX?p=78&vd_source=326368ccf929b51406b17a280e53c102">尚硅谷大数据Hive 3.x教程全新升级版（基于hive3.1.3）</a><br>#手握日月摘星辰，世间无我这般人！  </p>
-<p>相关学习文档<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1vdjJdb5hZtWMDK6hoH1R5g">https://pan.baidu.com/s/1vdjJdb5hZtWMDK6hoH1R5g</a><br>提取码：uce2   </p>
+        <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g84y147sX?p=78&vd_source=326368ccf929b51406b17a280e53c102">尚硅谷大数据Hive 3.x教程全新升级版（基于hive3.1.3）</a></p>
+<h1 id="手握日月摘星辰，世间无我这般人！"><a href="#手握日月摘星辰，世间无我这般人！" class="headerlink" title="手握日月摘星辰，世间无我这般人！"></a>手握日月摘星辰，世间无我这般人！</h1><p>相关学习文档<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1vdjJdb5hZtWMDK6hoH1R5g">https://pan.baidu.com/s/1vdjJdb5hZtWMDK6hoH1R5g</a><br>提取码：uce2   </p>
 <p><img src="/2023/07/30/hive_learn/8.png">  </p>
-<p>#一：Hive的基础知识<br>##1.什么是Hive？  </p>
-<p>Hive是由Facebook开源，基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张表，并提供类SQL查询功能</p>
-<p>##2.Hive本质  </p>
-<p>Hive是一个Hadoop客户端，用于将HQL（Hive SQL）转化成MapReduce程序。<br>（1）Hive中每张表的数据存储在HDFS<br>（2）Hive分析数据底层的实现是MapReduce（也可配置为Spark或者Tez）<br>（3）执行程序运行在Yarn上</p>
-<p>##3.用户接口：Client  </p>
-<p>CLI（command-line interface）、JDBC&#x2F;ODBC  </p>
-<p>###JDBC和ODBC的区别:  </p>
-<p>（1）JDBC的移植性比ODBC好 </p>
+<h1 id="一：Hive的基础知识"><a href="#一：Hive的基础知识" class="headerlink" title="一：Hive的基础知识"></a>一：Hive的基础知识</h1><h2 id="1-什么是Hive？"><a href="#1-什么是Hive？" class="headerlink" title="1.什么是Hive？"></a>1.什么是Hive？</h2><p>Hive是由Facebook开源，基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张表，并提供类SQL查询功能</p>
+<h2 id="2-Hive本质"><a href="#2-Hive本质" class="headerlink" title="2.Hive本质"></a>2.Hive本质</h2><p>Hive是一个Hadoop客户端，用于将HQL（Hive SQL）转化成MapReduce程序。<br>（1）Hive中每张表的数据存储在HDFS<br>（2）Hive分析数据底层的实现是MapReduce（也可配置为Spark或者Tez）<br>（3）执行程序运行在Yarn上</p>
+<h2 id="3-用户接口：Client"><a href="#3-用户接口：Client" class="headerlink" title="3.用户接口：Client"></a>3.用户接口：Client</h2><p>CLI（command-line interface）、JDBC&#x2F;ODBC  </p>
+<h3 id="JDBC和ODBC的区别"><a href="#JDBC和ODBC的区别" class="headerlink" title="JDBC和ODBC的区别:"></a>JDBC和ODBC的区别:</h3><p>（1）JDBC的移植性比ODBC好 </p>
 <p>（2）两者使用的语言不同，JDBC在Java编程时使用，ODBC一般在C&#x2F;C++编程时使用  </p>
-<p>##4:元数据：Metastore  </p>
-<p>元数据包括：数据库（默认是default）、表名、表的拥有者、列&#x2F;分区字段、表的类型（是否是外部表）、表的数据所在目录等  </p>
+<h2 id="4-元数据：Metastore"><a href="#4-元数据：Metastore" class="headerlink" title="4:元数据：Metastore"></a>4:元数据：Metastore</h2><p>元数据包括：数据库（默认是default）、表名、表的拥有者、列&#x2F;分区字段、表的类型（是否是外部表）、表的数据所在目录等  </p>
 <p>默认存储在自带的derby数据库中，由于derby数据库只支持单客户端访问，生产环境中为了多人开发，推荐使用MySQL存储Metastore  </p>
-<p>##5.hive的存储和计算  </p>
-<p>使用HDFS进行存储，可以选择MapReduce&#x2F;Tez&#x2F;Spark进行计算</p>
-<p>##6.hiveserver2服务  </p>
-<p>Hive的hiveserver2服务的作用是提供jdbc&#x2F;odbc接口，为用户提供远程访问Hive数据的功能，例如用户期望在个人电脑中访问远程服务中的Hive数据，就需要用到Hiveserver2  </p>
-<p>##7.用户说明  </p>
-<p>在远程访问Hive数据时，客户端并未直接访问Hadoop集群，而是由Hivesever2代理访问,那么访问Hadoop集群的用户身份是谁？  </p>
+<h2 id="5-hive的存储和计算"><a href="#5-hive的存储和计算" class="headerlink" title="5.hive的存储和计算"></a>5.hive的存储和计算</h2><p>使用HDFS进行存储，可以选择MapReduce&#x2F;Tez&#x2F;Spark进行计算</p>
+<h2 id="6-hiveserver2服务"><a href="#6-hiveserver2服务" class="headerlink" title="6.hiveserver2服务"></a>6.hiveserver2服务</h2><p>Hive的hiveserver2服务的作用是提供jdbc&#x2F;odbc接口，为用户提供远程访问Hive数据的功能，例如用户期望在个人电脑中访问远程服务中的Hive数据，就需要用到Hiveserver2  </p>
+<h2 id="7-用户说明"><a href="#7-用户说明" class="headerlink" title="7.用户说明"></a>7.用户说明</h2><p>在远程访问Hive数据时，客户端并未直接访问Hadoop集群，而是由Hivesever2代理访问,那么访问Hadoop集群的用户身份是谁？  </p>
 <p>具体是谁，由Hiveserver2的hive.server2.enable.doAs参数决定，该参数的含义是是否启用Hiveserver2用户模拟的功能  </p>
 <p>若启用，则Hiveserver2会模拟成客户端的登录用户去访问Hadoop集群的数据，不启用，则Hivesever2会直接使用启动用户访问Hadoop集群数据  </p>
 <p>默认为开启</p>
 <p>生产环境，推荐开启用户模拟功能，因为开启后才能保证各用户之间的权限隔离</p>
 <p>hivesever2的模拟用户功能，依赖于Hadoop提供的proxy user（代理用户功能），只有Hadoop中的代理用户才能模拟其他用户的身份访问Hadoop集群。因此，需要将hiveserver2的启动用户设置为Hadoop的代理用户 </p>
-<p>##8.metastore服务  </p>
-<p>Hive的metastore服务的作用是为Hive CLI或者Hiveserver2提供元数据访问接口  </p>
-<p>##9.metastore运行模式  </p>
-<p>metastore有两种运行模式，分别为嵌入式模式和独立服务模式</p>
+<h2 id="8-metastore服务"><a href="#8-metastore服务" class="headerlink" title="8.metastore服务"></a>8.metastore服务</h2><p>Hive的metastore服务的作用是为Hive CLI或者Hiveserver2提供元数据访问接口  </p>
+<h2 id="9-metastore运行模式"><a href="#9-metastore运行模式" class="headerlink" title="9.metastore运行模式"></a>9.metastore运行模式</h2><p>metastore有两种运行模式，分别为嵌入式模式和独立服务模式</p>
 <p><img src="/2023/07/30/hive_learn/1.png" alt="&quot;metastore运行模式&quot;"></p>
 <p>生产环境中，不推荐使用嵌入式模式  </p>
 <p>（1）嵌入式模式下，每个Hive CLI都需要直接连接元数据库，当Hive CLI较多时，数据库压力会比较大。  </p>
 <p>（2）每个客户端都需要用户元数据库的读写权限，元数据库的安全得不到很好的保证</p>
-<p>##10.编写Hive服务启动脚本  </p>
-<p>nohup：放在命令开头，表示不挂起，也就是关闭终端进程也继续保持运行状态  </p>
+<h2 id="10-编写Hive服务启动脚本"><a href="#10-编写Hive服务启动脚本" class="headerlink" title="10.编写Hive服务启动脚本"></a>10.编写Hive服务启动脚本</h2><p>nohup：放在命令开头，表示不挂起，也就是关闭终端进程也继续保持运行状态  </p>
 <p>&#x2F;dev&#x2F;null：是Linux文件系统中的一个文件，被称为黑洞，所有写入该文件的内容都会被自动丢弃  </p>
 <p>2&gt;&amp;1：表示将错误重定向到标准输出上  </p>
 <p>&amp;：放在命令结尾，表示后台运行  </p>
 <p>一般会组合使用：nohup  [xxx命令操作]&gt; file  2&gt;&amp;1 &amp;，表示将xxx命令运行的结果输出到file中，并保持命令启动的进程在后台运行。  </p>
-<p>##11.hive -e 和 hive -f  </p>
-<p>“-e”不进入hive的交互窗口执行hql语句  </p>
+<h2 id="11-hive-e-和-hive-f"><a href="#11-hive-e-和-hive-f" class="headerlink" title="11.hive -e 和 hive -f"></a>11.hive -e 和 hive -f</h2><p>“-e”不进入hive的交互窗口执行hql语句  </p>
 <p><code>bin/hive -e &quot;select id from student;&quot;</code></p>
 <p>“-f”执行脚本中的hql语句  </p>
 <p><code>bin/hive -f /opt/module/hive/datas/hivef.sql</code>  </p>
-<p>##12.Hive参数配置方式  </p>
-<p>参数的配置三种方式  </p>
-<p>###(1).配置文件方式  </p>
-<p><code>hive-site.xml</code></p>
-<p>###(2).命令行参数方式  </p>
-<p>启动Hive时，可以在命令行添加-hiveconf param&#x3D;value来设定参数  </p>
+<h2 id="12-Hive参数配置方式"><a href="#12-Hive参数配置方式" class="headerlink" title="12.Hive参数配置方式"></a>12.Hive参数配置方式</h2><p>参数的配置三种方式  </p>
+<h3 id="1-配置文件方式"><a href="#1-配置文件方式" class="headerlink" title="(1).配置文件方式"></a>(1).配置文件方式</h3><p><code>hive-site.xml</code></p>
+<h3 id="2-命令行参数方式"><a href="#2-命令行参数方式" class="headerlink" title="(2).命令行参数方式"></a>(2).命令行参数方式</h3><p>启动Hive时，可以在命令行添加-hiveconf param&#x3D;value来设定参数  </p>
 <p>比如：bin&#x2F;hive -hiveconf   </p>
 <p><code>mapreduce.job.reduces=10;</code></p>
 <p>注：仅对本次Hive启动有效  </p>
-<p>###(3).参数声明方式  </p>
-<p>可以在HQL中使用SET关键字设定参数  </p>
+<h3 id="3-参数声明方式"><a href="#3-参数声明方式" class="headerlink" title="(3).参数声明方式"></a>(3).参数声明方式</h3><p>可以在HQL中使用SET关键字设定参数  </p>
 <p><code>set mapreduce.job.reduces=10;</code>  </p>
 <p>上述三种设定方式的优先级依次递增,配置文件 &lt; 命令行参数 &lt; 参数声明  </p>
-<p>##13.Hive常见属性配置  </p>
-<p>Hive客户端显示当前库和表头<br>Set Hive-site.xml :<br>          <code>hive.cli.print.header = true</code><br>          <code>hive.cli.print.current.db</code>  </p>
+<h2 id="13-Hive常见属性配置"><a href="#13-Hive常见属性配置" class="headerlink" title="13.Hive常见属性配置"></a>13.Hive常见属性配置</h2><p>Hive客户端显示当前库和表头<br>Set Hive-site.xml :<br>          <code>hive.cli.print.header = true</code><br>          <code>hive.cli.print.current.db</code>  </p>
 <p>Hive运行日志路径配置<br>Set hive-log4j2.properties:<br>     <code>property.hive.log.dir=/opt/module/hive/logs</code>  </p>
 <p>修改Hive的堆内存<br>Set hive-env.sh:<br>     <code>export HADOOP_HEAPSIZE=2048</code>  </p>
 <p>关闭Hadoop虚拟内存检查<br>Set yarn-site.xml:<br>     <code>yarn.nodemanager.vmem-check-enabled =false</code>  </p>
-<p>#二：Hive的DDL语法  </p>
-<p>##1.创建数据库  </p>
-<pre><code>CREATE DATABASE [IF NOT EXISTS] database_name  
+<h1 id="二：Hive的DDL语法"><a href="#二：Hive的DDL语法" class="headerlink" title="二：Hive的DDL语法"></a>二：Hive的DDL语法</h1><h2 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1.创建数据库"></a>1.创建数据库</h2><pre><code>CREATE DATABASE [IF NOT EXISTS] database_name  
 [COMMENT database_comment]  
 [LOCATION hdfs_path]  
 [WITH DBPROPERTIES (property_name=property_value, ...)];   
 </code></pre>
 <p>创建一个数据库，指定路径<br>    hive (default)&gt; create database db_hive2 location ‘&#x2F;db_hive2’;  </p>
-<p>##2.查看数据库信息  </p>
-<pre><code>DESCRIBE DATABASE [EXTENDED] db_name;    
+<h2 id="2-查看数据库信息"><a href="#2-查看数据库信息" class="headerlink" title="2.查看数据库信息"></a>2.查看数据库信息</h2><pre><code>DESCRIBE DATABASE [EXTENDED] db_name;    
 </code></pre>
-<p>###(1) 查看基本信息  </p>
-<pre><code>desc database db_hive3;  
+<h3 id="1-查看基本信息"><a href="#1-查看基本信息" class="headerlink" title="(1) 查看基本信息"></a>(1) 查看基本信息</h3><pre><code>desc database db_hive3;  
 </code></pre>
-<p>###(2) 查看更多信息  </p>
-<pre><code>desc database extended db_hive3;  
+<h3 id="2-查看更多信息"><a href="#2-查看更多信息" class="headerlink" title="(2) 查看更多信息"></a>(2) 查看更多信息</h3><pre><code>desc database extended db_hive3;  
 </code></pre>
-<p>##3.修改数据库   </p>
-<p>需要注意的是：修改数据库location，不会改变当前已有表的路径信息，而只是改变后续创建的新表的默认的父目录  </p>
-<p>###修改dbproperties<br>    ALTER DATABASE database_name SET DBPROPERTIES   (property_name&#x3D;property_value, …);  </p>
-<p>###修改location<br>    ALTER DATABASE database_name SET LOCATION hdfs_path;  </p>
-<p>###修改owner user<br>    ALTER DATABASE database_name SET OWNER USER user_name;  </p>
-<p>##4.删除数据库  </p>
-<pre><code>DROP DATABASE [IF EXISTS] database_name [RESTRICT|CASCADE];    
+<h2 id="3-修改数据库"><a href="#3-修改数据库" class="headerlink" title="3.修改数据库"></a>3.修改数据库</h2><p>需要注意的是：修改数据库location，不会改变当前已有表的路径信息，而只是改变后续创建的新表的默认的父目录  </p>
+<h3 id="修改dbproperties"><a href="#修改dbproperties" class="headerlink" title="修改dbproperties"></a>修改dbproperties</h3><pre><code>ALTER DATABASE database_name SET DBPROPERTIES   (property_name=property_value, ...);  
+</code></pre>
+<h3 id="修改location"><a href="#修改location" class="headerlink" title="修改location"></a>修改location</h3><pre><code>ALTER DATABASE database_name SET LOCATION hdfs_path;  
+</code></pre>
+<h3 id="修改owner-user"><a href="#修改owner-user" class="headerlink" title="修改owner user"></a>修改owner user</h3><pre><code>ALTER DATABASE database_name SET OWNER USER user_name;  
+</code></pre>
+<h2 id="4-删除数据库"><a href="#4-删除数据库" class="headerlink" title="4.删除数据库"></a>4.删除数据库</h2><pre><code>DROP DATABASE [IF EXISTS] database_name [RESTRICT|CASCADE];    
 </code></pre>
 <p>RESTRICT：严格模式，若数据库不为空，则会删除失败，默认为该模式。  </p>
 <p>CASCADE：级联模式，若数据库不为空，则会将库中的表一并删除。</p>
-<p>##5.切换当前数据库  </p>
-<p>USE database_name;  </p>
-<p>##6.创建表  </p>
-<pre><code>CREATE [TEMPORARY] [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name   
+<h2 id="5-切换当前数据库"><a href="#5-切换当前数据库" class="headerlink" title="5.切换当前数据库"></a>5.切换当前数据库</h2><p>USE database_name;  </p>
+<h2 id="6-创建表"><a href="#6-创建表" class="headerlink" title="6.创建表"></a>6.创建表</h2><pre><code>CREATE [TEMPORARY] [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name   
 [(col_name data_type [COMMENT col_comment], ...)]
 [COMMENT table_comment]
 [PARTITIONED BY (col_name data_type [COMMENT col_comment], ...)]
@@ -384,30 +361,23 @@
 [LOCATION hdfs_path]
 [TBLPROPERTIES (property_name=property_value, ...)]
 </code></pre>
-<p>关键字说明:<br>###(1)TEMPORARY<br>临时表，该表只在当前会话可见，会话结束，表会被删除。  </p>
-<p>###(2)EXTERNAL（重点）  </p>
-<p>外部表，与之相对应的是内部表（管理表）。内部表意味着Hive会完全接管该表，包括元数据和HDFS中的数据。而外部表则意味着Hive只接管元数据，而不完全接管HDFS中的数据</p>
-<p>###(3)data_type（重点）</p>
-<p>Hive中的字段类型可分为基本数据类型和复杂数据类型。  </p>
+<p>关键字说明:  </p>
+<h3 id="1-TEMPORARY"><a href="#1-TEMPORARY" class="headerlink" title="(1)TEMPORARY"></a>(1)TEMPORARY</h3><p>临时表，该表只在当前会话可见，会话结束，表会被删除。  </p>
+<h3 id="2-EXTERNAL（重点）"><a href="#2-EXTERNAL（重点）" class="headerlink" title="(2)EXTERNAL（重点）"></a>(2)EXTERNAL（重点）</h3><p>外部表，与之相对应的是内部表（管理表）。内部表意味着Hive会完全接管该表，包括元数据和HDFS中的数据。而外部表则意味着Hive只接管元数据，而不完全接管HDFS中的数据</p>
+<h3 id="3-data-type（重点）"><a href="#3-data-type（重点）" class="headerlink" title="(3)data_type（重点）"></a>(3)data_type（重点）</h3><p>Hive中的字段类型可分为基本数据类型和复杂数据类型。  </p>
 <p><img src="/2023/07/30/hive_learn/2.png" alt="&quot;hive数据类型&quot;">  </p>
 <p>类型转换:  </p>
 <p>Hive的基本数据类型可以做类型转换，转换的方式包括隐式转换以及显示转换。  </p>
-<p>####方式一：隐式转换  </p>
-<p>隐式地转换为一个范围更广的类型   </p>
+<h4 id="方式一：隐式转换"><a href="#方式一：隐式转换" class="headerlink" title="方式一：隐式转换"></a>方式一：隐式转换</h4><p>隐式地转换为一个范围更广的类型   </p>
 <p>Hive官方隐式转换表<br><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/hive/languagemanual+types#LanguageManualTypes-AllowedImplicitConversions">Allowed Implicit Conversions</a>  </p>
-<p>####方式二：显示转换  </p>
-<p>可以借助cast函数完成显示的类型转换(强制转换)  </p>
+<h4 id="方式二：显示转换"><a href="#方式二：显示转换" class="headerlink" title="方式二：显示转换"></a>方式二：显示转换</h4><p>可以借助cast函数完成显示的类型转换(强制转换)  </p>
 <pre><code>select &#39;1&#39; + 2, cast(&#39;1&#39; as int) + 2;
 </code></pre>
-<p>###(4) PARTITIONED BY（重点）  </p>
-<p>创建分区表  </p>
-<p>###(5) CLUSTERED BY … SORTED BY…INTO … BUCKETS（重点）  </p>
-<p>创建分桶表  </p>
-<p>###(6) ROW FORMAT（重点）  </p>
-<p>指定SERDE，SERDE是Serializer and Deserializer的简写。Hive使用SERDE序列化和反序列化每行数据  </p>
+<h3 id="4-PARTITIONED-BY（重点）"><a href="#4-PARTITIONED-BY（重点）" class="headerlink" title="(4) PARTITIONED BY（重点）"></a>(4) PARTITIONED BY（重点）</h3><p>创建分区表  </p>
+<h3 id="5-CLUSTERED-BY-…-SORTED-BY…INTO-…-BUCKETS（重点）"><a href="#5-CLUSTERED-BY-…-SORTED-BY…INTO-…-BUCKETS（重点）" class="headerlink" title="(5) CLUSTERED BY … SORTED BY…INTO … BUCKETS（重点）"></a>(5) CLUSTERED BY … SORTED BY…INTO … BUCKETS（重点）</h3><p>创建分桶表  </p>
+<h3 id="6-ROW-FORMAT（重点）"><a href="#6-ROW-FORMAT（重点）" class="headerlink" title="(6) ROW FORMAT（重点）"></a>(6) ROW FORMAT（重点）</h3><p>指定SERDE，SERDE是Serializer and Deserializer的简写。Hive使用SERDE序列化和反序列化每行数据  </p>
 <p>Hive官方序列化反序列化器文档<br><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/DeveloperGuide#DeveloperGuide-HiveSerDe">Hive-Serde</a></p>
-<p>####语法一：  </p>
-<p>DELIMITED关键字表示对文件中的每个字段按照特定分割符进行分割，其会使用默认的SERDE对每行数据进行序列化和反序列化  </p>
+<h4 id="语法一："><a href="#语法一：" class="headerlink" title="语法一："></a>语法一：</h4><p>DELIMITED关键字表示对文件中的每个字段按照特定分割符进行分割，其会使用默认的SERDE对每行数据进行序列化和反序列化  </p>
 <pre><code>ROW FORAMT DELIMITED 
 [FIELDS TERMINATED BY char] 
 [COLLECTION ITEMS TERMINATED BY char] 
@@ -416,18 +386,13 @@
 [NULL DEFINED AS char]   
 </code></pre>
 <p>注：<br>fields terminated by ：列分隔符<br>collection items terminated by ： map、struct和array中每个元素之间的分隔符<br>map keys terminated by ：map中的key与value的分隔符<br>lines terminated by ：行分隔符  </p>
-<p>####语法二：  </p>
-<p>SERDE关键字可用于指定其他内置的SERDE或者用户自定义的SERDE。例如JSON SERDE，可用于处理JSON字符串  </p>
+<h4 id="语法二："><a href="#语法二：" class="headerlink" title="语法二："></a>语法二：</h4><p>SERDE关键字可用于指定其他内置的SERDE或者用户自定义的SERDE。例如JSON SERDE，可用于处理JSON字符串  </p>
 <pre><code>ROW FORMAT SERDE serde_name [WITH SERDEPROPERTIES (property_name=property_value,property_name=property_value, ...)] 
 </code></pre>
-<p>###(7) STORED AS（重点）  </p>
-<p>指定文件格式，常用的文件格式有，textfile（默认值），sequence file，orc file、parquet file等等  </p>
-<p>###(8) LOCATION  </p>
-<p>指定表所对应的HDFS路径，若不指定路径，其默认值为<br>${hive.metastore.warehouse.dir}&#x2F;db_name.db&#x2F;table_name  </p>
-<p>###(9) TBLPROPERTIES  </p>
-<p>用于配置表的一些KV键值对参数  </p>
-<p>##7.Create Table As Select（CTAS）建表  </p>
-<pre><code>CREATE [TEMPORARY] TABLE [IF NOT EXISTS] table_name 
+<h3 id="7-STORED-AS（重点）"><a href="#7-STORED-AS（重点）" class="headerlink" title="(7) STORED AS（重点）"></a>(7) STORED AS（重点）</h3><p>指定文件格式，常用的文件格式有，textfile（默认值），sequence file，orc file、parquet file等等  </p>
+<h3 id="8-LOCATION"><a href="#8-LOCATION" class="headerlink" title="(8) LOCATION"></a>(8) LOCATION</h3><p>指定表所对应的HDFS路径，若不指定路径，其默认值为<br>${hive.metastore.warehouse.dir}&#x2F;db_name.db&#x2F;table_name  </p>
+<h3 id="9-TBLPROPERTIES"><a href="#9-TBLPROPERTIES" class="headerlink" title="(9) TBLPROPERTIES"></a>(9) TBLPROPERTIES</h3><p>用于配置表的一些KV键值对参数  </p>
+<h2 id="7-Create-Table-As-Select（CTAS）建表"><a href="#7-Create-Table-As-Select（CTAS）建表" class="headerlink" title="7.Create Table As Select（CTAS）建表"></a>7.Create Table As Select（CTAS）建表</h2><pre><code>CREATE [TEMPORARY] TABLE [IF NOT EXISTS] table_name 
 [COMMENT table_comment] 
 [ROW FORMAT row_format] 
 [STORED AS file_format] 
@@ -435,8 +400,7 @@
 [TBLPROPERTIES (property_name=property_value, ...)]
 [AS select_statement]
 </code></pre>
-<p>##8.Create Table Like语法</p>
-<p>该语法允许用户复刻一张已经存在的表结构，与上述的CTAS语法不同，该语法创建出来的表中不包含数据  </p>
+<h2 id="8-Create-Table-Like语法"><a href="#8-Create-Table-Like语法" class="headerlink" title="8.Create Table Like语法"></a>8.Create Table Like语法</h2><p>该语法允许用户复刻一张已经存在的表结构，与上述的CTAS语法不同，该语法创建出来的表中不包含数据  </p>
 <pre><code>CREATE [TEMPORARY] [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name
 [LIKE exist_table_name]
 [ROW FORMAT row_format] 
@@ -444,68 +408,53 @@
 [LOCATION hdfs_path]
 [TBLPROPERTIES (property_name=property_value, ...)]
 </code></pre>
-<p>##9.内部表与外部表  </p>
-<p>Hive中默认创建的表都是的内部表，有时也被称为管理表。对于内部表，Hive会完全管理表的元数据和数据文件  </p>
+<h2 id="9-内部表与外部表"><a href="#9-内部表与外部表" class="headerlink" title="9.内部表与外部表"></a>9.内部表与外部表</h2><p>Hive中默认创建的表都是的内部表，有时也被称为管理表。对于内部表，Hive会完全管理表的元数据和数据文件  </p>
 <p>外部表通常可用于处理其他工具上传的数据文件，对于外部表，Hive只负责管理元数据，不负责管理HDFS中的数据文件  </p>
-<p>##10.查看表  </p>
-<pre><code>DESCRIBE [EXTENDED | FORMATTED] [db_name.]table_name  
+<h2 id="10-查看表"><a href="#10-查看表" class="headerlink" title="10.查看表"></a>10.查看表</h2><pre><code>DESCRIBE [EXTENDED | FORMATTED] [db_name.]table_name  
 </code></pre>
 <p>EXTENDED：展示详细信息  </p>
 <p>FORMATTED：对详细信息进行格式化的展示</p>
-<p>##11.修改列信息  </p>
-<p>###增加列  </p>
-<pre><code>ALTER TABLE table_name ADD COLUMNS (col_name data_type [COMMENT col_comment], ...)  
+<h2 id="11-修改列信息"><a href="#11-修改列信息" class="headerlink" title="11.修改列信息"></a>11.修改列信息</h2><h3 id="增加列"><a href="#增加列" class="headerlink" title="增加列"></a>增加列</h3><pre><code>ALTER TABLE table_name ADD COLUMNS (col_name data_type [COMMENT col_comment], ...)  
 </code></pre>
 <p>新增列的位置位于末尾  </p>
-<p>###更新列</p>
-<pre><code>ALTER TABLE table_name CHANGE [COLUMN] col_old_name col_new_name column_type [COMMENT col_comment] [FIRST|AFTER column_name]
+<h3 id="更新列"><a href="#更新列" class="headerlink" title="更新列"></a>更新列</h3><pre><code>ALTER TABLE table_name CHANGE [COLUMN] col_old_name col_new_name column_type [COMMENT col_comment] [FIRST|AFTER column_name]
 </code></pre>
 <p>该语句允许用户修改指定列的列名、数据类型、注释信息以及在表中的位置  </p>
-<p>###替换列  </p>
-<pre><code>ALTER TABLE table_name REPLACE COLUMNS (col_name data_type [COMMENT col_comment], ...)  
+<h3 id="替换列"><a href="#替换列" class="headerlink" title="替换列"></a>替换列</h3><pre><code>ALTER TABLE table_name REPLACE COLUMNS (col_name data_type [COMMENT col_comment], ...)  
 </code></pre>
 <p>该语句允许用户用新的列集替换表中原有的全部列  </p>
-<p>##12.清空表  </p>
-<pre><code>TRUNCATE [TABLE] table_name  
+<h2 id="12-清空表"><a href="#12-清空表" class="headerlink" title="12.清空表"></a>12.清空表</h2><pre><code>TRUNCATE [TABLE] table_name  
 </code></pre>
 <p>truncate只能清空管理表，不能删除外部表中数据  </p>
-<p>#三：Hive的DML语法  </p>
-<p>##1. Load  </p>
-<p>Load语句可将文件导入到Hive表中    </p>
+<h1 id="三：Hive的DML语法"><a href="#三：Hive的DML语法" class="headerlink" title="三：Hive的DML语法"></a>三：Hive的DML语法</h1><h2 id="1-Load"><a href="#1-Load" class="headerlink" title="1. Load"></a>1. Load</h2><p>Load语句可将文件导入到Hive表中    </p>
 <pre><code>LOAD DATA [LOCAL] INPATH &#39;filepath&#39; [OVERWRITE] INTO TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)];
 </code></pre>
 <p>关键字说明：  </p>
 <p>（1）local：表示从本地加载数据到Hive表；否则从HDFS加载数据到Hive表。  </p>
 <p>（2）overwrite：表示覆盖表中已有数据，否则表示追加。  </p>
 <p>（3）partition：表示上传到指定分区，若目标是分区表，需指定分区    </p>
-<p>###1.1加载本地文件到hive:  </p>
-<pre><code>load data local inpath &#39;/opt/module/datas/student.txt&#39; into table student;  
+<h3 id="1-1加载本地文件到hive"><a href="#1-1加载本地文件到hive" class="headerlink" title="1.1加载本地文件到hive:"></a>1.1加载本地文件到hive:</h3><pre><code>load data local inpath &#39;/opt/module/datas/student.txt&#39; into table student;  
 </code></pre>
-<p>###1.2加载HDFS上数据:  </p>
-<pre><code>hadoop fs -put /opt/module/datas/student.txt /user/atguigu;  
+<h3 id="1-2加载HDFS上数据"><a href="#1-2加载HDFS上数据" class="headerlink" title="1.2加载HDFS上数据:"></a>1.2加载HDFS上数据:</h3><pre><code>hadoop fs -put /opt/module/datas/student.txt /user/atguigu;  
 
 load data inpath &#39;/user/atguigu/student.txt&#39; into table student;
 </code></pre>
-<p>##2.Insert  </p>
-<pre><code>INSERT (INTO | OVERWRITE) TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)] select_statement;
+<h2 id="2-Insert"><a href="#2-Insert" class="headerlink" title="2.Insert"></a>2.Insert</h2><pre><code>INSERT (INTO | OVERWRITE) TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)] select_statement;
 </code></pre>
 <p>关键字说明：  </p>
 <p>（1）INTO：将结果追加到目标表  </p>
 <p>（2）OVERWRITE：用结果覆盖原有数据  </p>
-<p>###2.1 将给定Values插入表中</p>
-<pre><code>INSERT (INTO | OVERWRITE) TABLE tablename [PARTITION (partcol1[=val1], partcol2[=val2] ...)] VALUES values_row [, values_row ...]  
+<h3 id="2-1-将给定Values插入表中"><a href="#2-1-将给定Values插入表中" class="headerlink" title="2.1 将给定Values插入表中"></a>2.1 将给定Values插入表中</h3><pre><code>INSERT (INTO | OVERWRITE) TABLE tablename [PARTITION (partcol1[=val1], partcol2[=val2] ...)] VALUES values_row [, values_row ...]  
 </code></pre>
-<p>###2.2将查询结果写入目标路径  </p>
-<pre><code>INSERT OVERWRITE [LOCAL] DIRECTORY directory[ROW FORMAT row_format] [STORED AS file_format] select_statement;
+<h3 id="2-2将查询结果写入目标路径"><a href="#2-2将查询结果写入目标路径" class="headerlink" title="2.2将查询结果写入目标路径"></a>2.2将查询结果写入目标路径</h3><pre><code>INSERT OVERWRITE [LOCAL] DIRECTORY directory[ROW FORMAT row_format] [STORED AS file_format] select_statement;
 </code></pre>
-<p>##3.Export&amp;Import  </p>
-<p>Export导出语句可将表的数据和元数据信息一并到处的HDFS路径，Import可将Export导出的内容导入Hive，表的数据和元数据信息都会恢复。Export和Import可用于两个Hive实例之间的数据迁移</p>
-<p>###导出<br>    EXPORT TABLE tablename TO ‘export_target_path’</p>
-<p>###导入<br>    IMPORT [EXTERNAL] TABLE new_or_original_tablename FROM ‘source_path’ [LOCATION ‘import_target_path’]</p>
-<p>#四:查询  </p>
-<p><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Select">Hive-select语法文档</a></p>
-<p>##1.select 查询语法    </p>
-<pre><code>SELECT [ALL | DISTINCT] select_expr, select_expr, 
+<h2 id="3-Export-Import"><a href="#3-Export-Import" class="headerlink" title="3.Export&amp;Import"></a>3.Export&amp;Import</h2><p>Export导出语句可将表的数据和元数据信息一并到处的HDFS路径，Import可将Export导出的内容导入Hive，表的数据和元数据信息都会恢复。Export和Import可用于两个Hive实例之间的数据迁移</p>
+<h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><pre><code>EXPORT TABLE tablename TO &#39;export_target_path&#39;
+</code></pre>
+<h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><pre><code>IMPORT [EXTERNAL] TABLE new_or_original_tablename FROM &#39;source_path&#39; [LOCATION &#39;import_target_path&#39;]
+</code></pre>
+<h1 id="四-查询"><a href="#四-查询" class="headerlink" title="四:查询"></a>四:查询</h1><p><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Select">Hive-select语法文档</a></p>
+<h2 id="1-select-查询语法"><a href="#1-select-查询语法" class="headerlink" title="1.select 查询语法"></a>1.select 查询语法</h2><pre><code>SELECT [ALL | DISTINCT] select_expr, select_expr, 
 FROM table_reference       -- 从什么表查
 [WHERE where_condition]   -- 过滤
 [GROUP BY col_list]        -- 分组查询
@@ -516,32 +465,27 @@ FROM table_reference       -- 从什么表查
 [LIMIT number]                -- 限制输出的行数
 </code></pre>
 <p>注意：<br>（1）SQL 语言大小写不敏感。<br>（2）SQL 可以写在一行或者多行。<br>（3）关键字不能被缩写也不能分行。<br>（4）各子句一般要分行写。<br>（5）使用缩进提高语句的可读性    </p>
-<p>##2.Limit语句  </p>
-<p>典型的查询会返回多行数据。limit子句用于限制返回的行数  </p>
+<h2 id="2-Limit语句"><a href="#2-Limit语句" class="headerlink" title="2.Limit语句"></a>2.Limit语句</h2><p>典型的查询会返回多行数据。limit子句用于限制返回的行数  </p>
 <pre><code>select * from emp limit 2,3; -- 表示从第2行开始，向下抓取3行
 </code></pre>
-<p>##3.关系运算函数  </p>
-<p>A&lt;&#x3D;&gt;B :  </p>
+<h2 id="3-关系运算函数"><a href="#3-关系运算函数" class="headerlink" title="3.关系运算函数"></a>3.关系运算函数</h2><p>A&lt;&#x3D;&gt;B :  </p>
 <p> 如果A和B都为null或者都不为null，则返回true，如果只有一边为null，返回false  </p>
 <p>A [not] like B :  </p>
 <p> B是一个SQL下的简单正则表达式，也叫通配符模式，如果A与其匹配的话，则返回true；反之返回false。B的表达式说明如下：‘x%’表示A必须以字母‘x’开头，‘%x’表示A必须以字母‘x’结尾，而‘%x%’表示A包含有字母‘x’,可以位于开头，结尾或者字符串中间。如果使用not关键字则可达到相反的效果。  </p>
 <p>A rlike B, A regexp B:  </p>
 <p>B是基于java的正则表达式，如果A与其匹配，则返回true；反之返回false。匹配使用的是JDK中的正则表达式接口实现的，因为正则也依据其中的规则。例如，正则表达式必须和整个字符串A相匹配，而不是只需与其字符串匹配。  </p>
-<p>##4.聚合函数  </p>
-<p>count(*)，表示统计所有行数，包含null值； </p>
+<h2 id="4-聚合函数"><a href="#4-聚合函数" class="headerlink" title="4.聚合函数"></a>4.聚合函数</h2><p>count(*)，表示统计所有行数，包含null值； </p>
 <p>count(某列)，表示该列一共有多少行，不包含null值； </p>
 <p>max()，求最大值，不包含null，除非所有值都是null； </p>
 <p>min()，求最小值，不包含null，除非所有值都是null； </p>
 <p>sum()，求和，不包含null。   </p>
 <p>avg()，求平均值，不包含null。    </p>
-<p>##5.分组<br>Group By语句：  </p>
+<h2 id="5-分组"><a href="#5-分组" class="headerlink" title="5.分组"></a>5.分组</h2><p>Group By语句：  </p>
 <p>Group By语句通常会和聚合函数一起使用，按照一个或者多个列队结果进行分组，然后对每个组执行聚合操作</p>
-<p>##6.Having语句  </p>
-<p>having与where不同点  </p>
+<h2 id="6-Having语句"><a href="#6-Having语句" class="headerlink" title="6.Having语句"></a>6.Having语句</h2><p>having与where不同点  </p>
 <p>（1）where后面不能写分组聚合函数，而having后面可以使用分组聚合函数。  </p>
 <p>（2）having只用于group by分组统计语句    </p>
-<p>##7.Join语句   </p>
-<p>Hive支持通常的sql join语句，但是只支持等值连接，不支持非等值连接。  </p>
+<h2 id="7-Join语句"><a href="#7-Join语句" class="headerlink" title="7.Join语句"></a>7.Join语句</h2><p>Hive支持通常的sql join语句，但是只支持等值连接，不支持非等值连接。  </p>
 <p>inner join 内连接：只有进行连接的两个表中都存在与连接条件相匹配的数据才会被保留下来  </p>
 <p>left outer join 左外连接：join操作符左边表中符合where子句的所有记录将会被返回  </p>
 <p>right outer join 右外连接：join操作符右边表中符合where子句的所有记录将会被返回  </p>
@@ -549,23 +493,18 @@ FROM table_reference       -- 从什么表查
 <p>多表连接: 连接n个表，至少需要n-1个连接条件    </p>
 <p>大多数情况下，Hive会对每对join连接对象启动一个MapReduce任务。本例中会首先启动一个MapReduce job对表e和表d进行连接操作，然后会再启动一个MapReduce job将第一个MapReduce job的输出和表l进行连接操作</p>
 <p>因为Hive总是按照从左到右的顺序执行的  </p>
-<p>##8.笛卡尔积产生条件  </p>
-<p>（1）省略连接条件  </p>
+<h2 id="8-笛卡尔积产生条件"><a href="#8-笛卡尔积产生条件" class="headerlink" title="8.笛卡尔积产生条件"></a>8.笛卡尔积产生条件</h2><p>（1）省略连接条件  </p>
 <p>（2）连接条件无效  </p>
 <p>（3）所有表中的所有行互相连接  </p>
-<p>##9.联合（union &amp; union all）  </p>
-<p>union和union all都是上下拼接sql的结果，这点是和join有区别的，join是左右关联，union和union all是上下拼接。  </p>
+<h2 id="9-联合（union-union-all）"><a href="#9-联合（union-union-all）" class="headerlink" title="9.联合（union &amp; union all）"></a>9.联合（union &amp; union all）</h2><p>union和union all都是上下拼接sql的结果，这点是和join有区别的，join是左右关联，union和union all是上下拼接。  </p>
 <p>union去重，union all不去重  </p>
 <p>union和union all在上下拼接sql结果时有两个要求：  </p>
 <p>（1）两个sql的结果，列的个数必须相同  </p>
 <p>（2）两个sql的结果，上下所对应列的类型必须一致    </p>
-<p>##10.排序  </p>
-<p>####全局排序 Order By  </p>
-<p>全局排序，只有一个Reduce    </p>
+<h2 id="10-排序"><a href="#10-排序" class="headerlink" title="10.排序"></a>10.排序</h2><h4 id="全局排序-Order-By"><a href="#全局排序-Order-By" class="headerlink" title="全局排序 Order By"></a>全局排序 Order By</h4><p>全局排序，只有一个Reduce    </p>
 <p>asc（ascend）：升序（默认）  </p>
 <p>desc（descend）：降序  </p>
-<p>####每个Reduce内部排序（Sort By）  </p>
-<p>Sort By：对于大规模的数据集order by的效率非常低。在很多情况下，并不需要全局排序，此时可以使用Sort by  </p>
+<h4 id="每个Reduce内部排序（Sort-By）"><a href="#每个Reduce内部排序（Sort-By）" class="headerlink" title="每个Reduce内部排序（Sort By）"></a>每个Reduce内部排序（Sort By）</h4><p>Sort By：对于大规模的数据集order by的效率非常低。在很多情况下，并不需要全局排序，此时可以使用Sort by  </p>
 <p>Sort by为每个reduce产生一个排序文件。每个Reduce内部进行排序，对全局结果集来说不是排序  </p>
 <p>设置reduce个数  </p>
 <pre><code>hive (default)&gt; set mapreduce.job.reduces=3;  
@@ -573,18 +512,15 @@ FROM table_reference       -- 从什么表查
 <p>查看设置reduce个数  </p>
 <pre><code>hive (default)&gt; set mapreduce.job.reduces;  
 </code></pre>
-<p>##11.分区（Distribute By）</p>
-<p>Distribute By：在有些情况下，我们需要控制某个特定行应该到哪个Reducer，通常是为了进行后续的聚集操作。distribute by子句可以做这件事。distribute by类似MapReduce中partition（自定义分区），进行分区，结合sort by使用  </p>
+<h2 id="11-分区（Distribute-By）"><a href="#11-分区（Distribute-By）" class="headerlink" title="11.分区（Distribute By）"></a>11.分区（Distribute By）</h2><p>Distribute By：在有些情况下，我们需要控制某个特定行应该到哪个Reducer，通常是为了进行后续的聚集操作。distribute by子句可以做这件事。distribute by类似MapReduce中partition（自定义分区），进行分区，结合sort by使用  </p>
 <p>distribute by的分区规则是根据分区字段的hash码与reduce的个数进行相除后，余数相同的分到一个区。  </p>
 <p>Hive要求distribute by语句要写在sort by语句之前。  </p>
 <p>演示完以后mapreduce.job.reduces的值要设置回-1，否则下面分区or分桶表load跑MapReduce的时候会报错  </p>
-<p>##12.分区排序（Cluster By）  </p>
-<p>当distribute by和sort by字段相同时，可以使用cluster by方式  </p>
+<h2 id="12-分区排序（Cluster-By）"><a href="#12-分区排序（Cluster-By）" class="headerlink" title="12.分区排序（Cluster By）"></a>12.分区排序（Cluster By）</h2><p>当distribute by和sort by字段相同时，可以使用cluster by方式  </p>
 <p>cluster by除了具有distribute by的功能外还兼具sort by的功能。但是排序只能是升序排序，不能指定排序规则为asc或者desc      </p>
 <p>以下两种写法等价<br>hive (default)&gt;<br>    select *<br>    from emp<br>    cluster by deptno;  </p>
 <p>hive (default)&gt;<br>    select<br>    *<br>    from emp<br>    distribute by deptno sort by deptno asc;  </p>
-<p>#五:函数  </p>
-<p>Hive会将常用的逻辑封装成函数给用户进行使用，类似于Java中的函数    </p>
+<h1 id="五-函数"><a href="#五-函数" class="headerlink" title="五:函数"></a>五:函数</h1><p>Hive会将常用的逻辑封装成函数给用户进行使用，类似于Java中的函数    </p>
 <p>Hive提供了大量的内置函数，按照其特点可大致分为如下几类：单行函数、聚合函数、炸裂函数、窗口函数  </p>
 <p>查看系统内置函数</p>
 <pre><code>show functions;  
@@ -595,18 +531,15 @@ FROM table_reference       -- 从什么表查
 <p>查看内置函数详细信息  </p>
 <pre><code>desc function extended upper;  
 </code></pre>
-<p>##1.单行函数  </p>
-<p>单行函数的特点是一进一出，即输入一行，输出一行</p>
+<h2 id="1-单行函数"><a href="#1-单行函数" class="headerlink" title="1.单行函数"></a>1.单行函数</h2><p>单行函数的特点是一进一出，即输入一行，输出一行</p>
 <p>单行函数按照功能可分为如下几类: 日期函数、字符串函数、集合函数、数学函数、流程控制函数等  </p>
-<p>###数值函数  </p>
-<pre><code>round：四舍五入    
+<h3 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h3><pre><code>round：四舍五入    
 
 ceil：向上取整   
 
 floor：向下取整  
 </code></pre>
-<p>###字符串函数  </p>
-<pre><code>substring：截取字符串  
+<h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h3><pre><code>substring：截取字符串  
 
 substring(string A, int start)  
 
@@ -679,8 +612,7 @@ hive&gt; beijing-shanghai-shenzhen
 
 hive&gt; select get_json_object(&#39;[&#123;&quot;name&quot;:&quot;大海海&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;age&quot;:&quot;25&quot;&#125;,&#123;&quot;name&quot;:&quot;小宋宋&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;age&quot;:&quot;47&quot;&#125;]&#39;,&#39;$.[0].name&#39;);  
 </code></pre>
-<p>###日期函数  </p>
-<p>unix_timestamp：返回当前或指定时间的时间戳</p>
+<h3 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h3><p>unix_timestamp：返回当前或指定时间的时间戳</p>
 <pre><code>unix_timestamp()   
 
 返回值：bigint    
@@ -735,8 +667,7 @@ hive&gt; select datediff(&#39;2021-08-08&#39;,&#39;2022-10-09&#39;);
 
 2022年-08月-08日 
 </code></pre>
-<p>##流程控制函数  </p>
-<p>case when：条件判断函数  </p>
+<h2 id="流程控制函数"><a href="#流程控制函数" class="headerlink" title="流程控制函数"></a>流程控制函数</h2><p>case when：条件判断函数  </p>
 <pre><code>语法一： case when a then b [when c then d]* [else e] end   
 
 语法二： case a when b then c [when d then e]* [else f] end
@@ -751,8 +682,7 @@ hive&gt; select if(10 &gt; 5,&#39;正确&#39;,&#39;错误&#39;);
 
 输出：正确  
 </code></pre>
-<p>##集合函数  </p>
-<p>size：集合中元素的个数  </p>
+<h2 id="集合函数"><a href="#集合函数" class="headerlink" title="集合函数"></a>集合函数</h2><p>size：集合中元素的个数  </p>
 <pre><code>hive&gt; select size(friends) from test;  --2/2  每一行数据中的friends集合里的个数  
 </code></pre>
 <p>map：创建map集合</p>
@@ -803,8 +733,7 @@ hive&gt; &#123;&quot;col1&quot;:&quot;name&quot;,&quot;col2&quot;:&quot;age&quot
 
 hive&gt; &#123;&quot;name&quot;:&quot;xiaosong&quot;,&quot;age&quot;:18,&quot;weight&quot;:80&#125;  
 </code></pre>
-<p>##2.高级聚合函数</p>
-<p>多进一出 （多行传入，一个行输出） </p>
+<h2 id="2-高级聚合函数"><a href="#2-高级聚合函数" class="headerlink" title="2.高级聚合函数"></a>2.高级聚合函数</h2><p>多进一出 （多行传入，一个行输出） </p>
 <p>普通聚合  </p>
 <p>collect_list 收集并形成list集合，结果不去重</p>
 <pre><code>hive&gt;
@@ -820,13 +749,10 @@ select sex,collect_set(job) from employee group by sex;
 女	[&quot;行政&quot;,&quot;研发&quot;,&quot;前台&quot;]	
 男	[&quot;销售&quot;,&quot;研发&quot;,&quot;前台&quot;]  
 </code></pre>
-<p>##3.炸裂函数</p>
-<p>UDTF,接收一行数据，输出一行或多行数据。</p>
-<p>##4.窗口函数  </p>
-<p>窗口函数，能为每行数据划分一个窗口，然后对窗口范围内的数据进行计算，最后将计算结果返回给该行的数据。</p>
-<p>###窗口语法</p>
-<p>####基于行<br><img src="/2023/07/30/hive_learn/3.png" alt="基于行">            </p>
-<p>####基于值<br><img src="/2023/07/30/hive_learn/4.png" alt="基于值"></p>
+<h2 id="3-炸裂函数"><a href="#3-炸裂函数" class="headerlink" title="3.炸裂函数"></a>3.炸裂函数</h2><p>UDTF,接收一行数据，输出一行或多行数据。</p>
+<h2 id="4-窗口函数"><a href="#4-窗口函数" class="headerlink" title="4.窗口函数"></a>4.窗口函数</h2><p>窗口函数，能为每行数据划分一个窗口，然后对窗口范围内的数据进行计算，最后将计算结果返回给该行的数据。</p>
+<h3 id="窗口语法"><a href="#窗口语法" class="headerlink" title="窗口语法"></a>窗口语法</h3><h4 id="基于行"><a href="#基于行" class="headerlink" title="基于行"></a>基于行</h4><p><img src="/2023/07/30/hive_learn/3.png" alt="基于行">            </p>
+<h4 id="基于值"><a href="#基于值" class="headerlink" title="基于值"></a>基于值</h4><p><img src="/2023/07/30/hive_learn/4.png" alt="基于值"></p>
 <p>按照功能，常用窗口可划分为如下几类：聚合函数、跨行取值函数、排名函数  </p>
 <p>聚合函数</p>
 <pre><code>max：最大值
@@ -859,10 +785,8 @@ row_number
 
 三者均不支持自定义窗口  
 </code></pre>
-<p>#六：自定义函数  </p>
-<p><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/HivePlugins">自定义函数官方文档</a> </p>
-<p>##编程步骤  </p>
-<p>(1) 继承Hive提供的类  </p>
+<h1 id="六：自定义函数"><a href="#六：自定义函数" class="headerlink" title="六：自定义函数"></a>六：自定义函数</h1><p><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/HivePlugins">自定义函数官方文档</a> </p>
+<h2 id="编程步骤"><a href="#编程步骤" class="headerlink" title="编程步骤"></a>编程步骤</h2><p>(1) 继承Hive提供的类  </p>
 <p>org.apache.hadoop.hive.ql.udf.generic.GenericUDF  </p>
 <p>org.apache.hadoop.hive.ql.udf.generic.GenericUDTF;</p>
 <p>(2) 实现类中的抽象方法  </p>
@@ -876,9 +800,7 @@ row_number
 <p>(4) 在hive的命令行窗口删除函数  </p>
 <pre><code>drop [temporary] function [if exists] [dbname.]function_name;
 </code></pre>
-<p>#七：分区表和分桶表    </p>
-<p>##1.分区表  </p>
-<p>Hive中的分区就是把一张大表的数据按照业务需要分散的存储到多个目录，每个目录就称为该表的一个分区  </p>
+<h1 id="七：分区表和分桶表"><a href="#七：分区表和分桶表" class="headerlink" title="七：分区表和分桶表"></a>七：分区表和分桶表</h1><h2 id="1-分区表"><a href="#1-分区表" class="headerlink" title="1.分区表"></a>1.分区表</h2><p>Hive中的分区就是把一张大表的数据按照业务需要分散的存储到多个目录，每个目录就称为该表的一个分区  </p>
 <pre><code>hive (default)&gt; 
 create table dept_partition
 (
@@ -901,33 +823,25 @@ select deptno, dname, loc
 from dept_partition
 where day = &#39;2020-04-01&#39;;
 </code></pre>
-<p>###分区表基本操作  </p>
-<p>####1）查看所有分区信息  </p>
-<pre><code>hive&gt; show partitions dept_partition;
+<h3 id="分区表基本操作"><a href="#分区表基本操作" class="headerlink" title="分区表基本操作"></a>分区表基本操作</h3><h4 id="1）查看所有分区信息"><a href="#1）查看所有分区信息" class="headerlink" title="1）查看所有分区信息"></a>1）查看所有分区信息</h4><pre><code>hive&gt; show partitions dept_partition;
 </code></pre>
-<p>####2）增加分区<br>#####（1）创建单个分区  </p>
-<pre><code>hive (default)&gt; 
+<h4 id="2）增加分区"><a href="#2）增加分区" class="headerlink" title="2）增加分区"></a>2）增加分区</h4><h5 id="（1）创建单个分区"><a href="#（1）创建单个分区" class="headerlink" title="（1）创建单个分区"></a>（1）创建单个分区</h5><pre><code>hive (default)&gt; 
 alter table dept_partition 
 add partition(day=&#39;20220403&#39;);  
 </code></pre>
-<p>#####（2）同时创建多个分区（分区之间不能有逗号）  </p>
-<pre><code>hive (default)&gt; 
+<h5 id="（2）同时创建多个分区（分区之间不能有逗号）"><a href="#（2）同时创建多个分区（分区之间不能有逗号）" class="headerlink" title="（2）同时创建多个分区（分区之间不能有逗号）"></a>（2）同时创建多个分区（分区之间不能有逗号）</h5><pre><code>hive (default)&gt; 
 alter table dept_partition 
 add partition(day=&#39;20220404&#39;) partition(day=&#39;20220405&#39;);  
 </code></pre>
-<p>####3）删除分区  </p>
-<p>#####（1）删除单个分区  </p>
-<pre><code>hive (default)&gt; 
+<h4 id="3）删除分区"><a href="#3）删除分区" class="headerlink" title="3）删除分区"></a>3）删除分区</h4><h5 id="（1）删除单个分区"><a href="#（1）删除单个分区" class="headerlink" title="（1）删除单个分区"></a>（1）删除单个分区</h5><pre><code>hive (default)&gt; 
 alter table dept_partition 
 drop partition (day=&#39;20220403&#39;);
 </code></pre>
-<p>#####（2）同时删除多个分区（分区之间必须有逗号）  </p>
-<pre><code>hive (default)&gt; 
+<h5 id="（2）同时删除多个分区（分区之间必须有逗号）"><a href="#（2）同时删除多个分区（分区之间必须有逗号）" class="headerlink" title="（2）同时删除多个分区（分区之间必须有逗号）"></a>（2）同时删除多个分区（分区之间必须有逗号）</h5><pre><code>hive (default)&gt; 
 alter table dept_partition 
 drop partition (day=&#39;20220404&#39;), partition(day=&#39;20220405&#39;);
 </code></pre>
-<p>####4）修复分区</p>
-<p>add partition  </p>
+<h4 id="4）修复分区"><a href="#4）修复分区" class="headerlink" title="4）修复分区"></a>4）修复分区</h4><p>add partition  </p>
 <pre><code>若手动创建HDFS的分区路径，Hive无法识别，可通过add partition命令增加分区元数据信息，从而使元数据和分区路径保持一致
 </code></pre>
 <p>drop partition  </p>
@@ -947,8 +861,7 @@ msck repair table table_name sync partitions：该命令会同步HDFS路径和�
 msck repair table table_name：等价于msck repair table table_name add partitions命令
 </code></pre>
 <p><strong>所以msck修复hive元数据，首选msck repair table table_name sync partitions命令</strong>  </p>
-<p>####二级分区表 </p>
-<p>二级分区表建表语句  </p>
+<h4 id="二级分区表"><a href="#二级分区表" class="headerlink" title="二级分区表"></a>二级分区表</h4><p>二级分区表建表语句  </p>
 <pre><code>hive (default)&gt;
 create table dept_partition2(
 deptno int,    -- 部门编号
@@ -970,18 +883,15 @@ select  *
 from dept_partition2 
 where day=&#39;20220401&#39; and hour=&#39;12&#39;;  
 </code></pre>
-<p>####动态分区  </p>
-<p>动态分区是指向分区表insert数据时，被写往的分区不由用户指定，而是由每行数据的最后一个字段的值来动态的决定，使用动态分区，可只用一个insert语句将数据写入多个分区  </p>
-<p>#####1）动态分区相关参数  </p>
-<p>(1) 动态分区功能总开关（默认true，开启）  </p>
+<h4 id="动态分区"><a href="#动态分区" class="headerlink" title="动态分区"></a>动态分区</h4><p>动态分区是指向分区表insert数据时，被写往的分区不由用户指定，而是由每行数据的最后一个字段的值来动态的决定，使用动态分区，可只用一个insert语句将数据写入多个分区  </p>
+<h5 id="1）动态分区相关参数"><a href="#1）动态分区相关参数" class="headerlink" title="1）动态分区相关参数"></a>1）动态分区相关参数</h5><p>(1) 动态分区功能总开关（默认true，开启）  </p>
 <pre><code>set hive.exec.dynamic.partition=true  
 </code></pre>
 <p>(2) 严格模式和非严格模式   </p>
 <p>动态分区的模式，默认strict（严格模式），要求必须指定至少一个分区为静态分区，nonstrict（非严格模式）允许所有的分区字段都使用动态分区  </p>
 <pre><code>set hive.exec.dynamic.partition.mode=nonstrict
 </code></pre>
-<p>##2.分桶表  </p>
-<p>并非所有的数据集都可形成合理的分区。对于一张表或者分区，Hive 可以进一步组织成桶，也就是更为细粒度的数据范围划分  </p>
+<h2 id="2-分桶表"><a href="#2-分桶表" class="headerlink" title="2.分桶表"></a>2.分桶表</h2><p>并非所有的数据集都可形成合理的分区。对于一张表或者分区，Hive 可以进一步组织成桶，也就是更为细粒度的数据范围划分  </p>
 <p><strong>分区针对的是数据的存储路径，分桶针对的是数据文件</strong>  </p>
 <p>分桶表的基本原理是，首先为每行数据计算一个指定字段的数据的hash值，然后模以一个指定的分桶数，最后将取模运算结果相同的行，写入同一个文件中，这个文件就称为一个分桶（bucket）</p>
 <p>建表语句</p>
@@ -997,22 +907,15 @@ row format delimited fields terminated by &#39;\t&#39;;
 load data local inpath &#39;/opt/module/hive/datas/student.txt&#39; 
 into table stu_buck;
 </code></pre>
-<p>#8.Hive压缩格式和文件格式  </p>
-<p>##压缩格式</p>
-<p>DEFLATE<br>gzip<br>bzip2<br>LZO<br>Snappy</p>
-<p>##Hive文件格式<br>text file<br>orc<br>parquet<br>sequence file  </p>
-<p>##行式存储和列式存储</p>
-<p>###行式存储 - textfile，sequence file<br>文本文件是Hive默认使用的文件格式，文本文件中的一行内容，就对应Hive表中的一行记录</p>
+<h1 id="8-Hive压缩格式和文件格式"><a href="#8-Hive压缩格式和文件格式" class="headerlink" title="8.Hive压缩格式和文件格式"></a>8.Hive压缩格式和文件格式</h1><h2 id="压缩格式"><a href="#压缩格式" class="headerlink" title="压缩格式"></a>压缩格式</h2><p>DEFLATE<br>gzip<br>bzip2<br>LZO<br>Snappy</p>
+<h2 id="Hive文件格式"><a href="#Hive文件格式" class="headerlink" title="Hive文件格式"></a>Hive文件格式</h2><p>text file<br>orc<br>parquet<br>sequence file  </p>
+<h2 id="行式存储和列式存储"><a href="#行式存储和列式存储" class="headerlink" title="行式存储和列式存储"></a>行式存储和列式存储</h2><h3 id="行式存储-textfile，sequence-file"><a href="#行式存储-textfile，sequence-file" class="headerlink" title="行式存储 - textfile，sequence file"></a>行式存储 - textfile，sequence file</h3><p>文本文件是Hive默认使用的文件格式，文本文件中的一行内容，就对应Hive表中的一行记录</p>
 <p>适用于会用到很多where语句的表</p>
-<p>###列式存储 - orc，parquet</p>
-<p>数仓中尽量选用列式存储方式</p>
+<h3 id="列式存储-orc，parquet"><a href="#列式存储-orc，parquet" class="headerlink" title="列式存储 - orc，parquet"></a>列式存储 - orc，parquet</h3><p>数仓中尽量选用列式存储方式</p>
 <p><img src="/2023/07/30/hive_learn/5.png" alt="ORC文件基本格式">  </p>
 <p><img src="/2023/07/30/hive_learn/6.png" alt="Parquet文件基本格式">   </p>
-<p>##压缩</p>
-<p>在Hive表中和计算过程中，保持数据的压缩，对磁盘空间的有效利用和提高查询性能都是十分有益的  </p>
-<p>###Hive表数据进行压缩    </p>
-<p>####1）TextFile    </p>
-<p>无法直接在表结构中进行声明压缩    </p>
+<h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h2><p>在Hive表中和计算过程中，保持数据的压缩，对磁盘空间的有效利用和提高查询性能都是十分有益的  </p>
+<h3 id="Hive表数据进行压缩"><a href="#Hive表数据进行压缩" class="headerlink" title="Hive表数据进行压缩"></a>Hive表数据进行压缩</h3><h4 id="1）TextFile"><a href="#1）TextFile" class="headerlink" title="1）TextFile"></a>1）TextFile</h4><p>无法直接在表结构中进行声明压缩    </p>
 <p>直接将压缩后的文件导入到该表即可，Hive在查询表中数据时，可自动识别其压缩格式，进行解压  </p>
 <p>TextFile压缩格式常为Gzip  </p>
 <p>需要注意的是，在执行往表中导入数据的SQL语句时，用户需设置以下参数，来保证写入表中的数据是被压缩的。  </p>
@@ -1022,22 +925,19 @@ into table stu_buck;
 <p>–输出结果的压缩格式（以下示例为snappy）  </p>
 <pre><code>set mapreduce.output.fileoutputformat.compress.codec =org.apache.hadoop.io.compress.SnappyCodec;
 </code></pre>
-<p>####2）ORC</p>
-<p>可在建表时声明    </p>
+<h4 id="2）ORC"><a href="#2）ORC" class="headerlink" title="2）ORC"></a>2）ORC</h4><p>可在建表时声明    </p>
 <pre><code>create table orc_table
 (column_specs)
 stored as orc
 tblproperties (&quot;orc.compress&quot;=&quot;snappy&quot;);  
 </code></pre>
-<p>####3）Parquet  </p>
-<p>可在建表时声明   </p>
+<h4 id="3）Parquet"><a href="#3）Parquet" class="headerlink" title="3）Parquet"></a>3）Parquet</h4><p>可在建表时声明   </p>
 <pre><code>create table orc_table
 (column_specs)
 stored as parquet
 tblproperties (&quot;parquet.compression&quot;=&quot;snappy&quot;);
 </code></pre>
-<p>###计算过程中使用压缩  </p>
-<p>1）单个mr的中间结果进行压缩  </p>
+<h3 id="计算过程中使用压缩"><a href="#计算过程中使用压缩" class="headerlink" title="计算过程中使用压缩"></a>计算过程中使用压缩</h3><p>1）单个mr的中间结果进行压缩  </p>
 <p>–开启MapReduce中间数据压缩功能  </p>
 <pre><code>set mapreduce.map.output.compress=true;
 </code></pre>
@@ -1052,9 +952,7 @@ tblproperties (&quot;parquet.compression&quot;=&quot;snappy&quot;);
 <p>–压缩格式（以下示例为snappy）  </p>
 <pre><code>set hive.intermediate.compression.codec= org.apache.hadoop.io.compress.SnappyCodec;
 </code></pre>
-<p>#能看到这里，你是真滴牛批~</p>
-<p>#猛男，帅哥儿，靓仔，点个赞再肘~</p>
-<p><img src="/2023/07/30/hive_learn/7.png" alt="歪嘴猫"></p>
+<h1 id="能看到这里，你是真滴牛批"><a href="#能看到这里，你是真滴牛批" class="headerlink" title="能看到这里，你是真滴牛批~"></a>能看到这里，你是真滴牛批~</h1><h1 id="猛男，帅哥儿，靓仔，点个赞再肘"><a href="#猛男，帅哥儿，靓仔，点个赞再肘" class="headerlink" title="猛男，帅哥儿，靓仔，点个赞再肘~"></a>猛男，帅哥儿，靓仔，点个赞再肘~</h1><p><img src="/2023/07/30/hive_learn/7.png" alt="歪嘴猫"></p>
 
     </div>
 
@@ -1185,6 +1083,7 @@ tblproperties (&quot;parquet.compression&quot;=&quot;snappy&quot;);
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%89%8B%E6%8F%A1%E6%97%A5%E6%9C%88%E6%91%98%E6%98%9F%E8%BE%B0%EF%BC%8C%E4%B8%96%E9%97%B4%E6%97%A0%E6%88%91%E8%BF%99%E8%88%AC%E4%BA%BA%EF%BC%81"><span class="nav-number">1.</span> <span class="nav-text">手握日月摘星辰，世间无我这般人！</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%EF%BC%9AHive%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">2.</span> <span class="nav-text">一：Hive的基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AFHive%EF%BC%9F"><span class="nav-number">2.1.</span> <span class="nav-text">1.什么是Hive？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Hive%E6%9C%AC%E8%B4%A8"><span class="nav-number">2.2.</span> <span class="nav-text">2.Hive本质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%94%A8%E6%88%B7%E6%8E%A5%E5%8F%A3%EF%BC%9AClient"><span class="nav-number">2.3.</span> <span class="nav-text">3.用户接口：Client</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDBC%E5%92%8CODBC%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.3.1.</span> <span class="nav-text">JDBC和ODBC的区别:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%85%83%E6%95%B0%E6%8D%AE%EF%BC%9AMetastore"><span class="nav-number">2.4.</span> <span class="nav-text">4:元数据：Metastore</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-hive%E7%9A%84%E5%AD%98%E5%82%A8%E5%92%8C%E8%AE%A1%E7%AE%97"><span class="nav-number">2.5.</span> <span class="nav-text">5.hive的存储和计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-hiveserver2%E6%9C%8D%E5%8A%A1"><span class="nav-number">2.6.</span> <span class="nav-text">6.hiveserver2服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E7%94%A8%E6%88%B7%E8%AF%B4%E6%98%8E"><span class="nav-number">2.7.</span> <span class="nav-text">7.用户说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-metastore%E6%9C%8D%E5%8A%A1"><span class="nav-number">2.8.</span> <span class="nav-text">8.metastore服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-metastore%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.9.</span> <span class="nav-text">9.metastore运行模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E7%BC%96%E5%86%99Hive%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E8%84%9A%E6%9C%AC"><span class="nav-number">2.10.</span> <span class="nav-text">10.编写Hive服务启动脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-hive-e-%E5%92%8C-hive-f"><span class="nav-number">2.11.</span> <span class="nav-text">11.hive -e 和 hive -f</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-Hive%E5%8F%82%E6%95%B0%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="nav-number">2.12.</span> <span class="nav-text">12.Hive参数配置方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%96%B9%E5%BC%8F"><span class="nav-number">2.12.1.</span> <span class="nav-text">(1).配置文件方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%8F%82%E6%95%B0%E6%96%B9%E5%BC%8F"><span class="nav-number">2.12.2.</span> <span class="nav-text">(2).命令行参数方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E5%8F%82%E6%95%B0%E5%A3%B0%E6%98%8E%E6%96%B9%E5%BC%8F"><span class="nav-number">2.12.3.</span> <span class="nav-text">(3).参数声明方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-Hive%E5%B8%B8%E8%A7%81%E5%B1%9E%E6%80%A7%E9%85%8D%E7%BD%AE"><span class="nav-number">2.13.</span> <span class="nav-text">13.Hive常见属性配置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%EF%BC%9AHive%E7%9A%84DDL%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">二：Hive的DDL语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.1.</span> <span class="nav-text">1.创建数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%9F%A5%E7%9C%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BF%A1%E6%81%AF"><span class="nav-number">3.2.</span> <span class="nav-text">2.查看数据库信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E6%9F%A5%E7%9C%8B%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF"><span class="nav-number">3.2.1.</span> <span class="nav-text">(1) 查看基本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A%E4%BF%A1%E6%81%AF"><span class="nav-number">3.2.2.</span> <span class="nav-text">(2) 查看更多信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.3.</span> <span class="nav-text">3.修改数据库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9dbproperties"><span class="nav-number">3.3.1.</span> <span class="nav-text">修改dbproperties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9location"><span class="nav-number">3.3.2.</span> <span class="nav-text">修改location</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9owner-user"><span class="nav-number">3.3.3.</span> <span class="nav-text">修改owner user</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.4.</span> <span class="nav-text">4.删除数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%88%87%E6%8D%A2%E5%BD%93%E5%89%8D%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">3.5.</span> <span class="nav-text">5.切换当前数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="nav-number">3.6.</span> <span class="nav-text">6.创建表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-TEMPORARY"><span class="nav-number">3.6.1.</span> <span class="nav-text">(1)TEMPORARY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-EXTERNAL%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">3.6.2.</span> <span class="nav-text">(2)EXTERNAL（重点）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-data-type%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">3.6.3.</span> <span class="nav-text">(3)data_type（重点）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%B8%80%EF%BC%9A%E9%9A%90%E5%BC%8F%E8%BD%AC%E6%8D%A2"><span class="nav-number">3.6.3.1.</span> <span class="nav-text">方式一：隐式转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B9%E5%BC%8F%E4%BA%8C%EF%BC%9A%E6%98%BE%E7%A4%BA%E8%BD%AC%E6%8D%A2"><span class="nav-number">3.6.3.2.</span> <span class="nav-text">方式二：显示转换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-PARTITIONED-BY%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">3.6.4.</span> <span class="nav-text">(4) PARTITIONED BY（重点）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-CLUSTERED-BY-%E2%80%A6-SORTED-BY%E2%80%A6INTO-%E2%80%A6-BUCKETS%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">3.6.5.</span> <span class="nav-text">(5) CLUSTERED BY … SORTED BY…INTO … BUCKETS（重点）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-ROW-FORMAT%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">3.6.6.</span> <span class="nav-text">(6) ROW FORMAT（重点）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95%E4%B8%80%EF%BC%9A"><span class="nav-number">3.6.6.1.</span> <span class="nav-text">语法一：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95%E4%BA%8C%EF%BC%9A"><span class="nav-number">3.6.6.2.</span> <span class="nav-text">语法二：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-STORED-AS%EF%BC%88%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">3.6.7.</span> <span class="nav-text">(7) STORED AS（重点）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-LOCATION"><span class="nav-number">3.6.8.</span> <span class="nav-text">(8) LOCATION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-TBLPROPERTIES"><span class="nav-number">3.6.9.</span> <span class="nav-text">(9) TBLPROPERTIES</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Create-Table-As-Select%EF%BC%88CTAS%EF%BC%89%E5%BB%BA%E8%A1%A8"><span class="nav-number">3.7.</span> <span class="nav-text">7.Create Table As Select（CTAS）建表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-Create-Table-Like%E8%AF%AD%E6%B3%95"><span class="nav-number">3.8.</span> <span class="nav-text">8.Create Table Like语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E5%86%85%E9%83%A8%E8%A1%A8%E4%B8%8E%E5%A4%96%E9%83%A8%E8%A1%A8"><span class="nav-number">3.9.</span> <span class="nav-text">9.内部表与外部表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E6%9F%A5%E7%9C%8B%E8%A1%A8"><span class="nav-number">3.10.</span> <span class="nav-text">10.查看表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E4%BF%AE%E6%94%B9%E5%88%97%E4%BF%A1%E6%81%AF"><span class="nav-number">3.11.</span> <span class="nav-text">11.修改列信息</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%8A%A0%E5%88%97"><span class="nav-number">3.11.1.</span> <span class="nav-text">增加列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E5%88%97"><span class="nav-number">3.11.2.</span> <span class="nav-text">更新列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E5%88%97"><span class="nav-number">3.11.3.</span> <span class="nav-text">替换列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E6%B8%85%E7%A9%BA%E8%A1%A8"><span class="nav-number">3.12.</span> <span class="nav-text">12.清空表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%EF%BC%9AHive%E7%9A%84DML%E8%AF%AD%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">三：Hive的DML语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Load"><span class="nav-number">4.1.</span> <span class="nav-text">1. Load</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1%E5%8A%A0%E8%BD%BD%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E5%88%B0hive"><span class="nav-number">4.1.1.</span> <span class="nav-text">1.1加载本地文件到hive:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2%E5%8A%A0%E8%BD%BDHDFS%E4%B8%8A%E6%95%B0%E6%8D%AE"><span class="nav-number">4.1.2.</span> <span class="nav-text">1.2加载HDFS上数据:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Insert"><span class="nav-number">4.2.</span> <span class="nav-text">2.Insert</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%B0%86%E7%BB%99%E5%AE%9AValues%E6%8F%92%E5%85%A5%E8%A1%A8%E4%B8%AD"><span class="nav-number">4.2.1.</span> <span class="nav-text">2.1 将给定Values插入表中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2%E5%B0%86%E6%9F%A5%E8%AF%A2%E7%BB%93%E6%9E%9C%E5%86%99%E5%85%A5%E7%9B%AE%E6%A0%87%E8%B7%AF%E5%BE%84"><span class="nav-number">4.2.2.</span> <span class="nav-text">2.2将查询结果写入目标路径</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Export-Import"><span class="nav-number">4.3.</span> <span class="nav-text">3.Export&amp;Import</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%87%BA"><span class="nav-number">4.3.1.</span> <span class="nav-text">导出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5"><span class="nav-number">4.3.2.</span> <span class="nav-text">导入</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B-%E6%9F%A5%E8%AF%A2"><span class="nav-number">5.</span> <span class="nav-text">四:查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-select-%E6%9F%A5%E8%AF%A2%E8%AF%AD%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">1.select 查询语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Limit%E8%AF%AD%E5%8F%A5"><span class="nav-number">5.2.</span> <span class="nav-text">2.Limit语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%85%B3%E7%B3%BB%E8%BF%90%E7%AE%97%E5%87%BD%E6%95%B0"><span class="nav-number">5.3.</span> <span class="nav-text">3.关系运算函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">5.4.</span> <span class="nav-text">4.聚合函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E5%88%86%E7%BB%84"><span class="nav-number">5.5.</span> <span class="nav-text">5.分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Having%E8%AF%AD%E5%8F%A5"><span class="nav-number">5.6.</span> <span class="nav-text">6.Having语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Join%E8%AF%AD%E5%8F%A5"><span class="nav-number">5.7.</span> <span class="nav-text">7.Join语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF%E4%BA%A7%E7%94%9F%E6%9D%A1%E4%BB%B6"><span class="nav-number">5.8.</span> <span class="nav-text">8.笛卡尔积产生条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E8%81%94%E5%90%88%EF%BC%88union-union-all%EF%BC%89"><span class="nav-number">5.9.</span> <span class="nav-text">9.联合（union &amp; union all）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E6%8E%92%E5%BA%8F"><span class="nav-number">5.10.</span> <span class="nav-text">10.排序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E6%8E%92%E5%BA%8F-Order-By"><span class="nav-number">5.10.0.1.</span> <span class="nav-text">全局排序 Order By</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AF%8F%E4%B8%AAReduce%E5%86%85%E9%83%A8%E6%8E%92%E5%BA%8F%EF%BC%88Sort-By%EF%BC%89"><span class="nav-number">5.10.0.2.</span> <span class="nav-text">每个Reduce内部排序（Sort By）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E5%88%86%E5%8C%BA%EF%BC%88Distribute-By%EF%BC%89"><span class="nav-number">5.11.</span> <span class="nav-text">11.分区（Distribute By）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-%E5%88%86%E5%8C%BA%E6%8E%92%E5%BA%8F%EF%BC%88Cluster-By%EF%BC%89"><span class="nav-number">5.12.</span> <span class="nav-text">12.分区排序（Cluster By）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94-%E5%87%BD%E6%95%B0"><span class="nav-number">6.</span> <span class="nav-text">五:函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%8D%95%E8%A1%8C%E5%87%BD%E6%95%B0"><span class="nav-number">6.1.</span> <span class="nav-text">1.单行函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E5%87%BD%E6%95%B0"><span class="nav-number">6.1.1.</span> <span class="nav-text">数值函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%87%BD%E6%95%B0"><span class="nav-number">6.1.2.</span> <span class="nav-text">字符串函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E5%87%BD%E6%95%B0"><span class="nav-number">6.1.3.</span> <span class="nav-text">日期函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E5%87%BD%E6%95%B0"><span class="nav-number">6.2.</span> <span class="nav-text">流程控制函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">6.3.</span> <span class="nav-text">集合函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E9%AB%98%E7%BA%A7%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">6.4.</span> <span class="nav-text">2.高级聚合函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E7%82%B8%E8%A3%82%E5%87%BD%E6%95%B0"><span class="nav-number">6.5.</span> <span class="nav-text">3.炸裂函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E7%AA%97%E5%8F%A3%E5%87%BD%E6%95%B0"><span class="nav-number">6.6.</span> <span class="nav-text">4.窗口函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E8%AF%AD%E6%B3%95"><span class="nav-number">6.6.1.</span> <span class="nav-text">窗口语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E8%A1%8C"><span class="nav-number">6.6.1.1.</span> <span class="nav-text">基于行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E5%80%BC"><span class="nav-number">6.6.1.2.</span> <span class="nav-text">基于值</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%AD%EF%BC%9A%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0"><span class="nav-number">7.</span> <span class="nav-text">六：自定义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4"><span class="nav-number">7.1.</span> <span class="nav-text">编程步骤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%EF%BC%9A%E5%88%86%E5%8C%BA%E8%A1%A8%E5%92%8C%E5%88%86%E6%A1%B6%E8%A1%A8"><span class="nav-number">8.</span> <span class="nav-text">七：分区表和分桶表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%88%86%E5%8C%BA%E8%A1%A8"><span class="nav-number">8.1.</span> <span class="nav-text">1.分区表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%8C%BA%E8%A1%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">8.1.1.</span> <span class="nav-text">分区表基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%EF%BC%89%E6%9F%A5%E7%9C%8B%E6%89%80%E6%9C%89%E5%88%86%E5%8C%BA%E4%BF%A1%E6%81%AF"><span class="nav-number">8.1.1.1.</span> <span class="nav-text">1）查看所有分区信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%EF%BC%89%E5%A2%9E%E5%8A%A0%E5%88%86%E5%8C%BA"><span class="nav-number">8.1.1.2.</span> <span class="nav-text">2）增加分区</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%88%9B%E5%BB%BA%E5%8D%95%E4%B8%AA%E5%88%86%E5%8C%BA"><span class="nav-number">8.1.1.2.1.</span> <span class="nav-text">（1）创建单个分区</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%90%8C%E6%97%B6%E5%88%9B%E5%BB%BA%E5%A4%9A%E4%B8%AA%E5%88%86%E5%8C%BA%EF%BC%88%E5%88%86%E5%8C%BA%E4%B9%8B%E9%97%B4%E4%B8%8D%E8%83%BD%E6%9C%89%E9%80%97%E5%8F%B7%EF%BC%89"><span class="nav-number">8.1.1.2.2.</span> <span class="nav-text">（2）同时创建多个分区（分区之间不能有逗号）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%EF%BC%89%E5%88%A0%E9%99%A4%E5%88%86%E5%8C%BA"><span class="nav-number">8.1.1.3.</span> <span class="nav-text">3）删除分区</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%88%A0%E9%99%A4%E5%8D%95%E4%B8%AA%E5%88%86%E5%8C%BA"><span class="nav-number">8.1.1.3.1.</span> <span class="nav-text">（1）删除单个分区</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E5%90%8C%E6%97%B6%E5%88%A0%E9%99%A4%E5%A4%9A%E4%B8%AA%E5%88%86%E5%8C%BA%EF%BC%88%E5%88%86%E5%8C%BA%E4%B9%8B%E9%97%B4%E5%BF%85%E9%A1%BB%E6%9C%89%E9%80%97%E5%8F%B7%EF%BC%89"><span class="nav-number">8.1.1.3.2.</span> <span class="nav-text">（2）同时删除多个分区（分区之间必须有逗号）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4%EF%BC%89%E4%BF%AE%E5%A4%8D%E5%88%86%E5%8C%BA"><span class="nav-number">8.1.1.4.</span> <span class="nav-text">4）修复分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E7%BA%A7%E5%88%86%E5%8C%BA%E8%A1%A8"><span class="nav-number">8.1.1.5.</span> <span class="nav-text">二级分区表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E5%88%86%E5%8C%BA"><span class="nav-number">8.1.1.6.</span> <span class="nav-text">动态分区</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1%EF%BC%89%E5%8A%A8%E6%80%81%E5%88%86%E5%8C%BA%E7%9B%B8%E5%85%B3%E5%8F%82%E6%95%B0"><span class="nav-number">8.1.1.6.1.</span> <span class="nav-text">1）动态分区相关参数</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%86%E6%A1%B6%E8%A1%A8"><span class="nav-number">8.2.</span> <span class="nav-text">2.分桶表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-Hive%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F%E5%92%8C%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="nav-number">9.</span> <span class="nav-text">8.Hive压缩格式和文件格式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F"><span class="nav-number">9.1.</span> <span class="nav-text">压缩格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hive%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F"><span class="nav-number">9.2.</span> <span class="nav-text">Hive文件格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%BC%8F%E5%AD%98%E5%82%A8%E5%92%8C%E5%88%97%E5%BC%8F%E5%AD%98%E5%82%A8"><span class="nav-number">9.3.</span> <span class="nav-text">行式存储和列式存储</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%BC%8F%E5%AD%98%E5%82%A8-textfile%EF%BC%8Csequence-file"><span class="nav-number">9.3.1.</span> <span class="nav-text">行式存储 - textfile，sequence file</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E5%BC%8F%E5%AD%98%E5%82%A8-orc%EF%BC%8Cparquet"><span class="nav-number">9.3.2.</span> <span class="nav-text">列式存储 - orc，parquet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9"><span class="nav-number">9.4.</span> <span class="nav-text">压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive%E8%A1%A8%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E5%8E%8B%E7%BC%A9"><span class="nav-number">9.4.1.</span> <span class="nav-text">Hive表数据进行压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%EF%BC%89TextFile"><span class="nav-number">9.4.1.1.</span> <span class="nav-text">1）TextFile</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%EF%BC%89ORC"><span class="nav-number">9.4.1.2.</span> <span class="nav-text">2）ORC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%EF%BC%89Parquet"><span class="nav-number">9.4.1.3.</span> <span class="nav-text">3）Parquet</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%8E%8B%E7%BC%A9"><span class="nav-number">9.4.2.</span> <span class="nav-text">计算过程中使用压缩</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%BD%E7%9C%8B%E5%88%B0%E8%BF%99%E9%87%8C%EF%BC%8C%E4%BD%A0%E6%98%AF%E7%9C%9F%E6%BB%B4%E7%89%9B%E6%89%B9"><span class="nav-number">10.</span> <span class="nav-text">能看到这里，你是真滴牛批~</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8C%9B%E7%94%B7%EF%BC%8C%E5%B8%85%E5%93%A5%E5%84%BF%EF%BC%8C%E9%9D%93%E4%BB%94%EF%BC%8C%E7%82%B9%E4%B8%AA%E8%B5%9E%E5%86%8D%E8%82%98"><span class="nav-number">11.</span> <span class="nav-text">猛男，帅哥儿，靓仔，点个赞再肘~</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1207,7 +1106,7 @@ tblproperties (&quot;parquet.compression&quot;=&quot;snappy&quot;);
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

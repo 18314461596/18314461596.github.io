@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="天行健，君子以自强不息~   ##Java 核心机制-Java 虚拟机 [JVM java virtual machine]   JVM 是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器，包含在JDK中   对于不同的平台，有不同的虚拟机     ##什么是 JDK，JRE   ###JDK &#x3D; JRE + java 的开发工具 [java, ja">
+  <meta name="description" content="天行健，君子以自强不息~   Java 核心机制-Java 虚拟机 [JVM java virtual machine]JVM 是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器，包含在JDK中   对于不同的平台，有不同的虚拟机     什么是 JDK，JREJDK &#x3D; JRE + java 的开发工具 [java, javac,javadoc,j">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaSE">
 <meta property="og:url" content="http://example.com/2023/08/04/JavaSE/index.html">
 <meta property="og:site_name" content="第五门徒">
-<meta property="og:description" content="天行健，君子以自强不息~   ##Java 核心机制-Java 虚拟机 [JVM java virtual machine]   JVM 是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器，包含在JDK中   对于不同的平台，有不同的虚拟机     ##什么是 JDK，JRE   ###JDK &#x3D; JRE + java 的开发工具 [java, ja">
+<meta property="og:description" content="天行健，君子以自强不息~   Java 核心机制-Java 虚拟机 [JVM java virtual machine]JVM 是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器，包含在JDK中   对于不同的平台，有不同的虚拟机     什么是 JDK，JREJDK &#x3D; JRE + java 的开发工具 [java, javac,javadoc,j">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/08/04/JavaSE/1.png">
 <meta property="og:image" content="http://example.com/2023/08/04/JavaSE/2.png">
@@ -67,7 +67,7 @@
 <meta property="og:image" content="http://example.com/2023/08/04/JavaSE/37.png">
 <meta property="og:image" content="http://example.com/2023/08/04/JavaSE/38.png">
 <meta property="article:published_time" content="2023-08-04T09:50:53.000Z">
-<meta property="article:modified_time" content="2023-08-05T10:12:07.890Z">
+<meta property="article:modified_time" content="2023-08-11T05:02:10.351Z">
 <meta property="article:author" content="张宴银">
 <meta property="article:tag" content="天行健，君子以自强不息">
 <meta name="twitter:card" content="summary">
@@ -289,7 +289,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-05 18:12:07" itemprop="dateModified" datetime="2023-08-05T18:12:07+08:00">2023-08-05</time>
+                <time title="修改时间：2023-08-11 13:02:10" itemprop="dateModified" datetime="2023-08-11T13:02:10+08:00">2023-08-11</time>
               </span>
 
           
@@ -311,22 +311,16 @@
 
       
         <p>天行健，君子以自强不息~  </p>
-<p>##Java 核心机制-Java 虚拟机 [JVM java virtual machine]  </p>
-<p>JVM 是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器，包含在JDK中  </p>
+<h2 id="Java-核心机制-Java-虚拟机-JVM-java-virtual-machine"><a href="#Java-核心机制-Java-虚拟机-JVM-java-virtual-machine" class="headerlink" title="Java 核心机制-Java 虚拟机 [JVM java virtual machine]"></a>Java 核心机制-Java 虚拟机 [JVM java virtual machine]</h2><p>JVM 是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器，包含在JDK中  </p>
 <p>对于不同的平台，有不同的虚拟机    </p>
-<p>##什么是 JDK，JRE  </p>
-<p>###JDK &#x3D; JRE + java 的开发工具 [java, javac,javadoc,javap 等]     </p>
-<p>JDK 是提供给 Java 开发人员使用的，其中包含了 java 的开发工具，也包括了 JRE。所以安装了 JDK，就不用在单独安装JRE了  </p>
-<p>###JRE &#x3D; JVM + Java 的核心类库[类]  </p>
-<p>包括 Java 虚拟机(JVM Java Virtual Machine)和 Java 程序所需的核心类库等，如果想要运行一个开发好的 Java 程序，计算机中只需要安装 JRE 即可    </p>
-<p>####Java 转义字符    </p>
-<p>\t ：一个制表位，实现对齐的功能  </p>
+<h2 id="什么是-JDK，JRE"><a href="#什么是-JDK，JRE" class="headerlink" title="什么是 JDK，JRE"></a>什么是 JDK，JRE</h2><h3 id="JDK-JRE-java-的开发工具-java-javac-javadoc-javap-等"><a href="#JDK-JRE-java-的开发工具-java-javac-javadoc-javap-等" class="headerlink" title="JDK &#x3D; JRE + java 的开发工具 [java, javac,javadoc,javap 等]"></a>JDK &#x3D; JRE + java 的开发工具 [java, javac,javadoc,javap 等]</h3><p>JDK 是提供给 Java 开发人员使用的，其中包含了 java 的开发工具，也包括了 JRE。所以安装了 JDK，就不用在单独安装JRE了  </p>
+<h3 id="JRE-JVM-Java-的核心类库-类"><a href="#JRE-JVM-Java-的核心类库-类" class="headerlink" title="JRE &#x3D; JVM + Java 的核心类库[类]"></a>JRE &#x3D; JVM + Java 的核心类库[类]</h3><p>包括 Java 虚拟机(JVM Java Virtual Machine)和 Java 程序所需的核心类库等，如果想要运行一个开发好的 Java 程序，计算机中只需要安装 JRE 即可    </p>
+<h4 id="Java-转义字符"><a href="#Java-转义字符" class="headerlink" title="Java 转义字符"></a>Java 转义字符</h4><p>\t ：一个制表位，实现对齐的功能  </p>
 <p>\n ：换行符  </p>
 <p>\ ：一个\  </p>
 <p>&quot; :一个”  </p>
 <p>&#39; ：一个’ \r :一个回车 System.out.println(“韩顺平教育\r 北京”);  </p>
-<p>####Java 中的注释类型  </p>
-<ol>
+<h4 id="Java-中的注释类型"><a href="#Java-中的注释类型" class="headerlink" title="Java 中的注释类型"></a>Java 中的注释类型</h4><ol>
 <li><p>单行注释 &#x2F;&#x2F;  </p>
 </li>
 <li><p>多行注释 &#x2F;* *&#x2F;    </p>
@@ -341,12 +335,9 @@
 <li>@author 韩顺平  </li>
 <li>@version 1.0<br>*&#x2F;</li>
 </ul>
-<p>####Java 代码规范    </p>
-<p><img src="/2023/08/04/JavaSE/1.png" alt="Java代码规范">    </p>
-<p>###DOS 介绍 </p>
-<p>Dos： Disk Operating System 磁盘操作系统  </p>
-<p>####常用的 dos 命令  </p>
-<ol>
+<h4 id="Java-代码规范"><a href="#Java-代码规范" class="headerlink" title="Java 代码规范"></a>Java 代码规范</h4><p><img src="/2023/08/04/JavaSE/1.png" alt="Java代码规范">    </p>
+<h3 id="DOS-介绍"><a href="#DOS-介绍" class="headerlink" title="DOS 介绍"></a>DOS 介绍</h3><p>Dos： Disk Operating System 磁盘操作系统  </p>
+<h4 id="常用的-dos-命令"><a href="#常用的-dos-命令" class="headerlink" title="常用的 dos 命令"></a>常用的 dos 命令</h4><ol>
 <li><p>查看当前目录是有什么内容 dir  </p>
 <p> dir dir d:\abc2\test200</p>
 </li>
@@ -371,8 +362,7 @@
 <li><p>退出 DOS exit</p>
 </li>
 </ol>
-<p>##变量  </p>
-<p><strong>变量三要素：变量名+值+数据类型</strong>  </p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p><strong>变量三要素：变量名+值+数据类型</strong>  </p>
 <p>变量相当于内存中一个数据存储空间的表示，你可以把变量看做是一个房间的门牌号，通过门牌号我们可以找到房间，而通过变量名可以访问到变量(值)    </p>
 <ol>
 <li><p>声明变量  </p>
@@ -382,17 +372,14 @@
 <p> a &#x3D; 60; &#x2F;&#x2F;应该这么说: 把 60 赋给 a</p>
 </li>
 </ol>
-<p>###数据类型</p>
-<p>每一种数据都定义了明确的数据类型，在内存中分配了不同大小的内存空间(字节)。  </p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>每一种数据都定义了明确的数据类型，在内存中分配了不同大小的内存空间(字节)。  </p>
 <p><img src="/2023/08/04/JavaSE/2.png" alt="数据类型">    </p>
-<p>####整型的类型    </p>
-<p><img src="/2023/08/04/JavaSE/3.png" alt="数据类型">     </p>
+<h4 id="整型的类型"><a href="#整型的类型" class="headerlink" title="整型的类型"></a>整型的类型</h4><p><img src="/2023/08/04/JavaSE/3.png" alt="数据类型">     </p>
 <p>&#x2F;&#x2F;Java 的整型常量（具体值）默认为 int 型，声明 long 型常量须后加‘l’或‘L’  </p>
 <pre><code>int n1 = 1;//4 个字节
 long n3 = 1L;//长整型  
 </code></pre>
-<p>####浮点类型</p>
-<p><img src="/2023/08/04/JavaSE/4.png" alt="数据类型">    </p>
+<h4 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h4><p><img src="/2023/08/04/JavaSE/4.png" alt="数据类型">    </p>
 <p>&#x2F;&#x2F;Java 的浮点型常量(具体值)默认为 double 型，声明 float 型常量，须后加‘f’或‘F’  </p>
 <pre><code>float num2 = 1.1F;    
 double num3 = 1.1; 
@@ -401,17 +388,11 @@ double num4 = 1.1f;
 <p>十进制数形式：如：5.12 512.0f .512 (必须有小数点）   </p>
 <p>Java类的组织形式  </p>
 <p><img src="/2023/08/04/JavaSE/5.png" alt="Java类的组织形式">   </p>
-<p>####字符编码  </p>
-<p><img src="/2023/08/04/JavaSE/6.png" alt="字符编码">  </p>
-<p>####基本数据类型转换</p>
-<p>#####自动类型转换    </p>
-<p><img src="/2023/08/04/JavaSE/7.png" alt="自动类型转换">    </p>
-<p>#####强制类型转换   </p>
-<p>自动类型转换的逆过程，将容量大的数据类型转换为容量小的数据类型。使用时要加上强制转换符 ( )，但可能造成精度降低或溢出,格外要注意  </p>
+<h4 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h4><p><img src="/2023/08/04/JavaSE/6.png" alt="字符编码">  </p>
+<h4 id="基本数据类型转换"><a href="#基本数据类型转换" class="headerlink" title="基本数据类型转换"></a>基本数据类型转换</h4><h5 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h5><p><img src="/2023/08/04/JavaSE/7.png" alt="自动类型转换">    </p>
+<h5 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h5><p>自动类型转换的逆过程，将容量大的数据类型转换为容量小的数据类型。使用时要加上强制转换符 ( )，但可能造成精度降低或溢出,格外要注意  </p>
 <p><img src="/2023/08/04/JavaSE/8.png" alt="强制类型转换">  </p>
-<p>##运算符  </p>
-<p>###逻辑运算符  </p>
-<p>说明逻辑运算规则：  </p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>说明逻辑运算规则：  </p>
 <ol>
 <li><p>a&amp;b : &amp; 叫逻辑与：规则：当 a 和 b 同时为 true ,则结果为 true, 否则为 false  </p>
 </li>
@@ -440,20 +421,16 @@ double num4 = 1.1f;
 <li><p>| 逻辑或：不管第一个条件是否为 true，第二个条件都要判断，效率低</p>
 </li>
 </ol>
-<p>###三元运算符    </p>
-<p>条件表达式 ? 表达式 1: 表达式 2;  </p>
+<h3 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h3><p>条件表达式 ? 表达式 1: 表达式 2;  </p>
 <p>运算规则：  </p>
 <p>1.如果条件表达式为 true，运算后的结果是表达式 1；  </p>
 <p>2.如果条件表达式为 false，运算后的结果是表达式 2；  </p>
 <p>口诀: [一灯大师：一真大师]  </p>
-<p>#####接收控制台输入Scanner</p>
-<pre><code>import java.util.Scanner;    
+<h5 id="接收控制台输入Scanner"><a href="#接收控制台输入Scanner" class="headerlink" title="接收控制台输入Scanner"></a>接收控制台输入Scanner</h5><pre><code>import java.util.Scanner;    
 Scanner myScanner = new Scanner(System.in);  
 </code></pre>
-<p>#####原码、反码、补码(重点 难点)    </p>
-<p><img src="/2023/08/04/JavaSE/9.png">    </p>
-<p>##程序控制结构    </p>
-<p>主要有三大流程控制语句。  </p>
+<h5 id="原码、反码、补码-重点-难点"><a href="#原码、反码、补码-重点-难点" class="headerlink" title="原码、反码、补码(重点 难点)"></a>原码、反码、补码(重点 难点)</h5><p><img src="/2023/08/04/JavaSE/9.png">    </p>
+<h2 id="程序控制结构"><a href="#程序控制结构" class="headerlink" title="程序控制结构"></a>程序控制结构</h2><p>主要有三大流程控制语句。  </p>
 <ol>
 <li><p>顺序控制  </p>
 </li>
@@ -497,14 +474,10 @@ do&#123;
 &#125;while(循环条件);  
 </code></pre>
 <p>先执行，再判断，也就是说，一定会至少执行一次    </p>
-<p>##跳转控制语句-break    </p>
-<p>break 语句用于终止某个语句块的执行，一般使用在 switch 或者循环[for , while , do-while]中  </p>
-<p>##跳转控制语句-continue</p>
-<p>continue 语句用于结束本次循环，继续执行下一次循环  </p>
-<p>##跳转控制语句-return    </p>
-<p>return 使用在方法，表示跳出所在的方法  </p>
-<p>##数组</p>
-<p>数组可以存放多个同一类型的数据。数组也是一种数据类型，是<strong>引用类型</strong>  </p>
+<h2 id="跳转控制语句-break"><a href="#跳转控制语句-break" class="headerlink" title="跳转控制语句-break"></a>跳转控制语句-break</h2><p>break 语句用于终止某个语句块的执行，一般使用在 switch 或者循环[for , while , do-while]中  </p>
+<h2 id="跳转控制语句-continue"><a href="#跳转控制语句-continue" class="headerlink" title="跳转控制语句-continue"></a>跳转控制语句-continue</h2><p>continue 语句用于结束本次循环，继续执行下一次循环  </p>
+<h2 id="跳转控制语句-return"><a href="#跳转控制语句-return" class="headerlink" title="跳转控制语句-return"></a>跳转控制语句-return</h2><p>return 使用在方法，表示跳出所在的方法  </p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组可以存放多个同一类型的数据。数组也是一种数据类型，是<strong>引用类型</strong>  </p>
 <p><img src="/2023/08/04/JavaSE/10.png" alt="数组的使用">  </p>
 <pre><code>方式一：int a[] = new Int[5]   
 
@@ -515,10 +488,8 @@ do&#123;
 方式三：
    	   int a[] = &#123;2,3,4,5,6&#125;  
 </code></pre>
-<p>###数组赋值机制  </p>
-<p><img src="/2023/08/04/JavaSE/11.png" alt="数组的使用">      </p>
-<p>#面向对象编程(基础部分)    </p>
-<p>类和对象的区别和联系</p>
+<h3 id="数组赋值机制"><a href="#数组赋值机制" class="headerlink" title="数组赋值机制"></a>数组赋值机制</h3><p><img src="/2023/08/04/JavaSE/11.png" alt="数组的使用">      </p>
+<h1 id="面向对象编程-基础部分"><a href="#面向对象编程-基础部分" class="headerlink" title="面向对象编程(基础部分)"></a>面向对象编程(基础部分)</h1><p>类和对象的区别和联系</p>
 <ol>
 <li><p>类是抽象的，概念的，代表一类事物,比如人类,猫类.., 即它是数据类型  </p>
 </li>
@@ -527,10 +498,8 @@ do&#123;
 <li><p>类是对象的模板，对象是类的一个个体，对应一个实例</p>
 </li>
 </ol>
-<p>##对象在内存中存在形式(重要的)必须搞清楚</p>
-<p><img src="/2023/08/04/JavaSE/12.png" alt="对象在内存中存在形式">     </p>
-<p>###类和对象的内存分配机制     </p>
-<p>Java 内存的结构分析  </p>
+<h2 id="对象在内存中存在形式-重要的-必须搞清楚"><a href="#对象在内存中存在形式-重要的-必须搞清楚" class="headerlink" title="对象在内存中存在形式(重要的)必须搞清楚"></a>对象在内存中存在形式(重要的)必须搞清楚</h2><p><img src="/2023/08/04/JavaSE/12.png" alt="对象在内存中存在形式">     </p>
+<h3 id="类和对象的内存分配机制"><a href="#类和对象的内存分配机制" class="headerlink" title="类和对象的内存分配机制"></a>类和对象的内存分配机制</h3><p>Java 内存的结构分析  </p>
 <ol>
 <li><p>栈： 一般存放基本数据类型(局部变量)  </p>
 </li>
@@ -539,13 +508,10 @@ do&#123;
 <li><p>方法区：常量池(常量，比如字符串)， 类加载信息</p>
 </li>
 </ol>
-<p>##属性&#x2F;成员变量&#x2F;字段  </p>
-<p>成员变量 &#x3D; 属性 &#x3D; field(字段)  </p>
+<h2 id="属性-成员变量-字段"><a href="#属性-成员变量-字段" class="headerlink" title="属性&#x2F;成员变量&#x2F;字段"></a>属性&#x2F;成员变量&#x2F;字段</h2><p>成员变量 &#x3D; 属性 &#x3D; field(字段)  </p>
 <p>属性是类的一个组成部分，一般是基本数据类型,也可是引用类型(对象，数组)    </p>
-<p>##创建对象  </p>
-<p>Cat cat1 &#x3D; new Cat();  </p>
-<p>###成员方法  </p>
-<pre><code>class Person &#123;
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>Cat cat1 &#x3D; new Cat();  </p>
+<h3 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h3><pre><code>class Person &#123;
     String name;
     int age;  
     //方法(成员方法)  
@@ -554,29 +520,23 @@ do&#123;
         &#125;
     &#125;  
 </code></pre>
-<p>###方法的调用机制原理    </p>
-<p><img src="/2023/08/04/JavaSE/13.png">  </p>
-<p>###成员方法的好处    </p>
-<ol>
+<h3 id="方法的调用机制原理"><a href="#方法的调用机制原理" class="headerlink" title="方法的调用机制原理"></a>方法的调用机制原理</h3><p><img src="/2023/08/04/JavaSE/13.png">  </p>
+<h3 id="成员方法的好处"><a href="#成员方法的好处" class="headerlink" title="成员方法的好处"></a>成员方法的好处</h3><ol>
 <li><p>提高代码的复用性  </p>
 </li>
 <li><p>可以将实现的细节封装起来，然后供其他用户来调用即可</p>
 </li>
 </ol>
-<p>###成员方法的定义</p>
-<pre><code>访问修饰符 返回数据类型 方法名（形参列表..） &#123;	
+<h3 id="成员方法的定义"><a href="#成员方法的定义" class="headerlink" title="成员方法的定义"></a>成员方法的定义</h3><pre><code>访问修饰符 返回数据类型 方法名（形参列表..） &#123;	
     //方法体语句；
     return 返回值;
 &#125;
 </code></pre>
-<p>###传参 </p>
-<p>引用类型传递的是地址（传递也是值，但是值是地址），可以通过形参影响实参！  </p>
-<p>###方法递归调用(非常非常重要，比较难)  </p>
-<p>递归就是方法自己调用自己  </p>
+<h3 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h3><p>引用类型传递的是地址（传递也是值，但是值是地址），可以通过形参影响实参！  </p>
+<h3 id="方法递归调用-非常非常重要，比较难"><a href="#方法递归调用-非常非常重要，比较难" class="headerlink" title="方法递归调用(非常非常重要，比较难)"></a>方法递归调用(非常非常重要，比较难)</h3><p>递归就是方法自己调用自己  </p>
 <p>递归重要规则  </p>
 <p><img src="/2023/08/04/JavaSE/14.png"></p>
-<p>##方法重载(OverLoad)    </p>
-<p>java 中允许同一个类中，多个同名方法的存在，但要求 形参列表不一致！  </p>
+<h2 id="方法重载-OverLoad"><a href="#方法重载-OverLoad" class="headerlink" title="方法重载(OverLoad)"></a>方法重载(OverLoad)</h2><p>java 中允许同一个类中，多个同名方法的存在，但要求 形参列表不一致！  </p>
 <p>案例：类：MyCalculator 方法：calculate  </p>
 <ol>
 <li>calculate(int n1, int n2) &#x2F;&#x2F;两个整数的和  </li>
@@ -585,8 +545,7 @@ do&#123;
 <li>calculate(int n1, int n2,int n3)&#x2F;&#x2F;三个 int 的和</li>
 </ol>
 <p><img src="/2023/08/04/JavaSE/15.png" alt="方法重载">  </p>
-<p>###可变参数   </p>
-<p>java 允许将同一个类中多个同名同功能但参数个数不同的方法，封装成一个方法。<br>就可以通过可变参数实现</p>
+<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><p>java 允许将同一个类中多个同名同功能但参数个数不同的方法，封装成一个方法。<br>就可以通过可变参数实现</p>
 <p>eg:方法 sum 【可以计算 2 个数的和，3 个数的和 ， 4. 5， 。。】  </p>
 <pre><code>//1. int... 表示接受的是可变参数，类型是 int ,即可以接收多个 int(0-多)
 //2. 使用可变参数时，可以当做数组来使用 即 nums 可以当做数组
@@ -601,15 +560,14 @@ return res;
 &#125;
 &#125;  
 </code></pre>
-<p>###变量作用域<br>变量：  </p>
+<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>变量：  </p>
 <p>1.全局变量（属性）</p>
 <p>2.局部变量（局部变量一般是指在成员方法中定义的变量）</p>
 <p>全局变量和局部变量可以重名</p>
 <p><img src="/2023/08/04/JavaSE/16.png" alt="变量作用域">  </p>
 <p>全局变量和局部变量的区别  </p>
 <p><img src="/2023/08/04/JavaSE/17.png" alt="全局变量和局部变量的区别">    </p>
-<p>###构造方法&#x2F;构造器    </p>
-<p>在创建人类的对象时，就直接指定这个对象的年龄和姓名，该怎么做? 这时就可以使用构造器  </p>
+<h3 id="构造方法-构造器"><a href="#构造方法-构造器" class="headerlink" title="构造方法&#x2F;构造器"></a>构造方法&#x2F;构造器</h3><p>在创建人类的对象时，就直接指定这个对象的年龄和姓名，该怎么做? 这时就可以使用构造器  </p>
 <p>[修饰符] 方法名(形参列表){<br>方法体;<br>}   </p>
 <ol>
 <li><p>构造器的修饰符可以默认， 也可以是 public protected private  </p>
@@ -626,8 +584,7 @@ return res;
 <p>构造方法又叫构造器(constructor)，是类的一种特殊的方法，它的主要作用是完成对新对象的初始化  </p>
 <p><img src="/2023/08/04/JavaSE/18.png" alt="构造器使用注意事项"></p>
 <p><img src="/2023/08/04/JavaSE/19.png" alt="构造器使用注意事项"></p>
-<p>###this 关键字  </p>
-<p><img src="/2023/08/04/JavaSE/20.png" alt="This关键字"></p>
+<h3 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h3><p><img src="/2023/08/04/JavaSE/20.png" alt="This关键字"></p>
 <ol>
 <li><p>this 关键字可以用来访问本类的属性、方法、构造器  </p>
 </li>
@@ -640,8 +597,7 @@ return res;
 <li><p>this 不能在类定义的外部使用，只能在类定义的方法中使用。</p>
 </li>
 </ol>
-<p>#面向对象编程(中级部分)  </p>
-<p>IDEA 常用快捷键  </p>
+<h1 id="面向对象编程-中级部分"><a href="#面向对象编程-中级部分" class="headerlink" title="面向对象编程(中级部分)"></a>面向对象编程(中级部分)</h1><p>IDEA 常用快捷键  </p>
 <ol>
 <li><p>删除当前行, 默认是 ctrl + Y 自己配置 ctrl + d  </p>
 </li>
@@ -668,14 +624,12 @@ return res;
 <li><p>还有很多其它的快捷键</p>
 </li>
 </ol>
-<p>##包  </p>
-<p><img src="/2023/08/04/JavaSE/21.png" alt="包">  </p>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p><img src="/2023/08/04/JavaSE/21.png" alt="包">  </p>
 <p>包的本质 </p>
 <p><img src="/2023/08/04/JavaSE/22.png">  </p>
 <p>包的命名：  </p>
 <p>com.公司名.项目名.业务模块名  </p>
-<p>###Java常用的包  </p>
-<p>一个包下,包含很多的类,java 中常用的包有:  </p>
+<h3 id="Java常用的包"><a href="#Java常用的包" class="headerlink" title="Java常用的包"></a>Java常用的包</h3><p>一个包下,包含很多的类,java 中常用的包有:  </p>
 <ol>
 <li><p>java.lang.* &#x2F;&#x2F;lang 包是基本包，默认引入，不需要再引入.  </p>
 </li>
@@ -690,8 +644,7 @@ return res;
 <p>import 包;  </p>
 <p>eg:  import java.util.*  &#x2F;&#x2F;表示将java.util包所有都引入    </p>
 <p>我们需要使用到哪个类，就导入哪个类即可，不建议使用*导入   </p>
-<p>##访问修饰符   </p>
-<p>java 提供四种访问控制修饰符号，用于控制方法和属性(成员变量)的访问权限（范围）   </p>
+<h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><p>java 提供四种访问控制修饰符号，用于控制方法和属性(成员变量)的访问权限（范围）   </p>
 <ol>
 <li><p>公开级别:用 public 修饰,对外公开  </p>
 </li>
@@ -704,13 +657,11 @@ return res;
 </ol>
 <p><img src="/2023/08/04/JavaSE/23.png" alt="访问控制符">  </p>
 <p><img src="/2023/08/04/JavaSE/24.png" alt="访问控制符使用说明">   </p>
-<p>##面向对象编程三大特征  </p>
-<p>封装、继承和多态    </p>
-<p>###封装<br><img src="/2023/08/04/JavaSE/25.png" alt="封装"></p>
+<h2 id="面向对象编程三大特征"><a href="#面向对象编程三大特征" class="headerlink" title="面向对象编程三大特征"></a>面向对象编程三大特征</h2><p>封装、继承和多态    </p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p><img src="/2023/08/04/JavaSE/25.png" alt="封装"></p>
 <p>封装的实现步骤    </p>
 <p><img src="/2023/08/04/JavaSE/26.png" alt="封装的实现步骤">    </p>
-<p>###继承   </p>
-<p>继承可以解决代码复用,让我们的编程更加靠近人类思维.当多个类存在相同的属性(变量)和方法时,可以从这些类中抽象出父类,在父类中定义这些相同的属性和方法，所有的子类不需要重新定义这些属性和方法，只需要通过 extends 来声明继承父类即可  </p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承可以解决代码复用,让我们的编程更加靠近人类思维.当多个类存在相同的属性(变量)和方法时,可以从这些类中抽象出父类,在父类中定义这些相同的属性和方法，所有的子类不需要重新定义这些属性和方法，只需要通过 extends 来声明继承父类即可  </p>
 <p><img src="/2023/08/04/JavaSE/27.png" alt="继承">  </p>
 <p>继承的基本语法：  </p>
 <p>class 子类 extends 父类 {</p>
@@ -762,8 +713,7 @@ return res;
 </code></pre>
 <p>子类创建的内存布局  </p>
 <p><img src="/2023/08/04/JavaSE/28.png" alt="子类创建的内存布局">    </p>
-<p>###super 关键字  </p>
-<p>super 代表父类的引用，用于访问父类的属性、方法、构造器  </p>
+<h3 id="super-关键字"><a href="#super-关键字" class="headerlink" title="super 关键字"></a>super 关键字</h3><p>super 代表父类的引用，用于访问父类的属性、方法、构造器  </p>
 <p><img src="/2023/08/04/JavaSE/29.png" alt="super关键字">  </p>
 <p>&#x2F;&#x2F; (1)先找本类，如果有，则调用  </p>
 <p>&#x2F;&#x2F; (2)如果没有，则找父类(如果有，并可以调用，则调用)  </p>
@@ -773,13 +723,11 @@ return res;
 <p><img src="/2023/08/04/JavaSE/30.png" alt="Super关键字的用法细节">      </p>
 <p><strong>super 和 this 的比较</strong>    </p>
 <p><img src="/2023/08/04/JavaSE/31.png" alt="super和this的比较">    </p>
-<p>##方法重写&#x2F;覆盖(override) </p>
-<p><img src="/2023/08/04/JavaSE/32.png" alt="方法重写">  </p>
+<h2 id="方法重写-覆盖-override"><a href="#方法重写-覆盖-override" class="headerlink" title="方法重写&#x2F;覆盖(override)"></a>方法重写&#x2F;覆盖(override)</h2><p><img src="/2023/08/04/JavaSE/32.png" alt="方法重写">  </p>
 <p><img src="/2023/08/04/JavaSE/33.png" alt="方法重写的注意事项">    </p>
 <p><strong>方法重载和方法重写的区别</strong>  </p>
 <p><img src="/2023/08/04/JavaSE/34.png" alt="方法重载和方法重写的区别">  </p>
-<p>##多态  </p>
-<p>多态是建立在封装和继承基础之上的<br><img src="/2023/08/04/JavaSE/35.png" alt="多态">     </p>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>多态是建立在封装和继承基础之上的<br><img src="/2023/08/04/JavaSE/35.png" alt="多态">     </p>
 <p>多态的具体体现  </p>
 <ol>
 <li>方法的多态</li>
@@ -929,6 +877,7 @@ return res;
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E6%A0%B8%E5%BF%83%E6%9C%BA%E5%88%B6-Java-%E8%99%9A%E6%8B%9F%E6%9C%BA-JVM-java-virtual-machine"><span class="nav-number">1.</span> <span class="nav-text">Java 核心机制-Java 虚拟机 [JVM java virtual machine]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-JDK%EF%BC%8CJRE"><span class="nav-number">2.</span> <span class="nav-text">什么是 JDK，JRE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JDK-JRE-java-%E7%9A%84%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7-java-javac-javadoc-javap-%E7%AD%89"><span class="nav-number">2.1.</span> <span class="nav-text">JDK &#x3D; JRE + java 的开发工具 [java, javac,javadoc,javap 等]</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JRE-JVM-Java-%E7%9A%84%E6%A0%B8%E5%BF%83%E7%B1%BB%E5%BA%93-%E7%B1%BB"><span class="nav-number">2.2.</span> <span class="nav-text">JRE &#x3D; JVM + Java 的核心类库[类]</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6"><span class="nav-number">2.2.1.</span> <span class="nav-text">Java 转义字符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E4%B8%AD%E7%9A%84%E6%B3%A8%E9%87%8A%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.2.2.</span> <span class="nav-text">Java 中的注释类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E4%BB%A3%E7%A0%81%E8%A7%84%E8%8C%83"><span class="nav-number">2.2.3.</span> <span class="nav-text">Java 代码规范</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOS-%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.3.</span> <span class="nav-text">DOS 介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84-dos-%E5%91%BD%E4%BB%A4"><span class="nav-number">2.3.1.</span> <span class="nav-text">常用的 dos 命令</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">3.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B4%E5%9E%8B%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.1.1.</span> <span class="nav-text">整型的类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E7%B1%BB%E5%9E%8B"><span class="nav-number">3.1.2.</span> <span class="nav-text">浮点类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81"><span class="nav-number">3.1.3.</span> <span class="nav-text">字符编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">3.1.4.</span> <span class="nav-text">基本数据类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">3.1.4.1.</span> <span class="nav-text">自动类型转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%BA%E5%88%B6%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">3.1.4.2.</span> <span class="nav-text">强制类型转换</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.1.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">4.2.</span> <span class="nav-text">三元运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%8E%A5%E6%94%B6%E6%8E%A7%E5%88%B6%E5%8F%B0%E8%BE%93%E5%85%A5Scanner"><span class="nav-number">4.2.0.1.</span> <span class="nav-text">接收控制台输入Scanner</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E3%80%81%E8%A1%A5%E7%A0%81-%E9%87%8D%E7%82%B9-%E9%9A%BE%E7%82%B9"><span class="nav-number">4.2.0.2.</span> <span class="nav-text">原码、反码、补码(重点 难点)</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84"><span class="nav-number">5.</span> <span class="nav-text">程序控制结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5-break"><span class="nav-number">6.</span> <span class="nav-text">跳转控制语句-break</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5-continue"><span class="nav-number">7.</span> <span class="nav-text">跳转控制语句-continue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B7%B3%E8%BD%AC%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5-return"><span class="nav-number">8.</span> <span class="nav-text">跳转控制语句-return</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">9.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E8%B5%8B%E5%80%BC%E6%9C%BA%E5%88%B6"><span class="nav-number">9.1.</span> <span class="nav-text">数组赋值机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B-%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86"><span class="nav-number"></span> <span class="nav-text">面向对象编程(基础部分)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E5%AD%98%E5%9C%A8%E5%BD%A2%E5%BC%8F-%E9%87%8D%E8%A6%81%E7%9A%84-%E5%BF%85%E9%A1%BB%E6%90%9E%E6%B8%85%E6%A5%9A"><span class="nav-number">1.</span> <span class="nav-text">对象在内存中存在形式(重要的)必须搞清楚</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E6%9C%BA%E5%88%B6"><span class="nav-number">1.1.</span> <span class="nav-text">类和对象的内存分配机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7-%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F-%E5%AD%97%E6%AE%B5"><span class="nav-number">2.</span> <span class="nav-text">属性&#x2F;成员变量&#x2F;字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.</span> <span class="nav-text">创建对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">成员方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E8%B0%83%E7%94%A8%E6%9C%BA%E5%88%B6%E5%8E%9F%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">方法的调用机制原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="nav-number">3.3.</span> <span class="nav-text">成员方法的好处</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E6%96%B9%E6%B3%95%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">3.4.</span> <span class="nav-text">成员方法的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%A0%E5%8F%82"><span class="nav-number">3.5.</span> <span class="nav-text">传参</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%80%92%E5%BD%92%E8%B0%83%E7%94%A8-%E9%9D%9E%E5%B8%B8%E9%9D%9E%E5%B8%B8%E9%87%8D%E8%A6%81%EF%BC%8C%E6%AF%94%E8%BE%83%E9%9A%BE"><span class="nav-number">3.6.</span> <span class="nav-text">方法递归调用(非常非常重要，比较难)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E8%BD%BD-OverLoad"><span class="nav-number">4.</span> <span class="nav-text">方法重载(OverLoad)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"><span class="nav-number">4.1.</span> <span class="nav-text">可变参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">4.2.</span> <span class="nav-text">变量作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95-%E6%9E%84%E9%80%A0%E5%99%A8"><span class="nav-number">4.3.</span> <span class="nav-text">构造方法&#x2F;构造器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">4.4.</span> <span class="nav-text">this 关键字</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B-%E4%B8%AD%E7%BA%A7%E9%83%A8%E5%88%86"><span class="nav-number"></span> <span class="nav-text">面向对象编程(中级部分)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85"><span class="nav-number">1.</span> <span class="nav-text">包</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E5%B8%B8%E7%94%A8%E7%9A%84%E5%8C%85"><span class="nav-number">1.1.</span> <span class="nav-text">Java常用的包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text">访问修饰符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81"><span class="nav-number">3.</span> <span class="nav-text">面向对象编程三大特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E8%A3%85"><span class="nav-number">3.1.</span> <span class="nav-text">封装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-number">3.2.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#super-%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">3.3.</span> <span class="nav-text">super 关键字</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99-%E8%A6%86%E7%9B%96-override"><span class="nav-number">4.</span> <span class="nav-text">方法重写&#x2F;覆盖(override)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E6%80%81"><span class="nav-number">5.</span> <span class="nav-text">多态</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -951,7 +900,7 @@ return res;
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

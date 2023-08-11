@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="#博观而约取，厚积而薄发      相关学习文档链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1WLK6GP99XAgJcX3FtrqjhA提取码：mvcs    #免密登录原理         #HDFS架构概述      HDFS适合一次写入，多次读出的场景，且不支持文件的修改   HDFS的缺点：仅支持数据append，不支持文件的随机修改          HDFS文件块大小：在H">
+  <meta name="description" content="博观而约取，厚积而薄发相关学习文档链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1WLK6GP99XAgJcX3FtrqjhA提取码：mvcs    免密登录原理     HDFS架构概述   HDFS适合一次写入，多次读出的场景，且不支持文件的修改   HDFS的缺点：仅支持数据append，不支持文件的随机修改          HDFS文件块大小：在Hadoop2.x版本中是128M">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hadoop学习笔记">
 <meta property="og:url" content="http://example.com/2023/08/06/hadoop/index.html">
 <meta property="og:site_name" content="第五门徒">
-<meta property="og:description" content="#博观而约取，厚积而薄发      相关学习文档链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1WLK6GP99XAgJcX3FtrqjhA提取码：mvcs    #免密登录原理         #HDFS架构概述      HDFS适合一次写入，多次读出的场景，且不支持文件的修改   HDFS的缺点：仅支持数据append，不支持文件的随机修改          HDFS文件块大小：在H">
+<meta property="og:description" content="博观而约取，厚积而薄发相关学习文档链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1WLK6GP99XAgJcX3FtrqjhA提取码：mvcs    免密登录原理     HDFS架构概述   HDFS适合一次写入，多次读出的场景，且不支持文件的修改   HDFS的缺点：仅支持数据append，不支持文件的随机修改          HDFS文件块大小：在Hadoop2.x版本中是128M">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/08/06/hadoop/4.png">
 <meta property="og:image" content="http://example.com/2023/08/06/hadoop/1.png">
@@ -63,7 +63,7 @@
 <meta property="og:image" content="http://example.com/2023/08/06/hadoop/33.png">
 <meta property="og:image" content="http://example.com/2023/08/06/hadoop/34.png">
 <meta property="article:published_time" content="2023-08-06T02:45:20.000Z">
-<meta property="article:modified_time" content="2023-08-06T09:55:19.285Z">
+<meta property="article:modified_time" content="2023-08-11T05:09:37.770Z">
 <meta property="article:author" content="张宴银">
 <meta property="article:tag" content="博观而约取，厚积而薄发">
 <meta name="twitter:card" content="summary">
@@ -277,10 +277,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-08-06 10:45:20 / 修改时间：17:55:19" itemprop="dateCreated datePublished" datetime="2023-08-06T10:45:20+08:00">2023-08-06</time>
+              <time title="创建时间：2023-08-06 10:45:20" itemprop="dateCreated datePublished" datetime="2023-08-06T10:45:20+08:00">2023-08-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-11 13:09:37" itemprop="dateModified" datetime="2023-08-11T13:09:37+08:00">2023-08-11</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -300,12 +306,9 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>#博观而约取，厚积而薄发     </p>
-<p>相关学习文档<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1WLK6GP99XAgJcX3FtrqjhA">https://pan.baidu.com/s/1WLK6GP99XAgJcX3FtrqjhA</a><br>提取码：mvcs   </p>
-<p>#免密登录原理   </p>
-<p><img src="/2023/08/06/hadoop/4.png" alt="免密登录原理">    </p>
-<p>#HDFS架构概述  </p>
-<p><img src="/2023/08/06/hadoop/1.png" alt="HDFS架构概述">  </p>
+        <h1 id="博观而约取，厚积而薄发"><a href="#博观而约取，厚积而薄发" class="headerlink" title="博观而约取，厚积而薄发"></a>博观而约取，厚积而薄发</h1><p>相关学习文档<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1WLK6GP99XAgJcX3FtrqjhA">https://pan.baidu.com/s/1WLK6GP99XAgJcX3FtrqjhA</a><br>提取码：mvcs   </p>
+<h1 id="免密登录原理"><a href="#免密登录原理" class="headerlink" title="免密登录原理"></a>免密登录原理</h1><p><img src="/2023/08/06/hadoop/4.png" alt="免密登录原理">    </p>
+<h1 id="HDFS架构概述"><a href="#HDFS架构概述" class="headerlink" title="HDFS架构概述"></a>HDFS架构概述</h1><p><img src="/2023/08/06/hadoop/1.png" alt="HDFS架构概述">  </p>
 <p>HDFS适合一次写入，多次读出的场景，且不支持文件的修改  </p>
 <p>HDFS的缺点：仅支持数据append，不支持文件的随机修改  </p>
 <p><img src="/2023/08/06/hadoop/5.png" alt="HDFS组成架构">  </p>
@@ -313,51 +316,39 @@
 <p>HDFS文件块大小：在Hadoop2.x版本中是128M  </p>
 <p>寻址时间为传输时间的1%时，是最佳状态  </p>
 <p>HDFS块的大小设置主要取决于磁盘传输速率  </p>
-<p>###HDFS写数据流程  </p>
-<p><img src="/2023/08/06/hadoop/7.png" alt="HDFS写数据流程">    </p>
+<h3 id="HDFS写数据流程"><a href="#HDFS写数据流程" class="headerlink" title="HDFS写数据流程"></a>HDFS写数据流程</h3><p><img src="/2023/08/06/hadoop/7.png" alt="HDFS写数据流程">    </p>
 <p>在HDFS写数据的过程中，NameNode会选择距离待上传数据最近距离的DataNode接收数据    </p>
-<p>###HDFS副本节点选择  </p>
-<p><img src="/2023/08/06/hadoop/8.png" alt="HDFS副本节点选择">       </p>
-<p>###HDFS读数据流程  </p>
-<p><img src="/2023/08/06/hadoop/9.png" alt="HDFS读数据流程">    </p>
-<p>#NN和2NN工作机制  </p>
-<p>NameNode中的元数据是存储在内存中，在内存上维护一个Edits文件，磁盘上维护一个FsImage文件，每当元数据有更新或者添加元数据时，修改内存中的元数据并追加到Edits中，一旦NameNode节点断电，可以通过FsImage和Edits的合并，合成元数据  </p>
+<h3 id="HDFS副本节点选择"><a href="#HDFS副本节点选择" class="headerlink" title="HDFS副本节点选择"></a>HDFS副本节点选择</h3><p><img src="/2023/08/06/hadoop/8.png" alt="HDFS副本节点选择">       </p>
+<h3 id="HDFS读数据流程"><a href="#HDFS读数据流程" class="headerlink" title="HDFS读数据流程"></a>HDFS读数据流程</h3><p><img src="/2023/08/06/hadoop/9.png" alt="HDFS读数据流程">    </p>
+<h1 id="NN和2NN工作机制"><a href="#NN和2NN工作机制" class="headerlink" title="NN和2NN工作机制"></a>NN和2NN工作机制</h1><p>NameNode中的元数据是存储在内存中，在内存上维护一个Edits文件，磁盘上维护一个FsImage文件，每当元数据有更新或者添加元数据时，修改内存中的元数据并追加到Edits中，一旦NameNode节点断电，可以通过FsImage和Edits的合并，合成元数据  </p>
 <p>需要定期进行FsImage和Edits的合并，由SecondaryNamenode完成，专门负责FsImage和Edits的合并  </p>
-<p>##NameNode工作机制  </p>
-<p><img src="/2023/08/06/hadoop/10.png" alt="NameNode工作机制">    </p>
-<p>##NameNode故障处理  </p>
-<p>方法一：将SecondaryNameNode中数据拷贝到NameNode存储数据的目录    </p>
+<h2 id="NameNode工作机制"><a href="#NameNode工作机制" class="headerlink" title="NameNode工作机制"></a>NameNode工作机制</h2><p><img src="/2023/08/06/hadoop/10.png" alt="NameNode工作机制">    </p>
+<h2 id="NameNode故障处理"><a href="#NameNode故障处理" class="headerlink" title="NameNode故障处理"></a>NameNode故障处理</h2><p>方法一：将SecondaryNameNode中数据拷贝到NameNode存储数据的目录    </p>
 <p>方法二：使用-importCheckpoint选项启动NameNode守护进程，从而将SecondaryNameNode中数据拷贝到NameNode目录中  </p>
 <p><img src="/2023/08/06/hadoop/11.png" alt="集群安全模式">    </p>
 <p>（1）bin&#x2F;hdfs dfsadmin -safemode get		（功能描述：查看安全模式状态）  </p>
 <p>（2）bin&#x2F;hdfs dfsadmin -safemode enter  	（功能描述：进入安全模式状态）  </p>
 <p>（3）bin&#x2F;hdfs dfsadmin -safemode leave	（功能描述：离开安全模式状态）  </p>
 <p>（4）bin&#x2F;hdfs dfsadmin -safemode wait	（功能描述：等待安全模式状态）  </p>
-<p>##DataNode工作机制   </p>
-<p><img src="/2023/08/06/hadoop/12.png" alt="DataNode工作机制">   </p>
-<p>###DataNode如何保证数据完整性？    </p>
-<p>1）当DataNode读取Block的时候，它会计算CheckSum。  </p>
+<h2 id="DataNode工作机制"><a href="#DataNode工作机制" class="headerlink" title="DataNode工作机制"></a>DataNode工作机制</h2><p><img src="/2023/08/06/hadoop/12.png" alt="DataNode工作机制">   </p>
+<h3 id="DataNode如何保证数据完整性？"><a href="#DataNode如何保证数据完整性？" class="headerlink" title="DataNode如何保证数据完整性？"></a>DataNode如何保证数据完整性？</h3><p>1）当DataNode读取Block的时候，它会计算CheckSum。  </p>
 <p>2）如果计算后的CheckSum，与Block创建时值不一样，说明Block已经损坏。  </p>
 <p>3）Client读取其他DataNode上的Block。  </p>
 <p>4）DataNode在其文件创建后周期验证CheckSum    </p>
 <p><img src="/2023/08/06/hadoop/13.png" alt="DataNode数据完整性">    </p>
 <p>HDFS中默认DataNode掉线的超时时长为10分钟+30秒    </p>
-<p>###DataNode配置多目录  </p>
-<p>DataNode也可以配置成多个目录，每个目录存储的数据不一样。即：数据不是副本   </p>
+<h3 id="DataNode配置多目录"><a href="#DataNode配置多目录" class="headerlink" title="DataNode配置多目录"></a>DataNode配置多目录</h3><p>DataNode也可以配置成多个目录，每个目录存储的数据不一样。即：数据不是副本   </p>
 <p>hdfs-site.xml  </p>
 <pre><code>&lt;property&gt;
     &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
     &lt;value&gt;file:///$&#123;hadoop.tmp.dir&#125;/dfs/data1,file:///$&#123;hadoop.tmp.dir&#125;/dfs/data2&lt;/value&gt;
 &lt;/property&gt;
 </code></pre>
-<p>##HDFS-HA故障转移机制  </p>
-<p><img src="/2023/08/06/hadoop/14.png" alt="HDFS-HA故障转移机制">   </p>
-<p>#YARN架构概述  </p>
-<p><img src="/2023/08/06/hadoop/2.png" alt="YARN架构概述">    </p>
+<h2 id="HDFS-HA故障转移机制"><a href="#HDFS-HA故障转移机制" class="headerlink" title="HDFS-HA故障转移机制"></a>HDFS-HA故障转移机制</h2><p><img src="/2023/08/06/hadoop/14.png" alt="HDFS-HA故障转移机制">   </p>
+<h1 id="YARN架构概述"><a href="#YARN架构概述" class="headerlink" title="YARN架构概述"></a>YARN架构概述</h1><p><img src="/2023/08/06/hadoop/2.png" alt="YARN架构概述">    </p>
 <p>Yarn是一个资源调度平台，负责为运算程序提供服务器运算资源，相当于一个分布式的操作系统平台，而MapReduce等运算程序则相当于运行于操作系统之上的应用程序  </p>
 <p>YARN主要由ResourceManager、NodeManager、ApplicationMaster和Container等组件构成</p>
-<p>###Yarn工作机制  </p>
-<p><img src="/2023/08/06/hadoop/25.png" alt="Yarn工作机制">    </p>
+<h2 id="Yarn工作机制"><a href="#Yarn工作机制" class="headerlink" title="Yarn工作机制"></a>Yarn工作机制</h2><p><img src="/2023/08/06/hadoop/25.png" alt="Yarn工作机制">    </p>
 <p>工作机制详解  </p>
 <pre><code>（1）MR程序提交到客户端所在的节点。  
 （2）YarnRunner向ResourceManager申请一个Application。  
@@ -376,65 +367,46 @@
 （15）程序运行完毕后，MR会向RM申请注销自己
 </code></pre>
 <p>总结：程序提交之后，找RM申请Application,告知运行程序需要的资源。RM生成一个资源分配Task任务放进yarn队列。这个Task会随机分配给Nodemanager，NodeManager领取任务后会根据资源要求创建Container容器，开始运行程序，运行完毕后向RM报告，注销资源占用和Task任务。  </p>
-<p>###资源调度器  </p>
-<p>1.先进先出调度器（FIFO）  </p>
+<h3 id="资源调度器"><a href="#资源调度器" class="headerlink" title="资源调度器"></a>资源调度器</h3><p>1.先进先出调度器（FIFO）  </p>
 <p>2.容量调度器（Capacity Scheduler）  </p>
 <p>3．公平调度器（Fair Scheduler）  </p>
-<p>#MapReduce架构概述  </p>
-<p><img src="/2023/08/06/hadoop/3.png" alt="MapReduce架构概述">     </p>
-<p>###MapReduce核心思想  </p>
-<p><img src="/2023/08/06/hadoop/15.png" alt="MapReduce核心思想">   </p>
+<h1 id="MapReduce架构概述"><a href="#MapReduce架构概述" class="headerlink" title="MapReduce架构概述"></a>MapReduce架构概述</h1><p><img src="/2023/08/06/hadoop/3.png" alt="MapReduce架构概述">     </p>
+<h2 id="MapReduce核心思想"><a href="#MapReduce核心思想" class="headerlink" title="MapReduce核心思想"></a>MapReduce核心思想</h2><p><img src="/2023/08/06/hadoop/15.png" alt="MapReduce核心思想">   </p>
 <p>MapReduce编程模型只能包含一个Map阶段和一个Reduce阶段，如果用户的业务逻辑非常复杂，那就只能多个MapReduce程序，串行运行  </p>
-<p>###MapTask并行度决定机制  </p>
-<p>数据块：Block是HDFS物理上把数据分成一块一块。  </p>
+<h3 id="MapTask并行度决定机制"><a href="#MapTask并行度决定机制" class="headerlink" title="MapTask并行度决定机制"></a>MapTask并行度决定机制</h3><p>数据块：Block是HDFS物理上把数据分成一块一块。  </p>
 <p>数据切片：数据切片只是在逻辑上对输入进行分片，并不会在磁盘上将其切分成片进行存储  </p>
 <p><img src="/2023/08/06/hadoop/16.png" alt="MapTask并行度决定机制">  </p>
-<p>##MapReduce工作流程  </p>
-<p><img src="/2023/08/06/hadoop/17.png" alt="MapReduce工作流程">  </p>
+<h2 id="MapReduce工作流程"><a href="#MapReduce工作流程" class="headerlink" title="MapReduce工作流程"></a>MapReduce工作流程</h2><p><img src="/2023/08/06/hadoop/17.png" alt="MapReduce工作流程">  </p>
 <p><img src="/2023/08/06/hadoop/18.png" alt="MapReduce工作流程">  </p>
 <p>Shuffle中的缓冲区大小会影响到MapReduce程序的执行效率，原则上说，缓冲区越大，磁盘io的次数越少，执行速度就越快,默认100M   </p>
-<p>##Shuffle机制  </p>
-<p><img src="/2023/08/06/hadoop/19.png" alt="Shuffle机制">    </p>
-<p>##MapTask工作机制  </p>
-<p><img src="/2023/08/06/hadoop/20.png" alt="MapTask工作机制">    </p>
-<p>##ReduceTask工作机制</p>
-<p><img src="/2023/08/06/hadoop/21.png" alt="ReduceTask工作机制">  </p>
+<h2 id="Shuffle机制"><a href="#Shuffle机制" class="headerlink" title="Shuffle机制"></a>Shuffle机制</h2><p><img src="/2023/08/06/hadoop/19.png" alt="Shuffle机制">    </p>
+<h2 id="MapTask工作机制"><a href="#MapTask工作机制" class="headerlink" title="MapTask工作机制"></a>MapTask工作机制</h2><p><img src="/2023/08/06/hadoop/20.png" alt="MapTask工作机制">    </p>
+<h2 id="ReduceTask工作机制"><a href="#ReduceTask工作机制" class="headerlink" title="ReduceTask工作机制"></a>ReduceTask工作机制</h2><p><img src="/2023/08/06/hadoop/21.png" alt="ReduceTask工作机制">  </p>
 <p>ReduceTask的并行度同样影响整个Job的执行并发度和执行效率，但与MapTask的并发数由切片数决定不同，ReduceTask数量的决定是可以直接手动设置  </p>
-<p>#Hadoop文件压缩    </p>
-<p><img src="/2023/08/06/hadoop/22.png" alt="Hadoop文件压缩">  </p>
-<p>###Hadoop文件压缩性能比较  </p>
-<p><img src="/2023/08/06/hadoop/23.png" alt="Hadoop文件压缩性能比较">  </p>
+<h1 id="Hadoop文件压缩"><a href="#Hadoop文件压缩" class="headerlink" title="Hadoop文件压缩"></a>Hadoop文件压缩</h1><p><img src="/2023/08/06/hadoop/22.png" alt="Hadoop文件压缩">  </p>
+<h3 id="Hadoop文件压缩性能比较"><a href="#Hadoop文件压缩性能比较" class="headerlink" title="Hadoop文件压缩性能比较"></a>Hadoop文件压缩性能比较</h3><p><img src="/2023/08/06/hadoop/23.png" alt="Hadoop文件压缩性能比较">  </p>
 <p>Gzip压缩：每个文件压缩后都在130M以内的（一个块大小内），都可以考虑Gzip压缩格式  ，不支持Split  </p>
 <p>Bzip压缩：支持Split，压缩率很高，但压缩&#x2F;解压缩 速度慢  </p>
 <p>LZO压缩：支持Split，合理的压缩率，是Hadoop中最流行的压缩格式    </p>
 <p>Snappy压缩：不支持Split，压缩率比Gzip低，但Hadoop本身不支持，需要安装  </p>
-<p>###压缩位置选择  </p>
-<p><img src="/2023/08/06/hadoop/24.png" alt="压缩位置选择">   </p>
+<h3 id="压缩位置选择"><a href="#压缩位置选择" class="headerlink" title="压缩位置选择"></a>压缩位置选择</h3><p><img src="/2023/08/06/hadoop/24.png" alt="压缩位置选择">   </p>
 <p>压缩可以在MapReduce作用的任意阶段启用    </p>
 <p>速度是最优先考虑的因素，而不是压缩率  </p>
-<p>#ZooKeeper    </p>
-<p>是一个针对大型分布式系统的可靠协调系统，提供的功能包括：配置维护、名字服务、 分布式同步、组服务等。   </p>
+<h1 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h1><p>是一个针对大型分布式系统的可靠协调系统，提供的功能包括：配置维护、名字服务、 分布式同步、组服务等。   </p>
 <p>ZooKeeper的目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功 能稳定的系统提供给用户    </p>
-<p>##Zookeeper工作机制  </p>
-<p><img src="/2023/08/06/hadoop/26.png" alt="Zookeeper工作机制">  </p>
-<p>###Zookeeper特点    </p>
-<p><img src="/2023/08/06/hadoop/27.png" alt="Zookeeper特点">    </p>
-<p>###Zookeeper的数据结构  </p>
-<p><img src="/2023/08/06/hadoop/28.png" alt="Zookeeper的数据结构">    </p>
-<p>###软负载均衡  </p>
-<p>在Zookeeper中记录每台服务器的访问数，让访问数最少的服务器去处理最新的客户端请求  </p>
-<p>##选举机制（面试重点）   </p>
-<p><img src="/2023/08/06/hadoop/29.png" alt="Zookeeper选举机制-第一次启动">    </p>
+<h2 id="Zookeeper工作机制"><a href="#Zookeeper工作机制" class="headerlink" title="Zookeeper工作机制"></a>Zookeeper工作机制</h2><p><img src="/2023/08/06/hadoop/26.png" alt="Zookeeper工作机制">  </p>
+<h3 id="Zookeeper特点"><a href="#Zookeeper特点" class="headerlink" title="Zookeeper特点"></a>Zookeeper特点</h3><p><img src="/2023/08/06/hadoop/27.png" alt="Zookeeper特点">    </p>
+<h3 id="Zookeeper的数据结构"><a href="#Zookeeper的数据结构" class="headerlink" title="Zookeeper的数据结构"></a>Zookeeper的数据结构</h3><p><img src="/2023/08/06/hadoop/28.png" alt="Zookeeper的数据结构">    </p>
+<h3 id="软负载均衡"><a href="#软负载均衡" class="headerlink" title="软负载均衡"></a>软负载均衡</h3><p>在Zookeeper中记录每台服务器的访问数，让访问数最少的服务器去处理最新的客户端请求  </p>
+<h2 id="选举机制（面试重点）"><a href="#选举机制（面试重点）" class="headerlink" title="选举机制（面试重点）"></a>选举机制（面试重点）</h2><p><img src="/2023/08/06/hadoop/29.png" alt="Zookeeper选举机制-第一次启动">    </p>
 <p><img src="/2023/08/06/hadoop/30.png" alt="Zookeeper选举机制-非第一次启动">   </p>
-<p>###客户端命令行操作 </p>
-<p>1）启动客户端    </p>
+<h3 id="客户端命令行操作"><a href="#客户端命令行操作" class="headerlink" title="客户端命令行操作"></a>客户端命令行操作</h3><p>1）启动客户端    </p>
 <pre><code>[atguigu@hadoop102 zookeeper-3.5.7]$ bin/zkCli.sh -server hadoop102:2181
 </code></pre>
 <p>2）显示所有操作命令  </p>
 <pre><code>[zk: hadoop102:2181(CONNECTED) 1] help  
 </code></pre>
-<p>####znode 节点数据信息  </p>
-<p>1）查看当前znode中所包含的内容   </p>
+<h4 id="znode-节点数据信息"><a href="#znode-节点数据信息" class="headerlink" title="znode 节点数据信息"></a>znode 节点数据信息</h4><p>1）查看当前znode中所包含的内容   </p>
 <pre><code>[zk: hadoop102:2181(CONNECTED) 0] ls /  
 </code></pre>
 <p>2）查看当前节点详细数据  </p>
@@ -463,8 +435,7 @@ numChildren = 1
 <p>（9）ephemeralOwner：如果是临时节点，这个是 znode 拥有者的 session id。如果不是临时节点则是 0。  </p>
 <p>（10）dataLength：znode 的数据长度  </p>
 <p>（11）numChildren：znode 子节点数量  </p>
-<p>####节点类型（持久&#x2F;短暂&#x2F;有序号&#x2F;无序号）  </p>
-<p><img src="/2023/08/06/hadoop/31.png" alt="Zookeeper节点类型">   </p>
+<h4 id="节点类型（持久-短暂-有序号-无序号）"><a href="#节点类型（持久-短暂-有序号-无序号）" class="headerlink" title="节点类型（持久&#x2F;短暂&#x2F;有序号&#x2F;无序号）"></a>节点类型（持久&#x2F;短暂&#x2F;有序号&#x2F;无序号）</h4><p><img src="/2023/08/06/hadoop/31.png" alt="Zookeeper节点类型">   </p>
 <p>1）分别创建2个普通节点（永久节点 + 不带序号）   </p>
 <pre><code>[zk: localhost:2181(CONNECTED) 3] create /sanguo &quot;diaochan&quot; 
 注意：创建节点时，要赋值  
@@ -493,11 +464,9 @@ numChildren = 1
 <p>（4）修改节点数据值   </p>
 <pre><code>[zk: localhost:2181(CONNECTED) 6] set /sanguo/weiguo &quot;simayi&quot;  
 </code></pre>
-<p>##监听器原理      </p>
-<p>监听机制保证 ZooKeeper 保存的任何的数据的任何改变都能快速的响应到监听了该节点的应用程序。  </p>
+<h2 id="监听器原理"><a href="#监听器原理" class="headerlink" title="监听器原理"></a>监听器原理</h2><p>监听机制保证 ZooKeeper 保存的任何的数据的任何改变都能快速的响应到监听了该节点的应用程序。  </p>
 <p><img src="/2023/08/06/hadoop/32.png" alt="监听器原理">      </p>
-<p>####节点删除与查看    </p>
-<p>1）删除节点  </p>
+<h4 id="节点删除与查看"><a href="#节点删除与查看" class="headerlink" title="节点删除与查看"></a>节点删除与查看</h4><p>1）删除节点  </p>
 <pre><code>[zk: localhost:2181(CONNECTED) 4] delete /sanguo/jin
 </code></pre>
 <p>2）递归删除节点  </p>
@@ -506,14 +475,10 @@ numChildren = 1
 <p>3）查看节点状态  </p>
 <pre><code>[zk: localhost:2181(CONNECTED) 17] stat /sanguo
 </code></pre>
-<p>####客户端向服务端写数据流程  </p>
-<p><img src="/2023/08/06/hadoop/33.png" alt="客户端向服务端写数据流程">  </p>
-<p>##ZooKeeper 分布式锁    </p>
-<p>“进程1” 在使用该资源的时候，会先去获得锁，保持独占，这样其他进程就无法访问该资源,用完该资源以后就将锁释放掉,保证了分布式系统中多个进程能够有序的访问该临界资源。  </p>
+<h4 id="客户端向服务端写数据流程"><a href="#客户端向服务端写数据流程" class="headerlink" title="客户端向服务端写数据流程"></a>客户端向服务端写数据流程</h4><p><img src="/2023/08/06/hadoop/33.png" alt="客户端向服务端写数据流程">  </p>
+<h2 id="ZooKeeper-分布式锁"><a href="#ZooKeeper-分布式锁" class="headerlink" title="ZooKeeper 分布式锁"></a>ZooKeeper 分布式锁</h2><p>“进程1” 在使用该资源的时候，会先去获得锁，保持独占，这样其他进程就无法访问该资源,用完该资源以后就将锁释放掉,保证了分布式系统中多个进程能够有序的访问该临界资源。  </p>
 <p><img src="/2023/08/06/hadoop/34.png" alt="Zookeeper分布式锁">      </p>
-<p>##Zookeeper企业面试真题（面试重点）总结    </p>
-<p>###选举机制  </p>
-<p>半数机制，超过半数的投票通过，即通过。  </p>
+<h2 id="Zookeeper企业面试真题（面试重点）总结"><a href="#Zookeeper企业面试真题（面试重点）总结" class="headerlink" title="Zookeeper企业面试真题（面试重点）总结"></a>Zookeeper企业面试真题（面试重点）总结</h2><h3 id="选举机制"><a href="#选举机制" class="headerlink" title="选举机制"></a>选举机制</h3><p>半数机制，超过半数的投票通过，即通过。  </p>
 <p>（1）第一次启动选举规则：  </p>
 <pre><code>投票过半数时，服务器 id 大的胜出  
 </code></pre>
@@ -665,6 +630,7 @@ numChildren = 1
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8D%9A%E8%A7%82%E8%80%8C%E7%BA%A6%E5%8F%96%EF%BC%8C%E5%8E%9A%E7%A7%AF%E8%80%8C%E8%96%84%E5%8F%91"><span class="nav-number">1.</span> <span class="nav-text">博观而约取，厚积而薄发</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">免密登录原理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HDFS%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0"><span class="nav-number">3.</span> <span class="nav-text">HDFS架构概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HDFS%E5%86%99%E6%95%B0%E6%8D%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">3.0.1.</span> <span class="nav-text">HDFS写数据流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HDFS%E5%89%AF%E6%9C%AC%E8%8A%82%E7%82%B9%E9%80%89%E6%8B%A9"><span class="nav-number">3.0.2.</span> <span class="nav-text">HDFS副本节点选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HDFS%E8%AF%BB%E6%95%B0%E6%8D%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">3.0.3.</span> <span class="nav-text">HDFS读数据流程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NN%E5%92%8C2NN%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">4.</span> <span class="nav-text">NN和2NN工作机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NameNode%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">4.1.</span> <span class="nav-text">NameNode工作机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NameNode%E6%95%85%E9%9A%9C%E5%A4%84%E7%90%86"><span class="nav-number">4.2.</span> <span class="nav-text">NameNode故障处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataNode%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">4.3.</span> <span class="nav-text">DataNode工作机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DataNode%E5%A6%82%E4%BD%95%E4%BF%9D%E8%AF%81%E6%95%B0%E6%8D%AE%E5%AE%8C%E6%95%B4%E6%80%A7%EF%BC%9F"><span class="nav-number">4.3.1.</span> <span class="nav-text">DataNode如何保证数据完整性？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DataNode%E9%85%8D%E7%BD%AE%E5%A4%9A%E7%9B%AE%E5%BD%95"><span class="nav-number">4.3.2.</span> <span class="nav-text">DataNode配置多目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDFS-HA%E6%95%85%E9%9A%9C%E8%BD%AC%E7%A7%BB%E6%9C%BA%E5%88%B6"><span class="nav-number">4.4.</span> <span class="nav-text">HDFS-HA故障转移机制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#YARN%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0"><span class="nav-number">5.</span> <span class="nav-text">YARN架构概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Yarn%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">5.1.</span> <span class="nav-text">Yarn工作机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E8%B0%83%E5%BA%A6%E5%99%A8"><span class="nav-number">5.1.1.</span> <span class="nav-text">资源调度器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MapReduce%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0"><span class="nav-number">6.</span> <span class="nav-text">MapReduce架构概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="nav-number">6.1.</span> <span class="nav-text">MapReduce核心思想</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MapTask%E5%B9%B6%E8%A1%8C%E5%BA%A6%E5%86%B3%E5%AE%9A%E6%9C%BA%E5%88%B6"><span class="nav-number">6.1.1.</span> <span class="nav-text">MapTask并行度决定机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">6.2.</span> <span class="nav-text">MapReduce工作流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shuffle%E6%9C%BA%E5%88%B6"><span class="nav-number">6.3.</span> <span class="nav-text">Shuffle机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MapTask%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">6.4.</span> <span class="nav-text">MapTask工作机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ReduceTask%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">6.5.</span> <span class="nav-text">ReduceTask工作机制</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hadoop%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9"><span class="nav-number">7.</span> <span class="nav-text">Hadoop文件压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop%E6%96%87%E4%BB%B6%E5%8E%8B%E7%BC%A9%E6%80%A7%E8%83%BD%E6%AF%94%E8%BE%83"><span class="nav-number">7.0.1.</span> <span class="nav-text">Hadoop文件压缩性能比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E4%BD%8D%E7%BD%AE%E9%80%89%E6%8B%A9"><span class="nav-number">7.0.2.</span> <span class="nav-text">压缩位置选择</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ZooKeeper"><span class="nav-number">8.</span> <span class="nav-text">ZooKeeper</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6"><span class="nav-number">8.1.</span> <span class="nav-text">Zookeeper工作机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Zookeeper%E7%89%B9%E7%82%B9"><span class="nav-number">8.1.1.</span> <span class="nav-text">Zookeeper特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Zookeeper%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">8.1.2.</span> <span class="nav-text">Zookeeper的数据结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="nav-number">8.1.3.</span> <span class="nav-text">软负载均衡</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%89%E4%B8%BE%E6%9C%BA%E5%88%B6%EF%BC%88%E9%9D%A2%E8%AF%95%E9%87%8D%E7%82%B9%EF%BC%89"><span class="nav-number">8.2.</span> <span class="nav-text">选举机制（面试重点）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%93%8D%E4%BD%9C"><span class="nav-number">8.2.1.</span> <span class="nav-text">客户端命令行操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#znode-%E8%8A%82%E7%82%B9%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF"><span class="nav-number">8.2.1.1.</span> <span class="nav-text">znode 节点数据信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E7%B1%BB%E5%9E%8B%EF%BC%88%E6%8C%81%E4%B9%85-%E7%9F%AD%E6%9A%82-%E6%9C%89%E5%BA%8F%E5%8F%B7-%E6%97%A0%E5%BA%8F%E5%8F%B7%EF%BC%89"><span class="nav-number">8.2.1.2.</span> <span class="nav-text">节点类型（持久&#x2F;短暂&#x2F;有序号&#x2F;无序号）</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E5%90%AC%E5%99%A8%E5%8E%9F%E7%90%86"><span class="nav-number">8.3.</span> <span class="nav-text">监听器原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%88%A0%E9%99%A4%E4%B8%8E%E6%9F%A5%E7%9C%8B"><span class="nav-number">8.3.0.1.</span> <span class="nav-text">节点删除与查看</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%90%91%E6%9C%8D%E5%8A%A1%E7%AB%AF%E5%86%99%E6%95%B0%E6%8D%AE%E6%B5%81%E7%A8%8B"><span class="nav-number">8.3.0.2.</span> <span class="nav-text">客户端向服务端写数据流程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ZooKeeper-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81"><span class="nav-number">8.4.</span> <span class="nav-text">ZooKeeper 分布式锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Zookeeper%E4%BC%81%E4%B8%9A%E9%9D%A2%E8%AF%95%E7%9C%9F%E9%A2%98%EF%BC%88%E9%9D%A2%E8%AF%95%E9%87%8D%E7%82%B9%EF%BC%89%E6%80%BB%E7%BB%93"><span class="nav-number">8.5.</span> <span class="nav-text">Zookeeper企业面试真题（面试重点）总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%89%E4%B8%BE%E6%9C%BA%E5%88%B6"><span class="nav-number">8.5.1.</span> <span class="nav-text">选举机制</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -687,7 +653,7 @@ numChildren = 1
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

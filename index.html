@@ -247,7 +247,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-09 12:18:18" itemprop="dateModified" datetime="2023-08-09T12:18:18+08:00">2023-08-09</time>
+                <time title="修改时间：2023-08-11 13:02:31" itemprop="dateModified" datetime="2023-08-11T13:02:31+08:00">2023-08-11</time>
               </span>
 
           
@@ -261,16 +261,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>#君子藏器于身，待时而动   </p>
-<p>##线性结构和非线性结构    </p>
-<p>###线性结构  </p>
-<p>线性结构作为最常用的数据结构，其特点是数据元素之间存在一对一的线性关系  </p>
+          <h1 id="君子藏器于身，待时而动"><a href="#君子藏器于身，待时而动" class="headerlink" title="君子藏器于身，待时而动"></a>君子藏器于身，待时而动</h1><h2 id="线性结构和非线性结构"><a href="#线性结构和非线性结构" class="headerlink" title="线性结构和非线性结构"></a>线性结构和非线性结构</h2><h3 id="线性结构"><a href="#线性结构" class="headerlink" title="线性结构"></a>线性结构</h3><p>线性结构作为最常用的数据结构，其特点是数据元素之间存在一对一的线性关系  </p>
 <p>线性结构有两种不同的存储结构，即顺序存储结构和链式存储结构。顺序存储的线性表称为顺序表，顺序表中的存储元素是连续的  </p>
 <p>链式存储的线性表称为链表，链表中的存储元素不一定是连续的，元素节点中存放数据元素以及相邻元素的地址信息  </p>
 <p>线性结构常见的有：数组、队列、链表和栈，后面我们会详细讲解   </p>
 <p>非线性结构包括：二维数组，多维数组，广义表，树结构，图结构  </p>
-<p>#稀疏数组  </p>
-<p>当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。  </p>
+<h1 id="稀疏数组"><a href="#稀疏数组" class="headerlink" title="稀疏数组"></a>稀疏数组</h1><p>当一个数组中大部分元素为０，或者为同一个值的数组时，可以使用稀疏数组来保存该数组。  </p>
 <p>稀疏数组的处理方法是:  </p>
 <p>记录数组一共有几行几列，有多少个不同的值  </p>
 <p>把具有不同值的元素的行列及值记录在一个小规模的数组中，从而缩小程序的规模  </p>
@@ -407,11 +403,9 @@ public class SparseArray &#123;
 0	0	0	0	0	0	0	0	0	0	0	
 0	0	0	0	0	0	0	0	0	0	0	
 </code></pre>
-<p>#队列  </p>
-<p>队列是一个有序列表，可以用数组或者链表来实现。遵循先进先出原则（FIFO）</p>
+<h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p>队列是一个有序列表，可以用数组或者链表来实现。遵循先进先出原则（FIFO）</p>
 <p><img src="/2023/08/07/Java_datastrcut/3.png" alt="数组模拟队列">  </p>
-<p>##数组模拟队列  </p>
-<pre><code>package com.zyy;
+<h2 id="数组模拟队列"><a href="#数组模拟队列" class="headerlink" title="数组模拟队列"></a>数组模拟队列</h2><pre><code>package com.zyy;
 import java.util.Scanner;
 
 public class ArrayQueueDemo &#123;
@@ -542,10 +536,8 @@ static class ArrayQueue&#123;
 
 &#125;
 </code></pre>
-<p>###使用数组模拟队列存在的问题：  </p>
-<p>数组只能使用一次，因为front和rear指针无法再回头指向已经走过的数组位置  </p>
-<p>###优化方案：</p>
-<p>通过取模运算，让front和rear指针能循环指向已经走过的数组位置，让数组复用  </p>
+<h3 id="使用数组模拟队列存在的问题："><a href="#使用数组模拟队列存在的问题：" class="headerlink" title="使用数组模拟队列存在的问题："></a>使用数组模拟队列存在的问题：</h3><p>数组只能使用一次，因为front和rear指针无法再回头指向已经走过的数组位置  </p>
+<h3 id="优化方案："><a href="#优化方案：" class="headerlink" title="优化方案："></a>优化方案：</h3><p>通过取模运算，让front和rear指针能循环指向已经走过的数组位置，让数组复用  </p>
 <p>分析说明:  </p>
 <p>1):尾索引的下一个为头索引时表示队列满，即将队列容量空出一个作为约定，这个在做判断队列满的时候需要注意（rear+1）%maxSize &#x3D;&#x3D; front 满</p>
 <p>2):rear &#x3D;&#x3D; front(空)</p>
@@ -597,10 +589,16 @@ static class ArrayQueue&#123;
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-08-06 10:45:20 / 修改时间：17:55:19" itemprop="dateCreated datePublished" datetime="2023-08-06T10:45:20+08:00">2023-08-06</time>
+              <time title="创建时间：2023-08-06 10:45:20" itemprop="dateCreated datePublished" datetime="2023-08-06T10:45:20+08:00">2023-08-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-11 13:09:37" itemprop="dateModified" datetime="2023-08-11T13:09:37+08:00">2023-08-11</time>
+              </span>
 
           
 
@@ -613,12 +611,9 @@ static class ArrayQueue&#123;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>#博观而约取，厚积而薄发     </p>
-<p>相关学习文档<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1WLK6GP99XAgJcX3FtrqjhA">https://pan.baidu.com/s/1WLK6GP99XAgJcX3FtrqjhA</a><br>提取码：mvcs   </p>
-<p>#免密登录原理   </p>
-<p><img src="/2023/08/06/hadoop/4.png" alt="免密登录原理">    </p>
-<p>#HDFS架构概述  </p>
-<p><img src="/2023/08/06/hadoop/1.png" alt="HDFS架构概述">  </p>
+          <h1 id="博观而约取，厚积而薄发"><a href="#博观而约取，厚积而薄发" class="headerlink" title="博观而约取，厚积而薄发"></a>博观而约取，厚积而薄发</h1><p>相关学习文档<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1WLK6GP99XAgJcX3FtrqjhA">https://pan.baidu.com/s/1WLK6GP99XAgJcX3FtrqjhA</a><br>提取码：mvcs   </p>
+<h1 id="免密登录原理"><a href="#免密登录原理" class="headerlink" title="免密登录原理"></a>免密登录原理</h1><p><img src="/2023/08/06/hadoop/4.png" alt="免密登录原理">    </p>
+<h1 id="HDFS架构概述"><a href="#HDFS架构概述" class="headerlink" title="HDFS架构概述"></a>HDFS架构概述</h1><p><img src="/2023/08/06/hadoop/1.png" alt="HDFS架构概述">  </p>
 <p>HDFS适合一次写入，多次读出的场景，且不支持文件的修改  </p>
 <p>HDFS的缺点：仅支持数据append，不支持文件的随机修改  </p>
 <p><img src="/2023/08/06/hadoop/5.png" alt="HDFS组成架构">  </p>
@@ -626,51 +621,39 @@ static class ArrayQueue&#123;
 <p>HDFS文件块大小：在Hadoop2.x版本中是128M  </p>
 <p>寻址时间为传输时间的1%时，是最佳状态  </p>
 <p>HDFS块的大小设置主要取决于磁盘传输速率  </p>
-<p>###HDFS写数据流程  </p>
-<p><img src="/2023/08/06/hadoop/7.png" alt="HDFS写数据流程">    </p>
+<h3 id="HDFS写数据流程"><a href="#HDFS写数据流程" class="headerlink" title="HDFS写数据流程"></a>HDFS写数据流程</h3><p><img src="/2023/08/06/hadoop/7.png" alt="HDFS写数据流程">    </p>
 <p>在HDFS写数据的过程中，NameNode会选择距离待上传数据最近距离的DataNode接收数据    </p>
-<p>###HDFS副本节点选择  </p>
-<p><img src="/2023/08/06/hadoop/8.png" alt="HDFS副本节点选择">       </p>
-<p>###HDFS读数据流程  </p>
-<p><img src="/2023/08/06/hadoop/9.png" alt="HDFS读数据流程">    </p>
-<p>#NN和2NN工作机制  </p>
-<p>NameNode中的元数据是存储在内存中，在内存上维护一个Edits文件，磁盘上维护一个FsImage文件，每当元数据有更新或者添加元数据时，修改内存中的元数据并追加到Edits中，一旦NameNode节点断电，可以通过FsImage和Edits的合并，合成元数据  </p>
+<h3 id="HDFS副本节点选择"><a href="#HDFS副本节点选择" class="headerlink" title="HDFS副本节点选择"></a>HDFS副本节点选择</h3><p><img src="/2023/08/06/hadoop/8.png" alt="HDFS副本节点选择">       </p>
+<h3 id="HDFS读数据流程"><a href="#HDFS读数据流程" class="headerlink" title="HDFS读数据流程"></a>HDFS读数据流程</h3><p><img src="/2023/08/06/hadoop/9.png" alt="HDFS读数据流程">    </p>
+<h1 id="NN和2NN工作机制"><a href="#NN和2NN工作机制" class="headerlink" title="NN和2NN工作机制"></a>NN和2NN工作机制</h1><p>NameNode中的元数据是存储在内存中，在内存上维护一个Edits文件，磁盘上维护一个FsImage文件，每当元数据有更新或者添加元数据时，修改内存中的元数据并追加到Edits中，一旦NameNode节点断电，可以通过FsImage和Edits的合并，合成元数据  </p>
 <p>需要定期进行FsImage和Edits的合并，由SecondaryNamenode完成，专门负责FsImage和Edits的合并  </p>
-<p>##NameNode工作机制  </p>
-<p><img src="/2023/08/06/hadoop/10.png" alt="NameNode工作机制">    </p>
-<p>##NameNode故障处理  </p>
-<p>方法一：将SecondaryNameNode中数据拷贝到NameNode存储数据的目录    </p>
+<h2 id="NameNode工作机制"><a href="#NameNode工作机制" class="headerlink" title="NameNode工作机制"></a>NameNode工作机制</h2><p><img src="/2023/08/06/hadoop/10.png" alt="NameNode工作机制">    </p>
+<h2 id="NameNode故障处理"><a href="#NameNode故障处理" class="headerlink" title="NameNode故障处理"></a>NameNode故障处理</h2><p>方法一：将SecondaryNameNode中数据拷贝到NameNode存储数据的目录    </p>
 <p>方法二：使用-importCheckpoint选项启动NameNode守护进程，从而将SecondaryNameNode中数据拷贝到NameNode目录中  </p>
 <p><img src="/2023/08/06/hadoop/11.png" alt="集群安全模式">    </p>
 <p>（1）bin&#x2F;hdfs dfsadmin -safemode get		（功能描述：查看安全模式状态）  </p>
 <p>（2）bin&#x2F;hdfs dfsadmin -safemode enter  	（功能描述：进入安全模式状态）  </p>
 <p>（3）bin&#x2F;hdfs dfsadmin -safemode leave	（功能描述：离开安全模式状态）  </p>
 <p>（4）bin&#x2F;hdfs dfsadmin -safemode wait	（功能描述：等待安全模式状态）  </p>
-<p>##DataNode工作机制   </p>
-<p><img src="/2023/08/06/hadoop/12.png" alt="DataNode工作机制">   </p>
-<p>###DataNode如何保证数据完整性？    </p>
-<p>1）当DataNode读取Block的时候，它会计算CheckSum。  </p>
+<h2 id="DataNode工作机制"><a href="#DataNode工作机制" class="headerlink" title="DataNode工作机制"></a>DataNode工作机制</h2><p><img src="/2023/08/06/hadoop/12.png" alt="DataNode工作机制">   </p>
+<h3 id="DataNode如何保证数据完整性？"><a href="#DataNode如何保证数据完整性？" class="headerlink" title="DataNode如何保证数据完整性？"></a>DataNode如何保证数据完整性？</h3><p>1）当DataNode读取Block的时候，它会计算CheckSum。  </p>
 <p>2）如果计算后的CheckSum，与Block创建时值不一样，说明Block已经损坏。  </p>
 <p>3）Client读取其他DataNode上的Block。  </p>
 <p>4）DataNode在其文件创建后周期验证CheckSum    </p>
 <p><img src="/2023/08/06/hadoop/13.png" alt="DataNode数据完整性">    </p>
 <p>HDFS中默认DataNode掉线的超时时长为10分钟+30秒    </p>
-<p>###DataNode配置多目录  </p>
-<p>DataNode也可以配置成多个目录，每个目录存储的数据不一样。即：数据不是副本   </p>
+<h3 id="DataNode配置多目录"><a href="#DataNode配置多目录" class="headerlink" title="DataNode配置多目录"></a>DataNode配置多目录</h3><p>DataNode也可以配置成多个目录，每个目录存储的数据不一样。即：数据不是副本   </p>
 <p>hdfs-site.xml  </p>
 <pre><code>&lt;property&gt;
     &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;
     &lt;value&gt;file:///$&#123;hadoop.tmp.dir&#125;/dfs/data1,file:///$&#123;hadoop.tmp.dir&#125;/dfs/data2&lt;/value&gt;
 &lt;/property&gt;
 </code></pre>
-<p>##HDFS-HA故障转移机制  </p>
-<p><img src="/2023/08/06/hadoop/14.png" alt="HDFS-HA故障转移机制">   </p>
-<p>#YARN架构概述  </p>
-<p><img src="/2023/08/06/hadoop/2.png" alt="YARN架构概述">    </p>
+<h2 id="HDFS-HA故障转移机制"><a href="#HDFS-HA故障转移机制" class="headerlink" title="HDFS-HA故障转移机制"></a>HDFS-HA故障转移机制</h2><p><img src="/2023/08/06/hadoop/14.png" alt="HDFS-HA故障转移机制">   </p>
+<h1 id="YARN架构概述"><a href="#YARN架构概述" class="headerlink" title="YARN架构概述"></a>YARN架构概述</h1><p><img src="/2023/08/06/hadoop/2.png" alt="YARN架构概述">    </p>
 <p>Yarn是一个资源调度平台，负责为运算程序提供服务器运算资源，相当于一个分布式的操作系统平台，而MapReduce等运算程序则相当于运行于操作系统之上的应用程序  </p>
 <p>YARN主要由ResourceManager、NodeManager、ApplicationMaster和Container等组件构成</p>
-<p>###Yarn工作机制  </p>
-<p><img src="/2023/08/06/hadoop/25.png" alt="Yarn工作机制">    </p>
+<h2 id="Yarn工作机制"><a href="#Yarn工作机制" class="headerlink" title="Yarn工作机制"></a>Yarn工作机制</h2><p><img src="/2023/08/06/hadoop/25.png" alt="Yarn工作机制">    </p>
 <p>工作机制详解  </p>
 <pre><code>（1）MR程序提交到客户端所在的节点。  
 （2）YarnRunner向ResourceManager申请一个Application。  
@@ -689,65 +672,46 @@ static class ArrayQueue&#123;
 （15）程序运行完毕后，MR会向RM申请注销自己
 </code></pre>
 <p>总结：程序提交之后，找RM申请Application,告知运行程序需要的资源。RM生成一个资源分配Task任务放进yarn队列。这个Task会随机分配给Nodemanager，NodeManager领取任务后会根据资源要求创建Container容器，开始运行程序，运行完毕后向RM报告，注销资源占用和Task任务。  </p>
-<p>###资源调度器  </p>
-<p>1.先进先出调度器（FIFO）  </p>
+<h3 id="资源调度器"><a href="#资源调度器" class="headerlink" title="资源调度器"></a>资源调度器</h3><p>1.先进先出调度器（FIFO）  </p>
 <p>2.容量调度器（Capacity Scheduler）  </p>
 <p>3．公平调度器（Fair Scheduler）  </p>
-<p>#MapReduce架构概述  </p>
-<p><img src="/2023/08/06/hadoop/3.png" alt="MapReduce架构概述">     </p>
-<p>###MapReduce核心思想  </p>
-<p><img src="/2023/08/06/hadoop/15.png" alt="MapReduce核心思想">   </p>
+<h1 id="MapReduce架构概述"><a href="#MapReduce架构概述" class="headerlink" title="MapReduce架构概述"></a>MapReduce架构概述</h1><p><img src="/2023/08/06/hadoop/3.png" alt="MapReduce架构概述">     </p>
+<h2 id="MapReduce核心思想"><a href="#MapReduce核心思想" class="headerlink" title="MapReduce核心思想"></a>MapReduce核心思想</h2><p><img src="/2023/08/06/hadoop/15.png" alt="MapReduce核心思想">   </p>
 <p>MapReduce编程模型只能包含一个Map阶段和一个Reduce阶段，如果用户的业务逻辑非常复杂，那就只能多个MapReduce程序，串行运行  </p>
-<p>###MapTask并行度决定机制  </p>
-<p>数据块：Block是HDFS物理上把数据分成一块一块。  </p>
+<h3 id="MapTask并行度决定机制"><a href="#MapTask并行度决定机制" class="headerlink" title="MapTask并行度决定机制"></a>MapTask并行度决定机制</h3><p>数据块：Block是HDFS物理上把数据分成一块一块。  </p>
 <p>数据切片：数据切片只是在逻辑上对输入进行分片，并不会在磁盘上将其切分成片进行存储  </p>
 <p><img src="/2023/08/06/hadoop/16.png" alt="MapTask并行度决定机制">  </p>
-<p>##MapReduce工作流程  </p>
-<p><img src="/2023/08/06/hadoop/17.png" alt="MapReduce工作流程">  </p>
+<h2 id="MapReduce工作流程"><a href="#MapReduce工作流程" class="headerlink" title="MapReduce工作流程"></a>MapReduce工作流程</h2><p><img src="/2023/08/06/hadoop/17.png" alt="MapReduce工作流程">  </p>
 <p><img src="/2023/08/06/hadoop/18.png" alt="MapReduce工作流程">  </p>
 <p>Shuffle中的缓冲区大小会影响到MapReduce程序的执行效率，原则上说，缓冲区越大，磁盘io的次数越少，执行速度就越快,默认100M   </p>
-<p>##Shuffle机制  </p>
-<p><img src="/2023/08/06/hadoop/19.png" alt="Shuffle机制">    </p>
-<p>##MapTask工作机制  </p>
-<p><img src="/2023/08/06/hadoop/20.png" alt="MapTask工作机制">    </p>
-<p>##ReduceTask工作机制</p>
-<p><img src="/2023/08/06/hadoop/21.png" alt="ReduceTask工作机制">  </p>
+<h2 id="Shuffle机制"><a href="#Shuffle机制" class="headerlink" title="Shuffle机制"></a>Shuffle机制</h2><p><img src="/2023/08/06/hadoop/19.png" alt="Shuffle机制">    </p>
+<h2 id="MapTask工作机制"><a href="#MapTask工作机制" class="headerlink" title="MapTask工作机制"></a>MapTask工作机制</h2><p><img src="/2023/08/06/hadoop/20.png" alt="MapTask工作机制">    </p>
+<h2 id="ReduceTask工作机制"><a href="#ReduceTask工作机制" class="headerlink" title="ReduceTask工作机制"></a>ReduceTask工作机制</h2><p><img src="/2023/08/06/hadoop/21.png" alt="ReduceTask工作机制">  </p>
 <p>ReduceTask的并行度同样影响整个Job的执行并发度和执行效率，但与MapTask的并发数由切片数决定不同，ReduceTask数量的决定是可以直接手动设置  </p>
-<p>#Hadoop文件压缩    </p>
-<p><img src="/2023/08/06/hadoop/22.png" alt="Hadoop文件压缩">  </p>
-<p>###Hadoop文件压缩性能比较  </p>
-<p><img src="/2023/08/06/hadoop/23.png" alt="Hadoop文件压缩性能比较">  </p>
+<h1 id="Hadoop文件压缩"><a href="#Hadoop文件压缩" class="headerlink" title="Hadoop文件压缩"></a>Hadoop文件压缩</h1><p><img src="/2023/08/06/hadoop/22.png" alt="Hadoop文件压缩">  </p>
+<h3 id="Hadoop文件压缩性能比较"><a href="#Hadoop文件压缩性能比较" class="headerlink" title="Hadoop文件压缩性能比较"></a>Hadoop文件压缩性能比较</h3><p><img src="/2023/08/06/hadoop/23.png" alt="Hadoop文件压缩性能比较">  </p>
 <p>Gzip压缩：每个文件压缩后都在130M以内的（一个块大小内），都可以考虑Gzip压缩格式  ，不支持Split  </p>
 <p>Bzip压缩：支持Split，压缩率很高，但压缩&#x2F;解压缩 速度慢  </p>
 <p>LZO压缩：支持Split，合理的压缩率，是Hadoop中最流行的压缩格式    </p>
 <p>Snappy压缩：不支持Split，压缩率比Gzip低，但Hadoop本身不支持，需要安装  </p>
-<p>###压缩位置选择  </p>
-<p><img src="/2023/08/06/hadoop/24.png" alt="压缩位置选择">   </p>
+<h3 id="压缩位置选择"><a href="#压缩位置选择" class="headerlink" title="压缩位置选择"></a>压缩位置选择</h3><p><img src="/2023/08/06/hadoop/24.png" alt="压缩位置选择">   </p>
 <p>压缩可以在MapReduce作用的任意阶段启用    </p>
 <p>速度是最优先考虑的因素，而不是压缩率  </p>
-<p>#ZooKeeper    </p>
-<p>是一个针对大型分布式系统的可靠协调系统，提供的功能包括：配置维护、名字服务、 分布式同步、组服务等。   </p>
+<h1 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h1><p>是一个针对大型分布式系统的可靠协调系统，提供的功能包括：配置维护、名字服务、 分布式同步、组服务等。   </p>
 <p>ZooKeeper的目标就是封装好复杂易出错的关键服务，将简单易用的接口和性能高效、功 能稳定的系统提供给用户    </p>
-<p>##Zookeeper工作机制  </p>
-<p><img src="/2023/08/06/hadoop/26.png" alt="Zookeeper工作机制">  </p>
-<p>###Zookeeper特点    </p>
-<p><img src="/2023/08/06/hadoop/27.png" alt="Zookeeper特点">    </p>
-<p>###Zookeeper的数据结构  </p>
-<p><img src="/2023/08/06/hadoop/28.png" alt="Zookeeper的数据结构">    </p>
-<p>###软负载均衡  </p>
-<p>在Zookeeper中记录每台服务器的访问数，让访问数最少的服务器去处理最新的客户端请求  </p>
-<p>##选举机制（面试重点）   </p>
-<p><img src="/2023/08/06/hadoop/29.png" alt="Zookeeper选举机制-第一次启动">    </p>
+<h2 id="Zookeeper工作机制"><a href="#Zookeeper工作机制" class="headerlink" title="Zookeeper工作机制"></a>Zookeeper工作机制</h2><p><img src="/2023/08/06/hadoop/26.png" alt="Zookeeper工作机制">  </p>
+<h3 id="Zookeeper特点"><a href="#Zookeeper特点" class="headerlink" title="Zookeeper特点"></a>Zookeeper特点</h3><p><img src="/2023/08/06/hadoop/27.png" alt="Zookeeper特点">    </p>
+<h3 id="Zookeeper的数据结构"><a href="#Zookeeper的数据结构" class="headerlink" title="Zookeeper的数据结构"></a>Zookeeper的数据结构</h3><p><img src="/2023/08/06/hadoop/28.png" alt="Zookeeper的数据结构">    </p>
+<h3 id="软负载均衡"><a href="#软负载均衡" class="headerlink" title="软负载均衡"></a>软负载均衡</h3><p>在Zookeeper中记录每台服务器的访问数，让访问数最少的服务器去处理最新的客户端请求  </p>
+<h2 id="选举机制（面试重点）"><a href="#选举机制（面试重点）" class="headerlink" title="选举机制（面试重点）"></a>选举机制（面试重点）</h2><p><img src="/2023/08/06/hadoop/29.png" alt="Zookeeper选举机制-第一次启动">    </p>
 <p><img src="/2023/08/06/hadoop/30.png" alt="Zookeeper选举机制-非第一次启动">   </p>
-<p>###客户端命令行操作 </p>
-<p>1）启动客户端    </p>
+<h3 id="客户端命令行操作"><a href="#客户端命令行操作" class="headerlink" title="客户端命令行操作"></a>客户端命令行操作</h3><p>1）启动客户端    </p>
 <pre><code>[atguigu@hadoop102 zookeeper-3.5.7]$ bin/zkCli.sh -server hadoop102:2181
 </code></pre>
 <p>2）显示所有操作命令  </p>
 <pre><code>[zk: hadoop102:2181(CONNECTED) 1] help  
 </code></pre>
-<p>####znode 节点数据信息  </p>
-<p>1）查看当前znode中所包含的内容   </p>
+<h4 id="znode-节点数据信息"><a href="#znode-节点数据信息" class="headerlink" title="znode 节点数据信息"></a>znode 节点数据信息</h4><p>1）查看当前znode中所包含的内容   </p>
 <pre><code>[zk: hadoop102:2181(CONNECTED) 0] ls /  
 </code></pre>
 <p>2）查看当前节点详细数据  </p>
@@ -776,8 +740,7 @@ numChildren = 1
 <p>（9）ephemeralOwner：如果是临时节点，这个是 znode 拥有者的 session id。如果不是临时节点则是 0。  </p>
 <p>（10）dataLength：znode 的数据长度  </p>
 <p>（11）numChildren：znode 子节点数量  </p>
-<p>####节点类型（持久&#x2F;短暂&#x2F;有序号&#x2F;无序号）  </p>
-<p><img src="/2023/08/06/hadoop/31.png" alt="Zookeeper节点类型">   </p>
+<h4 id="节点类型（持久-短暂-有序号-无序号）"><a href="#节点类型（持久-短暂-有序号-无序号）" class="headerlink" title="节点类型（持久&#x2F;短暂&#x2F;有序号&#x2F;无序号）"></a>节点类型（持久&#x2F;短暂&#x2F;有序号&#x2F;无序号）</h4><p><img src="/2023/08/06/hadoop/31.png" alt="Zookeeper节点类型">   </p>
 <p>1）分别创建2个普通节点（永久节点 + 不带序号）   </p>
 <pre><code>[zk: localhost:2181(CONNECTED) 3] create /sanguo &quot;diaochan&quot; 
 注意：创建节点时，要赋值  
@@ -806,11 +769,9 @@ numChildren = 1
 <p>（4）修改节点数据值   </p>
 <pre><code>[zk: localhost:2181(CONNECTED) 6] set /sanguo/weiguo &quot;simayi&quot;  
 </code></pre>
-<p>##监听器原理      </p>
-<p>监听机制保证 ZooKeeper 保存的任何的数据的任何改变都能快速的响应到监听了该节点的应用程序。  </p>
+<h2 id="监听器原理"><a href="#监听器原理" class="headerlink" title="监听器原理"></a>监听器原理</h2><p>监听机制保证 ZooKeeper 保存的任何的数据的任何改变都能快速的响应到监听了该节点的应用程序。  </p>
 <p><img src="/2023/08/06/hadoop/32.png" alt="监听器原理">      </p>
-<p>####节点删除与查看    </p>
-<p>1）删除节点  </p>
+<h4 id="节点删除与查看"><a href="#节点删除与查看" class="headerlink" title="节点删除与查看"></a>节点删除与查看</h4><p>1）删除节点  </p>
 <pre><code>[zk: localhost:2181(CONNECTED) 4] delete /sanguo/jin
 </code></pre>
 <p>2）递归删除节点  </p>
@@ -819,14 +780,10 @@ numChildren = 1
 <p>3）查看节点状态  </p>
 <pre><code>[zk: localhost:2181(CONNECTED) 17] stat /sanguo
 </code></pre>
-<p>####客户端向服务端写数据流程  </p>
-<p><img src="/2023/08/06/hadoop/33.png" alt="客户端向服务端写数据流程">  </p>
-<p>##ZooKeeper 分布式锁    </p>
-<p>“进程1” 在使用该资源的时候，会先去获得锁，保持独占，这样其他进程就无法访问该资源,用完该资源以后就将锁释放掉,保证了分布式系统中多个进程能够有序的访问该临界资源。  </p>
+<h4 id="客户端向服务端写数据流程"><a href="#客户端向服务端写数据流程" class="headerlink" title="客户端向服务端写数据流程"></a>客户端向服务端写数据流程</h4><p><img src="/2023/08/06/hadoop/33.png" alt="客户端向服务端写数据流程">  </p>
+<h2 id="ZooKeeper-分布式锁"><a href="#ZooKeeper-分布式锁" class="headerlink" title="ZooKeeper 分布式锁"></a>ZooKeeper 分布式锁</h2><p>“进程1” 在使用该资源的时候，会先去获得锁，保持独占，这样其他进程就无法访问该资源,用完该资源以后就将锁释放掉,保证了分布式系统中多个进程能够有序的访问该临界资源。  </p>
 <p><img src="/2023/08/06/hadoop/34.png" alt="Zookeeper分布式锁">      </p>
-<p>##Zookeeper企业面试真题（面试重点）总结    </p>
-<p>###选举机制  </p>
-<p>半数机制，超过半数的投票通过，即通过。  </p>
+<h2 id="Zookeeper企业面试真题（面试重点）总结"><a href="#Zookeeper企业面试真题（面试重点）总结" class="headerlink" title="Zookeeper企业面试真题（面试重点）总结"></a>Zookeeper企业面试真题（面试重点）总结</h2><h3 id="选举机制"><a href="#选举机制" class="headerlink" title="选举机制"></a>选举机制</h3><p>半数机制，超过半数的投票通过，即通过。  </p>
 <p>（1）第一次启动选举规则：  </p>
 <pre><code>投票过半数时，服务器 id 大的胜出  
 </code></pre>
@@ -900,7 +857,7 @@ numChildren = 1
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-05 18:12:07" itemprop="dateModified" datetime="2023-08-05T18:12:07+08:00">2023-08-05</time>
+                <time title="修改时间：2023-08-11 13:02:10" itemprop="dateModified" datetime="2023-08-11T13:02:10+08:00">2023-08-11</time>
               </span>
 
           
@@ -915,22 +872,16 @@ numChildren = 1
 
       
           <p>天行健，君子以自强不息~  </p>
-<p>##Java 核心机制-Java 虚拟机 [JVM java virtual machine]  </p>
-<p>JVM 是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器，包含在JDK中  </p>
+<h2 id="Java-核心机制-Java-虚拟机-JVM-java-virtual-machine"><a href="#Java-核心机制-Java-虚拟机-JVM-java-virtual-machine" class="headerlink" title="Java 核心机制-Java 虚拟机 [JVM java virtual machine]"></a>Java 核心机制-Java 虚拟机 [JVM java virtual machine]</h2><p>JVM 是一个虚拟的计算机，具有指令集并使用不同的存储区域。负责执行指令，管理数据、内存、寄存器，包含在JDK中  </p>
 <p>对于不同的平台，有不同的虚拟机    </p>
-<p>##什么是 JDK，JRE  </p>
-<p>###JDK &#x3D; JRE + java 的开发工具 [java, javac,javadoc,javap 等]     </p>
-<p>JDK 是提供给 Java 开发人员使用的，其中包含了 java 的开发工具，也包括了 JRE。所以安装了 JDK，就不用在单独安装JRE了  </p>
-<p>###JRE &#x3D; JVM + Java 的核心类库[类]  </p>
-<p>包括 Java 虚拟机(JVM Java Virtual Machine)和 Java 程序所需的核心类库等，如果想要运行一个开发好的 Java 程序，计算机中只需要安装 JRE 即可    </p>
-<p>####Java 转义字符    </p>
-<p>\t ：一个制表位，实现对齐的功能  </p>
+<h2 id="什么是-JDK，JRE"><a href="#什么是-JDK，JRE" class="headerlink" title="什么是 JDK，JRE"></a>什么是 JDK，JRE</h2><h3 id="JDK-JRE-java-的开发工具-java-javac-javadoc-javap-等"><a href="#JDK-JRE-java-的开发工具-java-javac-javadoc-javap-等" class="headerlink" title="JDK &#x3D; JRE + java 的开发工具 [java, javac,javadoc,javap 等]"></a>JDK &#x3D; JRE + java 的开发工具 [java, javac,javadoc,javap 等]</h3><p>JDK 是提供给 Java 开发人员使用的，其中包含了 java 的开发工具，也包括了 JRE。所以安装了 JDK，就不用在单独安装JRE了  </p>
+<h3 id="JRE-JVM-Java-的核心类库-类"><a href="#JRE-JVM-Java-的核心类库-类" class="headerlink" title="JRE &#x3D; JVM + Java 的核心类库[类]"></a>JRE &#x3D; JVM + Java 的核心类库[类]</h3><p>包括 Java 虚拟机(JVM Java Virtual Machine)和 Java 程序所需的核心类库等，如果想要运行一个开发好的 Java 程序，计算机中只需要安装 JRE 即可    </p>
+<h4 id="Java-转义字符"><a href="#Java-转义字符" class="headerlink" title="Java 转义字符"></a>Java 转义字符</h4><p>\t ：一个制表位，实现对齐的功能  </p>
 <p>\n ：换行符  </p>
 <p>\ ：一个\  </p>
 <p>&quot; :一个”  </p>
 <p>&#39; ：一个’ \r :一个回车 System.out.println(“韩顺平教育\r 北京”);  </p>
-<p>####Java 中的注释类型  </p>
-<ol>
+<h4 id="Java-中的注释类型"><a href="#Java-中的注释类型" class="headerlink" title="Java 中的注释类型"></a>Java 中的注释类型</h4><ol>
 <li><p>单行注释 &#x2F;&#x2F;  </p>
 </li>
 <li><p>多行注释 &#x2F;* *&#x2F;    </p>
@@ -945,12 +896,9 @@ numChildren = 1
 <li>@author 韩顺平  </li>
 <li>@version 1.0<br>*&#x2F;</li>
 </ul>
-<p>####Java 代码规范    </p>
-<p><img src="/2023/08/04/JavaSE/1.png" alt="Java代码规范">    </p>
-<p>###DOS 介绍 </p>
-<p>Dos： Disk Operating System 磁盘操作系统  </p>
-<p>####常用的 dos 命令  </p>
-<ol>
+<h4 id="Java-代码规范"><a href="#Java-代码规范" class="headerlink" title="Java 代码规范"></a>Java 代码规范</h4><p><img src="/2023/08/04/JavaSE/1.png" alt="Java代码规范">    </p>
+<h3 id="DOS-介绍"><a href="#DOS-介绍" class="headerlink" title="DOS 介绍"></a>DOS 介绍</h3><p>Dos： Disk Operating System 磁盘操作系统  </p>
+<h4 id="常用的-dos-命令"><a href="#常用的-dos-命令" class="headerlink" title="常用的 dos 命令"></a>常用的 dos 命令</h4><ol>
 <li><p>查看当前目录是有什么内容 dir  </p>
 <p> dir dir d:\abc2\test200</p>
 </li>
@@ -975,8 +923,7 @@ numChildren = 1
 <li><p>退出 DOS exit</p>
 </li>
 </ol>
-<p>##变量  </p>
-<p><strong>变量三要素：变量名+值+数据类型</strong>  </p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p><strong>变量三要素：变量名+值+数据类型</strong>  </p>
 <p>变量相当于内存中一个数据存储空间的表示，你可以把变量看做是一个房间的门牌号，通过门牌号我们可以找到房间，而通过变量名可以访问到变量(值)    </p>
 <ol>
 <li><p>声明变量  </p>
@@ -986,17 +933,14 @@ numChildren = 1
 <p> a &#x3D; 60; &#x2F;&#x2F;应该这么说: 把 60 赋给 a</p>
 </li>
 </ol>
-<p>###数据类型</p>
-<p>每一种数据都定义了明确的数据类型，在内存中分配了不同大小的内存空间(字节)。  </p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>每一种数据都定义了明确的数据类型，在内存中分配了不同大小的内存空间(字节)。  </p>
 <p><img src="/2023/08/04/JavaSE/2.png" alt="数据类型">    </p>
-<p>####整型的类型    </p>
-<p><img src="/2023/08/04/JavaSE/3.png" alt="数据类型">     </p>
+<h4 id="整型的类型"><a href="#整型的类型" class="headerlink" title="整型的类型"></a>整型的类型</h4><p><img src="/2023/08/04/JavaSE/3.png" alt="数据类型">     </p>
 <p>&#x2F;&#x2F;Java 的整型常量（具体值）默认为 int 型，声明 long 型常量须后加‘l’或‘L’  </p>
 <pre><code>int n1 = 1;//4 个字节
 long n3 = 1L;//长整型  
 </code></pre>
-<p>####浮点类型</p>
-<p><img src="/2023/08/04/JavaSE/4.png" alt="数据类型">    </p>
+<h4 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h4><p><img src="/2023/08/04/JavaSE/4.png" alt="数据类型">    </p>
 <p>&#x2F;&#x2F;Java 的浮点型常量(具体值)默认为 double 型，声明 float 型常量，须后加‘f’或‘F’  </p>
 <pre><code>float num2 = 1.1F;    
 double num3 = 1.1; 
@@ -1005,17 +949,11 @@ double num4 = 1.1f;
 <p>十进制数形式：如：5.12 512.0f .512 (必须有小数点）   </p>
 <p>Java类的组织形式  </p>
 <p><img src="/2023/08/04/JavaSE/5.png" alt="Java类的组织形式">   </p>
-<p>####字符编码  </p>
-<p><img src="/2023/08/04/JavaSE/6.png" alt="字符编码">  </p>
-<p>####基本数据类型转换</p>
-<p>#####自动类型转换    </p>
-<p><img src="/2023/08/04/JavaSE/7.png" alt="自动类型转换">    </p>
-<p>#####强制类型转换   </p>
-<p>自动类型转换的逆过程，将容量大的数据类型转换为容量小的数据类型。使用时要加上强制转换符 ( )，但可能造成精度降低或溢出,格外要注意  </p>
+<h4 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h4><p><img src="/2023/08/04/JavaSE/6.png" alt="字符编码">  </p>
+<h4 id="基本数据类型转换"><a href="#基本数据类型转换" class="headerlink" title="基本数据类型转换"></a>基本数据类型转换</h4><h5 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h5><p><img src="/2023/08/04/JavaSE/7.png" alt="自动类型转换">    </p>
+<h5 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h5><p>自动类型转换的逆过程，将容量大的数据类型转换为容量小的数据类型。使用时要加上强制转换符 ( )，但可能造成精度降低或溢出,格外要注意  </p>
 <p><img src="/2023/08/04/JavaSE/8.png" alt="强制类型转换">  </p>
-<p>##运算符  </p>
-<p>###逻辑运算符  </p>
-<p>说明逻辑运算规则：  </p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>说明逻辑运算规则：  </p>
 <ol>
 <li><p>a&amp;b : &amp; 叫逻辑与：规则：当 a 和 b 同时为 true ,则结果为 true, 否则为 false  </p>
 </li>
@@ -1044,20 +982,16 @@ double num4 = 1.1f;
 <li><p>| 逻辑或：不管第一个条件是否为 true，第二个条件都要判断，效率低</p>
 </li>
 </ol>
-<p>###三元运算符    </p>
-<p>条件表达式 ? 表达式 1: 表达式 2;  </p>
+<h3 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h3><p>条件表达式 ? 表达式 1: 表达式 2;  </p>
 <p>运算规则：  </p>
 <p>1.如果条件表达式为 true，运算后的结果是表达式 1；  </p>
 <p>2.如果条件表达式为 false，运算后的结果是表达式 2；  </p>
 <p>口诀: [一灯大师：一真大师]  </p>
-<p>#####接收控制台输入Scanner</p>
-<pre><code>import java.util.Scanner;    
+<h5 id="接收控制台输入Scanner"><a href="#接收控制台输入Scanner" class="headerlink" title="接收控制台输入Scanner"></a>接收控制台输入Scanner</h5><pre><code>import java.util.Scanner;    
 Scanner myScanner = new Scanner(System.in);  
 </code></pre>
-<p>#####原码、反码、补码(重点 难点)    </p>
-<p><img src="/2023/08/04/JavaSE/9.png">    </p>
-<p>##程序控制结构    </p>
-<p>主要有三大流程控制语句。  </p>
+<h5 id="原码、反码、补码-重点-难点"><a href="#原码、反码、补码-重点-难点" class="headerlink" title="原码、反码、补码(重点 难点)"></a>原码、反码、补码(重点 难点)</h5><p><img src="/2023/08/04/JavaSE/9.png">    </p>
+<h2 id="程序控制结构"><a href="#程序控制结构" class="headerlink" title="程序控制结构"></a>程序控制结构</h2><p>主要有三大流程控制语句。  </p>
 <ol>
 <li><p>顺序控制  </p>
 </li>
@@ -1101,14 +1035,10 @@ do&#123;
 &#125;while(循环条件);  
 </code></pre>
 <p>先执行，再判断，也就是说，一定会至少执行一次    </p>
-<p>##跳转控制语句-break    </p>
-<p>break 语句用于终止某个语句块的执行，一般使用在 switch 或者循环[for , while , do-while]中  </p>
-<p>##跳转控制语句-continue</p>
-<p>continue 语句用于结束本次循环，继续执行下一次循环  </p>
-<p>##跳转控制语句-return    </p>
-<p>return 使用在方法，表示跳出所在的方法  </p>
-<p>##数组</p>
-<p>数组可以存放多个同一类型的数据。数组也是一种数据类型，是<strong>引用类型</strong>  </p>
+<h2 id="跳转控制语句-break"><a href="#跳转控制语句-break" class="headerlink" title="跳转控制语句-break"></a>跳转控制语句-break</h2><p>break 语句用于终止某个语句块的执行，一般使用在 switch 或者循环[for , while , do-while]中  </p>
+<h2 id="跳转控制语句-continue"><a href="#跳转控制语句-continue" class="headerlink" title="跳转控制语句-continue"></a>跳转控制语句-continue</h2><p>continue 语句用于结束本次循环，继续执行下一次循环  </p>
+<h2 id="跳转控制语句-return"><a href="#跳转控制语句-return" class="headerlink" title="跳转控制语句-return"></a>跳转控制语句-return</h2><p>return 使用在方法，表示跳出所在的方法  </p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>数组可以存放多个同一类型的数据。数组也是一种数据类型，是<strong>引用类型</strong>  </p>
 <p><img src="/2023/08/04/JavaSE/10.png" alt="数组的使用">  </p>
 <pre><code>方式一：int a[] = new Int[5]   
 
@@ -1119,10 +1049,8 @@ do&#123;
 方式三：
    	   int a[] = &#123;2,3,4,5,6&#125;  
 </code></pre>
-<p>###数组赋值机制  </p>
-<p><img src="/2023/08/04/JavaSE/11.png" alt="数组的使用">      </p>
-<p>#面向对象编程(基础部分)    </p>
-<p>类和对象的区别和联系</p>
+<h3 id="数组赋值机制"><a href="#数组赋值机制" class="headerlink" title="数组赋值机制"></a>数组赋值机制</h3><p><img src="/2023/08/04/JavaSE/11.png" alt="数组的使用">      </p>
+<h1 id="面向对象编程-基础部分"><a href="#面向对象编程-基础部分" class="headerlink" title="面向对象编程(基础部分)"></a>面向对象编程(基础部分)</h1><p>类和对象的区别和联系</p>
 <ol>
 <li><p>类是抽象的，概念的，代表一类事物,比如人类,猫类.., 即它是数据类型  </p>
 </li>
@@ -1131,10 +1059,8 @@ do&#123;
 <li><p>类是对象的模板，对象是类的一个个体，对应一个实例</p>
 </li>
 </ol>
-<p>##对象在内存中存在形式(重要的)必须搞清楚</p>
-<p><img src="/2023/08/04/JavaSE/12.png" alt="对象在内存中存在形式">     </p>
-<p>###类和对象的内存分配机制     </p>
-<p>Java 内存的结构分析  </p>
+<h2 id="对象在内存中存在形式-重要的-必须搞清楚"><a href="#对象在内存中存在形式-重要的-必须搞清楚" class="headerlink" title="对象在内存中存在形式(重要的)必须搞清楚"></a>对象在内存中存在形式(重要的)必须搞清楚</h2><p><img src="/2023/08/04/JavaSE/12.png" alt="对象在内存中存在形式">     </p>
+<h3 id="类和对象的内存分配机制"><a href="#类和对象的内存分配机制" class="headerlink" title="类和对象的内存分配机制"></a>类和对象的内存分配机制</h3><p>Java 内存的结构分析  </p>
 <ol>
 <li><p>栈： 一般存放基本数据类型(局部变量)  </p>
 </li>
@@ -1143,13 +1069,10 @@ do&#123;
 <li><p>方法区：常量池(常量，比如字符串)， 类加载信息</p>
 </li>
 </ol>
-<p>##属性&#x2F;成员变量&#x2F;字段  </p>
-<p>成员变量 &#x3D; 属性 &#x3D; field(字段)  </p>
+<h2 id="属性-成员变量-字段"><a href="#属性-成员变量-字段" class="headerlink" title="属性&#x2F;成员变量&#x2F;字段"></a>属性&#x2F;成员变量&#x2F;字段</h2><p>成员变量 &#x3D; 属性 &#x3D; field(字段)  </p>
 <p>属性是类的一个组成部分，一般是基本数据类型,也可是引用类型(对象，数组)    </p>
-<p>##创建对象  </p>
-<p>Cat cat1 &#x3D; new Cat();  </p>
-<p>###成员方法  </p>
-<pre><code>class Person &#123;
+<h2 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h2><p>Cat cat1 &#x3D; new Cat();  </p>
+<h3 id="成员方法"><a href="#成员方法" class="headerlink" title="成员方法"></a>成员方法</h3><pre><code>class Person &#123;
     String name;
     int age;  
     //方法(成员方法)  
@@ -1158,29 +1081,23 @@ do&#123;
         &#125;
     &#125;  
 </code></pre>
-<p>###方法的调用机制原理    </p>
-<p><img src="/2023/08/04/JavaSE/13.png">  </p>
-<p>###成员方法的好处    </p>
-<ol>
+<h3 id="方法的调用机制原理"><a href="#方法的调用机制原理" class="headerlink" title="方法的调用机制原理"></a>方法的调用机制原理</h3><p><img src="/2023/08/04/JavaSE/13.png">  </p>
+<h3 id="成员方法的好处"><a href="#成员方法的好处" class="headerlink" title="成员方法的好处"></a>成员方法的好处</h3><ol>
 <li><p>提高代码的复用性  </p>
 </li>
 <li><p>可以将实现的细节封装起来，然后供其他用户来调用即可</p>
 </li>
 </ol>
-<p>###成员方法的定义</p>
-<pre><code>访问修饰符 返回数据类型 方法名（形参列表..） &#123;	
+<h3 id="成员方法的定义"><a href="#成员方法的定义" class="headerlink" title="成员方法的定义"></a>成员方法的定义</h3><pre><code>访问修饰符 返回数据类型 方法名（形参列表..） &#123;	
     //方法体语句；
     return 返回值;
 &#125;
 </code></pre>
-<p>###传参 </p>
-<p>引用类型传递的是地址（传递也是值，但是值是地址），可以通过形参影响实参！  </p>
-<p>###方法递归调用(非常非常重要，比较难)  </p>
-<p>递归就是方法自己调用自己  </p>
+<h3 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h3><p>引用类型传递的是地址（传递也是值，但是值是地址），可以通过形参影响实参！  </p>
+<h3 id="方法递归调用-非常非常重要，比较难"><a href="#方法递归调用-非常非常重要，比较难" class="headerlink" title="方法递归调用(非常非常重要，比较难)"></a>方法递归调用(非常非常重要，比较难)</h3><p>递归就是方法自己调用自己  </p>
 <p>递归重要规则  </p>
 <p><img src="/2023/08/04/JavaSE/14.png"></p>
-<p>##方法重载(OverLoad)    </p>
-<p>java 中允许同一个类中，多个同名方法的存在，但要求 形参列表不一致！  </p>
+<h2 id="方法重载-OverLoad"><a href="#方法重载-OverLoad" class="headerlink" title="方法重载(OverLoad)"></a>方法重载(OverLoad)</h2><p>java 中允许同一个类中，多个同名方法的存在，但要求 形参列表不一致！  </p>
 <p>案例：类：MyCalculator 方法：calculate  </p>
 <ol>
 <li>calculate(int n1, int n2) &#x2F;&#x2F;两个整数的和  </li>
@@ -1189,8 +1106,7 @@ do&#123;
 <li>calculate(int n1, int n2,int n3)&#x2F;&#x2F;三个 int 的和</li>
 </ol>
 <p><img src="/2023/08/04/JavaSE/15.png" alt="方法重载">  </p>
-<p>###可变参数   </p>
-<p>java 允许将同一个类中多个同名同功能但参数个数不同的方法，封装成一个方法。<br>就可以通过可变参数实现</p>
+<h3 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h3><p>java 允许将同一个类中多个同名同功能但参数个数不同的方法，封装成一个方法。<br>就可以通过可变参数实现</p>
 <p>eg:方法 sum 【可以计算 2 个数的和，3 个数的和 ， 4. 5， 。。】  </p>
 <pre><code>//1. int... 表示接受的是可变参数，类型是 int ,即可以接收多个 int(0-多)
 //2. 使用可变参数时，可以当做数组来使用 即 nums 可以当做数组
@@ -1205,15 +1121,14 @@ return res;
 &#125;
 &#125;  
 </code></pre>
-<p>###变量作用域<br>变量：  </p>
+<h3 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h3><p>变量：  </p>
 <p>1.全局变量（属性）</p>
 <p>2.局部变量（局部变量一般是指在成员方法中定义的变量）</p>
 <p>全局变量和局部变量可以重名</p>
 <p><img src="/2023/08/04/JavaSE/16.png" alt="变量作用域">  </p>
 <p>全局变量和局部变量的区别  </p>
 <p><img src="/2023/08/04/JavaSE/17.png" alt="全局变量和局部变量的区别">    </p>
-<p>###构造方法&#x2F;构造器    </p>
-<p>在创建人类的对象时，就直接指定这个对象的年龄和姓名，该怎么做? 这时就可以使用构造器  </p>
+<h3 id="构造方法-构造器"><a href="#构造方法-构造器" class="headerlink" title="构造方法&#x2F;构造器"></a>构造方法&#x2F;构造器</h3><p>在创建人类的对象时，就直接指定这个对象的年龄和姓名，该怎么做? 这时就可以使用构造器  </p>
 <p>[修饰符] 方法名(形参列表){<br>方法体;<br>}   </p>
 <ol>
 <li><p>构造器的修饰符可以默认， 也可以是 public protected private  </p>
@@ -1230,8 +1145,7 @@ return res;
 <p>构造方法又叫构造器(constructor)，是类的一种特殊的方法，它的主要作用是完成对新对象的初始化  </p>
 <p><img src="/2023/08/04/JavaSE/18.png" alt="构造器使用注意事项"></p>
 <p><img src="/2023/08/04/JavaSE/19.png" alt="构造器使用注意事项"></p>
-<p>###this 关键字  </p>
-<p><img src="/2023/08/04/JavaSE/20.png" alt="This关键字"></p>
+<h3 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h3><p><img src="/2023/08/04/JavaSE/20.png" alt="This关键字"></p>
 <ol>
 <li><p>this 关键字可以用来访问本类的属性、方法、构造器  </p>
 </li>
@@ -1244,8 +1158,7 @@ return res;
 <li><p>this 不能在类定义的外部使用，只能在类定义的方法中使用。</p>
 </li>
 </ol>
-<p>#面向对象编程(中级部分)  </p>
-<p>IDEA 常用快捷键  </p>
+<h1 id="面向对象编程-中级部分"><a href="#面向对象编程-中级部分" class="headerlink" title="面向对象编程(中级部分)"></a>面向对象编程(中级部分)</h1><p>IDEA 常用快捷键  </p>
 <ol>
 <li><p>删除当前行, 默认是 ctrl + Y 自己配置 ctrl + d  </p>
 </li>
@@ -1272,14 +1185,12 @@ return res;
 <li><p>还有很多其它的快捷键</p>
 </li>
 </ol>
-<p>##包  </p>
-<p><img src="/2023/08/04/JavaSE/21.png" alt="包">  </p>
+<h2 id="包"><a href="#包" class="headerlink" title="包"></a>包</h2><p><img src="/2023/08/04/JavaSE/21.png" alt="包">  </p>
 <p>包的本质 </p>
 <p><img src="/2023/08/04/JavaSE/22.png">  </p>
 <p>包的命名：  </p>
 <p>com.公司名.项目名.业务模块名  </p>
-<p>###Java常用的包  </p>
-<p>一个包下,包含很多的类,java 中常用的包有:  </p>
+<h3 id="Java常用的包"><a href="#Java常用的包" class="headerlink" title="Java常用的包"></a>Java常用的包</h3><p>一个包下,包含很多的类,java 中常用的包有:  </p>
 <ol>
 <li><p>java.lang.* &#x2F;&#x2F;lang 包是基本包，默认引入，不需要再引入.  </p>
 </li>
@@ -1294,8 +1205,7 @@ return res;
 <p>import 包;  </p>
 <p>eg:  import java.util.*  &#x2F;&#x2F;表示将java.util包所有都引入    </p>
 <p>我们需要使用到哪个类，就导入哪个类即可，不建议使用*导入   </p>
-<p>##访问修饰符   </p>
-<p>java 提供四种访问控制修饰符号，用于控制方法和属性(成员变量)的访问权限（范围）   </p>
+<h2 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h2><p>java 提供四种访问控制修饰符号，用于控制方法和属性(成员变量)的访问权限（范围）   </p>
 <ol>
 <li><p>公开级别:用 public 修饰,对外公开  </p>
 </li>
@@ -1308,13 +1218,11 @@ return res;
 </ol>
 <p><img src="/2023/08/04/JavaSE/23.png" alt="访问控制符">  </p>
 <p><img src="/2023/08/04/JavaSE/24.png" alt="访问控制符使用说明">   </p>
-<p>##面向对象编程三大特征  </p>
-<p>封装、继承和多态    </p>
-<p>###封装<br><img src="/2023/08/04/JavaSE/25.png" alt="封装"></p>
+<h2 id="面向对象编程三大特征"><a href="#面向对象编程三大特征" class="headerlink" title="面向对象编程三大特征"></a>面向对象编程三大特征</h2><p>封装、继承和多态    </p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p><img src="/2023/08/04/JavaSE/25.png" alt="封装"></p>
 <p>封装的实现步骤    </p>
 <p><img src="/2023/08/04/JavaSE/26.png" alt="封装的实现步骤">    </p>
-<p>###继承   </p>
-<p>继承可以解决代码复用,让我们的编程更加靠近人类思维.当多个类存在相同的属性(变量)和方法时,可以从这些类中抽象出父类,在父类中定义这些相同的属性和方法，所有的子类不需要重新定义这些属性和方法，只需要通过 extends 来声明继承父类即可  </p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>继承可以解决代码复用,让我们的编程更加靠近人类思维.当多个类存在相同的属性(变量)和方法时,可以从这些类中抽象出父类,在父类中定义这些相同的属性和方法，所有的子类不需要重新定义这些属性和方法，只需要通过 extends 来声明继承父类即可  </p>
 <p><img src="/2023/08/04/JavaSE/27.png" alt="继承">  </p>
 <p>继承的基本语法：  </p>
 <p>class 子类 extends 父类 {</p>
@@ -1366,8 +1274,7 @@ return res;
 </code></pre>
 <p>子类创建的内存布局  </p>
 <p><img src="/2023/08/04/JavaSE/28.png" alt="子类创建的内存布局">    </p>
-<p>###super 关键字  </p>
-<p>super 代表父类的引用，用于访问父类的属性、方法、构造器  </p>
+<h3 id="super-关键字"><a href="#super-关键字" class="headerlink" title="super 关键字"></a>super 关键字</h3><p>super 代表父类的引用，用于访问父类的属性、方法、构造器  </p>
 <p><img src="/2023/08/04/JavaSE/29.png" alt="super关键字">  </p>
 <p>&#x2F;&#x2F; (1)先找本类，如果有，则调用  </p>
 <p>&#x2F;&#x2F; (2)如果没有，则找父类(如果有，并可以调用，则调用)  </p>
@@ -1377,13 +1284,11 @@ return res;
 <p><img src="/2023/08/04/JavaSE/30.png" alt="Super关键字的用法细节">      </p>
 <p><strong>super 和 this 的比较</strong>    </p>
 <p><img src="/2023/08/04/JavaSE/31.png" alt="super和this的比较">    </p>
-<p>##方法重写&#x2F;覆盖(override) </p>
-<p><img src="/2023/08/04/JavaSE/32.png" alt="方法重写">  </p>
+<h2 id="方法重写-覆盖-override"><a href="#方法重写-覆盖-override" class="headerlink" title="方法重写&#x2F;覆盖(override)"></a>方法重写&#x2F;覆盖(override)</h2><p><img src="/2023/08/04/JavaSE/32.png" alt="方法重写">  </p>
 <p><img src="/2023/08/04/JavaSE/33.png" alt="方法重写的注意事项">    </p>
 <p><strong>方法重载和方法重写的区别</strong>  </p>
 <p><img src="/2023/08/04/JavaSE/34.png" alt="方法重载和方法重写的区别">  </p>
-<p>##多态  </p>
-<p>多态是建立在封装和继承基础之上的<br><img src="/2023/08/04/JavaSE/35.png" alt="多态">     </p>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><p>多态是建立在封装和继承基础之上的<br><img src="/2023/08/04/JavaSE/35.png" alt="多态">     </p>
 <p>多态的具体体现  </p>
 <ol>
 <li>方法的多态</li>
@@ -1447,10 +1352,16 @@ return res;
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-08-03 18:25:47 / 修改时间：18:26:35" itemprop="dateCreated datePublished" datetime="2023-08-03T18:25:47+08:00">2023-08-03</time>
+              <time title="创建时间：2023-08-03 18:25:47" itemprop="dateCreated datePublished" datetime="2023-08-03T18:25:47+08:00">2023-08-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-11 12:58:35" itemprop="dateModified" datetime="2023-08-11T12:58:35+08:00">2023-08-11</time>
+              </span>
 
           
 
@@ -1463,7 +1374,7 @@ return res;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a target="_blank" rel="noopener" href="https://help.aliyun.com/zh/dataworks/user-guide/dataworks-data-modeling/?spm=a2c4g.11186623.0.0.6cbf2c36NLQ1IR">阿里数仓建模理论</a></p>
+          <h1 id="人生在勤，不索何获"><a href="#人生在勤，不索何获" class="headerlink" title="人生在勤，不索何获"></a>人生在勤，不索何获</h1><p><a target="_blank" rel="noopener" href="https://help.aliyun.com/zh/dataworks/user-guide/dataworks-data-modeling/?spm=a2c4g.11186623.0.0.6cbf2c36NLQ1IR">阿里数仓建模理论</a></p>
 
       
     </div>
@@ -1516,7 +1427,7 @@ return res;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-06 17:53:44" itemprop="dateModified" datetime="2023-08-06T17:53:44+08:00">2023-08-06</time>
+                <time title="修改时间：2023-08-11 13:00:47" itemprop="dateModified" datetime="2023-08-11T13:00:47+08:00">2023-08-11</time>
               </span>
 
           
@@ -1532,21 +1443,16 @@ return res;
       
           <p>黄沙百战穿金甲，不破楼兰终不还！   </p>
 <p>相关学习文档<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1GAiGG8E6vI94YOI7_JZCAw">https://pan.baidu.com/s/1GAiGG8E6vI94YOI7_JZCAw</a><br>提取码：85vn   </p>
-<p>#1.Kafka概述   </p>
-<p>##1.1定义：</p>
-<p>Kafka传 统定义：Kafka是一个分布式的基于发布&#x2F;订阅模式的消息队列（Message<br>Queue），主要应用于大数据实时处理领域。    </p>
+<h1 id="1-Kafka概述"><a href="#1-Kafka概述" class="headerlink" title="1.Kafka概述"></a>1.Kafka概述</h1><h2 id="1-1定义："><a href="#1-1定义：" class="headerlink" title="1.1定义："></a>1.1定义：</h2><p>Kafka传 统定义：Kafka是一个分布式的基于发布&#x2F;订阅模式的消息队列（Message<br>Queue），主要应用于大数据实时处理领域。    </p>
 <p>发布&#x2F;订阅：消息的发布者不会将消息直接发送给特定的订阅者，而是将发布的消息<br>分为不同的类别，订阅者只接收感兴趣的消息。  </p>
-<p>##1.2消息队列  </p>
-<p>大数据场景主要采用 Kafka 作为消息队列。  </p>
-<p>###1.2.1传统消息队列的应用场景  </p>
-<p>传统的消息队列的主要应用场景包括：缓存&#x2F;消峰、解耦和异步通信。</p>
+<h2 id="1-2消息队列"><a href="#1-2消息队列" class="headerlink" title="1.2消息队列"></a>1.2消息队列</h2><p>大数据场景主要采用 Kafka 作为消息队列。  </p>
+<h3 id="1-2-1传统消息队列的应用场景"><a href="#1-2-1传统消息队列的应用场景" class="headerlink" title="1.2.1传统消息队列的应用场景"></a>1.2.1传统消息队列的应用场景</h3><p>传统的消息队列的主要应用场景包括：缓存&#x2F;消峰、解耦和异步通信。</p>
 <p>缓冲&#x2F;消峰：解决生产消息和消费消息的处理速度不一致的情况。 </p>
 <p>解耦：允许你独立的扩展或修改两边的处理过程，只要确保它们遵守同样的接口约束。</p>
 <p><img src="/2023/08/03/kafka/kafka1.png" alt="解耦"> </p>
 <p>异步通信：允许用户把一个消息放入队列，但并不立即处理它，然后在需要的时候再去处理它们。  </p>
-<p>###1.2.2消息队列的两种模式    </p>
-<p><img src="/2023/08/03/kafka/2.png" alt="消息队列的两种模式">  </p>
-<p>##1.3kafka基础架构<br><img src="/2023/08/03/kafka/3.png" alt="kafka基础架构">   </p>
+<h3 id="1-2-2消息队列的两种模式"><a href="#1-2-2消息队列的两种模式" class="headerlink" title="1.2.2消息队列的两种模式"></a>1.2.2消息队列的两种模式</h3><p><img src="/2023/08/03/kafka/2.png" alt="消息队列的两种模式">  </p>
+<h2 id="1-3kafka基础架构"><a href="#1-3kafka基础架构" class="headerlink" title="1.3kafka基础架构"></a>1.3kafka基础架构</h2><p><img src="/2023/08/03/kafka/3.png" alt="kafka基础架构">   </p>
 <p>（1）Producer：消息生产者，就是向 Kafka broker 发消息的客户端。  </p>
 <p>（2）Consumer：消息消费者，向 Kafka broker 取消息的客户端。  </p>
 <p>（3）Consumer Group（CG）：消费者组，由多个 consumer 组成。消费者组内每个消<br>费者负责消费不同分区的数据，一个分区只能由一个组内消费者消费；消费者组之间互不<br>影响。所有的消费者都属于某个消费者组，即消费者组是逻辑上的一个订阅者。  </p>
@@ -1556,8 +1462,7 @@ return res;
 <p>（7）Replica：副本。一个 topic 的每个分区都有若干个副本，一个 Leader 和若干个Follower。  </p>
 <p>（8）Leader：每个分区多个副本的“主”，生产者发送数据的对象，以及消费者消费数<br>据的对象都是 Leader。  </p>
 <p>（9）Follower：每个分区多个副本中的“从”，实时从 Leader 中同步数据，保持和<br>Leader 数据的同步。Leader 发生故障时，某个 Follower 会成为新的 Leader。    </p>
-<p>##2kafka快速入门    </p>
-<p>kafka命令行操作    </p>
+<h2 id="2kafka快速入门"><a href="#2kafka快速入门" class="headerlink" title="2kafka快速入门"></a>2kafka快速入门</h2><p>kafka命令行操作    </p>
 <p>1）查看操作主题命令参数    </p>
 <pre><code> bin/kafka-topics.sh    
 </code></pre>
@@ -1583,19 +1488,14 @@ return res;
 <p>6）删除 topic    </p>
 <pre><code>bin/kafka-topics.sh --bootstrap-server hadoop102:9092 --delete --topic first
 </code></pre>
-<p>##生产者命令行操作</p>
-<p>发送消息</p>
+<h2 id="生产者命令行操作"><a href="#生产者命令行操作" class="headerlink" title="生产者命令行操作"></a>生产者命令行操作</h2><p>发送消息</p>
 <pre><code>bin/kafka-console-producer.sh --bootstrap-server hadoop102:9092 --topic first
 </code></pre>
-<p>##消费者命令行操作  </p>
-<p>###消费 first 主题中的数据</p>
-<pre><code>bin/kafka-console-consumer.sh --bootstrap-server hadoop102:9092 --topic first
+<h2 id="消费者命令行操作"><a href="#消费者命令行操作" class="headerlink" title="消费者命令行操作"></a>消费者命令行操作</h2><h3 id="消费-first-主题中的数据"><a href="#消费-first-主题中的数据" class="headerlink" title="消费 first 主题中的数据"></a>消费 first 主题中的数据</h3><pre><code>bin/kafka-console-consumer.sh --bootstrap-server hadoop102:9092 --topic first
 </code></pre>
-<p>###把主题中所有的数据都读取出来（包括历史数据）  </p>
-<pre><code>bin/kafka-console-consumer.sh --bootstrap-server hadoop102:9092 --from-beginning --topic first  
+<h3 id="把主题中所有的数据都读取出来（包括历史数据）"><a href="#把主题中所有的数据都读取出来（包括历史数据）" class="headerlink" title="把主题中所有的数据都读取出来（包括历史数据）"></a>把主题中所有的数据都读取出来（包括历史数据）</h3><pre><code>bin/kafka-console-consumer.sh --bootstrap-server hadoop102:9092 --from-beginning --topic first  
 </code></pre>
-<p>##生产者重要参数</p>
-<p>acks </p>
+<h2 id="生产者重要参数"><a href="#生产者重要参数" class="headerlink" title="生产者重要参数"></a>生产者重要参数</h2><p>acks </p>
 <pre><code>1）0：生产者发送过来的数据，不需要等数据落盘应答。  
 
 2）1：生产者发送过来的数据，Leader 收到数据后应答。  
@@ -1607,69 +1507,54 @@ return res;
 <p>compression.type  </p>
 <p>生产者发送的所有数据的压缩方式。默认是 none，也就是不压缩。  </p>
 <p>支持压缩类型：none、gzip、snappy、lz4 和 zstd。    </p>
-<p>##生产者分区    </p>
-<p>###1.分区好处  </p>
-<p>（1）便于合理使用存储资源  </p>
+<h2 id="生产者分区"><a href="#生产者分区" class="headerlink" title="生产者分区"></a>生产者分区</h2><h3 id="1-分区好处"><a href="#1-分区好处" class="headerlink" title="1.分区好处"></a>1.分区好处</h3><p>（1）便于合理使用存储资源  </p>
 <p>每个Partition在一个Broker上存储，可以把海量的数据按照分区切割成一<br>块一块数据存储在多台Broker上。合理控制分区的任务，可以实现负载均衡的效果   </p>
 <p>（2）提高并行度  </p>
 <p>生产者可以以分区为单位发送数据；消费者可以以分区为单位进行消费数据。  </p>
-<p>##生产经验——生产者如何提高吞吐量    </p>
-<p>batch.size：批次大小，默认16k   </p>
+<h2 id="生产经验——生产者如何提高吞吐量"><a href="#生产经验——生产者如何提高吞吐量" class="headerlink" title="生产经验——生产者如何提高吞吐量"></a>生产经验——生产者如何提高吞吐量</h2><p>batch.size：批次大小，默认16k   </p>
 <p>linger.ms：等待时间，修改为5-100ms  </p>
 <p>compression.type：压缩snappy   </p>
 <p>RecordAccumulator：缓冲区大小，修改为64m  </p>
-<p>##ack 应答原理  </p>
-<p><img src="/2023/08/03/kafka/4.png" alt="ack应答原理">  </p>
+<h2 id="ack-应答原理"><a href="#ack-应答原理" class="headerlink" title="ack 应答原理"></a>ack 应答原理</h2><p><img src="/2023/08/03/kafka/4.png" alt="ack应答原理">  </p>
 <p><img src="/2023/08/03/kafka/5.png" alt="ack应答原理"> </p>
 <p>数据完全可靠条件 &#x3D; ACK级别设置为-1 + 分区副本大于等于2 + ISR里应答的最小副本数量大于等于2  </p>
-<p>###可靠性总结：  </p>
-<p>acks&#x3D;0，生产者发送过来数据就不管了，可靠性差，效率高；  </p>
+<h3 id="可靠性总结："><a href="#可靠性总结：" class="headerlink" title="可靠性总结："></a>可靠性总结：</h3><p>acks&#x3D;0，生产者发送过来数据就不管了，可靠性差，效率高；  </p>
 <p>acks&#x3D;1，生产者发送过来数据Leader应答，可靠性中等，效率中等；  </p>
 <p>acks&#x3D;-1，生产者发送过来数据Leader和ISR队列里面所有Follwer应答，可靠性高，效率低；  </p>
 <p>在生产环境中，acks&#x3D;0很少使用；acks&#x3D;1，一般用于传输普通日志，允许丢个别数据；acks&#x3D;-1，一般用于传输和钱相关的数据，对可靠性要求比较高的场景。    </p>
-<p>##生产经验——数据去重    </p>
-<p>至少一次（At Least Once）&#x3D; ACK级别设置为-1 + 分区副本大于等于2 + ISR里应答的最小副本数量大于等于2  </p>
+<h2 id="生产经验——数据去重"><a href="#生产经验——数据去重" class="headerlink" title="生产经验——数据去重"></a>生产经验——数据去重</h2><p>至少一次（At Least Once）&#x3D; ACK级别设置为-1 + 分区副本大于等于2 + ISR里应答的最小副本数量大于等于2  </p>
 <p>最多一次（At Most Once）&#x3D; ACK级别设置为0  </p>
-<p>###总结：  </p>
-<p>At Least Once可以保证数据不丢失，但是不能保证数据不重复；  </p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><p>At Least Once可以保证数据不丢失，但是不能保证数据不重复；  </p>
 <p>At Most Once可以保证数据不重复，但是不能保证数据不丢失。  </p>
 <p>精确一次（Exactly Once）：对于一些非常重要的信息，比如和钱相关的数据，要求数据既不能重复也不丢失。  </p>
 <p>Kafka 0.11版本以后，引入了一项重大特性：幂等性和事务。  </p>
-<p>###幂等性原理  </p>
-<p>幂等性就是指Producer不论向Broker发送多少次重复数据，Broker端都只会持久化一条，保证了不重复。  </p>
+<h3 id="幂等性原理"><a href="#幂等性原理" class="headerlink" title="幂等性原理"></a>幂等性原理</h3><p>幂等性就是指Producer不论向Broker发送多少次重复数据，Broker端都只会持久化一条，保证了不重复。  </p>
 <p>精确一次（Exactly Once） &#x3D; 幂等性 + 至少一次（ ack&#x3D;-1 + 分区副本数&gt;&#x3D;2 + ISR最小副本数量&gt;&#x3D;2）  </p>
 <p>幂等性只能保证的是在单分区单会话内不重复。  </p>
-<p>####如何使用幂等性    </p>
-<p>开启参数 enable.idempotence 默认为 true，false 关闭。    </p>
+<h4 id="如何使用幂等性"><a href="#如何使用幂等性" class="headerlink" title="如何使用幂等性"></a>如何使用幂等性</h4><p>开启参数 enable.idempotence 默认为 true，false 关闭。    </p>
 <p>开启事务，必须开启幂等性。  </p>
-<p>##生产经验——数据乱序</p>
-<p>）kafka在1.x版本之前保证数据单分区有序，条件如下：  </p>
+<h2 id="生产经验——数据乱序"><a href="#生产经验——数据乱序" class="headerlink" title="生产经验——数据乱序"></a>生产经验——数据乱序</h2><p>）kafka在1.x版本之前保证数据单分区有序，条件如下：  </p>
 <p>max.in.flight.requests.per.connection&#x3D;1（不需要考虑是否开启幂等性）。  </p>
 <p>2）kafka在1.x及以后版本保证数据单分区有序，条件如下：    </p>
 <p>（1）未开启幂等性  </p>
 <p>max.in.flight.requests.per.connection需要设置为1。  </p>
 <p>（2）开启幂等性   </p>
 <p>max.in.flight.requests.per.connection需要设置小于等于5。    </p>
-<p>##Kafka 副本  </p>
-<p>###副本基本信息  </p>
-<p>（1）Kafka 副本作用：提高数据可靠性。  </p>
+<h2 id="Kafka-副本"><a href="#Kafka-副本" class="headerlink" title="Kafka 副本"></a>Kafka 副本</h2><h3 id="副本基本信息"><a href="#副本基本信息" class="headerlink" title="副本基本信息"></a>副本基本信息</h3><p>（1）Kafka 副本作用：提高数据可靠性。  </p>
 <p>（2）Kafka 默认副本 1 个，生产环境一般配置为 2 个，保证数据可靠性；  </p>
 <p>（3）Kafka 中副本分为：Leader 和 Follower。    </p>
 <p>（4）Kafka 分区中的所有副本统称为 AR（Assigned Repllicas）。AR &#x3D; ISR + OSR  </p>
 <p>ISR，表示和 Leader 保持同步的 Follower 集合。如果 Follower 长时间未向 Leader 发送通信请求或同步数据，则该 Follower 将被踢出 ISR。该时间阈值由 replica.lag.time.max.ms参数设定，默认 30s。Leader 发生故障之后，就会从 ISR 中选举新的 Leader    </p>
 <p>OSR，表示 Follower 与 Leader 副本同步时，延迟过多的副本。    </p>
-<p>###Leader 选举流程  </p>
-<p>Kafka 集群中有一个 broker 的 Controller 会被选举为 Controller Leader，负责管理集群broker 的上下线，所有 topic 的分区副本分配和 Leader 选举等工作。  </p>
+<h3 id="Leader-选举流程"><a href="#Leader-选举流程" class="headerlink" title="Leader 选举流程"></a>Leader 选举流程</h3><p>Kafka 集群中有一个 broker 的 Controller 会被选举为 Controller Leader，负责管理集群broker 的上下线，所有 topic 的分区副本分配和 Leader 选举等工作。  </p>
 <p><img src="/2023/08/03/kafka/6.png" alt="Leader选举流程">  </p>
-<p>###Leader 和 Follower 故障处理细节<br><img src="/2023/08/03/kafka/7.png" alt="Follower故障处理细节">   </p>
+<h3 id="Leader-和-Follower-故障处理细节"><a href="#Leader-和-Follower-故障处理细节" class="headerlink" title="Leader 和 Follower 故障处理细节"></a>Leader 和 Follower 故障处理细节</h3><p><img src="/2023/08/03/kafka/7.png" alt="Follower故障处理细节">   </p>
 <p><img src="/2023/08/03/kafka/8.png" alt="Leader故障处理细节"></p>
-<p>###生产经验——Leader Partition 负载平衡  </p>
-<p>正常情况下，Kafka本身会自动把Leader Partition均匀分散在各个机器上，来保证每台机器的读写吞吐量都是均匀的。但是如果某些broker宕机，会导致Leader Partition过于集中在其他少部分几台broker上，这会导致少数几台broker的读写请求压力过高，其他宕机的broker重启之后都是follower partition，读写请求很低，造成集群负载不均衡。</p>
+<h3 id="生产经验——Leader-Partition-负载平衡"><a href="#生产经验——Leader-Partition-负载平衡" class="headerlink" title="生产经验——Leader Partition 负载平衡"></a>生产经验——Leader Partition 负载平衡</h3><p>正常情况下，Kafka本身会自动把Leader Partition均匀分散在各个机器上，来保证每台机器的读写吞吐量都是均匀的。但是如果某些broker宕机，会导致Leader Partition过于集中在其他少部分几台broker上，这会导致少数几台broker的读写请求压力过高，其他宕机的broker重启之后都是follower partition，读写请求很低，造成集群负载不均衡。</p>
 <p>auto.leader.rebalance.enable 默认是 true。 自动 Leader Partition 平衡。生产环境中，leader 重选举的代价比较大，可能会带来性能影响，建议设置为 false 关闭。   </p>
 <p>leader.imbalance.per.broker.percentage 默认是 10%。每个 broker 允许的不平衡的 leader的比率。如果每个 broker 超过了这个值，控制器<br>会触发 leader 的平衡。  </p>
 <p>leader.imbalance.check.interval.seconds 默认值 300 秒。检查 leader 负载是否平衡的间隔时间。  </p>
-<p>###文件存储    </p>
-<p>1）Topic 数据的存储机制</p>
+<h3 id="文件存储"><a href="#文件存储" class="headerlink" title="文件存储"></a>文件存储</h3><p>1）Topic 数据的存储机制</p>
 <p>Topic是逻辑上的概念，而partition是物理上的概念，每个partition对应于一个log文件，该log文件中存储的就是Producer生产的数据。Producer生产的数据会被不断追加到该log文件末端，为防止log文件过大导致数据定位效率低下，Kafka采取了分片和索引机制，将每个partition分为多个segment。每个segment包括：“.index”文件、“.log”文件和.timeindex等文件。这些文件位于一个文件夹下，该文件夹的命名规则为：topic名称+分区序号，例如：first-0。  </p>
 <p><img src="/2023/08/03/kafka/9.png" alt="Kafka文件存储机制">   </p>
 <p>Topic数据存储位置：每个broker节点的 kafka&#x2F;datas&#x2F;目录下</p>
@@ -1677,12 +1562,10 @@ return res;
 <pre><code>Dumping ./00000000000000000000.index  
 offset: 3 position: 152 
 </code></pre>
-<p>####Log文件和Index文件详解  </p>
-<p><img src="/2023/08/03/kafka/10.png" alt="Log文件和Index文件详解">    </p>
+<h4 id="Log文件和Index文件详解"><a href="#Log文件和Index文件详解" class="headerlink" title="Log文件和Index文件详解"></a>Log文件和Index文件详解</h4><p><img src="/2023/08/03/kafka/10.png" alt="Log文件和Index文件详解">    </p>
 <p>log.segment.bytes Kafka 中 log 日志是分成一块块存储的，此配置是指 log 日志划分成块的大小，默认值 1G。  </p>
 <p>log.index.interval.bytes 默认 4kb，kafka 里面每当写入了 4kb 大小的日志（.log），然后就往 index 文件里面记录一个索引。 稀疏索引。    </p>
-<p>###文件清理策略    </p>
-<p>Kafka 中默认的日志保存时间为 7 天，可以通过调整如下参数修改保存时间。    </p>
+<h3 id="文件清理策略"><a href="#文件清理策略" class="headerlink" title="文件清理策略"></a>文件清理策略</h3><p>Kafka 中默认的日志保存时间为 7 天，可以通过调整如下参数修改保存时间。    </p>
 <p>Kafka 中提供的日志清理策略有 delete 和 compact 两种。  </p>
 <p>1）delete 日志删除：将过期数据删除<br> log.cleanup.policy &#x3D; delete 所有数据启用删除策略   </p>
 <p>（1）基于时间：默认打开。以 segment 中所有记录中的最大时间戳作为该文件时间戳。  </p>
@@ -1693,15 +1576,12 @@ offset: 3 position: 152
 <p>压缩后的offset可能是不连续的，比如上图中没有6，当从这些offset消费消息时，将会拿到比这个offset大的offset对应的消息，实际上会拿到offset为7的消息，并从这个位置开始消费。  </p>
 <p>这种策略只适合特殊场景，比如消息的key是用户ID，value是用户的资料，通过这种压缩策略，整个消息集里就保存了所有用户最新的资料。  </p>
 <p><img src="/2023/08/03/kafka/11.png" alt="compact日志压缩">  </p>
-<p>##高效读写数据  </p>
-<p>1）Kafka 本身是分布式集群，可以采用分区技术，并行度高  </p>
+<h2 id="高效读写数据"><a href="#高效读写数据" class="headerlink" title="高效读写数据"></a>高效读写数据</h2><p>1）Kafka 本身是分布式集群，可以采用分区技术，并行度高  </p>
 <p>2）读数据采用稀疏索引，可以快速定位要消费的数据  </p>
 <p>3）顺序写磁盘  </p>
 <p>   顺序写之所以快，是因为其省去了大量磁头寻址的时间。  </p>
 <p>4）页缓存 + 零拷贝技术     </p>
-<p>##Kafka 消费者  </p>
-<p>###Kafka 消费方式  </p>
-<p>pull（拉）模 式：</p>
+<h2 id="Kafka-消费者"><a href="#Kafka-消费者" class="headerlink" title="Kafka 消费者"></a>Kafka 消费者</h2><h3 id="Kafka-消费方式"><a href="#Kafka-消费方式" class="headerlink" title="Kafka 消费方式"></a>Kafka 消费方式</h3><p>pull（拉）模 式：</p>
 <p>consumer采用从broker中主动拉取数据。Kafka采用这种方式。</p>
 <p>push（推）模式：  </p>
 <p>Kafka没有采用这种方式，因为由broker决定消息发送速率，很难适应所有消费者的消费速率。    </p>
@@ -1713,44 +1593,32 @@ offset: 3 position: 152
 <p>消费者组内每个消费者负责消费不同分区的数据，一个分区只能由一个组内消费者消费。  </p>
 <p>消费者组之间互不影响。所有的消费者都属于某个消费者组，即消费者组是逻辑上的一个订阅者。    </p>
 <p><img src="/2023/08/03/kafka/13.png" alt="消费者组原理">  </p>
-<p>##生产经验——分区的分配以及再平衡</p>
-<p>Kafka有四种主流的分区分配策略： Range、RoundRobin、Sticky、CooperativeSticky。可以通过配置参数partition.assignment.strategy，修改分区的分配策略。默认策略是Range + CooperativeSticky。Kafka可以同时使用多个分区分配策略  </p>
-<p>###Range 以及再平衡 </p>
-<p>Range 是对每个 topic 而言的。首先对同一个 topic 里面的分区按照序号进行排序，并对消费者按照字母顺序进行排序。  </p>
+<h2 id="生产经验——分区的分配以及再平衡"><a href="#生产经验——分区的分配以及再平衡" class="headerlink" title="生产经验——分区的分配以及再平衡"></a>生产经验——分区的分配以及再平衡</h2><p>Kafka有四种主流的分区分配策略： Range、RoundRobin、Sticky、CooperativeSticky。可以通过配置参数partition.assignment.strategy，修改分区的分配策略。默认策略是Range + CooperativeSticky。Kafka可以同时使用多个分区分配策略  </p>
+<h3 id="Range-以及再平衡"><a href="#Range-以及再平衡" class="headerlink" title="Range 以及再平衡"></a>Range 以及再平衡</h3><p>Range 是对每个 topic 而言的。首先对同一个 topic 里面的分区按照序号进行排序，并对消费者按照字母顺序进行排序。  </p>
 <p>容易产生数据倾斜！    </p>
 <p>Kafka 默认的分区分配策略就是 Range + CooperativeSticky   </p>
-<p>###RoundRobin 以及再平衡  </p>
-<p>RoundRobin 轮询分区策略，是把所有的 partition 和所有的consumer 都列出来，然后按照 hashcode 进行排序，最后通过轮询算法来分配 partition 给到各个消费者。  </p>
-<p>###Sticky 以及再平衡  </p>
-<p>粘性分区定义：可以理解为分配的结果带有“粘性的”。即在执行一次新的分配之前，<br>考虑上一次分配的结果，尽量少的调整分配的变动，可以节省大量的开销。<br>粘性分区是 Kafka 从 0.11.x 版本开始引入这种分配策略，首先会尽量均衡的放置分区到消费者上面，在出现同一消费者组内消费者出现问题的时候，会尽量保持原有分配的分区不变化。   </p>
-<p>##offset 位移       </p>
-<p>从0.9版本开始，consumer默认将offset保存在Kafka一个内置的topic中，该topic为__consumer_offsets</p>
+<h3 id="RoundRobin-以及再平衡"><a href="#RoundRobin-以及再平衡" class="headerlink" title="RoundRobin 以及再平衡"></a>RoundRobin 以及再平衡</h3><p>RoundRobin 轮询分区策略，是把所有的 partition 和所有的consumer 都列出来，然后按照 hashcode 进行排序，最后通过轮询算法来分配 partition 给到各个消费者。  </p>
+<h3 id="Sticky-以及再平衡"><a href="#Sticky-以及再平衡" class="headerlink" title="Sticky 以及再平衡"></a>Sticky 以及再平衡</h3><p>粘性分区定义：可以理解为分配的结果带有“粘性的”。即在执行一次新的分配之前，<br>考虑上一次分配的结果，尽量少的调整分配的变动，可以节省大量的开销。<br>粘性分区是 Kafka 从 0.11.x 版本开始引入这种分配策略，首先会尽量均衡的放置分区到消费者上面，在出现同一消费者组内消费者出现问题的时候，会尽量保持原有分配的分区不变化。   </p>
+<h2 id="offset-位移"><a href="#offset-位移" class="headerlink" title="offset 位移"></a>offset 位移</h2><p>从0.9版本开始，consumer默认将offset保存在Kafka一个内置的topic中，该topic为__consumer_offsets</p>
 <p>__consumer_offsets 主题里面采用 key 和 value 的方式存储数据。key 是group.id+topic+分区号，value 就是当前 offset 的值。每隔一段时间，kafka 内部会对这个 topic 进行compact，也就是每个 group.id+topic+分区号就保留最新数据。  </p>
-<p>###自动提交 offset   </p>
-<p>为了使我们能够专注于自己的业务逻辑，Kafka提供了自动提交offset的功能。  </p>
+<h3 id="自动提交-offset"><a href="#自动提交-offset" class="headerlink" title="自动提交 offset"></a>自动提交 offset</h3><p>为了使我们能够专注于自己的业务逻辑，Kafka提供了自动提交offset的功能。  </p>
 <p>自动提交offset的相关参数：  </p>
 <p>enable.auto.commit：是否开启自动提交offset功能，默认是true  </p>
 <p>auto.commit.interval.ms：自动提交offset的时间间隔，默认是5s  </p>
-<p>###手动提交offset  </p>
-<p>手动提交offset的方法有两种：分别是commitSync（同步提交）和commitAsync（异步提交）。两者的相同点是，都会将本次提交的一批数据最高的偏移量提交；不同点是，同步提交阻塞当前线程，一直到提交成功，并且会自动失败重试（由不可控因素导致，也会出现提交失败）；而异步提交则没有失败重试机制，故有可能提交失败。  </p>
+<h3 id="手动提交offset"><a href="#手动提交offset" class="headerlink" title="手动提交offset"></a>手动提交offset</h3><p>手动提交offset的方法有两种：分别是commitSync（同步提交）和commitAsync（异步提交）。两者的相同点是，都会将本次提交的一批数据最高的偏移量提交；不同点是，同步提交阻塞当前线程，一直到提交成功，并且会自动失败重试（由不可控因素导致，也会出现提交失败）；而异步提交则没有失败重试机制，故有可能提交失败。  </p>
 <p>commitSync（同步提交）：必须等待offset提交完毕，再去消费下一批数据。  </p>
 <p>commitAsync（异步提交） ：发送完提交offset请求后，就开始消费下一批数据了。  </p>
-<p>###指定 Offset 消费</p>
-<pre><code>auto.offset.reset = earliest | latest | none 默认是 latest
+<h3 id="指定-Offset-消费"><a href="#指定-Offset-消费" class="headerlink" title="指定 Offset 消费"></a>指定 Offset 消费</h3><pre><code>auto.offset.reset = earliest | latest | none 默认是 latest
 </code></pre>
 <p>（1）earliest：自动将偏移量重置为最早的偏移量，–from-beginning。  </p>
 <p>（2）latest（默认值）：自动将偏移量重置为最新偏移量。  </p>
 <p>（3）none：如果未找到消费者组的先前偏移量，则向消费者抛出异常。  </p>
 <p>（4）任意指定 offset 位移开始消费    </p>
-<p>##漏消费和重复消费</p>
-<p>重复消费：已经消费了数据，但是 offset 没提交。 </p>
+<h2 id="漏消费和重复消费"><a href="#漏消费和重复消费" class="headerlink" title="漏消费和重复消费"></a>漏消费和重复消费</h2><p>重复消费：已经消费了数据，但是 offset 没提交。 </p>
 <p>漏消费：先提交 offset 后消费，有可能会造成数据的漏消费。  </p>
-<p>###生产经验——消费者事务     </p>
-<p>如果想完成Consumer端的精准一次性消费，那么需要Kafka消费端将消费过程和提交<br>offset过程做原子绑定。  </p>
-<p>###生产经验——数据积压（消费者如何提高吞吐量）    </p>
-<p><img src="/2023/08/03/kafka/14.png" alt="数据积压">    </p>
-<p>##Kafka-Kraft 模式    </p>
-<p><img src="/2023/08/03/kafka/15.png" alt="kafka-kraft架构">  </p>
+<h3 id="生产经验——消费者事务"><a href="#生产经验——消费者事务" class="headerlink" title="生产经验——消费者事务"></a>生产经验——消费者事务</h3><p>如果想完成Consumer端的精准一次性消费，那么需要Kafka消费端将消费过程和提交<br>offset过程做原子绑定。  </p>
+<h3 id="生产经验——数据积压（消费者如何提高吞吐量）"><a href="#生产经验——数据积压（消费者如何提高吞吐量）" class="headerlink" title="生产经验——数据积压（消费者如何提高吞吐量）"></a>生产经验——数据积压（消费者如何提高吞吐量）</h3><p><img src="/2023/08/03/kafka/14.png" alt="数据积压">    </p>
+<h2 id="Kafka-Kraft-模式"><a href="#Kafka-Kraft-模式" class="headerlink" title="Kafka-Kraft 模式"></a>Kafka-Kraft 模式</h2><p><img src="/2023/08/03/kafka/15.png" alt="kafka-kraft架构">  </p>
 <p>右图为 kraft 模式架构（实验性），不再依赖 zookeeper 集群，而是用三台controller 节点代替 zookeeper，元数据保存在 controller 中，由 controller 直接进行 Kafka 集群管理。  </p>
 <p>这样做的好处有以下几个：  </p>
 <p>Kafka 不再依赖外部框架，而是能够独立运行；    </p>
@@ -2303,10 +2171,16 @@ override def value: mutable.Map[String, Long] = map
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-08-01 11:07:31 / 修改时间：13:30:26" itemprop="dateCreated datePublished" datetime="2023-08-01T11:07:31+08:00">2023-08-01</time>
+              <time title="创建时间：2023-08-01 11:07:31" itemprop="dateCreated datePublished" datetime="2023-08-01T11:07:31+08:00">2023-08-01</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-11 12:59:20" itemprop="dateModified" datetime="2023-08-11T12:59:20+08:00">2023-08-11</time>
+              </span>
 
           
 
@@ -2319,19 +2193,15 @@ override def value: mutable.Map[String, Long] = map
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>#SQLServer查询处理体系结构指南</p>
-<p>##执行模式<br>行执行模式<br>批执行模式 </p>
-<p>###行执行模式<br>行模式执行是用于传统 RDBMS 表（其中数据以行格式存储）的查询处理方法</p>
-<p>###批执行模式<br>批模式执行是一种查询处理方法，用于统一处理多个行（因此采用“批”一词）    </p>
+          <h1 id="SQLServer查询处理体系结构指南"><a href="#SQLServer查询处理体系结构指南" class="headerlink" title="SQLServer查询处理体系结构指南"></a>SQLServer查询处理体系结构指南</h1><h2 id="执行模式"><a href="#执行模式" class="headerlink" title="执行模式"></a>执行模式</h2><p>行执行模式<br>批执行模式 </p>
+<h3 id="行执行模式"><a href="#行执行模式" class="headerlink" title="行执行模式"></a>行执行模式</h3><p>行模式执行是用于传统 RDBMS 表（其中数据以行格式存储）的查询处理方法</p>
+<h3 id="批执行模式"><a href="#批执行模式" class="headerlink" title="批执行模式"></a>批执行模式</h3><p>批模式执行是一种查询处理方法，用于统一处理多个行（因此采用“批”一词）    </p>
 <p>批中的每列都作为一个矢量存储在单独的内存区域中，因此批模式处理是基于矢量的</p>
 <p>当在批模式下执行查询并且查询访问列存储索引中的数据时，执行树运算符和子运算符会一次读取列段中的多行。 SQL Server 仅读取结果所需的列，即 SELECT 语句、JOIN 谓词或筛选谓词引用的列</p>
 <p><strong>批执行模式VS行执行模式的优势</strong>：一次读取多行，再筛选。避免了行执行模式的多次读取，提高运行效率  </p>
-<p>##SQL 语句处理  </p>
-<p>处理单个 Transact-SQL 语句是 SQL Server 执行 Transact-SQL 语句的最基本方法    </p>
-<p>###逻辑运算符优先级  </p>
-<p>计算顺序依次为：NOT、AND最后是 OR。算术运算符和位运算符优先于逻辑运算符处理  </p>
-<p>##优化 SELECT 语句    </p>
-<p>语句 SELECT 是非过程性的，数据库服务器必须分析语句，以决定提取所请求数据的最有效方法。  </p>
+<h2 id="SQL-语句处理"><a href="#SQL-语句处理" class="headerlink" title="SQL 语句处理"></a>SQL 语句处理</h2><p>处理单个 Transact-SQL 语句是 SQL Server 执行 Transact-SQL 语句的最基本方法    </p>
+<h3 id="逻辑运算符优先级"><a href="#逻辑运算符优先级" class="headerlink" title="逻辑运算符优先级"></a>逻辑运算符优先级</h3><p>计算顺序依次为：NOT、AND最后是 OR。算术运算符和位运算符优先于逻辑运算符处理  </p>
+<h2 id="优化-SELECT-语句"><a href="#优化-SELECT-语句" class="headerlink" title="优化 SELECT 语句"></a>优化 SELECT 语句</h2><p>语句 SELECT 是非过程性的，数据库服务器必须分析语句，以决定提取所请求数据的最有效方法。  </p>
 <p>执行此操作的组件称为查询优化器，可以使数据库服务器针对数据库内的更改情况进行动态调整，而无需程序员或数据库管理员输入  </p>
 <p>order 排序字段上应该建索引  </p>
 <p>从潜在的多个可能的计划中选择一个执行计划的过程称为“优化”  </p>
@@ -2348,23 +2218,18 @@ override def value: mutable.Map[String, Long] = map
 
     这包括执行过程中的运行时信息，每秒更新一次
 </code></pre>
-<p>##密度  </p>
-<p>密度定义数据中存在的唯一值的分布，或给定列的重复值平均数。 密度与值的选择性成反比，密度越小，值的选择性越大  </p>
-<p>##处理 SELECT 语句 </p>
-<p>SQL Server 处理单个 SELECT 语句的基本步骤包括如下内容：  </p>
+<h2 id="密度"><a href="#密度" class="headerlink" title="密度"></a>密度</h2><p>密度定义数据中存在的唯一值的分布，或给定列的重复值平均数。 密度与值的选择性成反比，密度越小，值的选择性越大  </p>
+<h2 id="处理-SELECT-语句"><a href="#处理-SELECT-语句" class="headerlink" title="处理 SELECT 语句"></a>处理 SELECT 语句</h2><p>SQL Server 处理单个 SELECT 语句的基本步骤包括如下内容：  </p>
 <p>1.解析select语句</p>
 <p>2.生成查询树</p>
 <p>3.生成执行计划，并选择合理的执行计划</p>
 <p>4.运行执行计划  </p>
 <p>5.返回结果</p>
-<p>##常量折叠和表达式计算</p>
-<p>###可折叠表达式    </p>
-<p>仅包含常量的算术表达式  </p>
+<h2 id="常量折叠和表达式计算"><a href="#常量折叠和表达式计算" class="headerlink" title="常量折叠和表达式计算"></a>常量折叠和表达式计算</h2><h3 id="可折叠表达式"><a href="#可折叠表达式" class="headerlink" title="可折叠表达式"></a>可折叠表达式</h3><p>仅包含常量的算术表达式  </p>
 <p>仅包含常量的逻辑表达式  </p>
 <p>被 SQL Server 认为可折叠的内置函数包括 CAST 和 CONVERT   </p>
 <p>CLR 用户定义类型的确定性方法和确定性的标量值 CLR 用户定义函数  </p>
-<p>###不可折叠的表达式    </p>
-<p>所有其他表达式类型都是不可折叠的。 特别是下列类型的表达式是不可折叠的：  </p>
+<h3 id="不可折叠的表达式"><a href="#不可折叠的表达式" class="headerlink" title="不可折叠的表达式"></a>不可折叠的表达式</h3><p>所有其他表达式类型都是不可折叠的。 特别是下列类型的表达式是不可折叠的：  </p>
 <p>非常量表达式    </p>
 <p>结果取决于局部变量或参数的表达式   </p>
 <p>不确定性函数     </p>
@@ -2372,10 +2237,9 @@ override def value: mutable.Map[String, Long] = map
 <p>结果取决于语言设置的表达式   </p>
 <p>结果取决于 SET 选项的表达式  </p>
 <p>结果取决于服务器配置选项的表达式  </p>
-<p>##常量折叠的优点  </p>
-<p>表达式不必在运行时重复计算  </p>
+<h2 id="常量折叠的优点"><a href="#常量折叠的优点" class="headerlink" title="常量折叠的优点"></a>常量折叠的优点</h2><p>表达式不必在运行时重复计算  </p>
 <p>查询优化器可使用计算表达式后所得的值来估计 TotalDue &gt; 117.00 + 1000.00 查询部分的结果集的大小  </p>
-<p>##工作表<br>工作表是用于保存中间结果的内部表。 某些 GROUP BY、 ORDER BY或 UNION 查询会生成工作表  </p>
+<h2 id="工作表"><a href="#工作表" class="headerlink" title="工作表"></a>工作表</h2><p>工作表是用于保存中间结果的内部表。 某些 GROUP BY、 ORDER BY或 UNION 查询会生成工作表  </p>
 <p>工作表在 tempdb 中生成，并在不再需要时自动删除  </p>
 <p>SQL Server 查询处理器对索引视图和非索引视图将区别对待  </p>
 <p>索引视图的行以表的格式存储在数据库中   </p>
@@ -2393,8 +2257,7 @@ override def value: mutable.Map[String, Long] = map
 <p>“SQL 计划”缓存存储 (SQLCP)   </p>
 <pre><code>用于与自动参数化、动态或已准备的查询相关的计划  
 </code></pre>
-<p>##从计划缓存中删除执行计划   </p>
-<p>只要计划缓存中有足够的存储空间，执行计划就会保留在其中   </p>
+<h2 id="从计划缓存中删除执行计划"><a href="#从计划缓存中删除执行计划" class="headerlink" title="从计划缓存中删除执行计划"></a>从计划缓存中删除执行计划</h2><p>只要计划缓存中有足够的存储空间，执行计划就会保留在其中   </p>
 <p>当存在内存不足的情况时，SQL Server 数据库引擎将使用基于开销的方法来确定从计划缓存中删除哪些执行计划  </p>
 
       
@@ -2448,7 +2311,7 @@ override def value: mutable.Map[String, Long] = map
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-06 17:53:02" itemprop="dateModified" datetime="2023-08-06T17:53:02+08:00">2023-08-06</time>
+                <time title="修改时间：2023-08-11 13:05:08" itemprop="dateModified" datetime="2023-08-11T13:05:08+08:00">2023-08-11</time>
               </span>
 
           
@@ -2462,8 +2325,7 @@ override def value: mutable.Map[String, Long] = map
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>#我于人间全无敌，不与天战与shui战？  </p>
-<p>本文测试数据和Explain可视化工具资料包<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Q8Zt7gWBF6JkW_Kg6sIWzw">https://pan.baidu.com/s/1Q8Zt7gWBF6JkW_Kg6sIWzw</a><br>提取码：2khx     </p>
+          <h1 id="我于人间全无敌，不与天战与shui战？"><a href="#我于人间全无敌，不与天战与shui战？" class="headerlink" title="我于人间全无敌，不与天战与shui战？"></a>我于人间全无敌，不与天战与shui战？</h1><p>本文测试数据和Explain可视化工具资料包<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Q8Zt7gWBF6JkW_Kg6sIWzw">https://pan.baidu.com/s/1Q8Zt7gWBF6JkW_Kg6sIWzw</a><br>提取码：2khx     </p>
 <p>相关学习文档<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Wdc2f38csrGbC3GA1s0H_w">https://pan.baidu.com/s/1Wdc2f38csrGbC3GA1s0H_w</a><br>提取码：888i   </p>
 <p>永久有效，失效来打我~<br><img src="/2023/07/31/Hive-on-mr/1.gif"></p>
 <p>Hive on mr  </p>
@@ -2475,9 +2337,7 @@ override def value: mutable.Map[String, Long] = map
 <p>通过优化执行计划,保证相同资源配置的情况下，任务运行更流畅  </p>
 <p>3): 常有调优参数设置  </p>
 <p>开启Hive内置的一些有助于任务高效运行的设置,保障任务流畅运行  </p>
-<p>##1:组件资源调优</p>
-<p>###Yarn资源配置  </p>
-<p>需要调整的Yarn参数均与CPU、内存等资源有关，核心配置参数如下  </p>
+<h2 id="1-组件资源调优"><a href="#1-组件资源调优" class="headerlink" title="1:组件资源调优"></a>1:组件资源调优</h2><h3 id="Yarn资源配置"><a href="#Yarn资源配置" class="headerlink" title="Yarn资源配置"></a>Yarn资源配置</h3><p>需要调整的Yarn参数均与CPU、内存等资源有关，核心配置参数如下  </p>
 <p>（1）yarn.nodemanager.resource.memory-mb  </p>
 <p>该参数的含义是，一个NodeManager节点分配给Container使用的内存。该参数的配置，<strong>取决于NodeManager所在节点的总内存容量和该节点运行的其他服务的数量</strong>。  </p>
 <p>（2）yarn.nodemanager.resource.cpu-vcores  </p>
@@ -2496,8 +2356,7 @@ override def value: mutable.Map[String, Long] = map
     &lt;value&gt;512&lt;/value&gt;
 &lt;/property&gt;
 </code></pre>
-<p>###MapReduce资源配置  </p>
-<p>MapReduce资源配置主要包括Map Task的内存和CPU核数，以及Reduce Task的内存和CPU核数  </p>
+<h3 id="MapReduce资源配置"><a href="#MapReduce资源配置" class="headerlink" title="MapReduce资源配置"></a>MapReduce资源配置</h3><p>MapReduce资源配置主要包括Map Task的内存和CPU核数，以及Reduce Task的内存和CPU核数  </p>
 <p>1）mapreduce.map.memory.mb	  </p>
 <p>该参数的含义是，单个Map Task申请的container容器内存大小，其默认值为1024。该值不能超出yarn.scheduler.maximum-allocation-mb和yarn.scheduler.minimum-allocation-mb规定的范围  </p>
 <p>该参数需要根据不同的计算任务单独进行配置，在hive中，可直接使用如下方式为每个SQL语句单独进行配置： </p>
@@ -2512,11 +2371,7 @@ override def value: mutable.Map[String, Long] = map
 </code></pre>
 <p>4）mapreduce.reduce.cpu.vcores	  </p>
 <p>该参数的含义是，单个Reduce Task申请的container容器cpu核数，其默认值为1。该值一般无需调整  </p>
-<p>#2.Explain执行计划调优 </p>
-<p>##测试用表</p>
-<p>###1.订单表(2000w条数据)</p>
-<p>####建表语句</p>
-<pre><code>hive (default)&gt;
+<h1 id="2-Explain执行计划调优"><a href="#2-Explain执行计划调优" class="headerlink" title="2.Explain执行计划调优"></a>2.Explain执行计划调优</h1><h2 id="测试用表"><a href="#测试用表" class="headerlink" title="测试用表"></a>测试用表</h2><h3 id="1-订单表-2000w条数据"><a href="#1-订单表-2000w条数据" class="headerlink" title="1.订单表(2000w条数据)"></a>1.订单表(2000w条数据)</h3><h4 id="建表语句"><a href="#建表语句" class="headerlink" title="建表语句"></a>建表语句</h4><pre><code>hive (default)&gt;
 drop table if exists order_detail;
 create table order_detail(
 id           string comment &#39;订单id&#39;,
@@ -2530,15 +2385,12 @@ total_amount decimal(16, 2) comment &#39;下单金额&#39;
 partitioned by (dt string)
 row format delimited fields terminated by &#39;\t&#39;;
 </code></pre>
-<p>####数据装载  </p>
-<p>将order_detail.txt文件上传到hiveserver2所在节点的&#x2F;opt&#x2F;module&#x2F;hive&#x2F;datas&#x2F;目录，并执行以下导入语句。</p>
+<h4 id="数据装载"><a href="#数据装载" class="headerlink" title="数据装载"></a>数据装载</h4><p>将order_detail.txt文件上传到hiveserver2所在节点的&#x2F;opt&#x2F;module&#x2F;hive&#x2F;datas&#x2F;目录，并执行以下导入语句。</p>
 <p>注：文件较大，请耐心等待。  </p>
 <pre><code>hive (default)&gt; 
 load data local inpath &#39;/opt/module/hive/datas/order_detail.txt&#39; overwrite into table order_detail partition(dt=&#39;2020-06-14&#39;); 
 </code></pre>
-<p>###2.支付表(600w条数据)</p>
-<p>####建表语句</p>
-<pre><code>hive (default)&gt;
+<h3 id="2-支付表-600w条数据"><a href="#2-支付表-600w条数据" class="headerlink" title="2.支付表(600w条数据)"></a>2.支付表(600w条数据)</h3><h4 id="建表语句-1"><a href="#建表语句-1" class="headerlink" title="建表语句"></a>建表语句</h4><pre><code>hive (default)&gt;
 drop table if exists payment_detail;
 create table payment_detail(
 id              string comment &#39;支付id&#39;,
@@ -2550,15 +2402,12 @@ total_amount    decimal(16, 2) comment &#39;支付金额&#39;
 partitioned by (dt string)
 row format delimited fields terminated by &#39;\t&#39;;
 </code></pre>
-<p>####数据装载  </p>
-<p>将payment_detail.txt文件上传到HiveServer2所在节点的&#x2F;opt&#x2F;module&#x2F;hive&#x2F;datas&#x2F;目录，并执行以下导入语句。</p>
+<h4 id="数据装载-1"><a href="#数据装载-1" class="headerlink" title="数据装载"></a>数据装载</h4><p>将payment_detail.txt文件上传到HiveServer2所在节点的&#x2F;opt&#x2F;module&#x2F;hive&#x2F;datas&#x2F;目录，并执行以下导入语句。</p>
 <p>注：文件较大，请耐心等待。  </p>
 <pre><code>hive (default)&gt; 
 load data local inpath &#39;/opt/module/hive/datas/payment_detail.txt&#39; overwrite into table payment_detail partition(dt=&#39;2020-06-14&#39;);  
 </code></pre>
-<p>###3.商品信息表(100w条数据)  </p>
-<p>####建表语句    </p>
-<pre><code>hive (default)&gt; 
+<h3 id="3-商品信息表-100w条数据"><a href="#3-商品信息表-100w条数据" class="headerlink" title="3.商品信息表(100w条数据)"></a>3.商品信息表(100w条数据)</h3><h4 id="建表语句-2"><a href="#建表语句-2" class="headerlink" title="建表语句"></a>建表语句</h4><pre><code>hive (default)&gt; 
 drop table if exists product_info;
 create table product_info(
 id           string comment &#39;商品id&#39;,
@@ -2568,14 +2417,11 @@ category_id  string comment &#39;分类id&#39;
 )
 row format delimited fields terminated by &#39;\t&#39;;  
 </code></pre>
-<p>####数据装载    </p>
-<p>将product_info.txt文件上传到HiveServer2所在节点的&#x2F;opt&#x2F;module&#x2F;hive&#x2F;datas&#x2F;目录，并执行以下导入语句。  </p>
+<h4 id="数据装载-2"><a href="#数据装载-2" class="headerlink" title="数据装载"></a>数据装载</h4><p>将product_info.txt文件上传到HiveServer2所在节点的&#x2F;opt&#x2F;module&#x2F;hive&#x2F;datas&#x2F;目录，并执行以下导入语句。  </p>
 <pre><code>hive (default)&gt; 
 load data local inpath &#39;/opt/module/hive/datas/product_info.txt&#39; overwrite into table product_info;  
 </code></pre>
-<p>###4.省份信息表(34条数据)    </p>
-<p>####建表语句    </p>
-<pre><code>hive (default)&gt; 
+<h3 id="4-省份信息表-34条数据"><a href="#4-省份信息表-34条数据" class="headerlink" title="4.省份信息表(34条数据)"></a>4.省份信息表(34条数据)</h3><h4 id="建表语句-3"><a href="#建表语句-3" class="headerlink" title="建表语句"></a>建表语句</h4><pre><code>hive (default)&gt; 
 drop table if exists province_info;
 create table province_info(
 id            string comment &#39;省份id&#39;,
@@ -2583,16 +2429,13 @@ province_name string comment &#39;省份名称&#39;
 )
 row format delimited fields terminated by &#39;\t&#39;;  
 </code></pre>
-<p>####数据装载  </p>
-<p>将province_info.txt文件上传到HiveServer2所在节点的&#x2F;opt&#x2F;module&#x2F;hive&#x2F;datas&#x2F;目录，并执行以下导入语句。  </p>
+<h4 id="数据装载-3"><a href="#数据装载-3" class="headerlink" title="数据装载"></a>数据装载</h4><p>将province_info.txt文件上传到HiveServer2所在节点的&#x2F;opt&#x2F;module&#x2F;hive&#x2F;datas&#x2F;目录，并执行以下导入语句。  </p>
 <pre><code>hive (default)&gt; 
 load data local inpath &#39;/opt/module/hive/datas/province_info.txt&#39; overwrite into table province_info;  
 </code></pre>
-<p>##Explain查看执行计划（重点）    </p>
-<p>Explain呈现的执行计划，由一系列Stage组成，这一系列Stage具有依赖关系，每个Stage对应一个MapReduce Job，或者一个文件系统操作等。  </p>
+<h2 id="Explain查看执行计划（重点）"><a href="#Explain查看执行计划（重点）" class="headerlink" title="Explain查看执行计划（重点）"></a>Explain查看执行计划（重点）</h2><p>Explain呈现的执行计划，由一系列Stage组成，这一系列Stage具有依赖关系，每个Stage对应一个MapReduce Job，或者一个文件系统操作等。  </p>
 <p>若某个Stage对应的一个MapReduce Job，其Map端和Reduce端的计算逻辑分别由Map Operator Tree和Reduce Operator Tree进行描述，Operator Tree由一系列的Operator组成，一个Operator代表在Map或Reduce阶段的一个单一的逻辑操作，例如TableScan Operator，Select Operator，Join Operator等</p>
-<p>###常见的Operator及其作用如下：  </p>
-<p>TableScan：表扫描操作，通常map端第一个操作肯定是表扫描操作  </p>
+<h3 id="常见的Operator及其作用如下："><a href="#常见的Operator及其作用如下：" class="headerlink" title="常见的Operator及其作用如下："></a>常见的Operator及其作用如下：</h3><p>TableScan：表扫描操作，通常map端第一个操作肯定是表扫描操作  </p>
 <p>Select Operator：选取操作   </p>
 <p>Group By Operator：分组聚合操作  </p>
 <p>Reduce Output Operator：输出到 reduce 操作  </p>
@@ -2600,16 +2443,14 @@ load data local inpath &#39;/opt/module/hive/datas/province_info.txt&#39; overwr
 <p>Join Operator：join 操作  </p>
 <p>File Output Operator：文件输出操作  </p>
 <p>Fetch Operator 客户端获取数据操作  </p>
-<p>###Explain查看执行计划基本语法  </p>
-<p>EXPLAIN [FORMATTED | EXTENDED | DEPENDENCY] query-sql  </p>
+<h3 id="Explain查看执行计划基本语法"><a href="#Explain查看执行计划基本语法" class="headerlink" title="Explain查看执行计划基本语法"></a>Explain查看执行计划基本语法</h3><p>EXPLAIN [FORMATTED | EXTENDED | DEPENDENCY] query-sql  </p>
 <pre><code>FORMATTED：将执行计划以JSON字符串的形式输出  
 
 EXTENDED：输出执行计划中的额外信息，通常是读写的文件名等信息  
 
 DEPENDENCY：输出执行计划读取的表及分区  
 </code></pre>
-<p>###Explain执行计划可视化工具使用方法  </p>
-<p>1.将本文开头百度网盘共享的dist文件压缩包上传至linux服务器中  </p>
+<h3 id="Explain执行计划可视化工具使用方法"><a href="#Explain执行计划可视化工具使用方法" class="headerlink" title="Explain执行计划可视化工具使用方法"></a>Explain执行计划可视化工具使用方法</h3><p>1.将本文开头百度网盘共享的dist文件压缩包上传至linux服务器中  </p>
 <p>2.unzip dist.zip 解压  </p>
 <p>3.进入解压后的dist文件夹下  </p>
 <p>4.python -m SimpleHTTPServer 8901  启动可视化工具（此处的8901是我指定的可用端口号，可以按自己的想法设置）<br><img src="/2023/07/31/Hive-on-mr/1.png" alt="Explain可视化工具">  </p>
@@ -2617,11 +2458,9 @@ DEPENDENCY：输出执行计划读取的表及分区
 <p><img src="/2023/07/31/Hive-on-mr/2.png" alt="Explain执行计划json格式">  </p>
 <p>6.Explain可视化工具示例  </p>
 <p><img src="/2023/07/31/Hive-on-mr/3.png" alt="示例">  </p>
-<p>##HQL语法优化之分组聚合优化 （map-site） </p>
-<p>Hive对分组聚合的优化主要围绕着减少Shuffle数据量进行，具体做法是map-side聚合  </p>
+<h2 id="HQL语法优化之分组聚合优化-（map-site）"><a href="#HQL语法优化之分组聚合优化-（map-site）" class="headerlink" title="HQL语法优化之分组聚合优化 （map-site）"></a>HQL语法优化之分组聚合优化 （map-site）</h2><p>Hive对分组聚合的优化主要围绕着减少Shuffle数据量进行，具体做法是map-side聚合  </p>
 <p>在map端维护一个hash table进行预聚合，按照分组字段分区，发送至reduce端，完成最终的聚合。有效的减少shuffle操作的数量，达到提高运行效率的目的。  </p>
-<p>###map-side 聚合相关的参数如下：</p>
-<p>–启用map-side聚合 </p>
+<h3 id="map-side-聚合相关的参数如下："><a href="#map-side-聚合相关的参数如下：" class="headerlink" title="map-side 聚合相关的参数如下："></a>map-side 聚合相关的参数如下：</h3><p>–启用map-side聚合 </p>
 <pre><code>set hive.map.aggr=true;  
 </code></pre>
 <p>–用于检测源表数据是否适合进行map-side聚合。检测的方法是：先对若干条数据进行map-side聚合，若聚合后的条数和聚合前的条数比值小于该值，则认为该表适合进行map-side聚合；否则，认为该表数据不适合进行map-side聚合，后续数据便不再进行map-side聚合。  </p>
@@ -2633,16 +2472,14 @@ DEPENDENCY：输出执行计划读取的表及分区
 <p>–map-side聚合所用的hash table，占用map task堆内存的最大比例，若超出该值，则会对hash table进行一次flush。  </p>
 <pre><code>set hive.map.aggr.hash.force.flush.memory.threshold=0.9;  
 </code></pre>
-<p>###HQL语法优化之分组聚合优化 （map-site）优化案例  </p>
-<pre><code>select
+<h3 id="HQL语法优化之分组聚合优化-（map-site）优化案例"><a href="#HQL语法优化之分组聚合优化-（map-site）优化案例" class="headerlink" title="HQL语法优化之分组聚合优化 （map-site）优化案例"></a>HQL语法优化之分组聚合优化 （map-site）优化案例</h3><pre><code>select
 product_id,
 count(*)
 from order_detail
 group by product_id;  
 </code></pre>
 <p><img src="/2023/07/31/Hive-on-mr/4.png" alt="启用map-site调优前后Explain执行计划对比">  </p>
-<p>####优化思路   </p>
-<p>开启map-side聚合，配置以下参数：  </p>
+<h4 id="优化思路"><a href="#优化思路" class="headerlink" title="优化思路"></a>优化思路</h4><p>开启map-side聚合，配置以下参数：  </p>
 <pre><code>set hive.map.aggr=true;  
 
 set hive.map.aggr.hash.min.reduction=0.5;   
@@ -2651,8 +2488,7 @@ set hive.groupby.mapaggr.checkinterval=100000;
 
 set hive.map.aggr.hash.force.flush.memory.threshold=0.9;  
 </code></pre>
-<p>###HQL语法优化之Join优化  </p>
-<p>Join算法概述</p>
+<h3 id="HQL语法优化之Join优化"><a href="#HQL语法优化之Join优化" class="headerlink" title="HQL语法优化之Join优化"></a>HQL语法优化之Join优化</h3><p>Join算法概述</p>
 <p>Common Join : 常规join，不做优化    </p>
 <p><img src="/2023/07/31/Hive-on-mr/5.png" alt="Common Join原理图">  </p>
 <p>Map Join：<strong>适用于大表join小表</strong>，将小表数据缓存为hash table（内存表），然后扫描大表数据，这样在map端即可完成关联操作  </p>
@@ -2673,8 +2509,7 @@ set hive.map.aggr.hash.force.flush.memory.threshold=0.9;
 SMB Map Join，两个分桶之间的join实现原理为Sort Merge Join算法   
 </code></pre>
 <p>3.相较于Bucket Map Join，SMB Map Join对分桶大小是没有要求的,因为SMB Map Join不需要缓存数据  </p>
-<p>####Map Join  </p>
-<p>优化说明 </p>
+<h4 id="Map-Join"><a href="#Map-Join" class="headerlink" title="Map Join"></a>Map Join</h4><p>优化说明 </p>
 <p><img src="/2023/07/31/Hive-on-mr/9.png" alt="Map join原理解析">   </p>
 <p>寻找大表候选人：  </p>
 <p>a inner join b时，a,b都可以作为大表候选人，只返回a,b都能连接上的数据  </p>
@@ -2699,8 +2534,7 @@ SMB Map Join，两个分桶之间的join实现原理为Sort Merge Join算法
 <p>–无条件转Map Join时的小表之和阈值,若一个Common Join operator相关的表中，存在n-1张表的大小总和&lt;&#x3D;该值,此时hive便不会再为每种n-1张表的组合均生成Map Join计划,同时也不会保留Common Join作为后备计划。而是只生成一个最优的Map Join计划。  </p>
 <pre><code>set hive.auto.convert.join.noconditionaltask.size=10000000;  
 </code></pre>
-<p>#####Map Join优化案例  </p>
-<pre><code>select  *
+<h5 id="Map-Join优化案例"><a href="#Map-Join优化案例" class="headerlink" title="Map Join优化案例"></a>Map Join优化案例</h5><pre><code>select  *
 from order_detail od
 join product_info product on od.product_id = product.id
 join province_info province on od.province_id = province.id;  
@@ -2709,8 +2543,7 @@ join province_info province on od.province_id = province.id;
 <p><img src="/2023/07/31/Hive-on-mr/10.png" alt="Map Join优化前">    </p>
 <p>对参与关联的三张表进行分析，发现各自大小如下   </p>
 <p><img src="/2023/07/31/Hive-on-mr/11.png" alt="参与关联的三张表大小"></p>
-<p>######Map Join方案一：  </p>
-<p>启用Map Join自动转换 </p>
+<h6 id="Map-Join方案一："><a href="#Map-Join方案一：" class="headerlink" title="Map Join方案一："></a>Map Join方案一：</h6><p>启用Map Join自动转换 </p>
 <pre><code>set hive.auto.convert.join=true;  
 </code></pre>
 <p>不使用无条件转Map Join  </p>
@@ -2721,8 +2554,7 @@ join province_info province on od.province_id = province.id;
 </code></pre>
 <p>这样可保证将两个Common Join operator均可转为Map Join operator，并保留Common Join作为后备计划，保证计算任务的稳定  </p>
 <p><img src="/2023/07/31/Hive-on-mr/12.png" alt="Map Jion优化方案一">  </p>
-<p>######Map Join方案二： </p>
-<p>启用Map Join自动转换  </p>
+<h6 id="Map-Join方案二："><a href="#Map-Join方案二：" class="headerlink" title="Map Join方案二："></a>Map Join方案二：</h6><p>启用Map Join自动转换  </p>
 <pre><code>set hive.auto.convert.join=true;  
 </code></pre>
 <p>使用无条件转Map Join  </p>
@@ -2733,8 +2565,7 @@ join province_info province on od.province_id = province.id;
 </code></pre>
 <p>这样可直接将两个Common Join operator转为两个Map Join operator，并且由于两个Map Join operator的小表大小之和小于等于hive.auto.convert.join.noconditionaltask.size，故两个Map Join operator任务可合并为同一个。这个方案计算效率最高，但需要的内存也是最多的</p>
 <p><img src="/2023/07/31/Hive-on-mr/13.png" alt="Map Jion优化方案二"> </p>
-<p>######Map Join方案三：  </p>
-<p>启用Map Join自动转换    </p>
+<h6 id="Map-Join方案三："><a href="#Map-Join方案三：" class="headerlink" title="Map Join方案三："></a>Map Join方案三：</h6><p>启用Map Join自动转换    </p>
 <pre><code>set hive.auto.convert.join=true;   
 </code></pre>
 <p>使用无条件转Map Join  </p>
@@ -2745,8 +2576,7 @@ join province_info province on od.province_id = province.id;
 </code></pre>
 <p>这样可直接将两个Common Join operator转为Map Join operator，但不会将两个Map Join的任务合并。该方案计算效率比方案二低，但需要的内存也更少</p>
 <p><img src="/2023/07/31/Hive-on-mr/14.png" alt="Map Join优化方案三"></p>
-<p>####Bucket Map Join  </p>
-<p>Bucket Map Join不支持自动转换，发须通过用户在SQL语句中提供如下Hint提示，并配置如下相关参数，方可使用  </p>
+<h4 id="Bucket-Map-Join"><a href="#Bucket-Map-Join" class="headerlink" title="Bucket Map Join"></a>Bucket Map Join</h4><p>Bucket Map Join不支持自动转换，发须通过用户在SQL语句中提供如下Hint提示，并配置如下相关参数，方可使用  </p>
 <pre><code>select /*+ mapjoin(ta) */
 ta.id,
 tb.id
@@ -2763,8 +2593,7 @@ join table_b tb on ta.id=tb.id;
 <p>–启用bucket map join优化功能  </p>
 <pre><code>set hive.optimize.bucketmapjoin = true;    
 </code></pre>
-<p>#####Bucket Map Join优化案例   </p>
-<pre><code>select
+<h5 id="Bucket-Map-Join优化案例"><a href="#Bucket-Map-Join优化案例" class="headerlink" title="Bucket Map Join优化案例"></a>Bucket Map Join优化案例</h5><pre><code>select
     *
 from(
     select
@@ -2780,11 +2609,10 @@ join(
 )pd
 on od.id=pd.order_detail_id;  
 </code></pre>
-<p>######Bucket Map Join优化前    </p>
-<pre><code>set hive.auto.convert.join=false;  
+<h6 id="Bucket-Map-Join优化前"><a href="#Bucket-Map-Join优化前" class="headerlink" title="Bucket Map Join优化前"></a>Bucket Map Join优化前</h6><pre><code>set hive.auto.convert.join=false;  
 </code></pre>
 <p><img src="/2023/07/31/Hive-on-mr/15.png" alt="Bucket Map Join优化前"></p>
-<p>######Bucket Map Join优化思路<br>经分析，参与join的两张表，数据量如下  </p>
+<h6 id="Bucket-Map-Join优化思路"><a href="#Bucket-Map-Join优化思路" class="headerlink" title="Bucket Map Join优化思路"></a>Bucket Map Join优化思路</h6><p>经分析，参与join的两张表，数据量如下  </p>
 <p>order_detail	  1176009934（约1122M）<br>payment_detail	  334198480（约319M）  </p>
 <p>可以认为是大表join大表，可尝试采用Bucket Map Join优化方案  </p>
 <p>首先需要依据源表创建两个分桶表，order_detail建议分16个bucket  </p>
@@ -2863,8 +2691,7 @@ join payment_detail_bucketed pd on od.id = pd.order_detail_id;
 <p><img src="/2023/07/31/Hive-on-mr/16.png">  </p>
 <p>由于bucket map join和map join的执行计划非常像，如何确定该执行计划是否属于bucket map join ? </p>
 <p><img src="/2023/07/31/Hive-on-mr/17.png"></p>
-<p>####Sort Merge Bucket Map Join   </p>
-<p>优化说明  </p>
+<h4 id="Sort-Merge-Bucket-Map-Join"><a href="#Sort-Merge-Bucket-Map-Join" class="headerlink" title="Sort Merge Bucket Map Join"></a>Sort Merge Bucket Map Join</h4><p>优化说明  </p>
 <p>Sort Merge Bucket Map Join有两种触发方式，包括Hint提示和自动转换。Hint提示已过时，不推荐使用。下面是自动转换的相关参数:  </p>
 <p>–启动Sort Merge Bucket Map Join优化  </p>
 <pre><code>set hive.optimize.bucketmapjoin.sortedmerge=true;  
@@ -2872,8 +2699,7 @@ join payment_detail_bucketed pd on od.id = pd.order_detail_id;
 <p>–使用自动转换SMB Join  </p>
 <pre><code>set hive.auto.convert.sortmerge.join=true;   
 </code></pre>
-<p>#####Sort Merge Bucket Map Join优化案例  </p>
-<pre><code>select
+<h5 id="Sort-Merge-Bucket-Map-Join优化案例"><a href="#Sort-Merge-Bucket-Map-Join优化案例" class="headerlink" title="Sort Merge Bucket Map Join优化案例"></a>Sort Merge Bucket Map Join优化案例</h5><pre><code>select
         *
 from(
     select
@@ -2889,7 +2715,7 @@ join(
 )pd
 on od.id=pd.order_detail_id;  
 </code></pre>
-<p>#####Sort Merge Bucket Map Join优化思路<br>order_detail	1176009934（约1122M）<br>payment_detail	334198480（约319M）</p>
+<h5 id="Sort-Merge-Bucket-Map-Join优化思路"><a href="#Sort-Merge-Bucket-Map-Join优化思路" class="headerlink" title="Sort Merge Bucket Map Join优化思路"></a>Sort Merge Bucket Map Join优化思路</h5><p>order_detail	1176009934（约1122M）<br>payment_detail	334198480（约319M）</p>
 <p>两张表都相对较大，除了可以考虑采用Bucket Map Join算法，还可以考虑SMB Join。相较于Bucket Map Join，SMB Map Join对分桶大小是没有要求的    </p>
 <p>首先需要依据源表创建两个的有序的分桶表，order_detail建议分16个bucket，payment_detail建议分8个bucket,注意分桶个数的倍数关系以及分桶字段和排序字段</p>
 <p>–订单表  </p>
@@ -2962,15 +2788,12 @@ join payment_detail_sorted_bucketed pd
 on od.id = pd.order_detail_id;  
 </code></pre>
 <p><img src="/2023/07/31/Hive-on-mr/18.png">  </p>
-<p>###HQL语法优化之数据倾斜    </p>
-<p>数据倾斜概述</p>
+<h3 id="HQL语法优化之数据倾斜"><a href="#HQL语法优化之数据倾斜" class="headerlink" title="HQL语法优化之数据倾斜"></a>HQL语法优化之数据倾斜</h3><p>数据倾斜概述</p>
 <p>数据倾斜问题，通常是指参与计算的数据分布不均，即某个key或者某些key的数据量远超其他key，导致在shuffle阶段，大量相同key的数据被发往同一个Reduce，进而导致该Reduce所需的时间远超其他Reduce，成为整个任务的瓶颈</p>
 <p>Hive中的数据倾斜常出现在<strong>分组聚合</strong>和<strong>join操作</strong>的场景中  </p>
-<p>####分组聚合导致的数据倾斜 （Map-Side聚合&#x2F;Skew-GroupBy优化）</p>
-<p>如果group by分组字段的值分布不均，就可能导致大量相同的key进入同一Reduce，从而导致数据倾斜问题   </p>
+<h4 id="分组聚合导致的数据倾斜-（Map-Side聚合-Skew-GroupBy优化）"><a href="#分组聚合导致的数据倾斜-（Map-Side聚合-Skew-GroupBy优化）" class="headerlink" title="分组聚合导致的数据倾斜 （Map-Side聚合&#x2F;Skew-GroupBy优化）"></a>分组聚合导致的数据倾斜 （Map-Side聚合&#x2F;Skew-GroupBy优化）</h4><p>如果group by分组字段的值分布不均，就可能导致大量相同的key进入同一Reduce，从而导致数据倾斜问题   </p>
 <p>由分组聚合导致的数据倾斜问题，有以下两种解决思路    </p>
-<p>#####Map-Side聚合   </p>
-<p>开启Map-Side聚合后，数据会现在Map端完成部分聚合工作。这样一来即便原始数据是倾斜的，经过Map端的初步聚合后，发往Reduce的数据也就不再倾斜了，最佳状态下，Map-端聚合能完全屏蔽数据倾斜问题。  </p>
+<h5 id="Map-Side聚合"><a href="#Map-Side聚合" class="headerlink" title="Map-Side聚合"></a>Map-Side聚合</h5><p>开启Map-Side聚合后，数据会现在Map端完成部分聚合工作。这样一来即便原始数据是倾斜的，经过Map端的初步聚合后，发往Reduce的数据也就不再倾斜了，最佳状态下，Map-端聚合能完全屏蔽数据倾斜问题。  </p>
 <p>相关参数如下：  </p>
 <pre><code>set hive.map.aggr=true;
 
@@ -2980,27 +2803,23 @@ set hive.groupby.mapaggr.checkinterval=100000;
 
 set hive.map.aggr.hash.force.flush.memory.threshold=0.9;   
 </code></pre>
-<p>#####Skew-GroupBy优化 </p>
-<p>Skew-GroupBy的原理是启动两个MR任务，第一个MR按照随机数分区，将数据分散发送到Reduce，完成部分聚合，第二个MR按照分组字段分区，完成最终聚合  </p>
+<h5 id="Skew-GroupBy优化"><a href="#Skew-GroupBy优化" class="headerlink" title="Skew-GroupBy优化"></a>Skew-GroupBy优化</h5><p>Skew-GroupBy的原理是启动两个MR任务，第一个MR按照随机数分区，将数据分散发送到Reduce，完成部分聚合，第二个MR按照分组字段分区，完成最终聚合  </p>
 <p>–启用分组聚合数据倾斜优化  </p>
 <pre><code>set hive.groupby.skewindata=true;  
 </code></pre>
 <p>–关闭map-side聚合  </p>
 <pre><code>set hive.map.aggr=false;    
 </code></pre>
-<p>####Join导致的数据倾斜    </p>
-<p>如果关联字段的值分布不均，就可能导致大量相同的key进入同一Reduce，从而导致数据倾斜问题。  </p>
+<h4 id="Join导致的数据倾斜"><a href="#Join导致的数据倾斜" class="headerlink" title="Join导致的数据倾斜"></a>Join导致的数据倾斜</h4><p>如果关联字段的值分布不均，就可能导致大量相同的key进入同一Reduce，从而导致数据倾斜问题。  </p>
 <p>由join导致的数据倾斜问题，有如下三种解决方案：<br>map join<br>skew join<br>调整sql，通过sql语句将倾斜数据打散成更小的块  </p>
-<p>#####map join（<strong>适用于大表join小表时发生数据倾斜的场景</strong>）      </p>
-<p> 使用map join算法，join操作仅在map端就能完成，没有shuffle操作，没有reduce阶段，自然不会产生reduce端的数据倾斜     </p>
+<h5 id="map-join（适用于大表join小表时发生数据倾斜的场景）"><a href="#map-join（适用于大表join小表时发生数据倾斜的场景）" class="headerlink" title="map join（适用于大表join小表时发生数据倾斜的场景）"></a>map join（<strong>适用于大表join小表时发生数据倾斜的场景</strong>）</h5><p> 使用map join算法，join操作仅在map端就能完成，没有shuffle操作，没有reduce阶段，自然不会产生reduce端的数据倾斜     </p>
 <p>相关参数参照上文中map join部分内容  </p>
 <pre><code>set hive.auto.convert.join=true;  
 set hive.mapjoin.smalltable.filesize=250000;  
 set hive.auto.convert.join.noconditionaltask=true;
 set hive.auto.convert.join.noconditionaltask.size=10000000;
 </code></pre>
-<p>#####skew join（<strong>对两表中倾斜的key的数据量有要求</strong>）   </p>
-<p>skew join的原理是，为倾斜的大key单独启动一个map join任务进行计算，其余key进行正常的common join  </p>
+<h5 id="skew-join（对两表中倾斜的key的数据量有要求）"><a href="#skew-join（对两表中倾斜的key的数据量有要求）" class="headerlink" title="skew join（对两表中倾斜的key的数据量有要求）"></a>skew join（<strong>对两表中倾斜的key的数据量有要求</strong>）</h5><p>skew join的原理是，为倾斜的大key单独启动一个map join任务进行计算，其余key进行正常的common join  </p>
 <p><img src="/2023/07/31/Hive-on-mr/19.png" alt="Skew Join原理图">  </p>
 <p>相关参数如下：  </p>
 <p>–启用skew join优化  </p>
@@ -3010,8 +2829,7 @@ set hive.auto.convert.join.noconditionaltask.size=10000000;
 <pre><code>set hive.skewjoin.key=100000;    
 </code></pre>
 <p>对两表中倾斜的key的数据量有要求，要求一张表中的倾斜key的数据量比较小（方便走mapjoin）  </p>
-<p>#####SQL打散    </p>
-<pre><code>select
+<h5 id="SQL打散"><a href="#SQL打散" class="headerlink" title="SQL打散"></a>SQL打散</h5><pre><code>select
     *
 from(
     select --打散操作
@@ -3033,10 +2851,8 @@ join(
 on ta.id=tb.id;  
 </code></pre>
 <p><img src="/2023/07/31/Hive-on-mr/20.png" alt="SQL打散"></p>
-<p>####HQL语法优化之任务并行度  </p>
-<p>对于一个分布式的计算任务而言，设置一个合适的并行度十分重要。Hive的计算任务由MapReduce完成，故并行度的调整需要分为Map端和Reduce端</p>
-<p>#####Map端并行度  </p>
-<p>Map端的并行度，也就是Map的个数。是由输入文件的切片数决定的。一般情况下，Map端的并行度无需手动调整  </p>
+<h4 id="HQL语法优化之任务并行度"><a href="#HQL语法优化之任务并行度" class="headerlink" title="HQL语法优化之任务并行度"></a>HQL语法优化之任务并行度</h4><p>对于一个分布式的计算任务而言，设置一个合适的并行度十分重要。Hive的计算任务由MapReduce完成，故并行度的调整需要分为Map端和Reduce端</p>
+<h5 id="Map端并行度"><a href="#Map端并行度" class="headerlink" title="Map端并行度"></a>Map端并行度</h5><p>Map端的并行度，也就是Map的个数。是由输入文件的切片数决定的。一般情况下，Map端的并行度无需手动调整  </p>
 <p>以下特殊情况可考虑调整map端并行度：  </p>
 <p>1）查询的表中存在大量小文件    </p>
 <pre><code>set hive.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat;  
@@ -3046,8 +2862,7 @@ on ta.id=tb.id;
 <p>–一个切片的最大值  </p>
 <pre><code>set mapreduce.input.fileinputformat.split.maxsize=256000000;  
 </code></pre>
-<p>#####Reduce端并行度    </p>
-<p>Reduce端的并行度，也就是Reduce个数。相对来说，更需要关注。Reduce端的并行度，可由用户自己指定，也可由Hive自行根据该MR Job输入的文件大小进行估算    </p>
+<h5 id="Reduce端并行度"><a href="#Reduce端并行度" class="headerlink" title="Reduce端并行度"></a>Reduce端并行度</h5><p>Reduce端的并行度，也就是Reduce个数。相对来说，更需要关注。Reduce端的并行度，可由用户自己指定，也可由Hive自行根据该MR Job输入的文件大小进行估算    </p>
 <p>Reduce端的并行度的相关参数如下：  </p>
 <p>–指定Reduce端并行度，默认值为-1，表示用户未指定  </p>
 <pre><code>set mapreduce.job.reduces;  
@@ -3058,15 +2873,13 @@ on ta.id=tb.id;
 <p>–单个Reduce Task计算的数据量，用于估算Reduce并行度  </p>
 <pre><code>set hive.exec.reducers.bytes.per.reducer;
 </code></pre>
-<p>######估算逻辑   </p>
-<p>假设Job输入的文件大小为totalInputBytes  </p>
+<h6 id="估算逻辑"><a href="#估算逻辑" class="headerlink" title="估算逻辑"></a>估算逻辑</h6><p>假设Job输入的文件大小为totalInputBytes  </p>
 <p>参数hive.exec.reducers.bytes.per.reducer的值为bytesPerReducer。  </p>
 <p>参数hive.exec.reducers.max的值为maxReducers。  </p>
 <p>则Reduce端的并行度为：  </p>
 <pre><code>min(ceil(totalInputBytes/bytesPerReducer),maxReducers)  
 </code></pre>
-<p>####HQL语法优化之小文件合并    </p>
-<p>Map端输入文件合并   </p>
+<h4 id="HQL语法优化之小文件合并"><a href="#HQL语法优化之小文件合并" class="headerlink" title="HQL语法优化之小文件合并"></a>HQL语法优化之小文件合并</h4><p>Map端输入文件合并   </p>
 <p>合并Map端输入的小文件，是指将多个小文件划分到一个切片中，进而由一个Map Task去处理。目的是防止为单个小文件启动一个Map Task，浪费计算资源  </p>
 <p>–可将多个小文件切片，合并为一个切片，进而由一个map任务处理  </p>
 <pre><code>set hive.input.format=org.apache.hadoop.hive.ql.io.CombineHiveInputFormat;  
@@ -3085,29 +2898,24 @@ on ta.id=tb.id;
 <p>–触发小文件合并任务的阈值，若某计算任务输出的文件平均大小低于该值，则触发合并 </p>
 <pre><code>set hive.merge.smallfiles.avgsize=16000000;  
 </code></pre>
-<p>###其他优化</p>
-<p>####1.CBO优化     </p>
-<p>CBO是指Cost based Optimizer，即基于计算成本的优化</p>
+<h3 id="其他优化"><a href="#其他优化" class="headerlink" title="其他优化"></a>其他优化</h3><h4 id="1-CBO优化"><a href="#1-CBO优化" class="headerlink" title="1.CBO优化"></a>1.CBO优化</h4><p>CBO是指Cost based Optimizer，即基于计算成本的优化</p>
 <p>在Hive中，计算成本模型考虑到了：数据的行数、CPU、本地IO、HDFS IO、网络IO等方面  </p>
 <p>目前CBO在hive的MR引擎下主要用于join的优化，例如多表join的join顺序  </p>
 <p>–是否启用cbo优化   </p>
 <pre><code>set hive.cbo.enable=true;    
 </code></pre>
-<p>####2.谓词下推    </p>
-<p>谓词下推（predicate pushdown）是指，尽量将过滤操作前移，以减少后续计算步骤的数据量</p>
+<h4 id="2-谓词下推"><a href="#2-谓词下推" class="headerlink" title="2.谓词下推"></a>2.谓词下推</h4><p>谓词下推（predicate pushdown）是指，尽量将过滤操作前移，以减少后续计算步骤的数据量</p>
 <p>–是否启动谓词下推（predicate pushdown）优化  </p>
 <pre><code>set hive.optimize.ppd = true;  
 </code></pre>
 <p>CBO优化也会完成一部分的谓词下推优化工作，因为在执行计划中，谓词越靠前，整个计划的计算成本就会越低</p>
-<p>####3.矢量化查询  </p>
-<p>Hive的矢量化查询优化，依赖于CPU的矢量化计算，CPU的矢量化计算的基本原理如下图  </p>
+<h4 id="3-矢量化查询"><a href="#3-矢量化查询" class="headerlink" title="3.矢量化查询"></a>3.矢量化查询</h4><p>Hive的矢量化查询优化，依赖于CPU的矢量化计算，CPU的矢量化计算的基本原理如下图  </p>
 <p><img src="/2023/07/31/Hive-on-mr/21.png" alt="矢量化计算原理">  </p>
 <pre><code>set hive.vectorized.execution.enabled=true;  
 </code></pre>
 <p>若执行计划中，出现“Execution mode: vectorized”字样，即表明使用了矢量化计算。  </p>
 <p><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/Vectorized+Query+Execution#VectorizedQueryExecution-Limitations">矢量化计算官方文档</a> </p>
-<p>####4.Fetch抓取    </p>
-<p>Fetch抓取是指，Hive中对某些情况的查询可以不必使用MapReduce计算  </p>
+<h4 id="4-Fetch抓取"><a href="#4-Fetch抓取" class="headerlink" title="4.Fetch抓取"></a>4.Fetch抓取</h4><p>Fetch抓取是指，Hive中对某些情况的查询可以不必使用MapReduce计算  </p>
 <p>Hive可以简单地读取emp对应的存储目录下的文件，然后输出查询结果到控制台</p>
 <p>–是否在特定场景转换为fetch 任务  </p>
 <p>–设置为none表示不转换  </p>
@@ -3115,8 +2923,7 @@ on ta.id=tb.id;
 <p>–设置为more表示支持select 任意字段,包括函数，过滤，和limit等  </p>
 <pre><code>set hive.fetch.task.conversion=more;  
 </code></pre>
-<p>####5.本地模式（不上yarn）  </p>
-<p>Hive可以通过本地模式在单台机器上处理所有的任务。对于小数据集，执行时间可以明显被缩短</p>
+<h4 id="5-本地模式（不上yarn）"><a href="#5-本地模式（不上yarn）" class="headerlink" title="5.本地模式（不上yarn）"></a>5.本地模式（不上yarn）</h4><p>Hive可以通过本地模式在单台机器上处理所有的任务。对于小数据集，执行时间可以明显被缩短</p>
 <p>–开启自动转换为本地模式  </p>
 <pre><code>set hive.exec.mode.local.auto=true;  
 </code></pre>
@@ -3126,16 +2933,14 @@ on ta.id=tb.id;
 <p>–设置local MapReduce的最大输入文件个数，当输入文件个数小于这个值时采用local MapReduce的方式，默认为4  </p>
 <pre><code>set hive.exec.mode.local.auto.input.files.max=10;
 </code></pre>
-<p>####6.并行执行  </p>
-<p>Hive会将一个SQL语句转化成一个或者多个Stage，每个Stage对应一个MR Job。默认情况下，Hive同时只会执行一个Stage。但是某SQL语句可能会包含多个Stage，但这多个Stage可能并非完全互相依赖，也就是说有些Stage是可以并行执行的。此处提到的并行执行就是指这些Stage的并行执行   </p>
+<h4 id="6-并行执行"><a href="#6-并行执行" class="headerlink" title="6.并行执行"></a>6.并行执行</h4><p>Hive会将一个SQL语句转化成一个或者多个Stage，每个Stage对应一个MR Job。默认情况下，Hive同时只会执行一个Stage。但是某SQL语句可能会包含多个Stage，但这多个Stage可能并非完全互相依赖，也就是说有些Stage是可以并行执行的。此处提到的并行执行就是指这些Stage的并行执行   </p>
 <p>–启用并行执行优化  </p>
 <pre><code>set hive.exec.parallel=true;       
 </code></pre>
 <p>–同一个sql允许最大并行度，默认为8  </p>
 <pre><code>set hive.exec.parallel.thread.number=8;   
 </code></pre>
-<p>####7.严格模式   </p>
-<p>Hive可以通过设置某些参数防止危险操作：   </p>
+<h4 id="7-严格模式"><a href="#7-严格模式" class="headerlink" title="7.严格模式"></a>7.严格模式</h4><p>Hive可以通过设置某些参数防止危险操作：   </p>
 <p>1）分区表不使用分区过滤  </p>
 <p>将hive.strict.checks.no.partition.filter设置为true时，对于分区表，除非where语句中含有分区字段过滤条件来限制范围，否则不允许执行  </p>
 <p>2）使用order by没有limit过滤   </p>
@@ -3186,10 +2991,16 @@ on ta.id=tb.id;
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-07-31 11:40:34 / 修改时间：16:31:44" itemprop="dateCreated datePublished" datetime="2023-07-31T11:40:34+08:00">2023-07-31</time>
+              <time title="创建时间：2023-07-31 11:40:34" itemprop="dateCreated datePublished" datetime="2023-07-31T11:40:34+08:00">2023-07-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-11 13:03:22" itemprop="dateModified" datetime="2023-08-11T13:03:22+08:00">2023-08-11</time>
+              </span>
 
           
 
@@ -3202,16 +3013,12 @@ on ta.id=tb.id;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img src="/2023/07/31/hive-udf/2.png"></p>
-<p>#Hive自定义UDF函数案例    </p>
-<p>##0）需求  </p>
-<p>自定义一个UDF实现计算给定基本数据类型的长度，例如：  </p>
+          <h1 id="看似寻常最奇崛，成如容易却艰辛"><a href="#看似寻常最奇崛，成如容易却艰辛" class="headerlink" title="看似寻常最奇崛，成如容易却艰辛"></a>看似寻常最奇崛，成如容易却艰辛</h1><p><img src="/2023/07/31/hive-udf/2.png"></p>
+<h1 id="Hive自定义UDF函数案例"><a href="#Hive自定义UDF函数案例" class="headerlink" title="Hive自定义UDF函数案例"></a>Hive自定义UDF函数案例</h1><h2 id="0）需求"><a href="#0）需求" class="headerlink" title="0）需求"></a>0）需求</h2><p>自定义一个UDF实现计算给定基本数据类型的长度，例如：  </p>
 <pre><code>hive(default)&gt; select my_len(&quot;abcd&quot;);  
 4  
 </code></pre>
-<p>##1）创建一个Maven工程Hive</p>
-<p>##2）导入依赖</p>
-<pre><code>&lt;dependencies&gt;
+<h2 id="1）创建一个Maven工程Hive"><a href="#1）创建一个Maven工程Hive" class="headerlink" title="1）创建一个Maven工程Hive"></a>1）创建一个Maven工程Hive</h2><h2 id="2）导入依赖"><a href="#2）导入依赖" class="headerlink" title="2）导入依赖"></a>2）导入依赖</h2><pre><code>&lt;dependencies&gt;
     &lt;dependency&gt;
         &lt;groupId&gt;org.apache.hive&lt;/groupId&gt;
         &lt;artifactId&gt;hive-exec&lt;/artifactId&gt;
@@ -3219,8 +3026,7 @@ on ta.id=tb.id;
     &lt;/dependency&gt;
 &lt;/dependencies&gt;  
 </code></pre>
-<p>##3）创建一个类  </p>
-<pre><code>package com.atguigu.hive.udf;
+<h2 id="3）创建一个类"><a href="#3）创建一个类" class="headerlink" title="3）创建一个类"></a>3）创建一个类</h2><pre><code>package com.atguigu.hive.udf;
 
 import org.apache.hadoop.hive.ql.exec.UDFArgumentException;
 import org.apache.hadoop.hive.ql.exec.UDFArgumentLengthException;
@@ -3268,44 +3074,34 @@ public String getDisplayString(String[] children) &#123;
 &#125;
 &#125;
 </code></pre>
-<p>##4）创建临时函数  </p>
-<p>###（1）打成jar包上传到服务器&#x2F;opt&#x2F;module&#x2F;hive&#x2F;datas&#x2F;myudf.jar	</p>
-<p>###（2）将jar包添加到hive的classpath，临时生效</p>
-<pre><code>hive (default)&gt; add jar /opt/module/hive/datas/myudf.jar;
+<h2 id="4）创建临时函数"><a href="#4）创建临时函数" class="headerlink" title="4）创建临时函数"></a>4）创建临时函数</h2><h3 id="（1）打成jar包上传到服务器-opt-module-hive-datas-myudf-jar"><a href="#（1）打成jar包上传到服务器-opt-module-hive-datas-myudf-jar" class="headerlink" title="（1）打成jar包上传到服务器&#x2F;opt&#x2F;module&#x2F;hive&#x2F;datas&#x2F;myudf.jar"></a>（1）打成jar包上传到服务器&#x2F;opt&#x2F;module&#x2F;hive&#x2F;datas&#x2F;myudf.jar</h3><h3 id="（2）将jar包添加到hive的classpath，临时生效"><a href="#（2）将jar包添加到hive的classpath，临时生效" class="headerlink" title="（2）将jar包添加到hive的classpath，临时生效"></a>（2）将jar包添加到hive的classpath，临时生效</h3><pre><code>hive (default)&gt; add jar /opt/module/hive/datas/myudf.jar;
 </code></pre>
-<p>###（3）创建临时函数与开发好的java class关联</p>
-<pre><code>hive (default)&gt; 
+<h3 id="（3）创建临时函数与开发好的java-class关联"><a href="#（3）创建临时函数与开发好的java-class关联" class="headerlink" title="（3）创建临时函数与开发好的java class关联"></a>（3）创建临时函数与开发好的java class关联</h3><pre><code>hive (default)&gt; 
 create temporary function my_len 
 as &quot;com.atguigu.hive.udf.MyUDF&quot;;
 </code></pre>
-<p>###（4）即可在hql中使用自定义的临时函数</p>
-<pre><code>hive (default)&gt; 
+<h3 id="（4）即可在hql中使用自定义的临时函数"><a href="#（4）即可在hql中使用自定义的临时函数" class="headerlink" title="（4）即可在hql中使用自定义的临时函数"></a>（4）即可在hql中使用自定义的临时函数</h3><pre><code>hive (default)&gt; 
 select 
 ename,
 my_len(ename) ename_len 
 from emp;
 </code></pre>
-<p>###（5）删除临时函数</p>
-<pre><code>hive (default)&gt; drop temporary function my_len;
+<h3 id="（5）删除临时函数"><a href="#（5）删除临时函数" class="headerlink" title="（5）删除临时函数"></a>（5）删除临时函数</h3><pre><code>hive (default)&gt; drop temporary function my_len;
 注意：临时函数只跟会话有关系，跟库没有关系。只要创建临时函数的会话不断，在当前会话下，任意一个库都可以使用，其他会话全都不能使用。
 </code></pre>
-<p>##5）创建永久函数</p>
-<p>###（1）创建永久函数</p>
-<p>注意：因为add jar本身也是临时生效，所以在创建永久函数的时候，需要制定路径（并且因为元数据的原因，这个路径还得是HDFS上的路径）</p>
+<h2 id="5）创建永久函数"><a href="#5）创建永久函数" class="headerlink" title="5）创建永久函数"></a>5）创建永久函数</h2><h3 id="（1）创建永久函数"><a href="#（1）创建永久函数" class="headerlink" title="（1）创建永久函数"></a>（1）创建永久函数</h3><p>注意：因为add jar本身也是临时生效，所以在创建永久函数的时候，需要制定路径（并且因为元数据的原因，这个路径还得是HDFS上的路径）</p>
 <pre><code>hive (default)&gt; 
 create function my_len2 
 as &quot;com.atguigu.hive.udf.MyUDF&quot; 
 using jar &quot;hdfs://hadoop102:8020/udf/myudf.jar&quot;;
 </code></pre>
-<p>###（2）即可在hql中使用自定义的永久函数 </p>
-<pre><code>hive (default)&gt; 
+<h3 id="（2）即可在hql中使用自定义的永久函数"><a href="#（2）即可在hql中使用自定义的永久函数" class="headerlink" title="（2）即可在hql中使用自定义的永久函数"></a>（2）即可在hql中使用自定义的永久函数</h3><pre><code>hive (default)&gt; 
 select 
 ename,
 my_len2(ename) ename_len 
 from emp;
 </code></pre>
-<p>###（3）删除永久函数 </p>
-<pre><code>hive (default)&gt; drop function my_len2;  
+<h3 id="（3）删除永久函数"><a href="#（3）删除永久函数" class="headerlink" title="（3）删除永久函数"></a>（3）删除永久函数</h3><pre><code>hive (default)&gt; drop function my_len2;  
 </code></pre>
 <p>注意：永久函数跟会话没有关系，创建函数的会话断了以后，其他会话也可以使用。  </p>
 <p>永久函数创建的时候，在函数名之前需要自己加上库名，如果不指定库名的话，会默认把当前库的库名给加上。  </p>
@@ -3365,7 +3161,7 @@ from emp;
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-08-06 17:51:57" itemprop="dateModified" datetime="2023-08-06T17:51:57+08:00">2023-08-06</time>
+                <time title="修改时间：2023-08-11 13:08:10" itemprop="dateModified" datetime="2023-08-11T13:08:10+08:00">2023-08-11</time>
               </span>
 
           
@@ -3379,100 +3175,77 @@ from emp;
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g84y147sX?p=78&vd_source=326368ccf929b51406b17a280e53c102">尚硅谷大数据Hive 3.x教程全新升级版（基于hive3.1.3）</a><br>#手握日月摘星辰，世间无我这般人！  </p>
-<p>相关学习文档<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1vdjJdb5hZtWMDK6hoH1R5g">https://pan.baidu.com/s/1vdjJdb5hZtWMDK6hoH1R5g</a><br>提取码：uce2   </p>
+          <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g84y147sX?p=78&vd_source=326368ccf929b51406b17a280e53c102">尚硅谷大数据Hive 3.x教程全新升级版（基于hive3.1.3）</a></p>
+<h1 id="手握日月摘星辰，世间无我这般人！"><a href="#手握日月摘星辰，世间无我这般人！" class="headerlink" title="手握日月摘星辰，世间无我这般人！"></a>手握日月摘星辰，世间无我这般人！</h1><p>相关学习文档<br>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1vdjJdb5hZtWMDK6hoH1R5g">https://pan.baidu.com/s/1vdjJdb5hZtWMDK6hoH1R5g</a><br>提取码：uce2   </p>
 <p><img src="/2023/07/30/hive_learn/8.png">  </p>
-<p>#一：Hive的基础知识<br>##1.什么是Hive？  </p>
-<p>Hive是由Facebook开源，基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张表，并提供类SQL查询功能</p>
-<p>##2.Hive本质  </p>
-<p>Hive是一个Hadoop客户端，用于将HQL（Hive SQL）转化成MapReduce程序。<br>（1）Hive中每张表的数据存储在HDFS<br>（2）Hive分析数据底层的实现是MapReduce（也可配置为Spark或者Tez）<br>（3）执行程序运行在Yarn上</p>
-<p>##3.用户接口：Client  </p>
-<p>CLI（command-line interface）、JDBC&#x2F;ODBC  </p>
-<p>###JDBC和ODBC的区别:  </p>
-<p>（1）JDBC的移植性比ODBC好 </p>
+<h1 id="一：Hive的基础知识"><a href="#一：Hive的基础知识" class="headerlink" title="一：Hive的基础知识"></a>一：Hive的基础知识</h1><h2 id="1-什么是Hive？"><a href="#1-什么是Hive？" class="headerlink" title="1.什么是Hive？"></a>1.什么是Hive？</h2><p>Hive是由Facebook开源，基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张表，并提供类SQL查询功能</p>
+<h2 id="2-Hive本质"><a href="#2-Hive本质" class="headerlink" title="2.Hive本质"></a>2.Hive本质</h2><p>Hive是一个Hadoop客户端，用于将HQL（Hive SQL）转化成MapReduce程序。<br>（1）Hive中每张表的数据存储在HDFS<br>（2）Hive分析数据底层的实现是MapReduce（也可配置为Spark或者Tez）<br>（3）执行程序运行在Yarn上</p>
+<h2 id="3-用户接口：Client"><a href="#3-用户接口：Client" class="headerlink" title="3.用户接口：Client"></a>3.用户接口：Client</h2><p>CLI（command-line interface）、JDBC&#x2F;ODBC  </p>
+<h3 id="JDBC和ODBC的区别"><a href="#JDBC和ODBC的区别" class="headerlink" title="JDBC和ODBC的区别:"></a>JDBC和ODBC的区别:</h3><p>（1）JDBC的移植性比ODBC好 </p>
 <p>（2）两者使用的语言不同，JDBC在Java编程时使用，ODBC一般在C&#x2F;C++编程时使用  </p>
-<p>##4:元数据：Metastore  </p>
-<p>元数据包括：数据库（默认是default）、表名、表的拥有者、列&#x2F;分区字段、表的类型（是否是外部表）、表的数据所在目录等  </p>
+<h2 id="4-元数据：Metastore"><a href="#4-元数据：Metastore" class="headerlink" title="4:元数据：Metastore"></a>4:元数据：Metastore</h2><p>元数据包括：数据库（默认是default）、表名、表的拥有者、列&#x2F;分区字段、表的类型（是否是外部表）、表的数据所在目录等  </p>
 <p>默认存储在自带的derby数据库中，由于derby数据库只支持单客户端访问，生产环境中为了多人开发，推荐使用MySQL存储Metastore  </p>
-<p>##5.hive的存储和计算  </p>
-<p>使用HDFS进行存储，可以选择MapReduce&#x2F;Tez&#x2F;Spark进行计算</p>
-<p>##6.hiveserver2服务  </p>
-<p>Hive的hiveserver2服务的作用是提供jdbc&#x2F;odbc接口，为用户提供远程访问Hive数据的功能，例如用户期望在个人电脑中访问远程服务中的Hive数据，就需要用到Hiveserver2  </p>
-<p>##7.用户说明  </p>
-<p>在远程访问Hive数据时，客户端并未直接访问Hadoop集群，而是由Hivesever2代理访问,那么访问Hadoop集群的用户身份是谁？  </p>
+<h2 id="5-hive的存储和计算"><a href="#5-hive的存储和计算" class="headerlink" title="5.hive的存储和计算"></a>5.hive的存储和计算</h2><p>使用HDFS进行存储，可以选择MapReduce&#x2F;Tez&#x2F;Spark进行计算</p>
+<h2 id="6-hiveserver2服务"><a href="#6-hiveserver2服务" class="headerlink" title="6.hiveserver2服务"></a>6.hiveserver2服务</h2><p>Hive的hiveserver2服务的作用是提供jdbc&#x2F;odbc接口，为用户提供远程访问Hive数据的功能，例如用户期望在个人电脑中访问远程服务中的Hive数据，就需要用到Hiveserver2  </p>
+<h2 id="7-用户说明"><a href="#7-用户说明" class="headerlink" title="7.用户说明"></a>7.用户说明</h2><p>在远程访问Hive数据时，客户端并未直接访问Hadoop集群，而是由Hivesever2代理访问,那么访问Hadoop集群的用户身份是谁？  </p>
 <p>具体是谁，由Hiveserver2的hive.server2.enable.doAs参数决定，该参数的含义是是否启用Hiveserver2用户模拟的功能  </p>
 <p>若启用，则Hiveserver2会模拟成客户端的登录用户去访问Hadoop集群的数据，不启用，则Hivesever2会直接使用启动用户访问Hadoop集群数据  </p>
 <p>默认为开启</p>
 <p>生产环境，推荐开启用户模拟功能，因为开启后才能保证各用户之间的权限隔离</p>
 <p>hivesever2的模拟用户功能，依赖于Hadoop提供的proxy user（代理用户功能），只有Hadoop中的代理用户才能模拟其他用户的身份访问Hadoop集群。因此，需要将hiveserver2的启动用户设置为Hadoop的代理用户 </p>
-<p>##8.metastore服务  </p>
-<p>Hive的metastore服务的作用是为Hive CLI或者Hiveserver2提供元数据访问接口  </p>
-<p>##9.metastore运行模式  </p>
-<p>metastore有两种运行模式，分别为嵌入式模式和独立服务模式</p>
+<h2 id="8-metastore服务"><a href="#8-metastore服务" class="headerlink" title="8.metastore服务"></a>8.metastore服务</h2><p>Hive的metastore服务的作用是为Hive CLI或者Hiveserver2提供元数据访问接口  </p>
+<h2 id="9-metastore运行模式"><a href="#9-metastore运行模式" class="headerlink" title="9.metastore运行模式"></a>9.metastore运行模式</h2><p>metastore有两种运行模式，分别为嵌入式模式和独立服务模式</p>
 <p><img src="/2023/07/30/hive_learn/1.png" alt="&quot;metastore运行模式&quot;"></p>
 <p>生产环境中，不推荐使用嵌入式模式  </p>
 <p>（1）嵌入式模式下，每个Hive CLI都需要直接连接元数据库，当Hive CLI较多时，数据库压力会比较大。  </p>
 <p>（2）每个客户端都需要用户元数据库的读写权限，元数据库的安全得不到很好的保证</p>
-<p>##10.编写Hive服务启动脚本  </p>
-<p>nohup：放在命令开头，表示不挂起，也就是关闭终端进程也继续保持运行状态  </p>
+<h2 id="10-编写Hive服务启动脚本"><a href="#10-编写Hive服务启动脚本" class="headerlink" title="10.编写Hive服务启动脚本"></a>10.编写Hive服务启动脚本</h2><p>nohup：放在命令开头，表示不挂起，也就是关闭终端进程也继续保持运行状态  </p>
 <p>&#x2F;dev&#x2F;null：是Linux文件系统中的一个文件，被称为黑洞，所有写入该文件的内容都会被自动丢弃  </p>
 <p>2&gt;&amp;1：表示将错误重定向到标准输出上  </p>
 <p>&amp;：放在命令结尾，表示后台运行  </p>
 <p>一般会组合使用：nohup  [xxx命令操作]&gt; file  2&gt;&amp;1 &amp;，表示将xxx命令运行的结果输出到file中，并保持命令启动的进程在后台运行。  </p>
-<p>##11.hive -e 和 hive -f  </p>
-<p>“-e”不进入hive的交互窗口执行hql语句  </p>
+<h2 id="11-hive-e-和-hive-f"><a href="#11-hive-e-和-hive-f" class="headerlink" title="11.hive -e 和 hive -f"></a>11.hive -e 和 hive -f</h2><p>“-e”不进入hive的交互窗口执行hql语句  </p>
 <p><code>bin/hive -e &quot;select id from student;&quot;</code></p>
 <p>“-f”执行脚本中的hql语句  </p>
 <p><code>bin/hive -f /opt/module/hive/datas/hivef.sql</code>  </p>
-<p>##12.Hive参数配置方式  </p>
-<p>参数的配置三种方式  </p>
-<p>###(1).配置文件方式  </p>
-<p><code>hive-site.xml</code></p>
-<p>###(2).命令行参数方式  </p>
-<p>启动Hive时，可以在命令行添加-hiveconf param&#x3D;value来设定参数  </p>
+<h2 id="12-Hive参数配置方式"><a href="#12-Hive参数配置方式" class="headerlink" title="12.Hive参数配置方式"></a>12.Hive参数配置方式</h2><p>参数的配置三种方式  </p>
+<h3 id="1-配置文件方式"><a href="#1-配置文件方式" class="headerlink" title="(1).配置文件方式"></a>(1).配置文件方式</h3><p><code>hive-site.xml</code></p>
+<h3 id="2-命令行参数方式"><a href="#2-命令行参数方式" class="headerlink" title="(2).命令行参数方式"></a>(2).命令行参数方式</h3><p>启动Hive时，可以在命令行添加-hiveconf param&#x3D;value来设定参数  </p>
 <p>比如：bin&#x2F;hive -hiveconf   </p>
 <p><code>mapreduce.job.reduces=10;</code></p>
 <p>注：仅对本次Hive启动有效  </p>
-<p>###(3).参数声明方式  </p>
-<p>可以在HQL中使用SET关键字设定参数  </p>
+<h3 id="3-参数声明方式"><a href="#3-参数声明方式" class="headerlink" title="(3).参数声明方式"></a>(3).参数声明方式</h3><p>可以在HQL中使用SET关键字设定参数  </p>
 <p><code>set mapreduce.job.reduces=10;</code>  </p>
 <p>上述三种设定方式的优先级依次递增,配置文件 &lt; 命令行参数 &lt; 参数声明  </p>
-<p>##13.Hive常见属性配置  </p>
-<p>Hive客户端显示当前库和表头<br>Set Hive-site.xml :<br>          <code>hive.cli.print.header = true</code><br>          <code>hive.cli.print.current.db</code>  </p>
+<h2 id="13-Hive常见属性配置"><a href="#13-Hive常见属性配置" class="headerlink" title="13.Hive常见属性配置"></a>13.Hive常见属性配置</h2><p>Hive客户端显示当前库和表头<br>Set Hive-site.xml :<br>          <code>hive.cli.print.header = true</code><br>          <code>hive.cli.print.current.db</code>  </p>
 <p>Hive运行日志路径配置<br>Set hive-log4j2.properties:<br>     <code>property.hive.log.dir=/opt/module/hive/logs</code>  </p>
 <p>修改Hive的堆内存<br>Set hive-env.sh:<br>     <code>export HADOOP_HEAPSIZE=2048</code>  </p>
 <p>关闭Hadoop虚拟内存检查<br>Set yarn-site.xml:<br>     <code>yarn.nodemanager.vmem-check-enabled =false</code>  </p>
-<p>#二：Hive的DDL语法  </p>
-<p>##1.创建数据库  </p>
-<pre><code>CREATE DATABASE [IF NOT EXISTS] database_name  
+<h1 id="二：Hive的DDL语法"><a href="#二：Hive的DDL语法" class="headerlink" title="二：Hive的DDL语法"></a>二：Hive的DDL语法</h1><h2 id="1-创建数据库"><a href="#1-创建数据库" class="headerlink" title="1.创建数据库"></a>1.创建数据库</h2><pre><code>CREATE DATABASE [IF NOT EXISTS] database_name  
 [COMMENT database_comment]  
 [LOCATION hdfs_path]  
 [WITH DBPROPERTIES (property_name=property_value, ...)];   
 </code></pre>
 <p>创建一个数据库，指定路径<br>    hive (default)&gt; create database db_hive2 location ‘&#x2F;db_hive2’;  </p>
-<p>##2.查看数据库信息  </p>
-<pre><code>DESCRIBE DATABASE [EXTENDED] db_name;    
+<h2 id="2-查看数据库信息"><a href="#2-查看数据库信息" class="headerlink" title="2.查看数据库信息"></a>2.查看数据库信息</h2><pre><code>DESCRIBE DATABASE [EXTENDED] db_name;    
 </code></pre>
-<p>###(1) 查看基本信息  </p>
-<pre><code>desc database db_hive3;  
+<h3 id="1-查看基本信息"><a href="#1-查看基本信息" class="headerlink" title="(1) 查看基本信息"></a>(1) 查看基本信息</h3><pre><code>desc database db_hive3;  
 </code></pre>
-<p>###(2) 查看更多信息  </p>
-<pre><code>desc database extended db_hive3;  
+<h3 id="2-查看更多信息"><a href="#2-查看更多信息" class="headerlink" title="(2) 查看更多信息"></a>(2) 查看更多信息</h3><pre><code>desc database extended db_hive3;  
 </code></pre>
-<p>##3.修改数据库   </p>
-<p>需要注意的是：修改数据库location，不会改变当前已有表的路径信息，而只是改变后续创建的新表的默认的父目录  </p>
-<p>###修改dbproperties<br>    ALTER DATABASE database_name SET DBPROPERTIES   (property_name&#x3D;property_value, …);  </p>
-<p>###修改location<br>    ALTER DATABASE database_name SET LOCATION hdfs_path;  </p>
-<p>###修改owner user<br>    ALTER DATABASE database_name SET OWNER USER user_name;  </p>
-<p>##4.删除数据库  </p>
-<pre><code>DROP DATABASE [IF EXISTS] database_name [RESTRICT|CASCADE];    
+<h2 id="3-修改数据库"><a href="#3-修改数据库" class="headerlink" title="3.修改数据库"></a>3.修改数据库</h2><p>需要注意的是：修改数据库location，不会改变当前已有表的路径信息，而只是改变后续创建的新表的默认的父目录  </p>
+<h3 id="修改dbproperties"><a href="#修改dbproperties" class="headerlink" title="修改dbproperties"></a>修改dbproperties</h3><pre><code>ALTER DATABASE database_name SET DBPROPERTIES   (property_name=property_value, ...);  
+</code></pre>
+<h3 id="修改location"><a href="#修改location" class="headerlink" title="修改location"></a>修改location</h3><pre><code>ALTER DATABASE database_name SET LOCATION hdfs_path;  
+</code></pre>
+<h3 id="修改owner-user"><a href="#修改owner-user" class="headerlink" title="修改owner user"></a>修改owner user</h3><pre><code>ALTER DATABASE database_name SET OWNER USER user_name;  
+</code></pre>
+<h2 id="4-删除数据库"><a href="#4-删除数据库" class="headerlink" title="4.删除数据库"></a>4.删除数据库</h2><pre><code>DROP DATABASE [IF EXISTS] database_name [RESTRICT|CASCADE];    
 </code></pre>
 <p>RESTRICT：严格模式，若数据库不为空，则会删除失败，默认为该模式。  </p>
 <p>CASCADE：级联模式，若数据库不为空，则会将库中的表一并删除。</p>
-<p>##5.切换当前数据库  </p>
-<p>USE database_name;  </p>
-<p>##6.创建表  </p>
-<pre><code>CREATE [TEMPORARY] [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name   
+<h2 id="5-切换当前数据库"><a href="#5-切换当前数据库" class="headerlink" title="5.切换当前数据库"></a>5.切换当前数据库</h2><p>USE database_name;  </p>
+<h2 id="6-创建表"><a href="#6-创建表" class="headerlink" title="6.创建表"></a>6.创建表</h2><pre><code>CREATE [TEMPORARY] [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name   
 [(col_name data_type [COMMENT col_comment], ...)]
 [COMMENT table_comment]
 [PARTITIONED BY (col_name data_type [COMMENT col_comment], ...)]
@@ -3483,30 +3256,23 @@ from emp;
 [LOCATION hdfs_path]
 [TBLPROPERTIES (property_name=property_value, ...)]
 </code></pre>
-<p>关键字说明:<br>###(1)TEMPORARY<br>临时表，该表只在当前会话可见，会话结束，表会被删除。  </p>
-<p>###(2)EXTERNAL（重点）  </p>
-<p>外部表，与之相对应的是内部表（管理表）。内部表意味着Hive会完全接管该表，包括元数据和HDFS中的数据。而外部表则意味着Hive只接管元数据，而不完全接管HDFS中的数据</p>
-<p>###(3)data_type（重点）</p>
-<p>Hive中的字段类型可分为基本数据类型和复杂数据类型。  </p>
+<p>关键字说明:  </p>
+<h3 id="1-TEMPORARY"><a href="#1-TEMPORARY" class="headerlink" title="(1)TEMPORARY"></a>(1)TEMPORARY</h3><p>临时表，该表只在当前会话可见，会话结束，表会被删除。  </p>
+<h3 id="2-EXTERNAL（重点）"><a href="#2-EXTERNAL（重点）" class="headerlink" title="(2)EXTERNAL（重点）"></a>(2)EXTERNAL（重点）</h3><p>外部表，与之相对应的是内部表（管理表）。内部表意味着Hive会完全接管该表，包括元数据和HDFS中的数据。而外部表则意味着Hive只接管元数据，而不完全接管HDFS中的数据</p>
+<h3 id="3-data-type（重点）"><a href="#3-data-type（重点）" class="headerlink" title="(3)data_type（重点）"></a>(3)data_type（重点）</h3><p>Hive中的字段类型可分为基本数据类型和复杂数据类型。  </p>
 <p><img src="/2023/07/30/hive_learn/2.png" alt="&quot;hive数据类型&quot;">  </p>
 <p>类型转换:  </p>
 <p>Hive的基本数据类型可以做类型转换，转换的方式包括隐式转换以及显示转换。  </p>
-<p>####方式一：隐式转换  </p>
-<p>隐式地转换为一个范围更广的类型   </p>
+<h4 id="方式一：隐式转换"><a href="#方式一：隐式转换" class="headerlink" title="方式一：隐式转换"></a>方式一：隐式转换</h4><p>隐式地转换为一个范围更广的类型   </p>
 <p>Hive官方隐式转换表<br><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/hive/languagemanual+types#LanguageManualTypes-AllowedImplicitConversions">Allowed Implicit Conversions</a>  </p>
-<p>####方式二：显示转换  </p>
-<p>可以借助cast函数完成显示的类型转换(强制转换)  </p>
+<h4 id="方式二：显示转换"><a href="#方式二：显示转换" class="headerlink" title="方式二：显示转换"></a>方式二：显示转换</h4><p>可以借助cast函数完成显示的类型转换(强制转换)  </p>
 <pre><code>select &#39;1&#39; + 2, cast(&#39;1&#39; as int) + 2;
 </code></pre>
-<p>###(4) PARTITIONED BY（重点）  </p>
-<p>创建分区表  </p>
-<p>###(5) CLUSTERED BY … SORTED BY…INTO … BUCKETS（重点）  </p>
-<p>创建分桶表  </p>
-<p>###(6) ROW FORMAT（重点）  </p>
-<p>指定SERDE，SERDE是Serializer and Deserializer的简写。Hive使用SERDE序列化和反序列化每行数据  </p>
+<h3 id="4-PARTITIONED-BY（重点）"><a href="#4-PARTITIONED-BY（重点）" class="headerlink" title="(4) PARTITIONED BY（重点）"></a>(4) PARTITIONED BY（重点）</h3><p>创建分区表  </p>
+<h3 id="5-CLUSTERED-BY-…-SORTED-BY…INTO-…-BUCKETS（重点）"><a href="#5-CLUSTERED-BY-…-SORTED-BY…INTO-…-BUCKETS（重点）" class="headerlink" title="(5) CLUSTERED BY … SORTED BY…INTO … BUCKETS（重点）"></a>(5) CLUSTERED BY … SORTED BY…INTO … BUCKETS（重点）</h3><p>创建分桶表  </p>
+<h3 id="6-ROW-FORMAT（重点）"><a href="#6-ROW-FORMAT（重点）" class="headerlink" title="(6) ROW FORMAT（重点）"></a>(6) ROW FORMAT（重点）</h3><p>指定SERDE，SERDE是Serializer and Deserializer的简写。Hive使用SERDE序列化和反序列化每行数据  </p>
 <p>Hive官方序列化反序列化器文档<br><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/DeveloperGuide#DeveloperGuide-HiveSerDe">Hive-Serde</a></p>
-<p>####语法一：  </p>
-<p>DELIMITED关键字表示对文件中的每个字段按照特定分割符进行分割，其会使用默认的SERDE对每行数据进行序列化和反序列化  </p>
+<h4 id="语法一："><a href="#语法一：" class="headerlink" title="语法一："></a>语法一：</h4><p>DELIMITED关键字表示对文件中的每个字段按照特定分割符进行分割，其会使用默认的SERDE对每行数据进行序列化和反序列化  </p>
 <pre><code>ROW FORAMT DELIMITED 
 [FIELDS TERMINATED BY char] 
 [COLLECTION ITEMS TERMINATED BY char] 
@@ -3515,18 +3281,13 @@ from emp;
 [NULL DEFINED AS char]   
 </code></pre>
 <p>注：<br>fields terminated by ：列分隔符<br>collection items terminated by ： map、struct和array中每个元素之间的分隔符<br>map keys terminated by ：map中的key与value的分隔符<br>lines terminated by ：行分隔符  </p>
-<p>####语法二：  </p>
-<p>SERDE关键字可用于指定其他内置的SERDE或者用户自定义的SERDE。例如JSON SERDE，可用于处理JSON字符串  </p>
+<h4 id="语法二："><a href="#语法二：" class="headerlink" title="语法二："></a>语法二：</h4><p>SERDE关键字可用于指定其他内置的SERDE或者用户自定义的SERDE。例如JSON SERDE，可用于处理JSON字符串  </p>
 <pre><code>ROW FORMAT SERDE serde_name [WITH SERDEPROPERTIES (property_name=property_value,property_name=property_value, ...)] 
 </code></pre>
-<p>###(7) STORED AS（重点）  </p>
-<p>指定文件格式，常用的文件格式有，textfile（默认值），sequence file，orc file、parquet file等等  </p>
-<p>###(8) LOCATION  </p>
-<p>指定表所对应的HDFS路径，若不指定路径，其默认值为<br>${hive.metastore.warehouse.dir}&#x2F;db_name.db&#x2F;table_name  </p>
-<p>###(9) TBLPROPERTIES  </p>
-<p>用于配置表的一些KV键值对参数  </p>
-<p>##7.Create Table As Select（CTAS）建表  </p>
-<pre><code>CREATE [TEMPORARY] TABLE [IF NOT EXISTS] table_name 
+<h3 id="7-STORED-AS（重点）"><a href="#7-STORED-AS（重点）" class="headerlink" title="(7) STORED AS（重点）"></a>(7) STORED AS（重点）</h3><p>指定文件格式，常用的文件格式有，textfile（默认值），sequence file，orc file、parquet file等等  </p>
+<h3 id="8-LOCATION"><a href="#8-LOCATION" class="headerlink" title="(8) LOCATION"></a>(8) LOCATION</h3><p>指定表所对应的HDFS路径，若不指定路径，其默认值为<br>${hive.metastore.warehouse.dir}&#x2F;db_name.db&#x2F;table_name  </p>
+<h3 id="9-TBLPROPERTIES"><a href="#9-TBLPROPERTIES" class="headerlink" title="(9) TBLPROPERTIES"></a>(9) TBLPROPERTIES</h3><p>用于配置表的一些KV键值对参数  </p>
+<h2 id="7-Create-Table-As-Select（CTAS）建表"><a href="#7-Create-Table-As-Select（CTAS）建表" class="headerlink" title="7.Create Table As Select（CTAS）建表"></a>7.Create Table As Select（CTAS）建表</h2><pre><code>CREATE [TEMPORARY] TABLE [IF NOT EXISTS] table_name 
 [COMMENT table_comment] 
 [ROW FORMAT row_format] 
 [STORED AS file_format] 
@@ -3534,8 +3295,7 @@ from emp;
 [TBLPROPERTIES (property_name=property_value, ...)]
 [AS select_statement]
 </code></pre>
-<p>##8.Create Table Like语法</p>
-<p>该语法允许用户复刻一张已经存在的表结构，与上述的CTAS语法不同，该语法创建出来的表中不包含数据  </p>
+<h2 id="8-Create-Table-Like语法"><a href="#8-Create-Table-Like语法" class="headerlink" title="8.Create Table Like语法"></a>8.Create Table Like语法</h2><p>该语法允许用户复刻一张已经存在的表结构，与上述的CTAS语法不同，该语法创建出来的表中不包含数据  </p>
 <pre><code>CREATE [TEMPORARY] [EXTERNAL] TABLE [IF NOT EXISTS] [db_name.]table_name
 [LIKE exist_table_name]
 [ROW FORMAT row_format] 
@@ -3543,68 +3303,53 @@ from emp;
 [LOCATION hdfs_path]
 [TBLPROPERTIES (property_name=property_value, ...)]
 </code></pre>
-<p>##9.内部表与外部表  </p>
-<p>Hive中默认创建的表都是的内部表，有时也被称为管理表。对于内部表，Hive会完全管理表的元数据和数据文件  </p>
+<h2 id="9-内部表与外部表"><a href="#9-内部表与外部表" class="headerlink" title="9.内部表与外部表"></a>9.内部表与外部表</h2><p>Hive中默认创建的表都是的内部表，有时也被称为管理表。对于内部表，Hive会完全管理表的元数据和数据文件  </p>
 <p>外部表通常可用于处理其他工具上传的数据文件，对于外部表，Hive只负责管理元数据，不负责管理HDFS中的数据文件  </p>
-<p>##10.查看表  </p>
-<pre><code>DESCRIBE [EXTENDED | FORMATTED] [db_name.]table_name  
+<h2 id="10-查看表"><a href="#10-查看表" class="headerlink" title="10.查看表"></a>10.查看表</h2><pre><code>DESCRIBE [EXTENDED | FORMATTED] [db_name.]table_name  
 </code></pre>
 <p>EXTENDED：展示详细信息  </p>
 <p>FORMATTED：对详细信息进行格式化的展示</p>
-<p>##11.修改列信息  </p>
-<p>###增加列  </p>
-<pre><code>ALTER TABLE table_name ADD COLUMNS (col_name data_type [COMMENT col_comment], ...)  
+<h2 id="11-修改列信息"><a href="#11-修改列信息" class="headerlink" title="11.修改列信息"></a>11.修改列信息</h2><h3 id="增加列"><a href="#增加列" class="headerlink" title="增加列"></a>增加列</h3><pre><code>ALTER TABLE table_name ADD COLUMNS (col_name data_type [COMMENT col_comment], ...)  
 </code></pre>
 <p>新增列的位置位于末尾  </p>
-<p>###更新列</p>
-<pre><code>ALTER TABLE table_name CHANGE [COLUMN] col_old_name col_new_name column_type [COMMENT col_comment] [FIRST|AFTER column_name]
+<h3 id="更新列"><a href="#更新列" class="headerlink" title="更新列"></a>更新列</h3><pre><code>ALTER TABLE table_name CHANGE [COLUMN] col_old_name col_new_name column_type [COMMENT col_comment] [FIRST|AFTER column_name]
 </code></pre>
 <p>该语句允许用户修改指定列的列名、数据类型、注释信息以及在表中的位置  </p>
-<p>###替换列  </p>
-<pre><code>ALTER TABLE table_name REPLACE COLUMNS (col_name data_type [COMMENT col_comment], ...)  
+<h3 id="替换列"><a href="#替换列" class="headerlink" title="替换列"></a>替换列</h3><pre><code>ALTER TABLE table_name REPLACE COLUMNS (col_name data_type [COMMENT col_comment], ...)  
 </code></pre>
 <p>该语句允许用户用新的列集替换表中原有的全部列  </p>
-<p>##12.清空表  </p>
-<pre><code>TRUNCATE [TABLE] table_name  
+<h2 id="12-清空表"><a href="#12-清空表" class="headerlink" title="12.清空表"></a>12.清空表</h2><pre><code>TRUNCATE [TABLE] table_name  
 </code></pre>
 <p>truncate只能清空管理表，不能删除外部表中数据  </p>
-<p>#三：Hive的DML语法  </p>
-<p>##1. Load  </p>
-<p>Load语句可将文件导入到Hive表中    </p>
+<h1 id="三：Hive的DML语法"><a href="#三：Hive的DML语法" class="headerlink" title="三：Hive的DML语法"></a>三：Hive的DML语法</h1><h2 id="1-Load"><a href="#1-Load" class="headerlink" title="1. Load"></a>1. Load</h2><p>Load语句可将文件导入到Hive表中    </p>
 <pre><code>LOAD DATA [LOCAL] INPATH &#39;filepath&#39; [OVERWRITE] INTO TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)];
 </code></pre>
 <p>关键字说明：  </p>
 <p>（1）local：表示从本地加载数据到Hive表；否则从HDFS加载数据到Hive表。  </p>
 <p>（2）overwrite：表示覆盖表中已有数据，否则表示追加。  </p>
 <p>（3）partition：表示上传到指定分区，若目标是分区表，需指定分区    </p>
-<p>###1.1加载本地文件到hive:  </p>
-<pre><code>load data local inpath &#39;/opt/module/datas/student.txt&#39; into table student;  
+<h3 id="1-1加载本地文件到hive"><a href="#1-1加载本地文件到hive" class="headerlink" title="1.1加载本地文件到hive:"></a>1.1加载本地文件到hive:</h3><pre><code>load data local inpath &#39;/opt/module/datas/student.txt&#39; into table student;  
 </code></pre>
-<p>###1.2加载HDFS上数据:  </p>
-<pre><code>hadoop fs -put /opt/module/datas/student.txt /user/atguigu;  
+<h3 id="1-2加载HDFS上数据"><a href="#1-2加载HDFS上数据" class="headerlink" title="1.2加载HDFS上数据:"></a>1.2加载HDFS上数据:</h3><pre><code>hadoop fs -put /opt/module/datas/student.txt /user/atguigu;  
 
 load data inpath &#39;/user/atguigu/student.txt&#39; into table student;
 </code></pre>
-<p>##2.Insert  </p>
-<pre><code>INSERT (INTO | OVERWRITE) TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)] select_statement;
+<h2 id="2-Insert"><a href="#2-Insert" class="headerlink" title="2.Insert"></a>2.Insert</h2><pre><code>INSERT (INTO | OVERWRITE) TABLE tablename [PARTITION (partcol1=val1, partcol2=val2 ...)] select_statement;
 </code></pre>
 <p>关键字说明：  </p>
 <p>（1）INTO：将结果追加到目标表  </p>
 <p>（2）OVERWRITE：用结果覆盖原有数据  </p>
-<p>###2.1 将给定Values插入表中</p>
-<pre><code>INSERT (INTO | OVERWRITE) TABLE tablename [PARTITION (partcol1[=val1], partcol2[=val2] ...)] VALUES values_row [, values_row ...]  
+<h3 id="2-1-将给定Values插入表中"><a href="#2-1-将给定Values插入表中" class="headerlink" title="2.1 将给定Values插入表中"></a>2.1 将给定Values插入表中</h3><pre><code>INSERT (INTO | OVERWRITE) TABLE tablename [PARTITION (partcol1[=val1], partcol2[=val2] ...)] VALUES values_row [, values_row ...]  
 </code></pre>
-<p>###2.2将查询结果写入目标路径  </p>
-<pre><code>INSERT OVERWRITE [LOCAL] DIRECTORY directory[ROW FORMAT row_format] [STORED AS file_format] select_statement;
+<h3 id="2-2将查询结果写入目标路径"><a href="#2-2将查询结果写入目标路径" class="headerlink" title="2.2将查询结果写入目标路径"></a>2.2将查询结果写入目标路径</h3><pre><code>INSERT OVERWRITE [LOCAL] DIRECTORY directory[ROW FORMAT row_format] [STORED AS file_format] select_statement;
 </code></pre>
-<p>##3.Export&amp;Import  </p>
-<p>Export导出语句可将表的数据和元数据信息一并到处的HDFS路径，Import可将Export导出的内容导入Hive，表的数据和元数据信息都会恢复。Export和Import可用于两个Hive实例之间的数据迁移</p>
-<p>###导出<br>    EXPORT TABLE tablename TO ‘export_target_path’</p>
-<p>###导入<br>    IMPORT [EXTERNAL] TABLE new_or_original_tablename FROM ‘source_path’ [LOCATION ‘import_target_path’]</p>
-<p>#四:查询  </p>
-<p><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Select">Hive-select语法文档</a></p>
-<p>##1.select 查询语法    </p>
-<pre><code>SELECT [ALL | DISTINCT] select_expr, select_expr, 
+<h2 id="3-Export-Import"><a href="#3-Export-Import" class="headerlink" title="3.Export&amp;Import"></a>3.Export&amp;Import</h2><p>Export导出语句可将表的数据和元数据信息一并到处的HDFS路径，Import可将Export导出的内容导入Hive，表的数据和元数据信息都会恢复。Export和Import可用于两个Hive实例之间的数据迁移</p>
+<h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><pre><code>EXPORT TABLE tablename TO &#39;export_target_path&#39;
+</code></pre>
+<h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><pre><code>IMPORT [EXTERNAL] TABLE new_or_original_tablename FROM &#39;source_path&#39; [LOCATION &#39;import_target_path&#39;]
+</code></pre>
+<h1 id="四-查询"><a href="#四-查询" class="headerlink" title="四:查询"></a>四:查询</h1><p><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/LanguageManual+Select">Hive-select语法文档</a></p>
+<h2 id="1-select-查询语法"><a href="#1-select-查询语法" class="headerlink" title="1.select 查询语法"></a>1.select 查询语法</h2><pre><code>SELECT [ALL | DISTINCT] select_expr, select_expr, 
 FROM table_reference       -- 从什么表查
 [WHERE where_condition]   -- 过滤
 [GROUP BY col_list]        -- 分组查询
@@ -3615,32 +3360,27 @@ FROM table_reference       -- 从什么表查
 [LIMIT number]                -- 限制输出的行数
 </code></pre>
 <p>注意：<br>（1）SQL 语言大小写不敏感。<br>（2）SQL 可以写在一行或者多行。<br>（3）关键字不能被缩写也不能分行。<br>（4）各子句一般要分行写。<br>（5）使用缩进提高语句的可读性    </p>
-<p>##2.Limit语句  </p>
-<p>典型的查询会返回多行数据。limit子句用于限制返回的行数  </p>
+<h2 id="2-Limit语句"><a href="#2-Limit语句" class="headerlink" title="2.Limit语句"></a>2.Limit语句</h2><p>典型的查询会返回多行数据。limit子句用于限制返回的行数  </p>
 <pre><code>select * from emp limit 2,3; -- 表示从第2行开始，向下抓取3行
 </code></pre>
-<p>##3.关系运算函数  </p>
-<p>A&lt;&#x3D;&gt;B :  </p>
+<h2 id="3-关系运算函数"><a href="#3-关系运算函数" class="headerlink" title="3.关系运算函数"></a>3.关系运算函数</h2><p>A&lt;&#x3D;&gt;B :  </p>
 <p> 如果A和B都为null或者都不为null，则返回true，如果只有一边为null，返回false  </p>
 <p>A [not] like B :  </p>
 <p> B是一个SQL下的简单正则表达式，也叫通配符模式，如果A与其匹配的话，则返回true；反之返回false。B的表达式说明如下：‘x%’表示A必须以字母‘x’开头，‘%x’表示A必须以字母‘x’结尾，而‘%x%’表示A包含有字母‘x’,可以位于开头，结尾或者字符串中间。如果使用not关键字则可达到相反的效果。  </p>
 <p>A rlike B, A regexp B:  </p>
 <p>B是基于java的正则表达式，如果A与其匹配，则返回true；反之返回false。匹配使用的是JDK中的正则表达式接口实现的，因为正则也依据其中的规则。例如，正则表达式必须和整个字符串A相匹配，而不是只需与其字符串匹配。  </p>
-<p>##4.聚合函数  </p>
-<p>count(*)，表示统计所有行数，包含null值； </p>
+<h2 id="4-聚合函数"><a href="#4-聚合函数" class="headerlink" title="4.聚合函数"></a>4.聚合函数</h2><p>count(*)，表示统计所有行数，包含null值； </p>
 <p>count(某列)，表示该列一共有多少行，不包含null值； </p>
 <p>max()，求最大值，不包含null，除非所有值都是null； </p>
 <p>min()，求最小值，不包含null，除非所有值都是null； </p>
 <p>sum()，求和，不包含null。   </p>
 <p>avg()，求平均值，不包含null。    </p>
-<p>##5.分组<br>Group By语句：  </p>
+<h2 id="5-分组"><a href="#5-分组" class="headerlink" title="5.分组"></a>5.分组</h2><p>Group By语句：  </p>
 <p>Group By语句通常会和聚合函数一起使用，按照一个或者多个列队结果进行分组，然后对每个组执行聚合操作</p>
-<p>##6.Having语句  </p>
-<p>having与where不同点  </p>
+<h2 id="6-Having语句"><a href="#6-Having语句" class="headerlink" title="6.Having语句"></a>6.Having语句</h2><p>having与where不同点  </p>
 <p>（1）where后面不能写分组聚合函数，而having后面可以使用分组聚合函数。  </p>
 <p>（2）having只用于group by分组统计语句    </p>
-<p>##7.Join语句   </p>
-<p>Hive支持通常的sql join语句，但是只支持等值连接，不支持非等值连接。  </p>
+<h2 id="7-Join语句"><a href="#7-Join语句" class="headerlink" title="7.Join语句"></a>7.Join语句</h2><p>Hive支持通常的sql join语句，但是只支持等值连接，不支持非等值连接。  </p>
 <p>inner join 内连接：只有进行连接的两个表中都存在与连接条件相匹配的数据才会被保留下来  </p>
 <p>left outer join 左外连接：join操作符左边表中符合where子句的所有记录将会被返回  </p>
 <p>right outer join 右外连接：join操作符右边表中符合where子句的所有记录将会被返回  </p>
@@ -3648,23 +3388,18 @@ FROM table_reference       -- 从什么表查
 <p>多表连接: 连接n个表，至少需要n-1个连接条件    </p>
 <p>大多数情况下，Hive会对每对join连接对象启动一个MapReduce任务。本例中会首先启动一个MapReduce job对表e和表d进行连接操作，然后会再启动一个MapReduce job将第一个MapReduce job的输出和表l进行连接操作</p>
 <p>因为Hive总是按照从左到右的顺序执行的  </p>
-<p>##8.笛卡尔积产生条件  </p>
-<p>（1）省略连接条件  </p>
+<h2 id="8-笛卡尔积产生条件"><a href="#8-笛卡尔积产生条件" class="headerlink" title="8.笛卡尔积产生条件"></a>8.笛卡尔积产生条件</h2><p>（1）省略连接条件  </p>
 <p>（2）连接条件无效  </p>
 <p>（3）所有表中的所有行互相连接  </p>
-<p>##9.联合（union &amp; union all）  </p>
-<p>union和union all都是上下拼接sql的结果，这点是和join有区别的，join是左右关联，union和union all是上下拼接。  </p>
+<h2 id="9-联合（union-union-all）"><a href="#9-联合（union-union-all）" class="headerlink" title="9.联合（union &amp; union all）"></a>9.联合（union &amp; union all）</h2><p>union和union all都是上下拼接sql的结果，这点是和join有区别的，join是左右关联，union和union all是上下拼接。  </p>
 <p>union去重，union all不去重  </p>
 <p>union和union all在上下拼接sql结果时有两个要求：  </p>
 <p>（1）两个sql的结果，列的个数必须相同  </p>
 <p>（2）两个sql的结果，上下所对应列的类型必须一致    </p>
-<p>##10.排序  </p>
-<p>####全局排序 Order By  </p>
-<p>全局排序，只有一个Reduce    </p>
+<h2 id="10-排序"><a href="#10-排序" class="headerlink" title="10.排序"></a>10.排序</h2><h4 id="全局排序-Order-By"><a href="#全局排序-Order-By" class="headerlink" title="全局排序 Order By"></a>全局排序 Order By</h4><p>全局排序，只有一个Reduce    </p>
 <p>asc（ascend）：升序（默认）  </p>
 <p>desc（descend）：降序  </p>
-<p>####每个Reduce内部排序（Sort By）  </p>
-<p>Sort By：对于大规模的数据集order by的效率非常低。在很多情况下，并不需要全局排序，此时可以使用Sort by  </p>
+<h4 id="每个Reduce内部排序（Sort-By）"><a href="#每个Reduce内部排序（Sort-By）" class="headerlink" title="每个Reduce内部排序（Sort By）"></a>每个Reduce内部排序（Sort By）</h4><p>Sort By：对于大规模的数据集order by的效率非常低。在很多情况下，并不需要全局排序，此时可以使用Sort by  </p>
 <p>Sort by为每个reduce产生一个排序文件。每个Reduce内部进行排序，对全局结果集来说不是排序  </p>
 <p>设置reduce个数  </p>
 <pre><code>hive (default)&gt; set mapreduce.job.reduces=3;  
@@ -3672,18 +3407,15 @@ FROM table_reference       -- 从什么表查
 <p>查看设置reduce个数  </p>
 <pre><code>hive (default)&gt; set mapreduce.job.reduces;  
 </code></pre>
-<p>##11.分区（Distribute By）</p>
-<p>Distribute By：在有些情况下，我们需要控制某个特定行应该到哪个Reducer，通常是为了进行后续的聚集操作。distribute by子句可以做这件事。distribute by类似MapReduce中partition（自定义分区），进行分区，结合sort by使用  </p>
+<h2 id="11-分区（Distribute-By）"><a href="#11-分区（Distribute-By）" class="headerlink" title="11.分区（Distribute By）"></a>11.分区（Distribute By）</h2><p>Distribute By：在有些情况下，我们需要控制某个特定行应该到哪个Reducer，通常是为了进行后续的聚集操作。distribute by子句可以做这件事。distribute by类似MapReduce中partition（自定义分区），进行分区，结合sort by使用  </p>
 <p>distribute by的分区规则是根据分区字段的hash码与reduce的个数进行相除后，余数相同的分到一个区。  </p>
 <p>Hive要求distribute by语句要写在sort by语句之前。  </p>
 <p>演示完以后mapreduce.job.reduces的值要设置回-1，否则下面分区or分桶表load跑MapReduce的时候会报错  </p>
-<p>##12.分区排序（Cluster By）  </p>
-<p>当distribute by和sort by字段相同时，可以使用cluster by方式  </p>
+<h2 id="12-分区排序（Cluster-By）"><a href="#12-分区排序（Cluster-By）" class="headerlink" title="12.分区排序（Cluster By）"></a>12.分区排序（Cluster By）</h2><p>当distribute by和sort by字段相同时，可以使用cluster by方式  </p>
 <p>cluster by除了具有distribute by的功能外还兼具sort by的功能。但是排序只能是升序排序，不能指定排序规则为asc或者desc      </p>
 <p>以下两种写法等价<br>hive (default)&gt;<br>    select *<br>    from emp<br>    cluster by deptno;  </p>
 <p>hive (default)&gt;<br>    select<br>    *<br>    from emp<br>    distribute by deptno sort by deptno asc;  </p>
-<p>#五:函数  </p>
-<p>Hive会将常用的逻辑封装成函数给用户进行使用，类似于Java中的函数    </p>
+<h1 id="五-函数"><a href="#五-函数" class="headerlink" title="五:函数"></a>五:函数</h1><p>Hive会将常用的逻辑封装成函数给用户进行使用，类似于Java中的函数    </p>
 <p>Hive提供了大量的内置函数，按照其特点可大致分为如下几类：单行函数、聚合函数、炸裂函数、窗口函数  </p>
 <p>查看系统内置函数</p>
 <pre><code>show functions;  
@@ -3694,18 +3426,15 @@ FROM table_reference       -- 从什么表查
 <p>查看内置函数详细信息  </p>
 <pre><code>desc function extended upper;  
 </code></pre>
-<p>##1.单行函数  </p>
-<p>单行函数的特点是一进一出，即输入一行，输出一行</p>
+<h2 id="1-单行函数"><a href="#1-单行函数" class="headerlink" title="1.单行函数"></a>1.单行函数</h2><p>单行函数的特点是一进一出，即输入一行，输出一行</p>
 <p>单行函数按照功能可分为如下几类: 日期函数、字符串函数、集合函数、数学函数、流程控制函数等  </p>
-<p>###数值函数  </p>
-<pre><code>round：四舍五入    
+<h3 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h3><pre><code>round：四舍五入    
 
 ceil：向上取整   
 
 floor：向下取整  
 </code></pre>
-<p>###字符串函数  </p>
-<pre><code>substring：截取字符串  
+<h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h3><pre><code>substring：截取字符串  
 
 substring(string A, int start)  
 
@@ -3778,8 +3507,7 @@ hive&gt; beijing-shanghai-shenzhen
 
 hive&gt; select get_json_object(&#39;[&#123;&quot;name&quot;:&quot;大海海&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;age&quot;:&quot;25&quot;&#125;,&#123;&quot;name&quot;:&quot;小宋宋&quot;,&quot;sex&quot;:&quot;男&quot;,&quot;age&quot;:&quot;47&quot;&#125;]&#39;,&#39;$.[0].name&#39;);  
 </code></pre>
-<p>###日期函数  </p>
-<p>unix_timestamp：返回当前或指定时间的时间戳</p>
+<h3 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h3><p>unix_timestamp：返回当前或指定时间的时间戳</p>
 <pre><code>unix_timestamp()   
 
 返回值：bigint    
@@ -3834,8 +3562,7 @@ hive&gt; select datediff(&#39;2021-08-08&#39;,&#39;2022-10-09&#39;);
 
 2022年-08月-08日 
 </code></pre>
-<p>##流程控制函数  </p>
-<p>case when：条件判断函数  </p>
+<h2 id="流程控制函数"><a href="#流程控制函数" class="headerlink" title="流程控制函数"></a>流程控制函数</h2><p>case when：条件判断函数  </p>
 <pre><code>语法一： case when a then b [when c then d]* [else e] end   
 
 语法二： case a when b then c [when d then e]* [else f] end
@@ -3850,8 +3577,7 @@ hive&gt; select if(10 &gt; 5,&#39;正确&#39;,&#39;错误&#39;);
 
 输出：正确  
 </code></pre>
-<p>##集合函数  </p>
-<p>size：集合中元素的个数  </p>
+<h2 id="集合函数"><a href="#集合函数" class="headerlink" title="集合函数"></a>集合函数</h2><p>size：集合中元素的个数  </p>
 <pre><code>hive&gt; select size(friends) from test;  --2/2  每一行数据中的friends集合里的个数  
 </code></pre>
 <p>map：创建map集合</p>
@@ -3902,8 +3628,7 @@ hive&gt; &#123;&quot;col1&quot;:&quot;name&quot;,&quot;col2&quot;:&quot;age&quot
 
 hive&gt; &#123;&quot;name&quot;:&quot;xiaosong&quot;,&quot;age&quot;:18,&quot;weight&quot;:80&#125;  
 </code></pre>
-<p>##2.高级聚合函数</p>
-<p>多进一出 （多行传入，一个行输出） </p>
+<h2 id="2-高级聚合函数"><a href="#2-高级聚合函数" class="headerlink" title="2.高级聚合函数"></a>2.高级聚合函数</h2><p>多进一出 （多行传入，一个行输出） </p>
 <p>普通聚合  </p>
 <p>collect_list 收集并形成list集合，结果不去重</p>
 <pre><code>hive&gt;
@@ -3919,13 +3644,10 @@ select sex,collect_set(job) from employee group by sex;
 女	[&quot;行政&quot;,&quot;研发&quot;,&quot;前台&quot;]	
 男	[&quot;销售&quot;,&quot;研发&quot;,&quot;前台&quot;]  
 </code></pre>
-<p>##3.炸裂函数</p>
-<p>UDTF,接收一行数据，输出一行或多行数据。</p>
-<p>##4.窗口函数  </p>
-<p>窗口函数，能为每行数据划分一个窗口，然后对窗口范围内的数据进行计算，最后将计算结果返回给该行的数据。</p>
-<p>###窗口语法</p>
-<p>####基于行<br><img src="/2023/07/30/hive_learn/3.png" alt="基于行">            </p>
-<p>####基于值<br><img src="/2023/07/30/hive_learn/4.png" alt="基于值"></p>
+<h2 id="3-炸裂函数"><a href="#3-炸裂函数" class="headerlink" title="3.炸裂函数"></a>3.炸裂函数</h2><p>UDTF,接收一行数据，输出一行或多行数据。</p>
+<h2 id="4-窗口函数"><a href="#4-窗口函数" class="headerlink" title="4.窗口函数"></a>4.窗口函数</h2><p>窗口函数，能为每行数据划分一个窗口，然后对窗口范围内的数据进行计算，最后将计算结果返回给该行的数据。</p>
+<h3 id="窗口语法"><a href="#窗口语法" class="headerlink" title="窗口语法"></a>窗口语法</h3><h4 id="基于行"><a href="#基于行" class="headerlink" title="基于行"></a>基于行</h4><p><img src="/2023/07/30/hive_learn/3.png" alt="基于行">            </p>
+<h4 id="基于值"><a href="#基于值" class="headerlink" title="基于值"></a>基于值</h4><p><img src="/2023/07/30/hive_learn/4.png" alt="基于值"></p>
 <p>按照功能，常用窗口可划分为如下几类：聚合函数、跨行取值函数、排名函数  </p>
 <p>聚合函数</p>
 <pre><code>max：最大值
@@ -3958,10 +3680,8 @@ row_number
 
 三者均不支持自定义窗口  
 </code></pre>
-<p>#六：自定义函数  </p>
-<p><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/HivePlugins">自定义函数官方文档</a> </p>
-<p>##编程步骤  </p>
-<p>(1) 继承Hive提供的类  </p>
+<h1 id="六：自定义函数"><a href="#六：自定义函数" class="headerlink" title="六：自定义函数"></a>六：自定义函数</h1><p><a target="_blank" rel="noopener" href="https://cwiki.apache.org/confluence/display/Hive/HivePlugins">自定义函数官方文档</a> </p>
+<h2 id="编程步骤"><a href="#编程步骤" class="headerlink" title="编程步骤"></a>编程步骤</h2><p>(1) 继承Hive提供的类  </p>
 <p>org.apache.hadoop.hive.ql.udf.generic.GenericUDF  </p>
 <p>org.apache.hadoop.hive.ql.udf.generic.GenericUDTF;</p>
 <p>(2) 实现类中的抽象方法  </p>
@@ -3975,9 +3695,7 @@ row_number
 <p>(4) 在hive的命令行窗口删除函数  </p>
 <pre><code>drop [temporary] function [if exists] [dbname.]function_name;
 </code></pre>
-<p>#七：分区表和分桶表    </p>
-<p>##1.分区表  </p>
-<p>Hive中的分区就是把一张大表的数据按照业务需要分散的存储到多个目录，每个目录就称为该表的一个分区  </p>
+<h1 id="七：分区表和分桶表"><a href="#七：分区表和分桶表" class="headerlink" title="七：分区表和分桶表"></a>七：分区表和分桶表</h1><h2 id="1-分区表"><a href="#1-分区表" class="headerlink" title="1.分区表"></a>1.分区表</h2><p>Hive中的分区就是把一张大表的数据按照业务需要分散的存储到多个目录，每个目录就称为该表的一个分区  </p>
 <pre><code>hive (default)&gt; 
 create table dept_partition
 (
@@ -4000,33 +3718,25 @@ select deptno, dname, loc
 from dept_partition
 where day = &#39;2020-04-01&#39;;
 </code></pre>
-<p>###分区表基本操作  </p>
-<p>####1）查看所有分区信息  </p>
-<pre><code>hive&gt; show partitions dept_partition;
+<h3 id="分区表基本操作"><a href="#分区表基本操作" class="headerlink" title="分区表基本操作"></a>分区表基本操作</h3><h4 id="1）查看所有分区信息"><a href="#1）查看所有分区信息" class="headerlink" title="1）查看所有分区信息"></a>1）查看所有分区信息</h4><pre><code>hive&gt; show partitions dept_partition;
 </code></pre>
-<p>####2）增加分区<br>#####（1）创建单个分区  </p>
-<pre><code>hive (default)&gt; 
+<h4 id="2）增加分区"><a href="#2）增加分区" class="headerlink" title="2）增加分区"></a>2）增加分区</h4><h5 id="（1）创建单个分区"><a href="#（1）创建单个分区" class="headerlink" title="（1）创建单个分区"></a>（1）创建单个分区</h5><pre><code>hive (default)&gt; 
 alter table dept_partition 
 add partition(day=&#39;20220403&#39;);  
 </code></pre>
-<p>#####（2）同时创建多个分区（分区之间不能有逗号）  </p>
-<pre><code>hive (default)&gt; 
+<h5 id="（2）同时创建多个分区（分区之间不能有逗号）"><a href="#（2）同时创建多个分区（分区之间不能有逗号）" class="headerlink" title="（2）同时创建多个分区（分区之间不能有逗号）"></a>（2）同时创建多个分区（分区之间不能有逗号）</h5><pre><code>hive (default)&gt; 
 alter table dept_partition 
 add partition(day=&#39;20220404&#39;) partition(day=&#39;20220405&#39;);  
 </code></pre>
-<p>####3）删除分区  </p>
-<p>#####（1）删除单个分区  </p>
-<pre><code>hive (default)&gt; 
+<h4 id="3）删除分区"><a href="#3）删除分区" class="headerlink" title="3）删除分区"></a>3）删除分区</h4><h5 id="（1）删除单个分区"><a href="#（1）删除单个分区" class="headerlink" title="（1）删除单个分区"></a>（1）删除单个分区</h5><pre><code>hive (default)&gt; 
 alter table dept_partition 
 drop partition (day=&#39;20220403&#39;);
 </code></pre>
-<p>#####（2）同时删除多个分区（分区之间必须有逗号）  </p>
-<pre><code>hive (default)&gt; 
+<h5 id="（2）同时删除多个分区（分区之间必须有逗号）"><a href="#（2）同时删除多个分区（分区之间必须有逗号）" class="headerlink" title="（2）同时删除多个分区（分区之间必须有逗号）"></a>（2）同时删除多个分区（分区之间必须有逗号）</h5><pre><code>hive (default)&gt; 
 alter table dept_partition 
 drop partition (day=&#39;20220404&#39;), partition(day=&#39;20220405&#39;);
 </code></pre>
-<p>####4）修复分区</p>
-<p>add partition  </p>
+<h4 id="4）修复分区"><a href="#4）修复分区" class="headerlink" title="4）修复分区"></a>4）修复分区</h4><p>add partition  </p>
 <pre><code>若手动创建HDFS的分区路径，Hive无法识别，可通过add partition命令增加分区元数据信息，从而使元数据和分区路径保持一致
 </code></pre>
 <p>drop partition  </p>
@@ -4046,8 +3756,7 @@ msck repair table table_name sync partitions：该命令会同步HDFS路径和�
 msck repair table table_name：等价于msck repair table table_name add partitions命令
 </code></pre>
 <p><strong>所以msck修复hive元数据，首选msck repair table table_name sync partitions命令</strong>  </p>
-<p>####二级分区表 </p>
-<p>二级分区表建表语句  </p>
+<h4 id="二级分区表"><a href="#二级分区表" class="headerlink" title="二级分区表"></a>二级分区表</h4><p>二级分区表建表语句  </p>
 <pre><code>hive (default)&gt;
 create table dept_partition2(
 deptno int,    -- 部门编号
@@ -4069,18 +3778,15 @@ select  *
 from dept_partition2 
 where day=&#39;20220401&#39; and hour=&#39;12&#39;;  
 </code></pre>
-<p>####动态分区  </p>
-<p>动态分区是指向分区表insert数据时，被写往的分区不由用户指定，而是由每行数据的最后一个字段的值来动态的决定，使用动态分区，可只用一个insert语句将数据写入多个分区  </p>
-<p>#####1）动态分区相关参数  </p>
-<p>(1) 动态分区功能总开关（默认true，开启）  </p>
+<h4 id="动态分区"><a href="#动态分区" class="headerlink" title="动态分区"></a>动态分区</h4><p>动态分区是指向分区表insert数据时，被写往的分区不由用户指定，而是由每行数据的最后一个字段的值来动态的决定，使用动态分区，可只用一个insert语句将数据写入多个分区  </p>
+<h5 id="1）动态分区相关参数"><a href="#1）动态分区相关参数" class="headerlink" title="1）动态分区相关参数"></a>1）动态分区相关参数</h5><p>(1) 动态分区功能总开关（默认true，开启）  </p>
 <pre><code>set hive.exec.dynamic.partition=true  
 </code></pre>
 <p>(2) 严格模式和非严格模式   </p>
 <p>动态分区的模式，默认strict（严格模式），要求必须指定至少一个分区为静态分区，nonstrict（非严格模式）允许所有的分区字段都使用动态分区  </p>
 <pre><code>set hive.exec.dynamic.partition.mode=nonstrict
 </code></pre>
-<p>##2.分桶表  </p>
-<p>并非所有的数据集都可形成合理的分区。对于一张表或者分区，Hive 可以进一步组织成桶，也就是更为细粒度的数据范围划分  </p>
+<h2 id="2-分桶表"><a href="#2-分桶表" class="headerlink" title="2.分桶表"></a>2.分桶表</h2><p>并非所有的数据集都可形成合理的分区。对于一张表或者分区，Hive 可以进一步组织成桶，也就是更为细粒度的数据范围划分  </p>
 <p><strong>分区针对的是数据的存储路径，分桶针对的是数据文件</strong>  </p>
 <p>分桶表的基本原理是，首先为每行数据计算一个指定字段的数据的hash值，然后模以一个指定的分桶数，最后将取模运算结果相同的行，写入同一个文件中，这个文件就称为一个分桶（bucket）</p>
 <p>建表语句</p>
@@ -4096,22 +3802,15 @@ row format delimited fields terminated by &#39;\t&#39;;
 load data local inpath &#39;/opt/module/hive/datas/student.txt&#39; 
 into table stu_buck;
 </code></pre>
-<p>#8.Hive压缩格式和文件格式  </p>
-<p>##压缩格式</p>
-<p>DEFLATE<br>gzip<br>bzip2<br>LZO<br>Snappy</p>
-<p>##Hive文件格式<br>text file<br>orc<br>parquet<br>sequence file  </p>
-<p>##行式存储和列式存储</p>
-<p>###行式存储 - textfile，sequence file<br>文本文件是Hive默认使用的文件格式，文本文件中的一行内容，就对应Hive表中的一行记录</p>
+<h1 id="8-Hive压缩格式和文件格式"><a href="#8-Hive压缩格式和文件格式" class="headerlink" title="8.Hive压缩格式和文件格式"></a>8.Hive压缩格式和文件格式</h1><h2 id="压缩格式"><a href="#压缩格式" class="headerlink" title="压缩格式"></a>压缩格式</h2><p>DEFLATE<br>gzip<br>bzip2<br>LZO<br>Snappy</p>
+<h2 id="Hive文件格式"><a href="#Hive文件格式" class="headerlink" title="Hive文件格式"></a>Hive文件格式</h2><p>text file<br>orc<br>parquet<br>sequence file  </p>
+<h2 id="行式存储和列式存储"><a href="#行式存储和列式存储" class="headerlink" title="行式存储和列式存储"></a>行式存储和列式存储</h2><h3 id="行式存储-textfile，sequence-file"><a href="#行式存储-textfile，sequence-file" class="headerlink" title="行式存储 - textfile，sequence file"></a>行式存储 - textfile，sequence file</h3><p>文本文件是Hive默认使用的文件格式，文本文件中的一行内容，就对应Hive表中的一行记录</p>
 <p>适用于会用到很多where语句的表</p>
-<p>###列式存储 - orc，parquet</p>
-<p>数仓中尽量选用列式存储方式</p>
+<h3 id="列式存储-orc，parquet"><a href="#列式存储-orc，parquet" class="headerlink" title="列式存储 - orc，parquet"></a>列式存储 - orc，parquet</h3><p>数仓中尽量选用列式存储方式</p>
 <p><img src="/2023/07/30/hive_learn/5.png" alt="ORC文件基本格式">  </p>
 <p><img src="/2023/07/30/hive_learn/6.png" alt="Parquet文件基本格式">   </p>
-<p>##压缩</p>
-<p>在Hive表中和计算过程中，保持数据的压缩，对磁盘空间的有效利用和提高查询性能都是十分有益的  </p>
-<p>###Hive表数据进行压缩    </p>
-<p>####1）TextFile    </p>
-<p>无法直接在表结构中进行声明压缩    </p>
+<h2 id="压缩"><a href="#压缩" class="headerlink" title="压缩"></a>压缩</h2><p>在Hive表中和计算过程中，保持数据的压缩，对磁盘空间的有效利用和提高查询性能都是十分有益的  </p>
+<h3 id="Hive表数据进行压缩"><a href="#Hive表数据进行压缩" class="headerlink" title="Hive表数据进行压缩"></a>Hive表数据进行压缩</h3><h4 id="1）TextFile"><a href="#1）TextFile" class="headerlink" title="1）TextFile"></a>1）TextFile</h4><p>无法直接在表结构中进行声明压缩    </p>
 <p>直接将压缩后的文件导入到该表即可，Hive在查询表中数据时，可自动识别其压缩格式，进行解压  </p>
 <p>TextFile压缩格式常为Gzip  </p>
 <p>需要注意的是，在执行往表中导入数据的SQL语句时，用户需设置以下参数，来保证写入表中的数据是被压缩的。  </p>
@@ -4121,22 +3820,19 @@ into table stu_buck;
 <p>–输出结果的压缩格式（以下示例为snappy）  </p>
 <pre><code>set mapreduce.output.fileoutputformat.compress.codec =org.apache.hadoop.io.compress.SnappyCodec;
 </code></pre>
-<p>####2）ORC</p>
-<p>可在建表时声明    </p>
+<h4 id="2）ORC"><a href="#2）ORC" class="headerlink" title="2）ORC"></a>2）ORC</h4><p>可在建表时声明    </p>
 <pre><code>create table orc_table
 (column_specs)
 stored as orc
 tblproperties (&quot;orc.compress&quot;=&quot;snappy&quot;);  
 </code></pre>
-<p>####3）Parquet  </p>
-<p>可在建表时声明   </p>
+<h4 id="3）Parquet"><a href="#3）Parquet" class="headerlink" title="3）Parquet"></a>3）Parquet</h4><p>可在建表时声明   </p>
 <pre><code>create table orc_table
 (column_specs)
 stored as parquet
 tblproperties (&quot;parquet.compression&quot;=&quot;snappy&quot;);
 </code></pre>
-<p>###计算过程中使用压缩  </p>
-<p>1）单个mr的中间结果进行压缩  </p>
+<h3 id="计算过程中使用压缩"><a href="#计算过程中使用压缩" class="headerlink" title="计算过程中使用压缩"></a>计算过程中使用压缩</h3><p>1）单个mr的中间结果进行压缩  </p>
 <p>–开启MapReduce中间数据压缩功能  </p>
 <pre><code>set mapreduce.map.output.compress=true;
 </code></pre>
@@ -4151,9 +3847,7 @@ tblproperties (&quot;parquet.compression&quot;=&quot;snappy&quot;);
 <p>–压缩格式（以下示例为snappy）  </p>
 <pre><code>set hive.intermediate.compression.codec= org.apache.hadoop.io.compress.SnappyCodec;
 </code></pre>
-<p>#能看到这里，你是真滴牛批~</p>
-<p>#猛男，帅哥儿，靓仔，点个赞再肘~</p>
-<p><img src="/2023/07/30/hive_learn/7.png" alt="歪嘴猫"></p>
+<h1 id="能看到这里，你是真滴牛批"><a href="#能看到这里，你是真滴牛批" class="headerlink" title="能看到这里，你是真滴牛批~"></a>能看到这里，你是真滴牛批~</h1><h1 id="猛男，帅哥儿，靓仔，点个赞再肘"><a href="#猛男，帅哥儿，靓仔，点个赞再肘" class="headerlink" title="猛男，帅哥儿，靓仔，点个赞再肘~"></a>猛男，帅哥儿，靓仔，点个赞再肘~</h1><p><img src="/2023/07/30/hive_learn/7.png" alt="歪嘴猫"></p>
 
       
     </div>
@@ -4249,7 +3943,7 @@ tblproperties (&quot;parquet.compression&quot;=&quot;snappy&quot;);
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
