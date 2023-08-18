@@ -9,8 +9,32 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>初级以内我无敌，中级以上我一换一</description>
-    <pubDate>Sun, 13 Aug 2023 11:42:18 GMT</pubDate>
+    <pubDate>Fri, 18 Aug 2023 13:15:34 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>java问题集</title>
+      <link>http://example.com/2023/08/18/Java_questions/</link>
+      <guid>http://example.com/2023/08/18/Java_questions/</guid>
+      <pubDate>Fri, 18 Aug 2023 03:30:12 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;道虽迩，不行不至；事虽小，不为不成&quot;&gt;&lt;a href=&quot;#道虽迩，不行不至；事虽小，不为不成&quot; class=&quot;headerlink&quot; title=&quot;道虽迩，不行不至；事虽小，不为不成&quot;&gt;&lt;/a&gt;道虽迩，不行不至；事虽小，不为不成&lt;/h1&gt;&lt;h2 id=&quot;java中</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="道虽迩，不行不至；事虽小，不为不成"><a href="#道虽迩，不行不至；事虽小，不为不成" class="headerlink" title="道虽迩，不行不至；事虽小，不为不成"></a>道虽迩，不行不至；事虽小，不为不成</h1><h2 id="java中double类型数据如何指定保留位数？"><a href="#java中double类型数据如何指定保留位数？" class="headerlink" title="java中double类型数据如何指定保留位数？"></a>java中double类型数据如何指定保留位数？</h2><p><img src="/2023/08/18/Java_questions/1.png" alt="java中double类型数据如何指定保留位数"></p><h2 id="字符串的内容比较使用-为啥无效？"><a href="#字符串的内容比较使用-为啥无效？" class="headerlink" title="字符串的内容比较使用&#x3D;&#x3D;为啥无效？"></a>字符串的内容比较使用&#x3D;&#x3D;为啥无效？</h2><p>字符串的内容比较应该使用方法equals</p><pre><code>if(&quot;丁真&quot;.equals(name) &amp;&amp; &quot;666&quot;.equals(passwd))&#123;        //if(name == &quot;丁真&quot; &amp;&amp; passwd == &quot;666&quot;)&#123;  字符串判断相等时，不能使用 == ，会无效        System.out.println(&quot;恭喜你，登录成功~&quot;);        break;        &#125;else&#123;            chance--;            System.out.println(&quot;你还有&quot;+chance+&quot;次登录机会&quot;);        &#125;</code></pre>]]></content:encoded>
+      
+      
+      
+      <category domain="http://example.com/tags/%E9%81%93%E8%99%BD%E8%BF%A9%EF%BC%8C%E4%B8%8D%E8%A1%8C%E4%B8%8D%E8%87%B3%EF%BC%9B%E4%BA%8B%E8%99%BD%E5%B0%8F%EF%BC%8C%E4%B8%8D%E4%B8%BA%E4%B8%8D%E6%88%90/">道虽迩，不行不至；事虽小，不为不成</category>
+      
+      
+      <comments>http://example.com/2023/08/18/Java_questions/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>Spark报错经验记录</title>
@@ -227,28 +251,6 @@
       
       
       <comments>http://example.com/2023/08/02/Spark-Core/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>SQLServer查询体系学习记录</title>
-      <link>http://example.com/2023/08/01/SQLServer%E6%9F%A5%E8%AF%A2%E4%BD%93%E7%B3%BB%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</link>
-      <guid>http://example.com/2023/08/01/SQLServer%E6%9F%A5%E8%AF%A2%E4%BD%93%E7%B3%BB%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</guid>
-      <pubDate>Tue, 01 Aug 2023 03:07:31 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;SQLServer查询处理体系结构指南&quot;&gt;&lt;a href=&quot;#SQLServer查询处理体系结构指南&quot; class=&quot;headerlink&quot; title=&quot;SQLServer查询处理体系结构指南&quot;&gt;&lt;/a&gt;SQLServer查询处理体系结构指南&lt;/h1&gt;&lt;h2 i</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="SQLServer查询处理体系结构指南"><a href="#SQLServer查询处理体系结构指南" class="headerlink" title="SQLServer查询处理体系结构指南"></a>SQLServer查询处理体系结构指南</h1><h2 id="执行模式"><a href="#执行模式" class="headerlink" title="执行模式"></a>执行模式</h2><p>行执行模式<br>批执行模式 </p><h3 id="行执行模式"><a href="#行执行模式" class="headerlink" title="行执行模式"></a>行执行模式</h3><p>行模式执行是用于传统 RDBMS 表（其中数据以行格式存储）的查询处理方法</p><h3 id="批执行模式"><a href="#批执行模式" class="headerlink" title="批执行模式"></a>批执行模式</h3><p>批模式执行是一种查询处理方法，用于统一处理多个行（因此采用“批”一词）    </p><p>批中的每列都作为一个矢量存储在单独的内存区域中，因此批模式处理是基于矢量的</p><p>当在批模式下执行查询并且查询访问列存储索引中的数据时，执行树运算符和子运算符会一次读取列段中的多行。 SQL Server 仅读取结果所需的列，即 SELECT 语句、JOIN 谓词或筛选谓词引用的列</p><p><strong>批执行模式VS行执行模式的优势</strong>：一次读取多行，再筛选。避免了行执行模式的多次读取，提高运行效率  </p><h2 id="SQL-语句处理"><a href="#SQL-语句处理" class="headerlink" title="SQL 语句处理"></a>SQL 语句处理</h2><p>处理单个 Transact-SQL 语句是 SQL Server 执行 Transact-SQL 语句的最基本方法    </p><h3 id="逻辑运算符优先级"><a href="#逻辑运算符优先级" class="headerlink" title="逻辑运算符优先级"></a>逻辑运算符优先级</h3><p>计算顺序依次为：NOT、AND最后是 OR。算术运算符和位运算符优先于逻辑运算符处理  </p><h2 id="优化-SELECT-语句"><a href="#优化-SELECT-语句" class="headerlink" title="优化 SELECT 语句"></a>优化 SELECT 语句</h2><p>语句 SELECT 是非过程性的，数据库服务器必须分析语句，以决定提取所请求数据的最有效方法。  </p><p>执行此操作的组件称为查询优化器，可以使数据库服务器针对数据库内的更改情况进行动态调整，而无需程序员或数据库管理员输入  </p><p>order 排序字段上应该建索引  </p><p>从潜在的多个可能的计划中选择一个执行计划的过程称为“优化”  </p><p>SQL Server 查询优化器是基于成本的优化器（CBO）</p><p>当执行复杂的SQL语句时，不会去分析所有的执行计划成本，会根据算法选一个执行计划，其成本合理地接近最低可能成本的执行计划    </p><p><strong>除了CBO，还要考虑运行效率</strong>：SQL Server查询优化器不会仅选择资源成本最低的执行计划;它选择以合理的资源成本向用户返回结果的计划，并且以最快的速度返回结果  </p><p>SQL Server 查询优化器总能针对数据库的状态生成一个有效的执行计划    </p><p>SQL Server Management Studio 有三个选项可用于显示执行计划</p><pre><code>1.估计的执行计划    2.实际执行计划    3.实时查询统计信息，这与编译的计划及其执行上下文相同      这包括执行过程中的运行时信息，每秒更新一次</code></pre><h2 id="密度"><a href="#密度" class="headerlink" title="密度"></a>密度</h2><p>密度定义数据中存在的唯一值的分布，或给定列的重复值平均数。 密度与值的选择性成反比，密度越小，值的选择性越大  </p><h2 id="处理-SELECT-语句"><a href="#处理-SELECT-语句" class="headerlink" title="处理 SELECT 语句"></a>处理 SELECT 语句</h2><p>SQL Server 处理单个 SELECT 语句的基本步骤包括如下内容：  </p><p>1.解析select语句</p><p>2.生成查询树</p><p>3.生成执行计划，并选择合理的执行计划</p><p>4.运行执行计划  </p><p>5.返回结果</p><h2 id="常量折叠和表达式计算"><a href="#常量折叠和表达式计算" class="headerlink" title="常量折叠和表达式计算"></a>常量折叠和表达式计算</h2><h3 id="可折叠表达式"><a href="#可折叠表达式" class="headerlink" title="可折叠表达式"></a>可折叠表达式</h3><p>仅包含常量的算术表达式  </p><p>仅包含常量的逻辑表达式  </p><p>被 SQL Server 认为可折叠的内置函数包括 CAST 和 CONVERT   </p><p>CLR 用户定义类型的确定性方法和确定性的标量值 CLR 用户定义函数  </p><h3 id="不可折叠的表达式"><a href="#不可折叠的表达式" class="headerlink" title="不可折叠的表达式"></a>不可折叠的表达式</h3><p>所有其他表达式类型都是不可折叠的。 特别是下列类型的表达式是不可折叠的：  </p><p>非常量表达式    </p><p>结果取决于局部变量或参数的表达式   </p><p>不确定性函数     </p><p>用户定义的 Transact-SQL 函数  </p><p>结果取决于语言设置的表达式   </p><p>结果取决于 SET 选项的表达式  </p><p>结果取决于服务器配置选项的表达式  </p><h2 id="常量折叠的优点"><a href="#常量折叠的优点" class="headerlink" title="常量折叠的优点"></a>常量折叠的优点</h2><p>表达式不必在运行时重复计算  </p><p>查询优化器可使用计算表达式后所得的值来估计 TotalDue &gt; 117.00 + 1000.00 查询部分的结果集的大小  </p><h2 id="工作表"><a href="#工作表" class="headerlink" title="工作表"></a>工作表</h2><p>工作表是用于保存中间结果的内部表。 某些 GROUP BY、 ORDER BY或 UNION 查询会生成工作表  </p><p>工作表在 tempdb 中生成，并在不再需要时自动删除  </p><p>SQL Server 查询处理器对索引视图和非索引视图将区别对待  </p><p>索引视图的行以表的格式存储在数据库中   </p><p>只有非索引视图的定义才存储，而不存储视图的行  </p><p> 如果索引视图中的数据包括所有或部分 Transact-SQL 语句，而且查询优化器确定视图的某个索引是低成本的访问路径，则不论查询中是否引用了该视图的名称，查询优化器都将选择此索引  </p><p>视图没有单独的执行计划</p><h2 id="存储过程和触发器执行"><a href="#存储过程和触发器执行" class="headerlink" title="存储过程和触发器执行"></a>存储过程和触发器执行</h2><p>SQL Server 仅存储存储过程和触发器的源  </p><p>第一次执行存储过程或触发器时，源被编译为执行计划，在内存中被释放后需要重新运行存储过程再次生成  </p><p>执行计划缓存和重用  </p><p>SQL Server 有一个用于存储执行计划和数据缓冲区的内存池，池内分配给执行计划或数据缓冲区的百分比随系统状态动态波动    </p><p>计划缓存有两个不用于存储计划的附加存储：  </p><p>“对象计划”缓存存储 (OBJCP)  </p><pre><code>用于与持久化对象（存储过程、函数和触发器）相关的计划   </code></pre><p>“SQL 计划”缓存存储 (SQLCP)   </p><pre><code>用于与自动参数化、动态或已准备的查询相关的计划  </code></pre><h2 id="从计划缓存中删除执行计划"><a href="#从计划缓存中删除执行计划" class="headerlink" title="从计划缓存中删除执行计划"></a>从计划缓存中删除执行计划</h2><p>只要计划缓存中有足够的存储空间，执行计划就会保留在其中   </p><p>当存在内存不足的情况时，SQL Server 数据库引擎将使用基于开销的方法来确定从计划缓存中删除哪些执行计划  </p>]]></content:encoded>
-      
-      
-      
-      
-      <comments>http://example.com/2023/08/01/SQLServer%E6%9F%A5%E8%AF%A2%E4%BD%93%E7%B3%BB%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#disqus_thread</comments>
       
     </item>
     
