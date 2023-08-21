@@ -29,8 +29,12 @@
 <meta property="og:description" content="道虽迩，不行不至；事虽小，不为不成java中double类型数据如何指定保留位数？ 字符串的内容比较使用&#x3D;&#x3D;为啥无效？字符串的内容比较应该使用方法equals if(&quot;丁真&quot;.equals(name) &amp;&amp; &quot;666&quot;.equals(passwd))&amp;#123;         &#x2F;&#x2F;if(name &#x3D;&#x3D; &quot;丁真&amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/08/18/Java_questions/1.png">
+<meta property="og:image" content="http://example.com/2023/08/18/Java_questions/2.png">
+<meta property="og:image" content="http://example.com/2023/08/18/Java_questions/3.png">
+<meta property="og:image" content="http://example.com/2023/08/18/Java_questions/4.png">
+<meta property="og:image" content="http://example.com/2023/08/18/Java_questions/5.png">
 <meta property="article:published_time" content="2023-08-18T03:30:12.000Z">
-<meta property="article:modified_time" content="2023-08-18T13:15:34.043Z">
+<meta property="article:modified_time" content="2023-08-21T16:06:53.068Z">
 <meta property="article:author" content="张宴银">
 <meta property="article:tag" content="道虽迩，不行不至；事虽小，不为不成">
 <meta name="twitter:card" content="summary">
@@ -244,10 +248,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-08-18 11:30:12 / 修改时间：21:15:34" itemprop="dateCreated datePublished" datetime="2023-08-18T11:30:12+08:00">2023-08-18</time>
+              <time title="创建时间：2023-08-18 11:30:12" itemprop="dateCreated datePublished" datetime="2023-08-18T11:30:12+08:00">2023-08-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-22 00:06:53" itemprop="dateModified" datetime="2023-08-22T00:06:53+08:00">2023-08-22</time>
+              </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -278,6 +288,49 @@
             System.out.println(&quot;你还有&quot;+chance+&quot;次登录机会&quot;);
         &#125;
 </code></pre>
+<p>equals方法使用细节：  </p>
+<pre><code>System.out.println(name.equals(&quot;林黛玉&quot;));
+System.out.println(&quot;林黛玉&quot;.equals(name));//T [推荐，可以避免空指针
+</code></pre>
+<h2 id="Java中系统输入-char-字符-‘男’-应该如何做？"><a href="#Java中系统输入-char-字符-‘男’-应该如何做？" class="headerlink" title="Java中系统输入 char 字符 ‘男’ 应该如何做？"></a>Java中系统输入 char 字符 ‘男’ 应该如何做？</h2><pre><code>Scanner myScanner = new Scanner(System.in);
+char gender = myScanner.next().charAt(0);
+ if (gender == &#39;男&#39;)&#123;
+            System.out.println(&quot;进入男子组&quot;);
+        &#125;else if(gender == &#39;女&#39;)&#123;
+            System.out.println(&quot;进入女子组&quot;);
+        &#125;else&#123;
+            System.out.println(&quot;你的性别有误，不能参加决赛 ~ &quot;);
+        &#125;
+</code></pre>
+<h2 id="Java中数组的深拷贝和浅拷贝"><a href="#Java中数组的深拷贝和浅拷贝" class="headerlink" title="Java中数组的深拷贝和浅拷贝"></a>Java中数组的深拷贝和浅拷贝</h2><p>深拷贝： int[] arr2 &#x3D; new int[arr1.length]  ,arr2数组重新开辟了一个数组空间<br>浅拷贝： arr2 &#x3D; arr1 这是将arr1的数组地址赋值给了arr2，这样arr1和arr2其实都指向了同一个数组，此时arr1和arr2的元素都是同步变化的，并没有独立。</p>
+<h2 id="Java-中对象在内存中的存在形式是怎样的"><a href="#Java-中对象在内存中的存在形式是怎样的" class="headerlink" title="Java 中对象在内存中的存在形式是怎样的?"></a>Java 中对象在内存中的存在形式是怎样的?</h2><p><img src="/2023/08/18/Java_questions/2.png" alt="Java 中对象在内存中的存在形式"></p>
+<p>数值属性存储在堆内存中  </p>
+<p>方法存储在方法区中  </p>
+<p>方法区中的常量池负责存储数值属性之外的其他属性值  </p>
+<h3 id="类和对象的内存分配机制"><a href="#类和对象的内存分配机制" class="headerlink" title="类和对象的内存分配机制"></a>类和对象的内存分配机制</h3><h4 id="Java-内存的结构分析"><a href="#Java-内存的结构分析" class="headerlink" title="Java 内存的结构分析"></a>Java 内存的结构分析</h4><ol>
+<li><p>栈： 一般存放基本数据类型(局部变量)  </p>
+</li>
+<li><p>堆： 存放对象(Cat cat , 数组等)   </p>
+</li>
+<li><p>方法区：常量池(常量，比如字符串)， 类加载信息</p>
+</li>
+</ol>
+<h2 id="类定义在public-class-代码块内外有何区别？-什么时候需要使用static-class-？"><a href="#类定义在public-class-代码块内外有何区别？-什么时候需要使用static-class-？" class="headerlink" title="类定义在public class 代码块内外有何区别？ 什么时候需要使用static class ？"></a>类定义在public class 代码块内外有何区别？ 什么时候需要使用static class ？</h2><p><img src="/2023/08/18/Java_questions/3.png" alt="类定义在public class 代码块内外有何区别？"></p>
+<p><img src="/2023/08/18/Java_questions/4.png" alt="类定义在public class 代码块内外有何区别？"></p>
+<p>在别的代码中定义了同名类，本次代码中需要重新定义时，类应当定义在public class代码块中，使用static描述，否则会报错.这个是叫静态内部类吗？  </p>
+<p>类本质上就是一种数据类型。可以定义属性，定义方法。使用的时候和数据类型一样使用即可。  </p>
+<h3 id="方法的调用机制原理"><a href="#方法的调用机制原理" class="headerlink" title="方法的调用机制原理"></a>方法的调用机制原理</h3><p><img src="/2023/08/18/Java_questions/5.png" alt="方法的调用机制原理"></p>
+<h2 id="形参和实参"><a href="#形参和实参" class="headerlink" title="形参和实参"></a>形参和实参</h2><pre><code>getSumAndSub(int n1,int n2)  这就是形参  
+getSumAndSub(1,8) 这就是实参
+</code></pre>
+<h2 id="基本数据类型的传参机制"><a href="#基本数据类型的传参机制" class="headerlink" title="基本数据类型的传参机制"></a>基本数据类型的传参机制</h2><p>基本数据类型，传递的是值(值拷贝),形参的任何改变不影响实参</p>
+<p>main方法中的引用类型属性可以被方法修改    </p>
+<p>main方法中的基本类型属性无法被方法修改  </p>
+<p>引用类型传递的是地址（传递也是值，但是值是地址），可以通过形参影响实参！  </p>
+<h2 id="Java中的可变参数"><a href="#Java中的可变参数" class="headerlink" title="Java中的可变参数"></a>Java中的可变参数</h2><p>int… 与 int[] 等价  </p>
+<p>可变参数可以和普通类型的参数一起放在形参列表,但必须保证可变参数在最后    </p>
+<p>一个形参列表中只能出现一个可变参数  </p>
+<p>可变参数的实参可以是数组 </p>
 
     </div>
 
@@ -405,7 +458,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%93%E8%99%BD%E8%BF%A9%EF%BC%8C%E4%B8%8D%E8%A1%8C%E4%B8%8D%E8%87%B3%EF%BC%9B%E4%BA%8B%E8%99%BD%E5%B0%8F%EF%BC%8C%E4%B8%8D%E4%B8%BA%E4%B8%8D%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">道虽迩，不行不至；事虽小，不为不成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%ADdouble%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E6%8C%87%E5%AE%9A%E4%BF%9D%E7%95%99%E4%BD%8D%E6%95%B0%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">java中double类型数据如何指定保留位数？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%86%85%E5%AE%B9%E6%AF%94%E8%BE%83%E4%BD%BF%E7%94%A8-%E4%B8%BA%E5%95%A5%E6%97%A0%E6%95%88%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">字符串的内容比较使用&#x3D;&#x3D;为啥无效？</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%93%E8%99%BD%E8%BF%A9%EF%BC%8C%E4%B8%8D%E8%A1%8C%E4%B8%8D%E8%87%B3%EF%BC%9B%E4%BA%8B%E8%99%BD%E5%B0%8F%EF%BC%8C%E4%B8%8D%E4%B8%BA%E4%B8%8D%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">道虽迩，不行不至；事虽小，不为不成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%ADdouble%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%A6%82%E4%BD%95%E6%8C%87%E5%AE%9A%E4%BF%9D%E7%95%99%E4%BD%8D%E6%95%B0%EF%BC%9F"><span class="nav-number">1.1.</span> <span class="nav-text">java中double类型数据如何指定保留位数？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%86%85%E5%AE%B9%E6%AF%94%E8%BE%83%E4%BD%BF%E7%94%A8-%E4%B8%BA%E5%95%A5%E6%97%A0%E6%95%88%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">字符串的内容比较使用&#x3D;&#x3D;为啥无效？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E4%B8%AD%E7%B3%BB%E7%BB%9F%E8%BE%93%E5%85%A5-char-%E5%AD%97%E7%AC%A6-%E2%80%98%E7%94%B7%E2%80%99-%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E5%81%9A%EF%BC%9F"><span class="nav-number">1.3.</span> <span class="nav-text">Java中系统输入 char 字符 ‘男’ 应该如何做？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E4%B8%AD%E6%95%B0%E7%BB%84%E7%9A%84%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%92%8C%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="nav-number">1.4.</span> <span class="nav-text">Java中数组的深拷贝和浅拷贝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-%E4%B8%AD%E5%AF%B9%E8%B1%A1%E5%9C%A8%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E5%AD%98%E5%9C%A8%E5%BD%A2%E5%BC%8F%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84"><span class="nav-number">1.5.</span> <span class="nav-text">Java 中对象在内存中的存在形式是怎样的?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E6%9C%BA%E5%88%B6"><span class="nav-number">1.5.1.</span> <span class="nav-text">类和对象的内存分配机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java-%E5%86%85%E5%AD%98%E7%9A%84%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90"><span class="nav-number">1.5.1.1.</span> <span class="nav-text">Java 内存的结构分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB%E5%AE%9A%E4%B9%89%E5%9C%A8public-class-%E4%BB%A3%E7%A0%81%E5%9D%97%E5%86%85%E5%A4%96%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB%EF%BC%9F-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E9%9C%80%E8%A6%81%E4%BD%BF%E7%94%A8static-class-%EF%BC%9F"><span class="nav-number">1.6.</span> <span class="nav-text">类定义在public class 代码块内外有何区别？ 什么时候需要使用static class ？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E7%9A%84%E8%B0%83%E7%94%A8%E6%9C%BA%E5%88%B6%E5%8E%9F%E7%90%86"><span class="nav-number">1.6.1.</span> <span class="nav-text">方法的调用机制原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%A2%E5%8F%82%E5%92%8C%E5%AE%9E%E5%8F%82"><span class="nav-number">1.7.</span> <span class="nav-text">形参和实参</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E4%BC%A0%E5%8F%82%E6%9C%BA%E5%88%B6"><span class="nav-number">1.8.</span> <span class="nav-text">基本数据类型的传参机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E4%B8%AD%E7%9A%84%E5%8F%AF%E5%8F%98%E5%8F%82%E6%95%B0"><span class="nav-number">1.9.</span> <span class="nav-text">Java中的可变参数</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -498,7 +551,7 @@ $(document).ready(function() {
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共49k字</span>
+  <span class="post-count">博客全站共49.7k字</span>
 </div>
         
 <div class="busuanzi-count">
