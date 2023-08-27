@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="宰相必起于州部，猛将必发于卒伍枫叶云笔记Flink任务提交运行时架构  启动Flink集群首先会启动JobManager，Standalone集群模式下同时启动TaskManager，该模式资源也就固定；其他集群部署模式会根据提交任务来动态启动TaskManager；   当在客户端提交任务后，客户端会将任务转换成JobGraph提交给JobManager；   JobManager首先启动Dis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Flink">
+<meta property="og:url" content="http://example.com/2023/08/24/Flink_1/index.html">
+<meta property="og:site_name" content="第五门徒">
+<meta property="og:description" content="宰相必起于州部，猛将必发于卒伍枫叶云笔记Flink任务提交运行时架构  启动Flink集群首先会启动JobManager，Standalone集群模式下同时启动TaskManager，该模式资源也就固定；其他集群部署模式会根据提交任务来动态启动TaskManager；   当在客户端提交任务后，客户端会将任务转换成JobGraph提交给JobManager；   JobManager首先启动Dis">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/08/24/Flink_1/1.png">
+<meta property="og:image" content="http://example.com/2023/08/24/Flink_1/2.png">
+<meta property="og:image" content="http://example.com/2023/08/24/Flink_1/3.png">
+<meta property="og:image" content="http://example.com/2023/08/24/Flink_1/4.png">
+<meta property="article:published_time" content="2023-08-24T01:58:32.000Z">
+<meta property="article:modified_time" content="2023-08-26T14:32:18.061Z">
+<meta property="article:author" content="张宴银">
+<meta property="article:tag" content="宰相必起于州部，猛将必发于卒伍">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/08/24/Flink_1/1.png">
+
+<link rel="canonical" href="http://example.com/2023/08/24/Flink_1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Flink | 第五门徒</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="第五门徒" type="application/rss+xml">
+</head>
+
+
+
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">第五门徒</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+        <li class="menu-item menu-item-resources">
+
+    <a href="/resources/" rel="section"><i class="download fa-fw"></i>资源</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/08/24/Flink_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="张宴银">
+      <meta itemprop="description" content="初级以内我无敌，中级以上我一换一">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="第五门徒">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Flink
+        </h1>
+
+        <div class="post-meta">
+		  
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-08-24 09:58:32" itemprop="dateCreated datePublished" datetime="2023-08-24T09:58:32+08:00">2023-08-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-08-26 22:32:18" itemprop="dateModified" datetime="2023-08-26T22:32:18+08:00">2023-08-26</time>
+              </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="宰相必起于州部，猛将必发于卒伍"><a href="#宰相必起于州部，猛将必发于卒伍" class="headerlink" title="宰相必起于州部，猛将必发于卒伍"></a>宰相必起于州部，猛将必发于卒伍</h1><h1 id="枫叶云笔记"><a href="#枫叶云笔记" class="headerlink" title="枫叶云笔记"></a><a target="_blank" rel="noopener" href="https://cloud.fynote.com/share/d/GWHLLUWP">枫叶云笔记</a></h1><h2 id="Flink任务提交运行时架构"><a href="#Flink任务提交运行时架构" class="headerlink" title="Flink任务提交运行时架构"></a>Flink任务提交运行时架构</h2><p><img src="/2023/08/24/Flink_1/1.png" alt="Flink任务提交运行时架构"></p>
+<ol>
+<li>启动Flink集群首先会启动JobManager，Standalone集群模式下同时启动TaskManager，该模式资源也就固定；其他集群部署模式会根据提交任务来动态启动TaskManager；  </li>
+<li>当在客户端提交任务后，客户端会将任务转换成JobGraph提交给JobManager；  </li>
+<li>JobManager首先启动Dispatcher用于分发作业，运行Flink WebUI提供作业执行信息；  </li>
+<li>Dispatcher启动后会启动JobMaster并将JobGraph提交给JobMaster，JobMaster会将JobGraph转换成可执行的ExecutionGraph。  </li>
+<li>JobMaster向对应的资源管理器ResourceManager为当前任务申请Slot资源；  </li>
+<li>在Standalone资源管理器中会直接找到启动的TaskManager来申请Slot资源，如果资源不足，那么任务执行失败；  </li>
+<li>其他资源管理器会启动新的TaskManager，新启动的TaskManager会向ResourceManager进行注册资源，然后ResourceManager再向TaskManager申请Slot资源，如果资源不足会启动新的TaskManager来满足资源；  </li>
+<li>TaskManager为对应的JobMaster offer Slot资源；  </li>
+<li>JobMaster将要执行的task发送到对应的TaskManager上执行，TaskManager之间可以进行数据交换。</li>
+</ol>
+<h2 id="三种任务部署模式"><a href="#三种任务部署模式" class="headerlink" title="三种任务部署模式"></a>三种任务部署模式</h2><p>向Flink集群中提交任务有三种任务部署模式，分别如下：  </p>
+<p>会话模式 - Session Mode<br>单作业模式 - Per-Job Mode(过时)<br>应用模式 - Application Mode    </p>
+<p>以上三种任务提交模式的主要区别在于Flink集群的生命周期不同、资源的分配方式不同以及Flink 应用程序的main方法执行位置（Client客户端&#x2F;JobManager）不同。  </p>
+<h3 id="会话模式-Session-Mode"><a href="#会话模式-Session-Mode" class="headerlink" title="会话模式 - Session Mode"></a>会话模式 - Session Mode</h3><p>Session模式下我们首先会启动一个集群，保持一个会话，这个会话中通过客户端提交作业，集群启动时所有的资源都已经确定，所以所有的提交的作业会竞争集群中的资源。这种模式适合单个作业规模小、执行时间短的大量作业。  </p>
+<p>优势：只需要一个集群，所有作业提交之后都运行在这一个集群中，所有任务共享集群资源，每个任务执行完成后就释放资源。</p>
+<p>缺点：因为集群资源是共享的，所以资源不够了，提交新的作业就会失败，如果一个作业发生故障导致TaskManager宕机，那么所有的作业都会受到影响。  </p>
+<h3 id="单作业模式-Per-Job-Mode-过时"><a href="#单作业模式-Per-Job-Mode-过时" class="headerlink" title="单作业模式 - Per-Job Mode(过时)"></a>单作业模式 - Per-Job Mode(过时)</h3><p>Per-job模式是每提交一个作业会启动一个集群，集群只为这个作业而生，这种模式下客户端运行应用程序，然后启动集群，作业被提交给JobManager，进而分发给TaskManager执行，作业执行完成之后集群就会关闭，所有资源也会释放。  </p>
+<h3 id="应用模式-Application-Mode"><a href="#应用模式-Application-Mode" class="headerlink" title="应用模式 - Application Mode"></a>应用模式 - Application Mode</h3><p>Session模式和Pre-Job模式都是在客户端将作业提交给JobManager。  </p>
+<p>Application模式与Per-job类似，只是不需要客户端，每个Application提交之后就会启动一个JobManager，也就是创建一个集群，这个JobManager只为执行这一个Flink Application而存在，<br>Application中的多个job都会共用该集群，Application执行结束之后JobManager也就关闭了。这种模式下一个Application会动态创建自己的专属集群（JobManager）,所有任务共享该集群,不同<br>Application之间是完全隔离的，在生产环境中建议使用Application模式提交任务。    </p>
+<p>Application模式是在JobManager上执行main方法，为每个Flink的Application创建一个Flink集群，如果该Application有多个任务，这些Flink任务共享一个集群。  </p>
+<h2 id="Flink-On-Standalone任务提交"><a href="#Flink-On-Standalone任务提交" class="headerlink" title="Flink On Standalone任务提交"></a>Flink On Standalone任务提交</h2><p>Standlone集群部署时采用Session模式来构建集群。  </p>
+<p>Flink On Standalone 任务提交支持Session会话模式和Application应用模式，不支持Per-Job单作业模式。  </p>
+<h3 id="tandalone-Session模式"><a href="#tandalone-Session模式" class="headerlink" title="tandalone Session模式"></a>tandalone Session模式</h3><p>提交任务之前首先启动Standalone集群($FLINK_HOME&#x2F;bin&#x2F;start-cluster.sh)，然后再提交任务  </p>
+<pre><code>[root@node4 ~]# cd /software/flink-1.16.0/bin/
+[root@node4 bin]# ./flink run -m node1:8081 -d -c com.mashibing.flinkjava.code.chapter3.SocketWordCount /root/FlinkJavaCode-1.0-SNAPSHOT-jar-with-dependencies.jar
+</code></pre>
+<p>-m –jobmanager,指定提交任务连接的JobManager地址<br>-c –class,指定运行的class主类<br>-d –detached，任务提交后在后台独立运行，退出客户端，也可不指定<br>-p –parallelism,执行程序的并行度  </p>
+<p>也可以通过参数”pipeline.name”来自定义指定Job 名称，提交命令如下：  </p>
+<pre><code>[root@node4 bin]# ./flink run -m node1:8081 -d -Dpipeline.name=socket-wc -c com.mashibing.flinkjava.code.chapter3.SocketWordCount /root/FlinkJavaCode-1.0-SNAPSHOT-jar-with-dependencies.jar  
+</code></pre>
+<h4 id="Standalone-Session模式任务提交流程"><a href="#Standalone-Session模式任务提交流程" class="headerlink" title="Standalone Session模式任务提交流程"></a>Standalone Session模式任务提交流程</h4><p>Standalone Session模式提交任务中首先需要创建Flink集群，集群创建启动的同时Dispatcher、JobMaster、ResourceManager对象一并创建、TaskManager也一并启动，TaskManager会向集群ResourceManager汇报Slot信息，Flink集群资源也就确定了。Standalone Session模式提交任务流程如下：  </p>
+<p><img src="/2023/08/24/Flink_1/2.png" alt="Standalone Session模式任务提交流程">  </p>
+<pre><code>    1.在客户端提交Flink任务，客户端会将任务转换成JobGraph提交给JobManager。  
+    2.Dispatcher将提交任务提交给JobMaster。  
+    3.JobMaster向ResourceManager申请Slot资源。  
+    4.ResourceManager会在对应的TaskManager上划分Slot资源。  
+    5.TaskManager向JobMaster offer Slot资源。  
+    6.JobMaster将任务对应的task发送到TaskManager上执行。    
+</code></pre>
+<h3 id="Standalone-Application模式"><a href="#Standalone-Application模式" class="headerlink" title="Standalone Application模式"></a>Standalone Application模式</h3><p>Standalone Application模式中不会预先创建Flink集群，在提交Flink 任务的同时会创建JobManager，启动Flink集群,然后需要手动启动TaskManager连接该Flink集群，启动的TaskManager会根据$FLINK_HOME&#x2F;conf&#x2F;flink-conf.yaml配置文件中的”jobmanager.rpc.address”配置找JobManager，所以这里选择在node1节点上提交任务并启动JobManager，方便后续其他节点启动TaskManager后连接该节点。  </p>
+<h4 id="任务提交指令及顺序"><a href="#任务提交指令及顺序" class="headerlink" title="任务提交指令及顺序"></a>任务提交指令及顺序</h4><h5 id="1-准备Flink-jar包"><a href="#1-准备Flink-jar包" class="headerlink" title="1.准备Flink jar包"></a>1.准备Flink jar包</h5><p>在node1节点上将Flink 打好的”FlinkJavaCode-1.0-SNAPSHOT-jar-with-dependencies.jar”jar包放在 $FLINK_HOME&#x2F;lib目录下  </p>
+<h5 id="2-提交任务，在node1-节点上启动-JobManager"><a href="#2-提交任务，在node1-节点上启动-JobManager" class="headerlink" title="2.提交任务，在node1 节点上启动 JobManager"></a>2.提交任务，在node1 节点上启动 JobManager</h5><pre><code>[root@node1 ~]# cd /software/flink-1.16.0/bin/
+
+执行如下命令，启动JobManager  
+[root@node1 bin]# ./standalone-job.sh start --job-classname com.mashibing.flinkjava.code.chapter3.SocketWordCount  
+</code></pre>
+<h5 id="3-启动TaskManager"><a href="#3-启动TaskManager" class="headerlink" title="3. 启动TaskManager"></a>3. 启动TaskManager</h5><p>在node1、node2、node3任意一台节点上启动taskManager，根据$FLINK_HOME&#x2F;conf&#x2F;flinkconf.yaml配置文件中”jobmanager.rpc.address”配置项会找到对应node1 JobManager  </p>
+<pre><code>在node1节点上启动TaskManager
+[root@node1 ~]# cd /software/flink-1.16.0/bin/
+[root@node1 bin]# ./taskmanager.sh start
+
+在node2节点上启动TaskManager
+[root@node2 ~]# cd /software/flink-1.16.0/bin/
+[root@node2 bin]# ./taskmanager.sh start
+</code></pre>
+<p>启动两个TaskManager后可以看到Flink WebUI中对应的有2个TaskManager，可以根据自己任务使用资源的情况，手动启动多个TaskManager。    </p>
+<h5 id="4-停止集群"><a href="#4-停止集群" class="headerlink" title="4.停止集群"></a>4.停止集群</h5><pre><code>停止启动的JobManager
+[root@node1 bin]# ./standalone-job.sh stop
+
+停止启动的TaskManager
+[root@node1 bin]# ./taskmanager.sh stop
+[root@node2 bin]# ./taskmanager.sh stop  
+</code></pre>
+<p>可以以同样的方式在其他节点上以Standalone Application模式提交先前的Flink任务，但是每次提交都是当前提交任务独享集群资源。    </p>
+<p>Standalone Application模式提交任务中提交任务的同时会启动JobManager创建Flink集群，但是需要手动启动TaskManager，这样提交的任务才能正常运行，如果提交的任务使用资源多，还可以启动多个TaskManager。  </p>
+<h4 id="Standalone-Application模式任务提交流程"><a href="#Standalone-Application模式任务提交流程" class="headerlink" title="Standalone Application模式任务提交流程"></a>Standalone Application模式任务提交流程</h4><p><img src="/2023/08/24/Flink_1/3.png" alt="Standalone Application模式任务提交流程">   </p>
+<pre><code>    1.在客户端提交Flink任务的同时启动JobManager，客户端会将任务转换成JobGraph提交给JobManager。
+    2.Dispatcher会启动JobMaster，Dispatcher将提交任务提交给JobMaster。
+    3.JobMaster向ResourceManager申请Slot资源。
+    4.手动启动TaskManager，TaskManager会向ResourceManager注册Slot资源
+    5.ResourceManager会在对应的TaskManager上划分Slot资源。
+    6.TaskManager向JobMaster offer Slot资源。
+    7.JobMaster将任务对应的task发送到TaskManager上执行。  
+</code></pre>
+<h3 id="tandalone-Session模式-和-Standalone-Application模式-任务提交流程的区别"><a href="#tandalone-Session模式-和-Standalone-Application模式-任务提交流程的区别" class="headerlink" title="tandalone Session模式 和 Standalone Application模式 任务提交流程的区别"></a>tandalone Session模式 和 Standalone Application模式 任务提交流程的区别</h3><p>Standalone Session模式中启动Flink集群时JobManager、TaskManager、JobMaster会预先启动<br>Standalone Application模式中提交任务时同时启动集群JobManager、JobMaster，需要手动启动TaskManager</p>
+<h2 id="Flink-On-Yarn任务提交"><a href="#Flink-On-Yarn任务提交" class="headerlink" title="Flink On Yarn任务提交"></a>Flink On Yarn任务提交</h2><h3 id="Flink-On-Yarn运行原理"><a href="#Flink-On-Yarn运行原理" class="headerlink" title="Flink On Yarn运行原理"></a>Flink On Yarn运行原理</h3><p><img src="/2023/08/24/Flink_1/4.png" alt="Flink On Yarn运行原理">     </p>
+<pre><code>    1.当启动一个新的Flink YARN Client会话时，客户端首先会检查所请求的资源（容器和内存）是否可用，之后，它会上传Flink配置和JAR文件到HDFS。  
+
+    2.客户端的下一步是向ResourceManager请求一个YARN容器启动ApplicationMaster。JobManager和ApplicationMaster(AM)运行在同一个容器中，一旦它们成功地启动了，AM就能够知JobManager的地址，它会为TaskManager生成一个新的Flink配置文件（这样它才能连上JobManager），该文件也同样会被上传到HDFS。另外，AM容器还提供了Flink的Web界面服务。Flink用来提供服务的端是由用户和应用程序ID作为偏移配置的，这使得用户能够并行执行多个YARN会话。    
+
+    3.之后，AM开始为Flink的TaskManager分配容器（Container），从HDFS下载JAR文件和修改过的配置文件，一旦这些步骤完成了，Flink就可以基于Yarn运行任务了  
+</code></pre>
+<h3 id="代码及Yarn环境准备"><a href="#代码及Yarn环境准备" class="headerlink" title="代码及Yarn环境准备"></a>代码及Yarn环境准备</h3><h4 id="1-准备代码"><a href="#1-准备代码" class="headerlink" title="1.准备代码"></a>1.准备代码</h4><p>Flink On Yarn任务提交支持Session会话模式、Per-Job单作业模式、Application应用模式。  </p>
+<p>Flink允许在一个main方法中提交多个job任务，多Job执行的顺序不受部署模式影响，但受启动Job的调用影响，每次调用execute()或者executeAsyc()方法都会触发job执行，我们可以在一个Flink Application中执行多次execute()或者executeAsyc()方法来触发多个job执行，两者区别如下：  </p>
+<pre><code>execute()：该方法为阻塞方法，当一个Flink Application中执行多次execute()方法触发多个job时，下一个job的执行会被推迟到该job执行完成后再执行。  
+
+executeAsyc()：该方法为非阻塞方法，一旦调用该方法触发job后，后续还有job也会立即提交执行。
+</code></pre>
+<p>当一个Flink Application中有多个job时，这些job之间没有直接通信的机制，所以建议编写Flink代码时一个Application中包含一个job即可，目前只有非HA的Application模式可以支持多job运行。  </p>
+<pre><code>//1.准备环境
+StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+//2.读取Socket数据 ,获取ds1和ds2
+DataStreamSource&lt;String&gt; ds1 = env.socketTextStream(&quot;node5&quot;, 8888);
+DataStreamSource&lt;String&gt; ds2 = env.socketTextStream(&quot;node5&quot;, 9999);
+
+//3.1 对ds1 直接输出原始数据
+SingleOutputStreamOperator&lt;Tuple2&lt;String, Integer&gt;&gt; transDs1 = ds1.flatMap((String line, Collector&lt;Tuple2&lt;String, Integer&gt;&gt; out) -&gt; &#123;
+    String[] words = line.split(&quot;,&quot;);
+    for (String word : words) &#123;
+        out.collect(Tuple2.of(word, 1));
+    &#125;
+&#125;).returns(Types.TUPLE(Types.STRING, Types.INT));
+transDs1.print();
+env.executeAsync(&quot;first job&quot;);
+
+//3.2 对ds2准备K,V格式数据 ,统计实时WordCount
+SingleOutputStreamOperator&lt;Tuple2&lt;String, Integer&gt;&gt; tupleDS = ds2.flatMap((String line, Collector&lt;Tuple2&lt;String, Integer&gt;&gt; out) -&gt; &#123;
+    String[] words = line.split(&quot;,&quot;);
+    for (String word : words) &#123;
+        out.collect(Tuple2.of(word, 1));
+    &#125;
+&#125;).returns(Types.TUPLE(Types.STRING, Types.INT));
+tupleDS.keyBy(tp -&gt; tp.f0).sum(1).print();
+
+//5.execute触发执行
+env.execute(&quot;second job&quot;);  
+</code></pre>
+<h4 id="2-yarn-环境准备"><a href="#2-yarn-环境准备" class="headerlink" title="2.yarn 环境准备"></a>2.yarn 环境准备</h4><p>在Per-Job模式中，Flink每个job任务都会启动一个对应的Flink集群，基于Yarn提交后会在Yarn中同时运行多个实时Flink任务，在HDFS中$HADOOP_HOME&#x2F;etc&#x2F;hadoop&#x2F;capacity-scheduler.xml中有”yarn.scheduler.capacity.maximum-am-resource-percent”配置项，该项默认值为0.1，表示Yarn集群中运行的所有ApplicationMaster的资源比例上限，默认0.1表示10%，这个参数变相控制了处于活动状态的Application个数，所以这里我们修改该值为0.5，否则后续在Yarn中运行多个Flink Application时只有一个Application处于活动运行状态，其他处于Accepted状态.  </p>
+
+    </div>
+
+    
+    
+    
+	
+	  <div>
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  </div>
+	
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>张宴银
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2023/08/24/Flink_1/" title="Flink">http://example.com/2023/08/24/Flink_1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%AE%B0%E7%9B%B8%E5%BF%85%E8%B5%B7%E4%BA%8E%E5%B7%9E%E9%83%A8%EF%BC%8C%E7%8C%9B%E5%B0%86%E5%BF%85%E5%8F%91%E4%BA%8E%E5%8D%92%E4%BC%8D/" rel="tag"># 宰相必起于州部，猛将必发于卒伍</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/08/18/Java_questions/" rel="prev" title="java问题集">
+      <i class="fa fa-chevron-left"></i> java问题集
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=2042878838&auto=1&height=66"></iframe>
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%B0%E7%9B%B8%E5%BF%85%E8%B5%B7%E4%BA%8E%E5%B7%9E%E9%83%A8%EF%BC%8C%E7%8C%9B%E5%B0%86%E5%BF%85%E5%8F%91%E4%BA%8E%E5%8D%92%E4%BC%8D"><span class="nav-number">1.</span> <span class="nav-text">宰相必起于州部，猛将必发于卒伍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9E%AB%E5%8F%B6%E4%BA%91%E7%AC%94%E8%AE%B0"><span class="nav-number">2.</span> <span class="nav-text">枫叶云笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Flink%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4%E8%BF%90%E8%A1%8C%E6%97%B6%E6%9E%B6%E6%9E%84"><span class="nav-number">2.1.</span> <span class="nav-text">Flink任务提交运行时架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E7%A7%8D%E4%BB%BB%E5%8A%A1%E9%83%A8%E7%BD%B2%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.2.</span> <span class="nav-text">三种任务部署模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E8%AF%9D%E6%A8%A1%E5%BC%8F-Session-Mode"><span class="nav-number">2.2.1.</span> <span class="nav-text">会话模式 - Session Mode</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E4%BD%9C%E4%B8%9A%E6%A8%A1%E5%BC%8F-Per-Job-Mode-%E8%BF%87%E6%97%B6"><span class="nav-number">2.2.2.</span> <span class="nav-text">单作业模式 - Per-Job Mode(过时)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E6%A8%A1%E5%BC%8F-Application-Mode"><span class="nav-number">2.2.3.</span> <span class="nav-text">应用模式 - Application Mode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flink-On-Standalone%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4"><span class="nav-number">2.3.</span> <span class="nav-text">Flink On Standalone任务提交</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tandalone-Session%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.3.1.</span> <span class="nav-text">tandalone Session模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Standalone-Session%E6%A8%A1%E5%BC%8F%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">Standalone Session模式任务提交流程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Standalone-Application%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.3.2.</span> <span class="nav-text">Standalone Application模式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4%E6%8C%87%E4%BB%A4%E5%8F%8A%E9%A1%BA%E5%BA%8F"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">任务提交指令及顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E5%87%86%E5%A4%87Flink-jar%E5%8C%85"><span class="nav-number">2.3.2.1.1.</span> <span class="nav-text">1.准备Flink jar包</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E6%8F%90%E4%BA%A4%E4%BB%BB%E5%8A%A1%EF%BC%8C%E5%9C%A8node1-%E8%8A%82%E7%82%B9%E4%B8%8A%E5%90%AF%E5%8A%A8-JobManager"><span class="nav-number">2.3.2.1.2.</span> <span class="nav-text">2.提交任务，在node1 节点上启动 JobManager</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E5%90%AF%E5%8A%A8TaskManager"><span class="nav-number">2.3.2.1.3.</span> <span class="nav-text">3. 启动TaskManager</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-%E5%81%9C%E6%AD%A2%E9%9B%86%E7%BE%A4"><span class="nav-number">2.3.2.1.4.</span> <span class="nav-text">4.停止集群</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Standalone-Application%E6%A8%A1%E5%BC%8F%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">Standalone Application模式任务提交流程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tandalone-Session%E6%A8%A1%E5%BC%8F-%E5%92%8C-Standalone-Application%E6%A8%A1%E5%BC%8F-%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4%E6%B5%81%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">2.3.3.</span> <span class="nav-text">tandalone Session模式 和 Standalone Application模式 任务提交流程的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Flink-On-Yarn%E4%BB%BB%E5%8A%A1%E6%8F%90%E4%BA%A4"><span class="nav-number">2.4.</span> <span class="nav-text">Flink On Yarn任务提交</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Flink-On-Yarn%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="nav-number">2.4.1.</span> <span class="nav-text">Flink On Yarn运行原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%8F%8AYarn%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">2.4.2.</span> <span class="nav-text">代码及Yarn环境准备</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%87%86%E5%A4%87%E4%BB%A3%E7%A0%81"><span class="nav-number">2.4.2.1.</span> <span class="nav-text">1.准备代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-yarn-%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-number">2.4.2.2.</span> <span class="nav-text">2.yarn 环境准备</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="张宴银"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">张宴银</p>
+  <div class="site-description" itemprop="description">初级以内我无敌，中级以上我一换一</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; Sat Jul 29 2023 08:00:00 GMT+0800 (中国标准时间) – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">张宴银</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共52.9k字</span>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/canvas_lines.min.js"></script>
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
